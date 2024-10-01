@@ -1,39 +1,51 @@
-# Are You Looking for a Seasoned Business Analyst?
+# 🎯 **Are You Looking for a Seasoned Business Analyst to Drive Your Success?**
 
-With extensive experience in analyzing business needs, defining project requirements, and delivering actionable insights, I am here to help you achieve your goals. My services include:
-
-## 🚀 Services Offered
-
-- **🔍 Requirements Gathering**: Conducting detailed interviews and workshops with stakeholders to understand their needs and objectives.
-- **🔗 Business Process Modeling**: Creating clear and accurate models of your business processes to identify inefficiencies and opportunities for improvement.
-- **📊 Data Analysis**: Analyzing and interpreting data to provide actionable insights that support decision-making.
-- **📝 Documentation**: Developing comprehensive business requirements documents (BRD), functional specifications, and user stories.
-- **🤝 Stakeholder Management**: Facilitating communication between stakeholders and technical teams to ensure alignment and project success.
-- **🔧 Solution Evaluation**: Assessing potential solutions and providing recommendations to meet business needs effectively.
-
-## 🛠 Key Skills
-
-- 💡 Requirement Elicitation & Analysis
-- 📈 Process Improvement
-- 📉 Data Analysis & Interpretation
-- 📝 Documentation & Reporting
-- 💬 Stakeholder Communication
-- 📅 Project Management
-
-## 🌟 Why Choose Me?
-
-- 🏆 Proven Track Record: Demonstrated success in delivering complex projects across various industries.
-- 🎯 Detail-Oriented: Focused on delivering high-quality, actionable insights.
-- 👥 Client-Centric Approach: Committed to understanding and addressing your unique business needs.
-
-## 📞 Let's Discuss Your Project
-
-Feel free to reach out to discuss how I can help your project succeed. I'm here to provide the expertise you need to make informed decisions and achieve your business objectives.
+With a wealth of experience in **business needs analysis**, **project requirement definition**, and **actionable insights**, I am committed to helping businesses streamline operations and achieve strategic goals. Whether you're optimizing processes or improving decision-making, I offer tailored solutions designed to meet your unique needs.
 
 ---
 
-💼 [LinkedIn](https://www.linkedin.com/in/taanhluan/) &nbsp; | &nbsp; 📧 [Email Me](mailto:taanhluan@gmail.com) &nbsp; | &nbsp; 📞 Phone: (+84) 939 451 139
+## 🚀 **Services I Offer**
+
+| **Service**                        | **Details**                                                                                     |
+|------------------------------------|-------------------------------------------------------------------------------------------------|
+| **🔍 Requirements Gathering**      | Conduct in-depth interviews and workshops to understand business objectives and challenges.     |
+| **🔗 Business Process Modeling**    | Develop detailed business process models to eliminate inefficiencies and find growth areas.      |
+| **📊 Data-Driven Insights**         | Provide deep data analysis to produce actionable insights for better decision-making.            |
+| **📝 Comprehensive Documentation** | Create detailed Business Requirements Documents (BRD), functional specifications, and user stories.|
+| **🤝 Stakeholder Management**       | Ensure effective communication between technical teams and stakeholders to drive success.        |
+| **🔧 Solution Evaluation**          | Recommend solutions tailored to your specific business needs after a thorough evaluation.        |
 
 ---
 
-### [Download My Profile as PDF](profile.pdf)
+## 🛠 **Key Expertise**
+
+- **💡 Requirements Elicitation & Analysis**: Extract key project requirements through detailed discussions and analysis.
+- **📈 Process Improvement**: Streamline business processes to boost efficiency and performance.
+- **📉 Data Analysis & Interpretation**: Leverage data to provide clear and actionable business insights.
+- **📝 Documentation & Reporting**: Develop clear, concise project documentation for stakeholders and developers.
+- **💬 Stakeholder Communication**: Facilitate ongoing communication, ensuring alignment across teams.
+- **📅 Project Management**: Guide cross-functional teams to meet project deadlines with high quality.
+
+---
+
+## 🌟 **Why Choose Me?**
+
+- **🏆 Proven Success**: Demonstrated success in delivering complex projects across a variety of industries.
+- **🎯 Results-Oriented**: I focus on actionable, high-quality deliverables that generate results.
+- **👥 Client-Centric Approach**: Tailor solutions to meet each client’s unique business objectives and long-term strategies.
+
+---
+
+## 📞 **Ready to Discuss Your Project?**
+
+I am available for consultation to discuss your business goals and how my expertise can help you achieve them. Whether you need a quick solution or full-scale project support, I'm ready to help.
+
+---
+
+💼 **[Connect on LinkedIn](https://www.linkedin.com/in/taanhluan/)**  
+📧 **[Email Me](mailto:taanhluan@gmail.com)**  
+📞 **Phone**: (+84) 939 451 139
+
+---
+
+### 📂 **[Download My Profile as PDF](profile.pdf)**
