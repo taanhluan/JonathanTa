@@ -46,6 +46,3 @@ I am available for consultation to discuss your business goals and how my expert
 📧 **[Email Me](mailto:taanhluan@gmail.com)**  
 📞 **Phone**: (+84) 939 451 139
 
----
-
-### 📂 **[Download My Profile as PDF](profile.pdf)**
