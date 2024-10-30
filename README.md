@@ -102,7 +102,7 @@ I am available for consultation to discuss your business goals and how my expert
 
 <!-- Add Download Button -->
 <p align="center">
-  <a href="https://github.com/taanhluan/JonathanTa/raw/main/Ta%20Anh%20Luan%20CV.pdf" download>
+  <a href="https://github.com/taanhluan/JonathanTa/blob/main/Ta%20Anh%20Luan%20Resume.pdf" download>
     <img src="https://img.shields.io/badge/-Download_Profile-FF5733?style=for-the-badge&logo=download&logoColor=white" alt="Download Profile">
   </a>
 </p>
