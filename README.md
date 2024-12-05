@@ -1,13 +1,17 @@
 <!-- Add a Custom Banner Image, Centered -->
 <p align="center">
-  <img src="https://github.com/taanhluan/JonathanTa/blob/f351209a3b7b2a9fc10db5087680251581c13bf5/Jonathan%20TA-2.png?raw=true" alt="Header" />
+  <img 
+    src="https://github.com/taanhluan/JonathanTa/blob/f351209a3b7b2a9fc10db5087680251581c13bf5/Jonathan%20TA-2.png?raw=true" 
+    alt="Jonathan Ta - Business Analyst Header Image" 
+    style="max-width: 100%; height: auto;" 
+  />
 </p>
 
 <!-- Center the Header Text -->
 <h1 align="center">🎯 Are You Looking for a Seasoned Business Analyst to Drive Your Success?</h1>
 
 <p align="center">
-With a wealth of experience in <strong>business needs analysis</strong>, <strong>project requirement definition</strong>, and <strong>actionable insights</strong>, I am committed to helping businesses streamline operations and achieve strategic goals. Whether you're optimizing processes or improving decision-making, I offer tailored solutions designed to meet your unique needs.
+  With a wealth of experience in <strong>business needs analysis</strong>, <strong>project requirement definition</strong>, and <strong>actionable insights</strong>, I am committed to helping businesses streamline operations and achieve strategic goals. Whether you're optimizing processes or improving decision-making, I offer tailored solutions designed to meet your unique needs.
 </p>
 
 ---
@@ -19,7 +23,7 @@ With a wealth of experience in <strong>business needs analysis</strong>, <strong
 | **🔍 Requirements Gathering**      | Conduct in-depth interviews and workshops to understand business objectives and challenges.     |
 | **🔗 Business Process Modeling**    | Develop detailed business process models to eliminate inefficiencies and find growth areas.      |
 | **📊 Data-Driven Insights**         | Provide deep data analysis to produce actionable insights for better decision-making.            |
-| **📝 Comprehensive Documentation** | Create detailed Business Requirements Documents (BRD), functional specifications, and user stories.|
+| **📝 Comprehensive Documentation** | Create detailed Business Requirements Documents (BRD), functional specifications, and user stories. |
 | **🤝 Stakeholder Management**       | Ensure effective communication between technical teams and stakeholders to drive success.        |
 | **🔧 Solution Evaluation**          | Recommend solutions tailored to your specific business needs after a thorough evaluation.        |
 
@@ -44,6 +48,16 @@ With a wealth of experience in <strong>business needs analysis</strong>, <strong
 
 ---
 
+## 💼 **Explore My Experience**
+
+<p align="center">
+  <a href="experience.html" target="_blank">
+    <img src="https://img.shields.io/badge/-View%20Experience-FF5733?style=for-the-badge&logo=readme&logoColor=white" alt="View Experience">
+  </a>
+</p>
+
+---
+
 ## 📞 **Ready to Discuss Your Project?**
 
 I am available for consultation to discuss your business goals and how my expertise can help you achieve them. Whether you need a quick solution or full-scale project support, I'm ready to help.
@@ -58,28 +72,34 @@ I am available for consultation to discuss your business goals and how my expert
 
 ## 📊 **GitHub Stats**
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=taanhluan&show_icons=true&theme=radical" alt="Jonathan's GitHub Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=taanhluan&layout=compact&theme=dark" alt="Top Langs" />
-</p>
+<div align="center" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+  <img 
+    src="https://github-readme-stats.vercel.app/api?username=taanhluan&show_icons=true&theme=radical" 
+    alt="Jonathan's GitHub Stats" 
+    style="max-width: 100%; height: auto;" 
+  />
+  <img 
+    src="https://github-readme-stats.vercel.app/api/top-langs/?username=taanhluan&layout=compact&theme=dark" 
+    alt="Top Languages" 
+    style="max-width: 100%; height: auto;" 
+  />
+</div>
 
 ---
 
 ## 🚀 **Skills & Tools**
 
-![Odoo](https://img.shields.io/badge/-Odoo-77127B?style=flat-square&logo=odoo)
-![Jira](https://img.shields.io/badge/-Jira-0052CC?style=flat-square&logo=jira)
-![Confluence](https://img.shields.io/badge/-Confluence-172B4D?style=flat-square&logo=confluence)
-![Backbase](https://img.shields.io/badge/-Backbase-FF6F61?style=flat-square&logo=data:image/svg+xml;base64,...)
-![Pega](https://img.shields.io/badge/-Pega-0D678F?style=flat-square&logo=data:image/svg+xml;base64,...)
-![DrawIO](https://img.shields.io/badge/-DrawIO-FF9100?style=flat-square&logo=data:image/svg+xml;base64,...)
-![Figma](https://img.shields.io/badge/-Figma-F24E1E?style=flat-square&logo=figma)
-![Microsoft Azure](https://img.shields.io/badge/-Azure-0089D6?style=flat-square&logo=microsoft-azure)
-![Office 365](https://img.shields.io/badge/-Office_365-D83B01?style=flat-square&logo=microsoft-office)
+<p align="center">
+  <img src="https://img.shields.io/badge/-Odoo-77127B?style=flat-square&logo=odoo" alt="Odoo" />
+  <img src="https://img.shields.io/badge/-Jira-0052CC?style=flat-square&logo=jira" alt="Jira" />
+  <img src="https://img.shields.io/badge/-Confluence-172B4D?style=flat-square&logo=confluence" alt="Confluence" />
+  <img src="https://img.shields.io/badge/-Figma-F24E1E?style=flat-square&logo=figma" alt="Figma" />
+  <img src="https://img.shields.io/badge/-Azure-0089D6?style=flat-square&logo=microsoft-azure" alt="Microsoft Azure" />
+  <img src="https://img.shields.io/badge/-Office_365-D83B01?style=flat-square&logo=microsoft-office" alt="Office 365" />
+</p>
 
-<!-- Enhanced Footer Banner, Centered -->
+---
 
-<!-- Add Footer Content -->
 <p align="center">
   <b>Let's Connect and Create Something Great!</b>
 </p>
@@ -100,9 +120,8 @@ I am available for consultation to discuss your business goals and how my expert
   <i>“Transforming business needs into success stories, one solution at a time.”</i>
 </p>
 
-<!-- Add Download Button -->
 <p align="center">
   <a href="https://github.com/taanhluan/JonathanTa/blob/main/Ta%20Anh%20Luan%20Resume.pdf" download>
-    <img src="https://img.shields.io/badge/-Download_Resume-FF5733?style=for-the-badge&logo=download&logoColor=white" alt="Download Resume">
+    <img src="https://img.shields.io/badge/-Download_Resume-FF5733?style=for-the-badge&logo=download&logoColor=white" alt="Download Resume" />
   </a>
 </p>
