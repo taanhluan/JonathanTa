@@ -6,34 +6,18 @@
   <meta name="description" content="Explore Jonathan Ta's professional background, experience, and achievements.">
   <title>Jonathan Ta's Blog</title>
   <style>
+    /* Default Theme */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      color: #2D2D2D;
-      background-color: #F0F0F0;
+      color: var(--text-color, #2D2D2D);
+      background-color: var(--background-color, #F0F0F0);
     }
 
-    header {
-      background-color: #2E3E4F;
-      height: 250px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #FFF;
-      text-align: center;
-      font-size: 2.5rem;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
-
-    nav {
-      background-color: #2E3E4F;
-      padding: 1rem;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+    header, nav, footer {
+      color: var(--text-color, #FFFFFF);
+      background-color: var(--header-color, #2E3E4F);
     }
 
     nav a {
@@ -59,7 +43,7 @@
     }
 
     h1 {
-      color: #2D2D2D;
+      color: var(--text-color);
     }
 
     .profile-section {
@@ -71,43 +55,29 @@
       margin-bottom: 1rem;
     }
 
-    .badge {
-      display: inline-block;
-      margin: 1rem;
-      text-align: center;
-      padding: 10px;
-      background-color: #E0E0E0;
-      border-radius: 8px;
-      transition: transform 0.2s ease-in-out;
-    }
-
-    .badge img {
-      width: 60px;
-      height: auto;
-      border-radius: 8px;
-      margin-bottom: 0.5rem;
-    }
-
-    .badge p {
-      margin: 0;
-      font-weight: bold;
-      font-size: 0.9rem;
-    }
-
-    .badge:hover {
-      transform: scale(1.05);
-    }
-
     footer {
-      background-color: #2E3E4F;
       color: #FFF;
       text-align: center;
       padding: 1rem 0;
       margin-top: 2rem;
     }
+
+    /* Light Theme */
+    .light-theme {
+      --background-color: #FFFFFF;
+      --text-color: #2D2D2D;
+      --header-color: #007BFF;
+    }
+
+    /* Dark Theme */
+    .dark-theme {
+      --background-color: #2D2D2D;
+      --text-color: #FFFFFF;
+      --header-color: #1F2937;
+    }
   </style>
 </head>
-<body>
+<body class="light-theme">
 
 <header>
   <div>Jonathan Luan Ta</div>
@@ -142,34 +112,19 @@
 </div>
 
 <footer>
-  <div class="footer-badges">
-    <div class="badge">
-      <a href="#" target="_blank">
-        <img src="https://via.placeholder.com/60" alt="Professional Scrum Product Owner I">
-        <p>Professional Scrum Product Owner I</p>
-      </a>
-    </div>
-    <div class="badge">
-      <a href="#" target="_blank">
-        <img src="https://via.placeholder.com/60" alt="PSPO I Certification">
-        <p>Scrum Product Owner (PSPO I)</p>
-      </a>
-    </div>
-    <div class="badge">
-      <a href="#" target="_blank">
-        <img src="https://via.placeholder.com/60" alt="PMP Exam Prep Seminar">
-        <p>PMP® Exam Prep Seminar</p>
-      </a>
-    </div>
-    <div class="badge">
-      <a href="#" target="_blank">
-        <img src="https://via.placeholder.com/60" alt="Project Management Level One">
-        <p>Beginning Project Management</p>
-      </a>
-    </div>
-  </div>
   <p>&copy; 2024 Jonathan Ta. All rights reserved.</p>
 </footer>
+
+<button id="theme-toggle">Toggle Theme</button>
+
+<script>
+  const themeToggle = document.getElementById('theme-toggle');
+
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-theme');
+    document.body.classList.toggle('dark-theme');
+  });
+</script>
 
 </body>
 </html>
