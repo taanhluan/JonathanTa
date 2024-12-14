@@ -3,91 +3,173 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Experience - Jonathan Ta</title>
+  <meta name="description" content="Explore Jonathan Ta's professional background, experience, and achievements.">
+  <title>Jonathan Ta's Blog</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background-color: #f4f4f4;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
+      color: #333;
+      background-color: #F8F9FA;
     }
+
+    header {
+      background: url('image.png') no-repeat center center/cover;
+      height: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #FFF;
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    nav {
+      background-color: #2E3B4E;
+      padding: 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #FFF;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #007BFF;
+    }
+
+    .content {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #FFF;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
     h1 {
       color: #333;
     }
-    .container {
-      width: 80%;
-      margin: 0 auto;
-      padding: 20px;
+
+    .profile-section {
+      margin-bottom: 1.5rem;
     }
-    .experience-item {
-      background-color: #fff;
-      border: 1px solid #ddd;
-      padding: 15px;
-      margin-bottom: 20px;
-      border-radius: 8px;
+
+    .profile-section h2 {
+      color: #007BFF;
+      margin-bottom: 1rem;
     }
-    .experience-item h2 {
-      color: #0056b3;
-    }
-    .experience-item p {
-      font-size: 1.1rem;
-      color: #333;
-    }
-    .back-button {
+
+    .badge {
+      display: inline-block;
+      margin: 1rem;
       text-align: center;
-      margin-top: 30px;
+      padding: 10px;
+      background-color: #E0E0E0;
+      border-radius: 8px;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .badge img {
+      width: 60px;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+    }
+
+    .badge p {
+      margin: 0;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    .badge:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: #2E3B4E;
+      color: #FFF;
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
 
-<div class="container">
-  <h1 align="center">💼 Professional Experience</h1>
+<header>
+  <div>Jonathan Luan Ta</div>
+</header>
 
-  <div class="experience-item">
-    <h2>GTV Vietnam (Green Tech Ventures Vietnam)</h2>
-    <p><strong>Senior Business Analyst | Product Owner</strong> <br> <em>October 2023 – October 2024</em></p>
-    <ul>
-      <li>Led cross-functional teams to implement Corporate Digital Banking solutions.</li>
-      <li>Defined KPIs and prioritized product backlogs aligned with business goals.</li>
-      <li>Achieved key milestones, integrated T24 and Backbase systems, and enhanced AML processes.</li>
-    </ul>
-  </div>
+<nav>
+  <a href="#">HOME</a>
+  <a href="#">COURSES</a>
+  <a href="#">SERVICES & PRODUCTS</a>
+  <a href="#">ABOUT SCRUMVIET</a>
+  <a href="#">BLOG</a>
+  <a href="#">CONTACT</a>
+</nav>
 
-  <div class="experience-item">
-    <h2>Xebia</h2>
-    <p><strong>Senior Business Analyst</strong> <br> <em>November 2022 – October 2023</em></p>
-    <ul>
-      <li>Managed ABBank’s digital transformation via Backbase.</li>
-      <li>Delivered strategic plans aligned with business needs and market trends.</li>
-    </ul>
-  </div>
+<div class="content">
+  <section class="profile-section">
+    <h2>About Me</h2>
+    <p>
+      Since joining GTV Vietnam in October 2023, my focus has been on steering cross-functional teams towards the launch of cutting-edge Corporate Digital Banking services, tailored to meet the intricate demands of our clients. My approach harmonizes business objectives with customer satisfaction, ensuring a robust and feature-rich digital banking experience.
+    </p>
+    <p>
+      Leveraging expertise in Agile methodologies and project management, I've instituted KPIs to track our progress meticulously, and I prioritize product backlogs that resonate with market tendencies and stakeholder expectations. The goal is to perpetually deliver value and bolster GTV Vietnam's position as a leader in technological innovation within the banking sector.
+    </p>
+  </section>
 
-  <div class="experience-item">
-    <h2>FPT Software</h2>
-    <p><strong>Project Manager</strong> <br> <em>April 2022 – November 2022</em></p>
-    <ul>
-      <li>Realigned organizational structure and improved group-wide productivity.</li>
-    </ul>
-  </div>
-
-  <div class="experience-item">
-    <h2>Amaris Consulting</h2>
-    <p><strong>Scrum Master | Senior Business Consultant</strong> <br> <em>January 2021 – April 2022</em></p>
-    <ul>
-      <li>Delivered projects in insurance digital transformation for global clients.</li>
-      <li>Managed Agile teams, with achievements in BA, QA, and Dev team performance.</li>
-    </ul>
-  </div>
-
-  <div class="back-button">
-    <a href="index.html">
-      <img src="https://img.shields.io/badge/-Back%20to%20Main%20Page-0077B5?style=for-the-badge&logo=readme&logoColor=white" alt="Back to Main Page">
-    </a>
-  </div>
-
+  <section class="profile-section">
+    <h2>Contact</h2>
+    <p>
+      Feel free to connect with me via email at <a href="mailto:taanhluan@example.com">taanhluan@example.com</a> or on LinkedIn at <a href="https://www.linkedin.com/in/taanhluan/" target="_blank">linkedin.com/in/taanhluan</a>.
+    </p>
+  </section>
 </div>
+
+<footer>
+  <div class="footer-badges">
+    <div class="badge">
+      <a href="#" target="_blank">
+        <img src="https://via.placeholder.com/60" alt="Professional Scrum Product Owner I">
+        <p>Professional Scrum Product Owner I</p>
+      </a>
+    </div>
+    <div class="badge">
+      <a href="#" target="_blank">
+        <img src="https://via.placeholder.com/60" alt="PSPO I Certification">
+        <p>Scrum Product Owner (PSPO I)</p>
+      </a>
+    </div>
+    <div class="badge">
+      <a href="#" target="_blank">
+        <img src="https://via.placeholder.com/60" alt="PMP Exam Prep Seminar">
+        <p>PMP® Exam Prep Seminar</p>
+      </a>
+    </div>
+    <div class="badge">
+      <a href="#" target="_blank">
+        <img src="https://via.placeholder.com/60" alt="Project Management Level One">
+        <p>Beginning Project Management</p>
+      </a>
+    </div>
+  </div>
+  <p>&copy; 2024 Jonathan Ta. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
