@@ -8,20 +8,20 @@
   <style>
     /* Default Theme */
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      color: var(--text-color, #2D2D2D);
-      background-color: var(--background-color, #F0F0F0);
+      color: var(--text-color, #333);
+      background-color: var(--background-color, #F8F9FA);
     }
 
     header, nav, footer {
       color: var(--text-color, #FFFFFF);
-      background-color: var(--header-color, #2E3E4F);
+      background-color: var(--header-color, #007BFF);
     }
 
     nav a {
-      color: #FFF;
+      color: var(--nav-link-color, #FFFFFF);
       margin: 0 1rem;
       text-decoration: none;
       font-weight: bold;
@@ -30,14 +30,14 @@
     }
 
     nav a:hover {
-      color: #007BFF;
+      color: #FFC107;
     }
 
     .content {
       max-width: 1000px;
       margin: 2rem auto;
       padding: 1rem;
-      background: #FFF;
+      background: #FFFFFF;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
     }
@@ -56,24 +56,29 @@
     }
 
     footer {
-      color: #FFF;
+      color: var(--text-color, #FFFFFF);
       text-align: center;
       padding: 1rem 0;
+      background-color: var(--footer-color, #343A40);
       margin-top: 2rem;
     }
 
     /* Light Theme */
     .light-theme {
       --background-color: #FFFFFF;
-      --text-color: #2D2D2D;
+      --text-color: #333;
       --header-color: #007BFF;
+      --nav-link-color: #FFFFFF;
+      --footer-color: #343A40;
     }
 
     /* Dark Theme */
     .dark-theme {
-      --background-color: #2D2D2D;
+      --background-color: #1A1A1A;
       --text-color: #FFFFFF;
-      --header-color: #1F2937;
+      --header-color: #343A40;
+      --nav-link-color: #FFFFFF;
+      --footer-color: #1A1A1A;
     }
   </style>
 </head>
