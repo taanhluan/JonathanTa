@@ -7,10 +7,11 @@
   <title>Jonathan Ta's Blog</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
       color: #333;
+      background-color: #F5F5F5;
     }
 
     header {
@@ -27,17 +28,21 @@
     }
 
     nav {
-      background-color: #333;
+      background-color: #1C1C1C;
       padding: 1rem;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     nav a {
-      color: #fff;
+      color: #FFF;
       margin: 0 1rem;
       text-decoration: none;
       font-weight: bold;
       font-size: 1rem;
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
@@ -48,10 +53,9 @@
       max-width: 1000px;
       margin: 2rem auto;
       padding: 1rem;
-      background: #fff;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-      text-align: center;
+      background: #FFF;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
     }
 
     h1 {
@@ -71,36 +75,35 @@
       display: inline-block;
       margin: 1rem;
       text-align: center;
+      padding: 10px;
+      background-color: #E0E0E0;
+      border-radius: 8px;
+      transition: transform 0.2s ease-in-out;
     }
 
     .badge img {
-      width: 50px;
+      width: 60px;
       height: auto;
       border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      margin-bottom: 0.5rem;
     }
 
     .badge p {
-      margin: 0.5rem 0 0;
+      margin: 0;
       font-weight: bold;
-      font-size: 0.7rem;
+      font-size: 0.9rem;
+    }
+
+    .badge:hover {
+      transform: scale(1.05);
     }
 
     footer {
-      background-color: #333;
-      color: #fff;
+      background-color: #1C1C1C;
+      color: #FFF;
       text-align: center;
       padding: 1rem 0;
       margin-top: 2rem;
-      position: relative;
-    }
-
-    .footer-badges {
-      margin: 1rem 0;
-    }
-
-    .footer-badges .badge {
-      margin: 0 0.5rem;
     }
   </style>
 </head>
@@ -142,25 +145,25 @@
   <div class="footer-badges">
     <div class="badge">
       <a href="#" target="_blank">
-        <img src="https://via.placeholder.com/50" alt="Professional Scrum Product Owner I">
+        <img src="https://via.placeholder.com/60" alt="Professional Scrum Product Owner I">
         <p>Professional Scrum Product Owner I</p>
       </a>
     </div>
     <div class="badge">
       <a href="#" target="_blank">
-        <img src="https://via.placeholder.com/50" alt="PSPO I Certification">
+        <img src="https://via.placeholder.com/60" alt="PSPO I Certification">
         <p>Scrum Product Owner (PSPO I)</p>
       </a>
     </div>
     <div class="badge">
       <a href="#" target="_blank">
-        <img src="https://via.placeholder.com/50" alt="PMP Exam Prep Seminar">
+        <img src="https://via.placeholder.com/60" alt="PMP Exam Prep Seminar">
         <p>PMP® Exam Prep Seminar</p>
       </a>
     </div>
     <div class="badge">
       <a href="#" target="_blank">
-        <img src="https://via.placeholder.com/50" alt="Project Management Level One">
+        <img src="https://via.placeholder.com/60" alt="Project Management Level One">
         <p>Beginning Project Management</p>
       </a>
     </div>
