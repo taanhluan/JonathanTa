@@ -14,8 +14,8 @@
     }
 
     header {
-      background: url('https://via.placeholder.com/1500x500') no-repeat center center/cover;
-      height: 300px;
+      background: url('image.png') no-repeat center center/cover;
+      height: 250px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -74,7 +74,7 @@
     }
 
     .badge img {
-      width: 100px;
+      width: 50px;
       height: auto;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -83,7 +83,7 @@
     .badge p {
       margin: 0.5rem 0 0;
       font-weight: bold;
-      font-size: 0.9rem;
+      font-size: 0.7rem;
     }
 
     footer {
@@ -92,22 +92,31 @@
       text-align: center;
       padding: 1rem 0;
       margin-top: 2rem;
+      position: relative;
+    }
+
+    .footer-badges {
+      margin: 1rem 0;
+    }
+
+    .footer-badges .badge {
+      margin: 0 0.5rem;
     }
   </style>
 </head>
 <body>
 
 <header>
-  SCRUMVIET'S BLOG
+  <div>Jonathan Luan Ta</div>
 </header>
 
 <nav>
-  <a href="#">TRANG CHỦ</a>
-  <a href="#">KHÓA HỌC</a>
-  <a href="#">DỊCH VỤ & SẢN PHẨM</a>
-  <a href="#">VỀ SCRUMVIET</a>
+  <a href="#">HOME</a>
+  <a href="#">COURSES</a>
+  <a href="#">SERVICES & PRODUCTS</a>
+  <a href="#">ABOUT SCRUMVIET</a>
   <a href="#">BLOG</a>
-  <a href="#">LIÊN HỆ</a>
+  <a href="#">CONTACT</a>
 </nav>
 
 <div class="content">
@@ -122,34 +131,6 @@
   </section>
 
   <section class="profile-section">
-    <h2>Certifications</h2>
-    <div class="badge">
-      <a href="#" target="_blank">
-        <img src="https://via.placeholder.com/100" alt="Professional Scrum Product Owner I">
-        <p>Professional Scrum Product Owner I</p>
-      </a>
-    </div>
-    <div class="badge">
-      <a href="#" target="_blank">
-        <img src="https://via.placeholder.com/100" alt="PSPO I Certification">
-        <p>Scrum Product Owner (PSPO I)</p>
-      </a>
-    </div>
-    <div class="badge">
-      <a href="#" target="_blank">
-        <img src="https://via.placeholder.com/100" alt="PMP Exam Prep Seminar">
-        <p>PMP® Exam Prep Seminar</p>
-      </a>
-    </div>
-    <div class="badge">
-      <a href="#" target="_blank">
-        <img src="https://via.placeholder.com/100" alt="Project Management Level One">
-        <p>Beginning Project Management</p>
-      </a>
-    </div>
-  </section>
-
-  <section class="profile-section">
     <h2>Contact</h2>
     <p>
       Feel free to connect with me via email at <a href="mailto:taanhluan@example.com">taanhluan@example.com</a> or on LinkedIn at <a href="https://www.linkedin.com/in/taanhluan/" target="_blank">linkedin.com/in/taanhluan</a>.
@@ -158,6 +139,32 @@
 </div>
 
 <footer>
+  <div class="footer-badges">
+    <div class="badge">
+      <a href="#" target="_blank">
+        <img src="https://via.placeholder.com/50" alt="Professional Scrum Product Owner I">
+        <p>Professional Scrum Product Owner I</p>
+      </a>
+    </div>
+    <div class="badge">
+      <a href="#" target="_blank">
+        <img src="https://via.placeholder.com/50" alt="PSPO I Certification">
+        <p>Scrum Product Owner (PSPO I)</p>
+      </a>
+    </div>
+    <div class="badge">
+      <a href="#" target="_blank">
+        <img src="https://via.placeholder.com/50" alt="PMP Exam Prep Seminar">
+        <p>PMP® Exam Prep Seminar</p>
+      </a>
+    </div>
+    <div class="badge">
+      <a href="#" target="_blank">
+        <img src="https://via.placeholder.com/50" alt="Project Management Level One">
+        <p>Beginning Project Management</p>
+      </a>
+    </div>
+  </div>
   <p>&copy; 2024 Jonathan Ta. All rights reserved.</p>
 </footer>
 
