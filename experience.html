@@ -242,53 +242,49 @@
     margin-top: 10px;
 
      /* Ensure Print-Friendly Styling */
-  @media print {
-    body {
-      background-color: #fff;
-      color: #000;
-    }
-
-    .resume {
-      background-color: #fff; /* Solid background */
-      color: #000; /* High contrast text */
-    }
-
-    .collapsible {
-      background-color: #f4c20d !important; /* Bright yellow header for contrast */
-      color: #000 !important; /* Ensure text remains black */
-      border: 1px solid #ddd;
-    }
-
-    .content {
-      background-color: #fff !important; /* Solid white background */
-      color: #000 !important; /* High contrast text */
-      border-left: 4px solid #f4c20d; /* Keep the left highlight */
-    }
-
-    /* Remove shadows, transitions, and animations for print */
-    .collapsible:hover,
-    .content,
-    .content.show {
-      box-shadow: none !important;
-      animation: none !important;
-      transition: none !important;
-    }
-
-    .social-icons a {
-      color: #000 !important; /* Ensure social icons are visible in print */
-    }
-
-    /* Disable hover states and opacity issues */
-    a,
-    i {
-      color: inherit !important;
-    }
-
-    /* Remove unnecessary white gaps */
-    .download-btn {
-      display: none; /* Hide download button in PDF */
-    }
+@media print {
+  body {
+    background-color: #fff !important; /* White background */
+    color: #000 !important; /* Black text */
   }
+
+  .resume,
+  .content {
+    background-color: #fff !important; /* White solid background */
+    color: #000 !important; /* High contrast text */
+    box-shadow: none !important; /* Remove box shadows */
+  }
+
+  .collapsible {
+    background-color: #f4c20d !important; /* Highlight header yellow */
+    color: #000 !important; /* Black text for readability */
+    border: 1px solid #ddd !important; /* Soft border for structure */
+  }
+
+  .collapsible i {
+    color: #000 !important; /* Ensure icons are visible */
+  }
+
+  .content {
+    background-color: #fff !important;
+    color: #000 !important; /* Ensure all text is black */
+    border-left: 4px solid #f4c20d !important; /* Retain left highlight */
+    padding: 15px 20px !important;
+  }
+
+  /* Remove unnecessary effects */
+  .collapsible:hover,
+  .content.show {
+    box-shadow: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* Hide Download Button */
+  .download-btn {
+    display: none !important;
+  }
+}
 </style>
 </head>
 <body>
