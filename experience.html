@@ -42,14 +42,15 @@
       overflow: hidden;
     }
 
-   /* Header Background */
+  /* Header Styling */
 .header {
   background: linear-gradient(135deg, #f4c20d, #ffdd57);
-  color: #1e1e1e;
+  color: var(--black);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 30px 20px;
+  padding: 20px;
   text-align: center;
   position: relative;
 }
@@ -59,34 +60,29 @@
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  border: 4px solid #ffffff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 6px solid var(--white);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  margin-bottom: 15px;
 }
 
-/* Info Section */
-.info {
-  margin-top: 10px;
-  text-align: center;
-}
-
+/* Header Info */
 .info h1 {
-  font-size: 2em;
+  font-size: 2rem;
   font-weight: 700;
   margin: 10px 0;
-  color: #1e1e1e;
+  color: var(--black);
 }
 
 .info p {
-  font-size: 1.2em;
+  font-size: 1.1rem;
   font-weight: 400;
-  color: #333333;
+  color: #333;
 }
 
-.info .tagline {
-  font-size: 1em;
-  color: #666666;
-  margin-top: 10px;
+.tagline {
+  font-size: 1rem;
   font-style: italic;
+  color: var(--dark-gray);
 }
 
 /* Social Media Icons */
@@ -96,13 +92,13 @@
 
 .social-icons a {
   margin: 0 10px;
-  font-size: 1.5em;
-  color: #1e1e1e;
+  font-size: 1.4rem;
+  color: var(--black);
   transition: color 0.3s ease;
 }
 
 .social-icons a:hover {
-  color: #ffffff;
+  color: var(--white);
 }
 
     /* Collapsible Experience */
@@ -204,6 +200,8 @@
     <div class="header">
   <!-- Background Gradient -->
   <div class="header-background">
+  <!-- Header Section -->
+<div class="header">
   <!-- Profile Photo -->
   <div class="profile-photo">
     <img src="https://raw.githubusercontent.com/taanhluan/JonathanTa/main/Avt.jpg" alt="Profile Photo">
@@ -218,7 +216,7 @@
       <a href="https://www.linkedin.com/in/taanhluan/" target="_blank" title="LinkedIn">
         <i class="fab fa-linkedin"></i>
       </a>
-      <a href="https://aanhluan.github.io/JonathanTa/" target="_blank" title="GitHub">
+      <a href="https://taanhluan.github.io/JonathanTa/" target="_blank" title="GitHub">
         <i class="fab fa-github"></i>
       </a>
       <a href="mailto:taanhluan@gmail.com" title="Email">
