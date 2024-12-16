@@ -13,7 +13,7 @@
     :root {
       --black: #1e1e1e;
       --white: #ffffff;
-      --gray: #d9d9d9;
+      --gray: #f9f9f9;
       --yellow: #f4c20d;
       --dark-gray: #444444;
     }
@@ -40,6 +40,25 @@
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
       overflow: hidden;
+    }
+
+    /* About Section */
+    .about {
+      padding: 20px 30px;
+      background: var(--gray);
+      border-bottom: 2px solid var(--yellow);
+    }
+
+    .about h2 {
+      font-size: 1.5em;
+      color: var(--yellow);
+      margin-bottom: 10px;
+    }
+
+    .about p {
+      font-size: 1em;
+      color: var(--dark-gray);
+      margin-bottom: 10px;
     }
 
     /* Header Section */
@@ -155,6 +174,17 @@
 </head>
 <body>
   <div class="resume" id="resume">
+    <!-- About Section -->
+    <div class="about">
+      <h2>About</h2>
+      <p>
+        Since joining <strong>GTV Vietnam</strong> in October 2023, I have focused on steering cross-functional teams towards launching cutting-edge Corporate Digital Banking services. My approach harmonizes business objectives with customer satisfaction, ensuring a robust and feature-rich digital banking experience.
+      </p>
+      <p>
+        Leveraging expertise in Agile methodologies and project management, I institute KPIs to meticulously track progress and prioritize product backlogs aligned with market trends. My goal is to perpetually deliver value and position GTV Vietnam as a leader in technological innovation within the banking sector.
+      </p>
+    </div>
+
     <!-- Header Section -->
     <div class="header">
       <img src="https://via.placeholder.com/100" alt="Profile Photo">
@@ -164,7 +194,7 @@
       </div>
     </div>
 
-    <!-- Experience Section with Collapse -->
+    <!-- Experience Section -->
     <div class="section">
       <h2><i class="fas fa-briefcase"></i> Experience</h2>
 
@@ -174,21 +204,11 @@
         <i class="fas fa-chevron-down"></i>
       </div>
       <div class="content">
-        <p><strong>Duration:</strong> Oct 2023 - Oct 2024 · 1 yr 1 mo | Vietnam · On-site</p>
+        <p><strong>Duration:</strong> Oct 2023 - Oct 2024</p>
         <p><strong>Responsibilities:</strong><br>
-          - Managed and guided cross-functional teams for the successful implementation of Corporate Digital Banking solutions.<br>
-          - Defined and set KPIs to monitor team performance and track project progress.<br>
-          - Developed and prioritized product backlogs in alignment with business goals and stakeholder requirements.<br>
-          - Led project planning activities such as sprint planning, backlog grooming, and release management.<br>
-          - Facilitated collaboration between stakeholders, development teams, and departments.<br>
+          - Managed and guided cross-functional teams.<br>
+          - Implemented AML solutions and centralized Payment Hubs.
         </p>
-        <p><strong>Achievements:</strong><br>
-          - Led AML integration projects, ensuring regulatory compliance.<br>
-          - Successfully integrated T24 and Backbase core banking systems.<br>
-          - Implemented a centralized Payment Hub to streamline transaction processing.<br>
-          - Delivered key milestones within timelines while maintaining high standards.<br>
-        </p>
-        <p><strong>Skills:</strong> Business Strategy, Time Management, Corporate Banking, Core Banking</p>
       </div>
 
       <!-- Xebia Experience -->
@@ -197,20 +217,11 @@
         <i class="fas fa-chevron-down"></i>
       </div>
       <div class="content">
-        <p><strong>Duration:</strong> Nov 2022 - Oct 2023 · 1 yr | Vietnam · Remote</p>
+        <p><strong>Duration:</strong> Nov 2022 - Oct 2023</p>
         <p><strong>Responsibilities:</strong><br>
-          - Led ABBank's digital transformation initiatives using the Backbase platform.<br>
-          - Managed cross-functional teams using Agile/Scrum methodologies.<br>
-          - Developed strategic plans aligned with industry trends and business goals.<br>
-          - Facilitated workshops to improve leadership, value streams, and technology adoption.
+          - Led ABBank’s digital transformation.<br>
+          - Adopted Backbase platform seamlessly.
         </p>
-        <p><strong>Achievements:</strong><br>
-          - Successfully delivered key milestones for ABBank’s transformation.<br>
-          - Ensured seamless integration and adoption of the Backbase platform.<br>
-          - Identified business growth opportunities through analysis of market trends.<br>
-          - Fostered strong relationships with stakeholders to align goals and success metrics.
-        </p>
-        <p><strong>Skills:</strong> Business Analysis, Agile Methodologies, Backbase, Critical Thinking, Communication</p>
       </div>
     </div>
 
@@ -227,31 +238,24 @@
     </div>
   </div>
 
-  <!-- Script for Collapsible Behavior -->
+  <!-- Script for Collapsible Behavior and PDF -->
   <script>
-    const collapsibles = document.querySelectorAll('.collapsible');
-    collapsibles.forEach(item => {
+    document.querySelectorAll('.collapsible').forEach(item => {
       item.addEventListener('click', () => {
-        const content = item.nextElementSibling;
-        const icon = item.querySelector('i');
-        content.classList.toggle('show');
-        icon.classList.toggle('rotate');
+        item.nextElementSibling.classList.toggle('show');
+        item.querySelector('i').classList.toggle('rotate');
       });
     });
 
-    // PDF Download Script
     document.getElementById('download').addEventListener('click', () => {
       const element = document.getElementById('resume');
-      html2pdf()
-        .from(element)
-        .set({
-          margin: 10,
-          filename: 'resume_ta_anh_luan.pdf',
-          image: { type: 'jpeg', quality: 0.98 },
-          html2canvas: { scale: 2 },
-          jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-        })
-        .save();
+      html2pdf().from(element).set({
+        margin: 10,
+        filename: 'resume_ta_anh_luan.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      }).save();
     });
   </script>
 </body>
