@@ -64,6 +64,7 @@
       justify-content: center;
       text-align: center;
       height: 90vh;
+      background: linear-gradient(to right, #111, #333);
     }
 
     .hero img {
@@ -71,6 +72,7 @@
       height: 200px;
       border-radius: 50%;
       margin-bottom: 1.5rem;
+      border: 5px solid #FFD700;
     }
 
     .hero h1 {
@@ -101,56 +103,45 @@
       color: #000;
     }
 
-    .about {
-      padding: 3rem;
+    .feature-section {
+      padding: 4rem 2rem;
       text-align: center;
-      background: #111;
+      background-color: #111;
     }
 
-    .about h2 {
+    .feature-section h2 {
       font-size: 2rem;
-      margin-bottom: 1.5rem;
       color: #FFD700;
+      margin-bottom: 1.5rem;
     }
 
-    .about p {
-      font-size: 1.1rem;
-      max-width: 800px;
-      margin: 0 auto;
-      line-height: 1.8;
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
     }
 
-    .services {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      padding: 3rem 1.5rem;
-      background: #222;
+    .feature-card {
+      background-color: #222;
+      padding: 2rem;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
     }
 
-    .service {
-      text-align: center;
-      width: 300px;
-      margin: 1rem;
-      padding: 1.5rem;
-      background: #333;
-      border-radius: 8px;
-      transition: transform 0.3s;
-    }
-
-    .service:hover {
+    .feature-card:hover {
       transform: translateY(-10px);
     }
 
-    .service h3 {
+    .feature-card h3 {
+      color: #FFD700;
       font-size: 1.5rem;
       margin-bottom: 1rem;
-      color: #FFD700;
     }
 
-    .service p {
+    .feature-card p {
       font-size: 1rem;
-      line-height: 1.6;
+      color: #ddd;
     }
 
     footer {
@@ -191,25 +182,25 @@
     </div>
   </section>
 
-  <section id="about" class="about">
-    <h2>About Me</h2>
-    <p>
-      I specialize in leading cross-functional teams to deliver innovative solutions. My expertise lies in bridging the gap between technical execution and business objectives, ensuring exceptional results every step of the way.
-    </p>
-  </section>
-
-  <section id="services" class="services">
-    <div class="service">
-      <h3>Project Management</h3>
-      <p>Organizing and executing projects with precision and efficiency.</p>
-    </div>
-    <div class="service">
-      <h3>Agile Leadership</h3>
-      <p>Leading teams with Agile methodologies to drive continuous improvement.</p>
-    </div>
-    <div class="service">
-      <h3>Digital Transformation</h3>
-      <p>Implementing technology solutions to streamline business processes.</p>
+  <section class="feature-section">
+    <h2>My Core Services</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>Project Management</h3>
+        <p>Organizing and executing projects with precision and efficiency.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Agile Leadership</h3>
+        <p>Driving teams to deliver continuous improvement and innovative solutions.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Digital Transformation</h3>
+        <p>Streamlining business processes with cutting-edge technology.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Consulting</h3>
+        <p>Providing expert advice for projects and technology implementations.</p>
+      </div>
     </div>
   </section>
 
