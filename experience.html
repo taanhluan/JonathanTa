@@ -581,83 +581,108 @@
 <!-- JavaScript Code -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const collapsibles = document.querySelectorAll(".collapsible");
+  const collapsibles = document.querySelectorAll(".collapsible");
 
-    /**
-     * Toggle a collapsible section
-     * @param {HTMLElement} collapsible - The clicked collapsible element
-     */
-    function toggleCollapsible(collapsible) {
-      const content = collapsible.nextElementSibling;
-      const icon = collapsible.querySelector("i");
+  /**
+   * Toggle visibility for a collapsible section.
+   * @param {HTMLElement} collapsible - The clicked collapsible element.
+   */
+  function toggleCollapsible(collapsible) {
+    const content = collapsible.nextElementSibling;
+    const icon = collapsible.querySelector("i");
 
-      // Toggle visibility and icon rotation
+    if (content) {
       content.classList.toggle("show");
-      icon.classList.toggle("rotate");
+      if (icon) icon.classList.toggle("rotate");
     }
+  }
 
-    /**
-     * Expand all collapsible sections
-     * @returns {number[]} - Array of indexes of initially hidden sections
-     */
-    function expandAllSections() {
-      const contents = document.querySelectorAll(".content");
-      const icons = document.querySelectorAll(".collapsible i");
-      const initiallyHidden = [];
+  /**
+   * Expand all collapsible sections and return a list of indexes for those that were hidden.
+   * @returns {number[]} - Array of indexes for initially hidden sections.
+   */
+  function expandAllSections() {
+    const contents = document.querySelectorAll(".content");
+    const icons = document.querySelectorAll(".collapsible i");
+    const initiallyHidden = [];
 
-      contents.forEach((content, index) => {
-        if (!content.classList.contains("show")) {
-          content.classList.add("show");
-          icons[index].classList.add("rotate");
-          initiallyHidden.push(index);
-        }
-      });
-
-      return initiallyHidden;
-    }
-
-    /**
-     * Collapse previously hidden sections
-     * @param {number[]} hiddenIndexes - Array of indexes to collapse
-     */
-    function collapseHiddenSections(hiddenIndexes) {
-      const contents = document.querySelectorAll(".content");
-      const icons = document.querySelectorAll(".collapsible i");
-
-      hiddenIndexes.forEach((index) => {
-        contents[index].classList.remove("show");
-        icons[index].classList.remove("rotate");
-      });
-    }
-
-    /**
-     * Generate PDF using html2pdf
-     */
-    function generatePDF() {
-      const hiddenIndexes = expandAllSections(); // Expand all sections
-
-      const resume = document.getElementById("resume");
-      html2pdf()
-        .from(resume)
-        .set({
-          margin: 10,
-          filename: "resume_ta_anh_luan.pdf",
-          image: { type: "jpeg", quality: 0.98 },
-          html2canvas: { scale: 2, useCORS: true },
-          jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-        })
-        .save()
-        .then(() => collapseHiddenSections(hiddenIndexes)); // Collapse after saving
-    }
-
-    // Add event listeners to all collapsible sections
-    collapsibles.forEach((collapsible) => {
-      collapsible.addEventListener("click", () => toggleCollapsible(collapsible));
+    contents.forEach((content, index) => {
+      if (!content.classList.contains("show")) {
+        content.classList.add("show");
+        if (icons[index]) icons[index].classList.add("rotate");
+        initiallyHidden.push(index);
+      }
     });
 
-    // Add event listener to the download button
-    document.getElementById("download").addEventListener("click", generatePDF);
+    return initiallyHidden;
+  }
+
+  /**
+   * Collapse all sections that were expanded dynamically during PDF generation.
+   * @param {number[]} hiddenIndexes - Array of indexes to collapse.
+   */
+  function collapseHiddenSections(hiddenIndexes) {
+    const contents = document.querySelectorAll(".content");
+    const icons = document.querySelectorAll(".collapsible i");
+
+    hiddenIndexes.forEach((index) => {
+      if (contents[index]) contents[index].classList.remove("show");
+      if (icons[index]) icons[index].classList.remove("rotate");
+    });
+  }
+
+  /**
+   * Apply inline styles for better PDF consistency.
+   */
+  function applyPDFStyles() {
+    const collapsibles = document.querySelectorAll(".collapsible");
+    const contents = document.querySelectorAll(".content");
+
+    collapsibles.forEach((collapsible) => {
+      collapsible.style.backgroundColor = "#f4c20d"; // Highlight color for headers
+      collapsible.style.color = "#000";
+    });
+
+    contents.forEach((content) => {
+      content.style.backgroundColor = "#fff";
+      content.style.color = "#000";
+      content.style.borderLeft = "4px solid #f4c20d";
+      content.style.padding = "15px 20px";
+    });
+  }
+  /**
+   * Generate PDF with all sections expanded.
+   */
+  function generatePDF() {
+    const hiddenIndexes = expandAllSections(); // Expand all sections before generating
+    applyPDFStyles(); // Apply consistent PDF styles
+
+    const resume = document.getElementById("resume");
+
+    html2pdf()
+      .from(resume)
+      .set({
+        margin: 10,
+        filename: "resume_ta_anh_luan.pdf",
+        image: { type: "jpeg", quality: 0.98 },
+        html2canvas: { scale: 3, useCORS: true }, // Scale increased for sharp text
+        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+      })
+      .save()
+      .then(() => collapseHiddenSections(hiddenIndexes)); // Collapse sections after saving
+  }
+
+  // Attach event listeners to collapsible headers
+  collapsibles.forEach((collapsible) => {
+    collapsible.addEventListener("click", () => toggleCollapsible(collapsible));
   });
+
+  // Attach event listener to the download button
+  const downloadButton = document.getElementById("download");
+  if (downloadButton) {
+    downloadButton.addEventListener("click", generatePDF);
+  }
+});
 </script>
 </body>
 </html>
