@@ -43,7 +43,6 @@
   padding: 30px;
 }
 
-/* Profile Section */
 .profile {
   background: var(--orange);
   padding: 30px;
@@ -65,7 +64,6 @@
   color: var(--darker-blue);
 }
 
-/* Contact Section */
 .contact a {
   text-decoration: none;
   color: var(--white);
@@ -76,7 +74,6 @@
   margin-right: 10px;
 }
 
-/* Functional Section */
 .func h3 {
   color: var(--orange);
   margin: 10px 0;
@@ -87,21 +84,18 @@
   margin-bottom: 15px;
 }
 
-.func .skills-prog ul li, .func .skills-soft ul li {
-  margin-bottom: 8px;
-}
-
-/* Footer Styles */
 .footer {
-  display: flex;
-  justify-content: space-around;
   background: var(--medium-blue);
   padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .footer .skills-soft, .footer .interests {
+  flex: 1 1 45%;
   text-align: center;
-  flex: 1;
+  margin: 10px;
 }
 
 .footer h3 {
@@ -109,25 +103,65 @@
   margin-bottom: 10px;
 }
 
-.footer ul li {
-  list-style: none;
+.skills-soft ul {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
 }
 
-.footer .interests-items div i {
-  font-size: 45px;
-  color: var(--yellow);
-  margin-bottom: 5px;
+.skills-soft svg {
+  width: 80px;
+  height: 80px;
+  transform: rotate(-90deg);
 }
 
-.footer .interests-items div span {
+.skills-soft svg circle {
+  fill: none;
+  stroke-width: 5;
+}
+
+.skills-soft svg .cbar {
+  stroke: var(--orange);
+  stroke-dasharray: 282;
+  stroke-dashoffset: 282;
+  animation: progress 2s forwards;
+}
+
+@keyframes progress {
+  to {
+    stroke-dashoffset: calc(282 - (282 * var(--percent)) / 100);
+  }
+}
+
+.skills-soft span {
   display: block;
-  font-size: 1.1em;
+  margin-top: 5px;
+  color: var(--white);
+}
+
+.interests-items {
+  display: flex;
+  justify-content: space-around;
+}
+
+.interests-items div {
+  text-align: center;
+  margin: 10px;
+}
+
+.interests-items i {
+  font-size: 40px;
+  color: var(--yellow);
+}
+
+.interests-items span {
+  margin-top: 5px;
+  display: block;
   color: var(--white);
 }
 </style>
 </head>
 <body>
-
 <div class="resume">
   <div class="base">
     <div class="profile">
@@ -153,17 +187,6 @@
         <li><span>Senior Business Analyst</span><small>Xebia Group - ABBank Project</small><small>Nov 2022 - Oct 2023</small></li>
         <li><span>Project Manager - Scrum Master</span><small>FPT Software</small><small>Apr 2022 - Nov 2022</small></li>
         <li><span>Senior Business Analyst - Scrum Master</span><small>Amaris Consulting</small><small>Jan 2021 - Apr 2022</small></li>
-        <li><span>Senior Business Analyst</span><small>Jaccs Financial Group</small><small>Aug 2020 - Jan 2021</small></li>
-        <li><span>Senior Business Analyst</span><small>Innotech</small><small>May 2020 - Aug 2020</small></li>
-        <li><span>Project Coordinator / Business Analyst</span><small>Home Credit</small><small>Jun 2018 - May 2020</small></li>
-        <li><span>Technical Support</span><small>Maersk Line</small><small>Apr 2017 - Jun 2018</small></li>
-        <li><span>Freelancer</span><small>Independent Projects</small><small>2014 - 2016</small></li>
-      </ul>
-    </div>
-    <div class="edu">
-      <h3><i class="fa fa-graduation-cap"></i>Education</h3>
-      <ul>
-        <li><span>Bachelor of Science - Network Engineering</span><small>Industrial University of Ho Chi Minh City</small><small>2014 - 2018</small></li>
       </ul>
     </div>
   </div>
@@ -172,10 +195,18 @@
     <div class="skills-soft">
       <h3><i class="fas fa-bezier-curve"></i>Software Skills</h3>
       <ul>
-        <li>Illustrator</li>
-        <li>Photoshop</li>
-        <li>InDesign</li>
-        <li>Dreamweaver</li>
+        <li style="--percent: 90">
+          <svg viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="45" style="stroke: #3f51b5;"></circle>
+            <circle class="cbar" cx="50" cy="50" r="45"></circle>
+          </svg><span>Illustrator 90%</span>
+        </li>
+        <li style="--percent: 75">
+          <svg viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="45"></circle>
+            <circle class="cbar" cx="50" cy="50" r="45"></circle>
+          </svg><span>Photoshop 75%</span>
+        </li>
       </ul>
     </div>
     <div class="interests">
@@ -184,12 +215,9 @@
         <div><i class="fas fa-palette"></i><span>Art</span></div>
         <div><i class="fas fa-book"></i><span>Books</span></div>
         <div><i class="fas fa-film"></i><span>Movies</span></div>
-        <div><i class="fas fa-headphones"></i><span>Music</span></div>
-        <div><i class="fas fa-gamepad"></i><span>Games</span></div>
       </div>
     </div>
   </div>
 </div>
-
 </body>
 </html>
