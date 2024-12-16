@@ -118,8 +118,9 @@
 /* Collapsible Header */
 .collapsible {
   display: flex;
-  justify-content: space-between;
-  align-items: left;
+  justify-content: flex-start; /* Align content to the left */
+  align-items: center; /* Vertical alignment */
+  text-align: left; /* Ensure all text aligns to the left */
   background-color: #fcf6e3; /* Light yellow for header */
   color: #333; /* Dark text for readability */
   padding: 15px 20px;
@@ -148,6 +149,7 @@
 /* Collapsible Content */
 .content {
   display: none;
+  text-align: left; /* Align text to the left */
   background-color: #fff; /* White content background */
   color: #555; /* Gray text */
   padding: 15px 20px;
