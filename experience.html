@@ -3,12 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Enhanced Resume</title>
+  <title>Professional Resume</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
 
-    /* Global Reset */
+    /* Color Variables */
+    :root {
+      --black: #1e1e1e;
+      --white: #ffffff;
+      --yellow: #f4c20d;
+      --brown: #8d6e63;
+      --light-gray: #f2f2f2;
+      --dark-gray: #444444;
+    }
+
+    /* Global Styles */
     * {
       margin: 0;
       padding: 0;
@@ -16,36 +26,25 @@
       font-family: "Montserrat", sans-serif;
     }
 
-    /* Color Variables */
-    :root {
-      --dark-blue: #1e3d59;
-      --medium-blue: #4a69bd;
-      --light-blue: #60a3bc;
-      --white: #f8f9fa;
-      --orange: #e67e22;
-      --light-gray: #dfe6e9;
-      --dark-gray: #2d3436;
-    }
-
     body {
-      background: var(--light-gray);
-      color: var(--dark-gray);
+      background-color: var(--light-gray);
+      color: var(--black);
       line-height: 1.6;
     }
 
-    /* Resume Container */
     .resume {
       max-width: 960px;
       margin: 30px auto;
       background: var(--white);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      border: 1px solid var(--brown);
       border-radius: 10px;
       overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
 
     /* Profile Section */
     .profile {
-      background: var(--medium-blue);
+      background: var(--black);
       color: var(--white);
       text-align: center;
       padding: 40px 20px;
@@ -53,7 +52,7 @@
 
     .profile .photo i {
       font-size: 100px;
-      color: var(--orange);
+      color: var(--yellow);
     }
 
     .profile .info h1 {
@@ -65,11 +64,12 @@
     .profile .info h2 {
       font-size: 1.5em;
       font-weight: 400;
+      color: var(--brown);
     }
 
     /* Contact Section */
     .contact {
-      background: var(--dark-blue);
+      background: var(--brown);
       color: var(--white);
       text-align: center;
       padding: 20px 10px;
@@ -77,25 +77,26 @@
 
     .contact a {
       display: block;
-      color: var(--light-gray);
+      color: var(--yellow);
       text-decoration: none;
       margin: 5px 0;
       font-weight: 400;
     }
 
     .contact a i {
-      color: var(--orange);
       margin-right: 10px;
     }
 
-    /* Section Headers */
+    /* Section Headings */
     .func h3 {
-      font-size: 1.5em;
-      color: var(--orange);
+      font-size: 1.4em;
+      color: var(--brown);
       margin-bottom: 15px;
+      border-bottom: 2px solid var(--yellow);
+      padding-bottom: 5px;
     }
 
-    /* Work Experience */
+    /* Experience List */
     .func {
       padding: 20px 40px;
     }
@@ -103,8 +104,8 @@
     .work li {
       list-style: none;
       margin-bottom: 15px;
-      border-bottom: 1px solid var(--light-gray);
       padding-bottom: 10px;
+      border-bottom: 1px solid var(--light-gray);
     }
 
     .work li:last-child {
@@ -113,20 +114,19 @@
 
     .work span {
       font-weight: 700;
-      color: var(--dark-blue);
-      display: block;
+      color: var(--black);
       font-size: 1.1em;
     }
 
     .work small {
       display: block;
       font-size: 0.9em;
-      color: var(--medium-blue);
+      color: var(--dark-gray);
     }
 
-    /* Footer Skills and Interests */
+    /* Footer: Skills and Interests */
     .footer {
-      background: var(--light-blue);
+      background: var(--black);
       color: var(--white);
       display: flex;
       justify-content: space-between;
@@ -134,24 +134,21 @@
       text-align: center;
     }
 
-    .footer .skills-soft, .footer .interests {
-      flex: 1;
-      margin: 10px;
-    }
-
     .footer h3 {
-      color: var(--orange);
+      color: var(--yellow);
       margin-bottom: 10px;
     }
 
-    .skills-soft svg {
-      width: 80px;
-      height: 80px;
+    .skills-soft span {
+      display: block;
+      font-weight: 600;
+      color: var(--yellow);
     }
 
     .interests i {
       font-size: 30px;
-      color: var(--orange);
+      color: var(--yellow);
+      margin-bottom: 5px;
     }
 
     .interests div {
@@ -197,14 +194,9 @@
           <small>Apr 2022 - Nov 2022</small>
         </li>
         <li>
-          <span>Senior Business Analyst - Scrum Master</span>
+          <span>Senior Business Analyst</span>
           <small>Amaris Consulting</small>
           <small>Jan 2021 - Apr 2022</small>
-        </li>
-        <li>
-          <span>Project Coordinator / Business Analyst</span>
-          <small>Home Credit</small>
-          <small>Jun 2018 - May 2020</small>
         </li>
       </ul>
     </div>
@@ -213,7 +205,7 @@
     <div class="footer">
       <div class="skills-soft">
         <h3>Software Skills</h3>
-        <p>SQL, HTML/CSS, Agile Tools</p>
+        <span>SQL, Agile Tools, HTML/CSS</span>
       </div>
       <div class="interests">
         <h3>Interests</h3>
