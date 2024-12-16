@@ -12,13 +12,12 @@
     :root {
       --black: #1e1e1e;
       --white: #ffffff;
+      --gray: #d9d9d9;
       --yellow: #f4c20d;
-      --brown: #8d6e63;
-      --light-gray: #f2f2f2;
       --dark-gray: #444444;
     }
 
-    /* Global Styles */
+    /* General Reset */
     * {
       margin: 0;
       padding: 0;
@@ -27,198 +26,207 @@
     }
 
     body {
-      background-color: var(--light-gray);
+      background-color: var(--gray);
       color: var(--black);
       line-height: 1.6;
     }
 
+    /* Resume Container */
     .resume {
       max-width: 960px;
       margin: 30px auto;
       background: var(--white);
-      border: 1px solid var(--brown);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
 
-    /* Profile Section */
-    .profile {
-      background: var(--black);
-      color: var(--white);
-      text-align: center;
-      padding: 40px 20px;
+    /* Header Section */
+    .header {
+      display: flex;
+      align-items: center;
+      background: var(--yellow);
+      color: var(--black);
+      padding: 20px;
     }
 
-    .profile .photo i {
-      font-size: 100px;
-      color: var(--yellow);
+    .header img {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      margin-right: 20px;
+      border: 4px solid var(--white);
     }
 
-    .profile .info h1 {
-      font-size: 2em;
+    .header .info h1 {
+      font-size: 1.8em;
       font-weight: 700;
-      margin: 10px 0;
     }
 
-    .profile .info h2 {
-      font-size: 1.5em;
+    .header .info p {
+      font-size: 1em;
       font-weight: 400;
-      color: var(--brown);
     }
 
-    /* Contact Section */
-    .contact {
-      background: var(--brown);
-      color: var(--white);
-      text-align: center;
-      padding: 20px 10px;
+    /* About Section */
+    .about {
+      padding: 20px;
+      background: var(--white);
     }
 
-    .contact a {
-      display: block;
+    .about h2 {
       color: var(--yellow);
-      text-decoration: none;
-      margin: 5px 0;
-      font-weight: 400;
+      font-size: 1.2em;
+      margin-bottom: 10px;
     }
 
-    .contact a i {
-      margin-right: 10px;
+    .about p {
+      font-size: 0.9em;
+      color: var(--dark-gray);
     }
 
-    /* Section Headings */
-    .func h3 {
-      font-size: 1.4em;
-      color: var(--brown);
-      margin-bottom: 15px;
-      border-bottom: 2px solid var(--yellow);
+    /* Sections: Experience, Education, Reference */
+    .section {
+      padding: 20px 30px;
+    }
+
+    .section h2 {
+      font-size: 1.2em;
+      color: var(--yellow);
+      border-bottom: 2px solid var(--gray);
+      margin-bottom: 10px;
       padding-bottom: 5px;
     }
 
-    /* Experience List */
-    .func {
-      padding: 20px 40px;
-    }
-
-    .work li {
+    .section ul {
       list-style: none;
-      margin-bottom: 15px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--light-gray);
     }
 
-    .work li:last-child {
-      border-bottom: none;
+    .section ul li {
+      margin: 15px 0;
+      padding-left: 20px;
+      border-left: 3px solid var(--yellow);
     }
 
-    .work span {
-      font-weight: 700;
+    .section ul li span {
+      font-weight: bold;
       color: var(--black);
-      font-size: 1.1em;
     }
 
-    .work small {
+    .section ul li small {
       display: block;
       font-size: 0.9em;
       color: var(--dark-gray);
     }
 
-    /* Footer: Skills and Interests */
-    .footer {
-      background: var(--black);
-      color: var(--white);
+    /* Skills Section */
+    .skills {
       display: flex;
       justify-content: space-between;
-      padding: 20px;
+      padding: 20px 30px;
+      background: var(--gray);
+    }
+
+    .skills div {
       text-align: center;
     }
 
-    .footer h3 {
+    .skills h3 {
+      font-size: 1em;
       color: var(--yellow);
       margin-bottom: 10px;
     }
 
-    .skills-soft span {
-      display: block;
-      font-weight: 600;
-      color: var(--yellow);
+    .skills p {
+      font-weight: bold;
     }
 
-    .interests i {
-      font-size: 30px;
-      color: var(--yellow);
-      margin-bottom: 5px;
+    /* Footer */
+    .footer {
+      padding: 20px;
+      text-align: center;
+      background: var(--black);
+      color: var(--white);
     }
 
-    .interests div {
-      margin: 10px 0;
+    .footer a {
+      text-decoration: none;
+      color: var(--yellow);
+      margin: 0 10px;
     }
   </style>
 </head>
 <body>
   <div class="resume">
-    <!-- Profile Section -->
-    <div class="profile">
-      <div class="photo"><i class="fas fa-rocket"></i></div>
+    <!-- Header Section -->
+    <div class="header">
+      <img src="https://via.placeholder.com/100" alt="Profile Photo">
       <div class="info">
         <h1>Ta Anh Luan</h1>
-        <h2>Product Owner</h2>
+        <p>Product Owner</p>
       </div>
     </div>
 
-    <!-- Contact Section -->
-    <div class="contact">
-      <a href="tel:+84939451139"><i class="fas fa-phone"></i> (+84) 939 451 139</a>
-      <a href="mailto:taanhluan@gmail.com"><i class="fas fa-envelope"></i> taanhluan@gmail.com</a>
-      <a href="https://taanhluan.github.io/JonathanTa" target="_blank"><i class="fas fa-home"></i> taanhluan.github.io/JonathanTa</a>
+    <!-- About Section -->
+    <div class="about">
+      <h2>About Me</h2>
+      <p>
+        Experienced Product Owner and Business Analyst with a proven record of delivering innovative solutions and streamlining business processes.
+        Skilled in Agile frameworks, data analysis, and strategic planning.
+      </p>
     </div>
 
     <!-- Experience Section -->
-    <div class="func">
-      <h3><i class="fa fa-briefcase"></i> Experience</h3>
-      <ul class="work">
+    <div class="section">
+      <h2><i class="fas fa-briefcase"></i> Experience</h2>
+      <ul>
         <li>
           <span>Product Owner</span>
-          <small>BIC Bank Cambodia</small>
-          <small>Oct 2023 - Oct 2024</small>
+          <small>BIC Bank Cambodia | Oct 2023 - Oct 2024</small>
         </li>
         <li>
           <span>Senior Business Analyst</span>
-          <small>Xebia Group - ABBank Project</small>
-          <small>Nov 2022 - Oct 2023</small>
+          <small>Xebia Group - ABBank Project | Nov 2022 - Oct 2023</small>
         </li>
         <li>
           <span>Project Manager - Scrum Master</span>
-          <small>FPT Software</small>
-          <small>Apr 2022 - Nov 2022</small>
-        </li>
-        <li>
-          <span>Senior Business Analyst</span>
-          <small>Amaris Consulting</small>
-          <small>Jan 2021 - Apr 2022</small>
+          <small>FPT Software | Apr 2022 - Nov 2022</small>
         </li>
       </ul>
     </div>
 
-    <!-- Footer: Skills and Interests -->
+    <!-- Education Section -->
+    <div class="section">
+      <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+      <ul>
+        <li>
+          <span>Master of Business Administration</span>
+          <small>University of XYZ | 2016 - 2018</small>
+        </li>
+        <li>
+          <span>Bachelor of Computer Science</span>
+          <small>ABC Institute of Technology | 2012 - 2016</small>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Skills Section -->
+    <div class="skills">
+      <div>
+        <h3>Skills</h3>
+        <p>Agile Tools, SQL, HTML/CSS</p>
+      </div>
+      <div>
+        <h3>Soft Skills</h3>
+        <p>Leadership, Communication</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
     <div class="footer">
-      <div class="skills-soft">
-        <h3>Software Skills</h3>
-        <span>SQL, Agile Tools, HTML/CSS</span>
-      </div>
-      <div class="interests">
-        <h3>Interests</h3>
-        <div>
-          <i class="fas fa-palette"></i> <span>Art</span>
-        </div>
-        <div>
-          <i class="fas fa-book"></i> <span>Books</span>
-        </div>
-        <div>
-          <i class="fas fa-film"></i> <span>Movies</span>
-        </div>
-      </div>
+      <a href="mailto:taanhluan@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+      <a href="tel:+84939451139"><i class="fas fa-phone"></i> Phone</a>
+      <a href="https://taanhluan.github.io/JonathanTa" target="_blank"><i class="fas fa-globe"></i> Portfolio</a>
     </div>
   </div>
 </body>
