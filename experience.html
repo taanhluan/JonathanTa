@@ -165,5 +165,20 @@
   </div>
 </div>
 
+<script>
+(function() {
+  document.querySelectorAll(".skills-prog li").forEach((el, i) => {
+    const bar = el.querySelector(".bar");
+    const percent = el.dataset.percent;
+    if (bar) {
+      setTimeout(() => {
+        bar.style.width = percent + "%";
+        bar.style.transitionDuration = ".5s";
+      }, i * 150);
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
