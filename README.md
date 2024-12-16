@@ -40,13 +40,6 @@
 
 ## 🏆 **Licenses & Certifications**
 
-<p align="center">
-  <img src="https://github.com/taanhluan/JonathanTa/blob/main/image.png?raw=true" alt="Professional Scrum Product Owner I Badge" width="200px" />
-  <img src="https://github.com/taanhluan/JonathanTa/blob/main/image.png?raw=true" alt="Scrum Product Owner (PSPO I) Certification" width="200px" />
-  <img src="https://via.placeholder.com/200" alt="PMP Exam Prep Seminar" width="200px" />
-  <img src="https://via.placeholder.com/200" alt="Beginning Project Management Level One" width="200px" />
-</p>
-
 - **Professional Scrum Product Owner I** (Issued Dec 2024) [View Certificate](https://scrum.org/certificates/1168294)
 - **Scrum Product Owner (PSPO I) Certification** (Issued Dec 2024) [View Certificate](https://www.udemy.com/certificate/UC-2c5a42c8-7b69-4eb3-a2d6-ab8269fc24eb/)
 - **PMP Exam Prep Seminar** (Issued Nov 2022) [View Certificate](https://instructingcom-llc.verified.cv/en/verify/06023331710926)
