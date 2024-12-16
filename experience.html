@@ -448,16 +448,16 @@
   document.getElementById('download').addEventListener('click', () => {
     const collapsibles = document.querySelectorAll('.content');
     const icons = document.querySelectorAll('.collapsible i');
-    const hiddenContents = [];
+    const initiallyHidden = [];
 
-    // Expand all collapsible sections and store their previous state
+    // Expand all collapsible sections and track which were initially hidden
     collapsibles.forEach((content, index) => {
       if (!content.classList.contains('show')) {
         content.classList.add('show');
-        hiddenContents.push(index); // Track which sections were initially hidden
+        icons[index].classList.add('rotate');
+        initiallyHidden.push(index);
       }
     });
-    icons.forEach(icon => icon.classList.add('rotate'));
 
     // Generate PDF
     const element = document.getElementById('resume');
@@ -472,11 +472,14 @@
       })
       .save()
       .then(() => {
-        // Collapse the sections that were originally hidden
-        hiddenContents.forEach(index => collapsibles[index].classList.remove('show'));
-        icons.forEach(icon => icon.classList.remove('rotate'));
+        // Collapse sections that were initially hidden
+        initiallyHidden.forEach(index => {
+          collapsibles[index].classList.remove('show');
+          icons[index].classList.remove('rotate');
+        });
       });
   });
 </script>
+
 </body>
 </html>
