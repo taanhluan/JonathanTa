@@ -38,6 +38,20 @@
 - **💬 Stakeholder Communication**: Facilitate ongoing communication, ensuring alignment across teams.
 - **📅 Project Management**: Guide cross-functional teams to meet project deadlines with high quality.
 
+## 🏆 **Licenses & Certifications**
+
+<p align="center">
+  <img src="https://github.com/taanhluan/JonathanTa/blob/main/image.png?raw=true" alt="Professional Scrum Product Owner I Badge" width="120px" />
+  <img src="https://via.placeholder.com/120" alt="Scrum Product Owner (PSPO I) Certification" width="120px" />
+  <img src="https://via.placeholder.com/120" alt="PMP Exam Prep Seminar" width="120px" />
+  <img src="https://via.placeholder.com/120" alt="Beginning Project Management Level One" width="120px" />
+</p>
+
+- **Professional Scrum Product Owner I** (Issued Dec 2024)
+- **Scrum Product Owner (PSPO I) Certification** (Issued Dec 2024)
+- **PMP Exam Prep Seminar** (Issued Nov 2022)
+- **Beginning Project Management: Project Management Level One** (Issued Oct 2022)
+
 ---
 
 ## 🌟 **Why Choose Me?**
