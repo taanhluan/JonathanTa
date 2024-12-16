@@ -197,6 +197,42 @@
 
   .about {
     margin-top: 10px;
+  /* Hologram Border Effect */
+.hologram-border {
+  position: relative;
+  border-radius: 10px; /* Rounded corners */
+  padding: 10px; /* Adds spacing inside the border */
+  background: #fff; /* White background for content */
+  z-index: 1; /* Ensures content is above the pseudo-element */
+}
+
+.hologram-border::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 10px;
+  background: linear-gradient(45deg, 
+    #ff00ff, #00ffff, #ff00ff, #00ffff, #ff00ff);
+  background-size: 300% 300%;
+  z-index: -1;
+  animation: holo-border 6s infinite linear;
+}
+
+@keyframes holo-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
   </style>
 </head>
 <body>
