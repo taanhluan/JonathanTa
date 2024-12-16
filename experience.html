@@ -9,7 +9,6 @@
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
 
-    /* Color Variables */
     :root {
       --black: #1e1e1e;
       --white: #ffffff;
@@ -29,7 +28,6 @@
     body {
       background-color: var(--gray);
       color: var(--black);
-      line-height: 1.6;
     }
 
     /* Resume Container */
@@ -42,12 +40,11 @@
       overflow: hidden;
     }
 
-    /* Header Section */
+    /* Header */
     .header {
       display: flex;
       align-items: center;
       background: var(--yellow);
-      color: var(--black);
       padding: 20px;
     }
 
@@ -56,75 +53,52 @@
       width: 100px;
       height: 100px;
       margin-right: 20px;
-      border: 4px solid var(--white);
     }
 
-    .header .info h1 {
+    .header h1 {
       font-size: 1.8em;
       font-weight: 700;
     }
 
-    .header .info p {
-      font-size: 1em;
-      font-weight: 400;
-    }
-
-    /* About Section */
-    .about {
-      padding: 20px 30px;
-      background: var(--gray);
-      border-bottom: 2px solid var(--yellow);
-    }
-
-    .about h2 {
-      font-size: 1.5em;
-      color: var(--yellow);
-      margin-bottom: 10px;
-    }
-
-    .about p {
-      font-size: 1em;
-      color: var(--dark-gray);
-      margin-bottom: 10px;
-    }
-
     /* Section Headers */
     .section {
-      padding: 20px 30px;
+      padding: 20px;
     }
 
     .section h2 {
-      font-size: 1.3em;
+      font-size: 1.5em;
       color: var(--yellow);
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
 
-    /* Collapsible Experience */
+    /* Collapsible Section */
     .collapsible {
-      border-bottom: 1px solid #ccc;
-      padding: 15px 20px;
+      background-color: #f4f4f4;
+      padding: 15px;
       cursor: pointer;
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      background-color: #fafafa;
-      transition: background-color 0.3s;
+      border: 1px solid #ddd;
+      margin-bottom: 5px;
+      border-radius: 5px;
+      transition: background 0.3s ease;
     }
 
     .collapsible:hover {
-      background-color: #f4f4f4;
+      background-color: #eaeaea;
     }
 
     .collapsible i {
-      transition: transform 0.3s;
+      transition: transform 0.3s ease;
     }
 
     .content {
       display: none;
-      padding: 15px 20px;
-      border-bottom: 1px solid #eaeaea;
-      font-size: 0.9em;
-      color: #555;
+      padding: 15px;
+      background: #fefefe;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 10px;
     }
 
     .show {
@@ -135,24 +109,10 @@
       transform: rotate(180deg);
     }
 
-    /* Footer */
-    .footer {
-      padding: 20px;
-      text-align: center;
-      background: var(--black);
-      color: var(--white);
-    }
-
-    .footer a {
-      text-decoration: none;
-      color: var(--yellow);
-      margin: 0 10px;
-    }
-
     /* Download Button */
     .download-btn {
       text-align: center;
-      margin: 20px 0;
+      margin: 20px;
     }
 
     .download-btn button {
@@ -177,157 +137,87 @@
     <!-- Header Section -->
     <div class="header">
       <img src="https://via.placeholder.com/100" alt="Profile Photo">
-      <div class="info">
+      <div>
         <h1>Ta Anh Luan</h1>
         <p>Product Owner</p>
       </div>
     </div>
 
-    <!-- About Section -->
-    <div class="about">
-      <h2>About</h2>
-      <p>
-        Since joining <strong>GTV Vietnam</strong> in October 2023, I have focused on steering cross-functional teams towards launching cutting-edge Corporate Digital Banking services. My approach harmonizes business objectives with customer satisfaction, ensuring a robust and feature-rich digital banking experience.
-      </p>
-      <p>
-        Leveraging expertise in Agile methodologies and project management, I institute KPIs to meticulously track progress and prioritize product backlogs aligned with market trends. My goal is to perpetually deliver value and position GTV Vietnam as a leader in technological innovation within the banking sector.
-      </p>
+    <!-- Experience Section -->
+    <div class="section">
+      <h2><i class="fas fa-briefcase"></i> Experience</h2>
+
+      <!-- GTV Vietnam -->
+      <div class="collapsible">
+        <span><strong>Senior Business Analyst | Product Owner</strong> - GTV Vietnam</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="content">
+        <p><strong>Duration:</strong> Oct 2023 - Oct 2024</p>
+        <ul>
+          <li>Managed cross-functional teams for Corporate Digital Banking solutions.</li>
+          <li>Implemented AML integration and centralized Payment Hub systems.</li>
+        </ul>
+      </div>
+
+      <!-- Xebia Group -->
+      <div class="collapsible">
+        <span><strong>Senior Business Analyst</strong> - Xebia Group</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="content">
+        <p><strong>Duration:</strong> Nov 2022 - Oct 2023</p>
+        <ul>
+          <li>Led ABBank’s digital transformation using Backbase platform.</li>
+        </ul>
+      </div>
     </div>
-
-<!-- Experience Section -->
-<div class="section">
-  <h2><i class="fas fa-briefcase"></i> Experience</h2>
-
-  <!-- GTV Vietnam Experience -->
-  <div class="collapsible">
-    <span><strong>Senior Business Analyst | Product Owner</strong> - GTV Vietnam</span>
-    <i class="fas fa-chevron-down"></i>
-  </div>
-  <div class="content">
-    <p><strong>Duration:</strong> Oct 2023 - Oct 2024 | Vietnam · On-site</p>
-    <ul>
-      <li>Managed cross-functional teams for Corporate Digital Banking solutions.</li>
-      <li>Implemented AML integration and centralized Payment Hub systems.</li>
-    </ul>
-    <p><strong>Skills:</strong> Business Strategy, Core Banking, AML Compliance</p>
-  </div>
-
-  <!-- Xebia Experience -->
-  <div class="collapsible">
-    <span><strong>Senior Business Analyst</strong> - Xebia Group</span>
-    <i class="fas fa-chevron-down"></i>
-  </div>
-  <div class="content">
-    <p><strong>Duration:</strong> Nov 2022 - Oct 2023 | Vietnam · Remote</p>
-    <ul>
-      <li>Led ABBank’s digital transformation using the Backbase platform.</li>
-      <li>Ensured seamless integration and timely project delivery.</li>
-    </ul>
-    <p><strong>Skills:</strong> Agile Methodologies, Backbase, Business Analysis</p>
-  </div>
-
-  <!-- FPT Software Experience -->
-  <div class="collapsible">
-    <span><strong>Project Manager</strong> - FPT Software</span>
-    <i class="fas fa-chevron-down"></i>
-  </div>
-  <div class="content">
-    <p><strong>Duration:</strong> Apr 2022 - Nov 2022 | Vietnam</p>
-    <ul>
-      <li>Enhanced competitiveness through strategic business realignment.</li>
-    </ul>
-    <p><strong>Skills:</strong> Risk Management, Project Management, Agile</p>
-  </div>
-
-  <!-- JACCS Viet Nam Experience -->
-  <div class="collapsible">
-    <span><strong>Office System Chief</strong> - JACCS Viet Nam</span>
-    <i class="fas fa-chevron-down"></i>
-  </div>
-  <div class="content">
-    <p><strong>Duration:</strong> Aug 2020 - Jan 2021 | Vietnam</p>
-    <ul>
-      <li>Implemented and managed Credit Card Systems to support business operations.</li>
-    </ul>
-    <p><strong>Skills:</strong> Retail Banking, Risk Management, Core Banking</p>
-  </div>
-</div>
 
     <!-- Download Button -->
-<div class="download-btn">
-  <button id="download">Download Resume as PDF</button>
-</div>
-
-<!-- Footer -->
-<div class="footer">
-  <div class="footer-content">
-    <div class="footer-section contact">
-      <h3>Contact Information</h3>
-      <p><i class="fas fa-envelope"></i> <a href="mailto:taanhluan@gmail.com">taanhluan@gmail.com</a></p>
-      <p><i class="fas fa-phone"></i> <a href="tel:+84939451139">(+84) 939 451 139</a></p>
-      <p><i class="fas fa-globe"></i> <a href="https://taanhluan.github.io/JonathanTa" target="_blank">Portfolio Website</a></p>
-    </div>
-    <div class="footer-section social">
-      <h3>Connect with Me</h3>
-      <a href="https://www.linkedin.com/in/yourprofile" target="_blank" title="LinkedIn">
-        <i class="fab fa-linkedin fa-2x"></i>
-      </a>
-      <a href="https://github.com/yourusername" target="_blank" title="GitHub">
-        <i class="fab fa-github fa-2x"></i>
-      </a>
-      <a href="https://twitter.com/yourusername" target="_blank" title="Twitter">
-        <i class="fab fa-twitter fa-2x"></i>
-      </a>
+    <div class="download-btn">
+      <button id="download">Download Resume as PDF</button>
     </div>
   </div>
-  <div class="footer-bottom">
-    <p>&copy; 2024 Ta Anh Luan | Designed for professional purposes</p>
-  </div>
-</div>
 
-
-<!-- JavaScript Code -->
-<script>
-<script>
-  // Expand/Collapse Functionality for Experience Section
-  document.querySelectorAll('.collapsible').forEach(item => {
-    item.addEventListener('click', () => {
-      const content = item.nextElementSibling; // Target the next .content div
-      const icon = item.querySelector('i'); // Target the chevron icon
-
-      // Toggle 'show' class to expand/collapse content
-      content.classList.toggle('show');
-      icon.classList.toggle('rotate');
-    });
-  });
-
-  // PDF Download: Expand All Content Before Generating PDF
-  document.getElementById('download').addEventListener('click', () => {
-    const collapsibles = document.querySelectorAll('.content');
-    const icons = document.querySelectorAll('.collapsible i');
-
-    // Expand all collapsible sections
-    collapsibles.forEach(content => content.classList.add('show'));
-    icons.forEach(icon => icon.classList.add('rotate'));
-
-    // Generate PDF
-    const element = document.getElementById('resume');
-    html2pdf()
-      .from(element)
-      .set({
-        margin: 10,
-        filename: 'resume_ta_anh_luan.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-      })
-      .save()
-      .then(() => {
-        // Collapse sections after PDF is generated
-        collapsibles.forEach(content => content.classList.remove('show'));
-        icons.forEach(icon => icon.classList.remove('rotate'));
+  <!-- JavaScript -->
+  <script>
+    // Expand/Collapse Functionality
+    document.querySelectorAll('.collapsible').forEach(item => {
+      item.addEventListener('click', () => {
+        const content = item.nextElementSibling; // Target next sibling (.content)
+        const icon = item.querySelector('i'); // Target the chevron icon
+        content.classList.toggle('show');
+        icon.classList.toggle('rotate');
       });
-  });
-</script>
+    });
+
+    // PDF Download Logic
+    document.getElementById('download').addEventListener('click', () => {
+      const collapsibles = document.querySelectorAll('.content');
+      const icons = document.querySelectorAll('.collapsible i');
+
+      // Expand all sections before PDF download
+      collapsibles.forEach(content => content.classList.add('show'));
+      icons.forEach(icon => icon.classList.add('rotate'));
+
+      // Generate PDF
+      const element = document.getElementById('resume');
+      html2pdf()
+        .from(element)
+        .set({
+          margin: 10,
+          filename: 'resume_ta_anh_luan.pdf',
+          image: { type: 'jpeg', quality: 0.98 },
+          html2canvas: { scale: 2 },
+          jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        })
+        .save()
+        .then(() => {
+          // Collapse sections after PDF is generated
+          collapsibles.forEach(content => content.classList.remove('show'));
+          icons.forEach(icon => icon.classList.remove('rotate'));
+        });
+    });
+  </script>
 </body>
 </html>
