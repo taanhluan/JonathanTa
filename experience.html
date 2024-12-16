@@ -288,6 +288,19 @@
 
 <!-- JavaScript Code -->
 <script>
+<script>
+  // Expand/Collapse Functionality for Experience Section
+  document.querySelectorAll('.collapsible').forEach(item => {
+    item.addEventListener('click', () => {
+      const content = item.nextElementSibling; // Target the next .content div
+      const icon = item.querySelector('i'); // Target the chevron icon
+
+      // Toggle 'show' class to expand/collapse content
+      content.classList.toggle('show');
+      icon.classList.toggle('rotate');
+    });
+  });
+
   // PDF Download: Expand All Content Before Generating PDF
   document.getElementById('download').addEventListener('click', () => {
     const collapsibles = document.querySelectorAll('.content');
