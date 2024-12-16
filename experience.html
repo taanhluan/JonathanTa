@@ -36,6 +36,7 @@
   margin: 20px auto;
   box-shadow: 10px 10px var(--black);
   display: flex;
+  flex-direction: column;
 }
 
 .base, .func {
@@ -90,22 +91,43 @@
   margin-bottom: 8px;
 }
 
-.func .interests-items div {
-  text-align: center;
+/* Footer Styles */
+.footer {
+  display: flex;
+  justify-content: space-around;
+  background: var(--medium-blue);
+  padding: 20px;
 }
 
-.func .interests-items div i {
-  font-size: 45px;
+.footer .skills-soft, .footer .interests {
+  text-align: center;
+  flex: 1;
+}
+
+.footer h3 {
   color: var(--orange);
+  margin-bottom: 10px;
+}
+
+.footer ul li {
+  list-style: none;
+}
+
+.footer .interests-items div i {
+  font-size: 45px;
+  color: var(--yellow);
   margin-bottom: 5px;
 }
 
-.func .interests-items div span {
+.footer .interests-items div span {
   display: block;
   font-size: 1.1em;
+  color: var(--white);
 }
 </style>
 </head>
+<body>
+
 <div class="resume">
   <div class="base">
     <div class="profile">
@@ -123,47 +145,7 @@
     </div>
   </div>
 
-  <div class="skills-soft">
-      <h3><i class="fas fa-bezier-curve"></i>Software Skills</h3>
-      <ul>
-        <li data-percent="90">
-          <svg viewbox="0 0 100 100">
-            <circle cx="50" cy="50" r="45"></circle>
-            <circle class="cbar" cx="50" cy="50" r="45"></circle>
-          </svg><span>Illustrator</span><small></small>
-        </li>
-        <li data-percent="75">
-          <svg viewbox="0 0 100 100">
-            <circle cx="50" cy="50" r="45"></circle>
-            <circle class="cbar" cx="50" cy="50" r="45"></circle>
-          </svg><span>Photoshop</span><small></small>
-        </li>
-        <li data-percent="85">
-          <svg viewbox="0 0 100 100">
-            <circle cx="50" cy="50" r="45"></circle>
-            <circle class="cbar" cx="50" cy="50" r="45"></circle>
-          </svg><span>InDesign</span><small></small>
-        </li>
-        <li data-percent="65">
-          <svg viewbox="0 0 100 100">
-            <circle cx="50" cy="50" r="45"></circle>
-            <circle class="cbar" cx="50" cy="50" r="45"></circle>
-          </svg><span>Dreamweaver</span><small></small>
-        </li>
-      </ul>
-    </div>
-    <div class="interests">
-      <h3><i class="fas fa-star"></i>Interests</h3>
-      <div class="interests-items">
-        <div class="art"><i class="fas fa-palette"></i><span>Art</span></div>
-        <div class="art"><i class="fas fa-book"></i><span>Books</span></div>
-        <div class="movies"><i class="fas fa-film"></i><span>Movies</span></div>
-        <div class="music"><i class="fas fa-headphones"></i><span>Music</span></div>
-        <div class="games"><i class="fas fa-gamepad"></i><span>Games</span></div>
-      </div>
-    </div>
-
-    <div class="func">
+  <div class="func">
     <div class="work">
       <h3><i class="fa fa-briefcase"></i>Experience</h3>
       <ul>
@@ -178,22 +160,36 @@
         <li><span>Freelancer</span><small>Independent Projects</small><small>2014 - 2016</small></li>
       </ul>
     </div>
-
     <div class="edu">
       <h3><i class="fa fa-graduation-cap"></i>Education</h3>
       <ul>
         <li><span>Bachelor of Science - Network Engineering</span><small>Industrial University of Ho Chi Minh City</small><small>2014 - 2018</small></li>
       </ul>
     </div>
-        <li>Professional Scrum Product Owner I (PSPO I)</li>
-        <li>TOEIC Certificate - Score 800 (2014)</li>
-        <li>PMP® Exam Prep Seminar (2022)</li>
-        <li>Beginning Project Management: Level One (2022)</li>
-        <li>Scrum Certification (2022)</li>
-        <li>Fundamentals of Agile (2022)</li>
+  </div>
+
+  <div class="footer">
+    <div class="skills-soft">
+      <h3><i class="fas fa-bezier-curve"></i>Software Skills</h3>
+      <ul>
+        <li>Illustrator</li>
+        <li>Photoshop</li>
+        <li>InDesign</li>
+        <li>Dreamweaver</li>
       </ul>
+    </div>
+    <div class="interests">
+      <h3><i class="fas fa-star"></i>Interests</h3>
+      <div class="interests-items">
+        <div><i class="fas fa-palette"></i><span>Art</span></div>
+        <div><i class="fas fa-book"></i><span>Books</span></div>
+        <div><i class="fas fa-film"></i><span>Movies</span></div>
+        <div><i class="fas fa-headphones"></i><span>Music</span></div>
+        <div><i class="fas fa-gamepad"></i><span>Games</span></div>
+      </div>
     </div>
   </div>
 </div>
+
 </body>
 </html>
