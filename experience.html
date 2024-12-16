@@ -1,41 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enhanced Resume</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+/* CSS Variables */
+:root {
+  --darkest-blue: #1a237e;
+  --darker-blue: #283593;
+  --dark-blue: #303f9f;
+  --medium-blue: #3949ab;
+  --light-blue: #3f51b5;
+  --lighter-blue: #5c6bc0;
+  --lightest-blue: #9fa8da;
+  --white: #ffffff;
+  --black: #0e1442;
+  --orange: #ffb300;
+  --yellow: #fdd835;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.resume {
+  width: 960px;
+  background: var(--darkest-blue);
+  color: var(--white);
+  margin: 20px auto;
+  box-shadow: 10px 10px var(--black);
+  display: flex;
+}
+
+.base, .func {
+  padding: 30px;
+}
+
+/* Profile Section */
+.profile {
+  background: var(--orange);
+  padding: 30px;
+  text-align: center;
+}
+
+.profile .photo i {
+  font-size: 100px;
+  color: var(--darker-blue);
+}
+
+.profile .info .name {
+  font-size: 1.75em;
+  color: var(--darkest-blue);
+}
+
+.profile .info .job {
+  font-size: 1.5em;
+  color: var(--darker-blue);
+}
+
+/* Contact Section */
+.contact a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.contact i {
+  color: var(--orange);
+  margin-right: 10px;
+}
+
+/* Functional Section */
+.func h3 {
+  color: var(--orange);
+  margin: 10px 0;
+  font-size: 1.25em;
+}
+
+.func .work, .func .edu {
+  margin-bottom: 15px;
+}
+
+.func .skills-prog ul li, .func .skills-soft ul li {
+  margin-bottom: 8px;
+}
+
+.func .interests-items div {
+  text-align: center;
+}
+
+.func .interests-items div i {
+  font-size: 45px;
+  color: var(--orange);
+  margin-bottom: 5px;
+}
+
+.func .interests-items div span {
+  display: block;
+  font-size: 1.1em;
+}
+
+</style>
+</head>
+<body>
+
 <div class="resume">
   <div class="base">
     <div class="profile">
-      <div class="photo">
-        <!--<img src="" /> -->
-        <i class="fas fa-rocket"></i>
-      </div>
+      <div class="photo"><i class="fas fa-rocket"></i></div>
       <div class="info">
         <h1 class="name">Ta Anh Luan</h1>
         <h2 class="job">Senior Business Analyst Lead</h2>
       </div>
     </div>
-    <div class="about">
-      <h3>About Me</h3>
-      Experienced Senior Business Analyst with expertise in digital banking, project management, and IT integration. Skilled in Agile/Scrum methodologies and leading cross-functional teams to deliver innovative solutions.
-    </div>
     <div class="contact">
       <h3>Contact Me</h3>
-      <div class="call"><a href="tel:+84939451139"><i class="fas fa-phone"></i><span>(+84) 939 451 139</span></a></div>
-      <div class="address"><a href="https://goo.gl/maps/fiTBGT6Vnhy"><i class="fas fa-map-marker"></i><span>53 Đỗ Thừa Luông, P.Tân Quý, Q.Tân Phú TP.HCM, Vietnam</span></a></div>
-      <div class="email"><a href="mailto:taanhluan@gmail.com"><i class="fas fa-envelope"></i><span>taanhluan@gmail.com</span></a></div>
-      <div class="website"><a href="https://taanhluan.github.io/JonathanTa" target="_blank"><i class="fas fa-home"></i><span>taanhluan.github.io/JonathanTa</span></a></div>
-    </div>
-    <div class="follow">
-      <h3>Follow Me</h3>
-      <div class="box">
-        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-      </div>
+      <div><a href="tel:+84939451139"><i class="fas fa-phone"></i>(+84) 939 451 139</a></div>
+      <div><a href="mailto:taanhluan@gmail.com"><i class="fas fa-envelope"></i>taanhluan@gmail.com</a></div>
+      <div><a href="https://taanhluan.github.io/JonathanTa" target="_blank"><i class="fas fa-home"></i>taanhluan.github.io/JonathanTa</a></div>
     </div>
   </div>
+
   <div class="func">
     <div class="work">
       <h3><i class="fa fa-briefcase"></i>Experience</h3>
       <ul>
         <li><span>Senior Business Analyst Lead</span><small>BIC Bank - Cambodia</small><small>Oct 2023 - Now</small></li>
         <li><span>Senior Business Analyst</span><small>Xebia Group - ABBank Project</small><small>Nov 2022 - Oct 2023</small></li>
-        <li><span>Project Manager - Scrum Master</span><small>FPT Software</small><small>Apr 2022 - Nov 2022</small></li>
-        <li><span>Senior Business Analyst - Scrum Master</span><small>Amaris Consulting - Mantu Group</small><small>Jan 2021 - Apr 2022</small></li>
       </ul>
     </div>
     <div class="edu">
@@ -47,19 +144,15 @@
     <div class="skills-prog">
       <h3><i class="fas fa-code"></i>Professional Skills</h3>
       <ul>
-        <li data-percent="95"><span>Project Management</span></li>
-        <li data-percent="90"><span>Business Analysis</span></li>
-        <li data-percent="85"><span>Agile/Scrum</span></li>
-        <li data-percent="80"><span>System Integration</span></li>
-        <li data-percent="75"><span>Data Migration</span></li>
+        <li data-percent="95">Project Management</li>
+        <li data-percent="90">Business Analysis</li>
       </ul>
     </div>
     <div class="skills-soft">
       <h3><i class="fas fa-bezier-curve"></i>Certifications</h3>
       <ul>
-        <li data-percent="100"><span>PMP® Exam Prep Seminar</span></li>
-        <li data-percent="100"><span>Scrum Certification</span></li>
-        <li data-percent="100"><span>TOEIC Certificate - Score 800</span></li>
+        <li data-percent="100">PMP® Exam Prep Seminar</li>
+        <li data-percent="100">Scrum Certification</li>
       </ul>
     </div>
     <div class="interests">
@@ -67,8 +160,10 @@
       <div class="interests-items">
         <div class="tech"><i class="fas fa-laptop-code"></i><span>Technology</span></div>
         <div class="travel"><i class="fas fa-plane"></i><span>Travel</span></div>
-        <div class="reading"><i class="fas fa-book"></i><span>Reading</span></div>
       </div>
     </div>
   </div>
 </div>
+
+</body>
+</html>
