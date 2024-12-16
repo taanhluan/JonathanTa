@@ -280,25 +280,47 @@
 </div>
 
 
-  <!-- Script for Collapsible Behavior and PDF -->
-  <script>
-    document.querySelectorAll('.collapsible').forEach(item => {
-      item.addEventListener('click', () => {
-        item.nextElementSibling.classList.toggle('show');
-        item.querySelector('i').classList.toggle('rotate');
-      });
-    });
+  <!-- Download Button -->
+<div class="download-btn">
+  <button id="download">Download Resume as PDF</button>
+</div>
 
-    document.getElementById('download').addEventListener('click', () => {
-      const element = document.getElementById('resume');
-      html2pdf().from(element).set({
+<!-- Footer -->
+<div class="footer">
+  <a href="mailto:taanhluan@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+  <a href="tel:+84939451139"><i class="fas fa-phone"></i> Phone</a>
+  <a href="https://taanhluan.github.io/JonathanTa"><i class="fas fa-globe"></i> Portfolio</a>
+</div>
+
+<!-- JavaScript Code -->
+<script>
+  // PDF Download: Expand All Content Before Generating PDF
+  document.getElementById('download').addEventListener('click', () => {
+    const collapsibles = document.querySelectorAll('.content');
+    const icons = document.querySelectorAll('.collapsible i');
+
+    // Expand all collapsible sections
+    collapsibles.forEach(content => content.classList.add('show'));
+    icons.forEach(icon => icon.classList.add('rotate'));
+
+    // Generate PDF
+    const element = document.getElementById('resume');
+    html2pdf()
+      .from(element)
+      .set({
         margin: 10,
         filename: 'resume_ta_anh_luan.pdf',
         image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
+        html2canvas: { scale: 2, useCORS: true },
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-      }).save();
-    });
-  </script>
+      })
+      .save()
+      .then(() => {
+        // Collapse sections after PDF is generated
+        collapsibles.forEach(content => content.classList.remove('show'));
+        icons.forEach(icon => icon.classList.remove('rotate'));
+      });
+  });
+</script>
 </body>
 </html>
