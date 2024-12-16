@@ -243,34 +243,31 @@
 
      /* Ensure Print-Friendly Styling */
 @media print {
-  body {
-    background-color: #fff !important; /* White background */
-    color: #000 !important; /* Black text */
-  }
-
-  .resume,
-  .content {
-    background-color: #fff !important; /* White solid background */
-    color: #000 !important; /* High contrast text */
-    box-shadow: none !important; /* Remove box shadows */
+  body, .resume, .content, .collapsible {
+    background-color: #fff !important; /* Ensure white background */
+    color: #000 !important; /* Force black text */
+    border: none !important;
+    box-shadow: none !important;
   }
 
   .collapsible {
-    background-color: #f4c20d !important; /* Highlight header yellow */
-    color: #000 !important; /* Black text for readability */
-    border: 1px solid #ddd !important; /* Soft border for structure */
-  }
-
-  .collapsible i {
-    color: #000 !important; /* Ensure icons are visible */
+    border: 1px solid #000 !important; /* High contrast border */
   }
 
   .content {
-    background-color: #fff !important;
-    color: #000 !important; /* Ensure all text is black */
-    border-left: 4px solid #f4c20d !important; /* Retain left highlight */
-    padding: 15px 20px !important;
+    border-left: 4px solid #000 !important; /* Solid black left border */
   }
+
+  i {
+    color: #000 !important; /* Ensure all icons are black */
+  }
+
+  a, a:visited {
+    color: #000 !important; /* Black links */
+    text-decoration: none;
+  }
+}
+
 
   /* Remove unnecessary effects */
   .collapsible:hover,
