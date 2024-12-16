@@ -7,7 +7,7 @@
   <meta name="author" content="Jonathan Ta">
   <meta name="keywords" content="Jonathan Ta, Professional Profile, Agile, Scrum, Project Management">
   <meta name="robots" content="index, follow">
-  <title>Jonathan Ta's Blog</title>
+  <title>Jonathan Ta's Profile</title>
   <style>
     * {
       box-sizing: border-box;
@@ -17,117 +17,110 @@
 
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
+      background-color: #000;
+      color: #fff;
       line-height: 1.6;
     }
 
     header {
-      background: #333 url('image.png') no-repeat center center/cover;
-      height: 250px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
-      text-align: center;
-      font-size: 2.5rem;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
-
-    nav {
-      background-color: #333;
-      padding: 1rem;
-      text-align: center;
-    }
-
-    nav a {
-      color: #fff;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1rem;
-      transition: color 0.3s;
-    }
-
-    nav a:hover, nav a.active {
-      color: #FF5733;
-      text-decoration: underline;
-    }
-
-    .content {
-      max-width: 1000px;
-      margin: 2rem auto;
+      background: #000;
       padding: 2rem;
-      background: #fff;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
       text-align: left;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #FFD700;
     }
 
-    h1, h2 {
-      color: #333;
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .profile-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+
+    .profile-image img {
+      width: 100%;
+      height: auto;
+    }
+
+    h1 {
+      font-size: 3rem;
       margin-bottom: 1rem;
     }
 
-    .profile-section {
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
       margin-bottom: 2rem;
+      line-height: 1.8;
     }
 
-    .profile-section h2 {
-      color: #FF5733;
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: #444;
+      border-radius: 25px;
+      color: #fff;
+      font-size: 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .button:hover {
+      background: #FFD700;
+      color: #000;
     }
 
     footer {
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 1.5rem 0;
       margin-top: 2rem;
-    }
-
-    a {
-      color: inherit;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+      color: #777;
     }
   </style>
 </head>
 <body>
+  <header>
+    Jonathan Ta
+  </header>
 
-<header>
-  <div>Jonathan Luan Ta</div>
-</header>
+  <div class="container">
+    <div class="profile-image">
+      <img src="image.png" alt="Profile Picture">
+    </div>
 
-<nav>
-  <a href="#" class="active">HOME</a>
-  <a href="#">COURSES</a>
-  <a href="#">SERVICES & PRODUCTS</a>
-  <a href="#">ABOUT SCRUMVIET</a>
-  <a href="#">BLOG</a>
-  <a href="#">CONTACT</a>
-</nav>
-
-<div class="content">
-  <section class="profile-section">
-    <h2>About Me</h2>
+    <h1>Hello!</h1>
     <p>
-      Since joining GTV Vietnam in October 2023, my focus has been on steering cross-functional teams towards the launch of cutting-edge Corporate Digital Banking services, tailored to meet the intricate demands of our clients. My approach harmonizes business objectives with customer satisfaction, ensuring a robust and feature-rich digital banking experience.
+      I'm Jonathan Ta, a passionate project manager with expertise in Agile methodologies and technology innovation. I enjoy leading cross-functional teams, prioritizing business objectives, and delivering exceptional digital solutions.
     </p>
-    <p>
-      Leveraging expertise in Agile methodologies and project management, I've instituted KPIs to track our progress meticulously, and I prioritize product backlogs that resonate with market tendencies and stakeholder expectations. The goal is to perpetually deliver value and bolster GTV Vietnam's position as a leader in technological innovation within the banking sector.
-    </p>
-  </section>
 
-  <section class="profile-section">
-    <h2>Contact</h2>
-    <p>
-      Feel free to connect with me via email at <a href="mailto:taanhluan@example.com">taanhluan@example.com</a> or on LinkedIn at <a href="https://www.linkedin.com/in/taanhluan/" target="_blank">linkedin.com/in/taanhluan</a>.
-    </p>
-  </section>
-</div>
+    <div class="button-container">
+      <a href="#resume" class="button">Resume</a>
+      <a href="#projects" class="button">Projects</a>
+      <a href="#about" class="button">About Me</a>
+    </div>
+  </div>
 
-<footer>
-  <p>&copy; 2024 Jonathan Ta. All rights reserved.</p>
-</footer>
-
+  <footer>
+    &copy; 2024 Jonathan Ta | Follow me on <a href="https://linkedin.com/in/taanhluan" style="color: #FFD700;">LinkedIn</a>
+  </footer>
 </body>
 </html>
