@@ -514,63 +514,71 @@
   </div>
 </div>
 
-
 <!-- JavaScript Code -->
 <script>
-  // Collapsible functionality
   document.addEventListener("DOMContentLoaded", () => {
     const collapsibles = document.querySelectorAll(".collapsible");
 
+    // Function to toggle collapsible sections
+    function toggleCollapsible(collapsible) {
+      const content = collapsible.nextElementSibling;
+      const icon = collapsible.querySelector("i");
+
+      // Toggle visibility and icon rotation
+      content.classList.toggle("show");
+      icon.classList.toggle("rotate");
+    }
+
+    // Add event listeners to each collapsible section
     collapsibles.forEach((collapsible) => {
-      collapsible.addEventListener("click", () => {
-        const content = collapsible.nextElementSibling;
-        const icon = collapsible.querySelector("i");
-
-        // Toggle the 'show' class for content visibility
-        content.classList.toggle("show");
-
-        // Rotate the arrow icon
-        icon.classList.toggle("rotate");
-      });
+      collapsible.addEventListener("click", () => toggleCollapsible(collapsible));
     });
-  });
 
-  // PDF Download: Expand All Content Before Generating PDF
-  document.getElementById("download").addEventListener("click", () => {
-    const collapsibles = document.querySelectorAll(".content");
-    const icons = document.querySelectorAll(".collapsible i");
-    const initiallyHidden = [];
+    // PDF Download: Expand All Content Before Generating PDF
+    document.getElementById("download").addEventListener("click", () => {
+      const contents = document.querySelectorAll(".content");
+      const icons = document.querySelectorAll(".collapsible i");
+      const initiallyHidden = [];
 
-    // Expand all collapsible sections and track which were initially hidden
-    collapsibles.forEach((content, index) => {
-      if (!content.classList.contains("show")) {
-        content.classList.add("show");
-        icons[index].classList.add("rotate");
-        initiallyHidden.push(index);
+      // Function to expand all sections
+      function expandAll() {
+        contents.forEach((content, index) => {
+          if (!content.classList.contains("show")) {
+            content.classList.add("show");
+            icons[index].classList.add("rotate");
+            initiallyHidden.push(index);
+          }
+        });
       }
-    });
 
-    // Generate PDF
-    const element = document.getElementById("resume");
-    html2pdf()
-      .from(element)
-      .set({
-        margin: 10,
-        filename: "resume_ta_anh_luan.pdf",
-        image: { type: "jpeg", quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true },
-        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-      })
-      .save()
-      .then(() => {
-        // Collapse sections that were initially hidden
+      // Function to collapse previously hidden sections
+      function collapseHidden() {
         initiallyHidden.forEach((index) => {
-          collapsibles[index].classList.remove("show");
+          contents[index].classList.remove("show");
           icons[index].classList.remove("rotate");
         });
-      });
+      }
+
+      // Expand all sections before generating PDF
+      expandAll();
+
+      // Generate PDF using html2pdf
+      const resume = document.getElementById("resume");
+      html2pdf()
+        .from(resume)
+        .set({
+          margin: 10,
+          filename: "resume_ta_anh_luan.pdf",
+          image: { type: "jpeg", quality: 0.98 },
+          html2canvas: { scale: 2, useCORS: true },
+          jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+        })
+        .save()
+        .then(() => collapseHidden()); // Collapse sections after PDF generation
+    });
   });
 </script>
+
 
 
 </body>
