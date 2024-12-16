@@ -18,14 +18,13 @@
       --dark-gray: #444444;
     }
 
-    /* General Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Montserrat", sans-serif;
-    }
-
+  /* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
     body {
       background-color: var(--gray);
       color: var(--black);
@@ -101,65 +100,84 @@
   color: var(--white);
 }
 
-/* Collapsible Experience Section */
+/* Container */
+.section {
+  background-color: #fdfdfd; /* Light background for consistency */
+  padding: 10px 0;
+  color: #333;
+}
+
+/* Collapsible Section */
 .collapsible {
   display: flex;
-  justify-content: flex-start; /* Align all content to the left */
+  justify-content: flex-start; /* Left align */
   align-items: center;
-  text-align: left; /* Force text to align left */
-  font-weight: 600;
-  background-color: #f4f4f4; /* Light background */
-  color: #333;
-  padding: 20px 25px;
-  border-bottom: 1px solid #ddd;
   cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #f4f4f4; /* Light gray background */
+  color: #222;
+  padding: 15px 25px; /* Consistent padding */
+  border-bottom: 1px solid #e0e0e0;
+  font-weight: 600;
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .collapsible:hover {
-  background-color: #eaeaea;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+  background-color: #f9f9f9;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .collapsible i {
-  margin-right: 10px; /* Add spacing between the icon and text */
-  margin-left: 0; /* Ensure icon aligns flush to the left */
+  margin-right: 10px; /* Spacing between icon and text */
+  color: #888;
   transition: transform 0.3s ease, color 0.3s ease;
-  color: #777; /* Default icon color */
 }
 
 .collapsible i.rotate {
-  transform: rotate(180deg); /* Rotation for expanded state */
-  color: #f4c20d; /* Change color when rotated */
+  transform: rotate(180deg);
+  color: #f4c20d; /* Highlight icon color when expanded */
+}
+
+.collapsible span {
+  flex-grow: 1;
+  text-align: left;
 }
 
 /* Content Section */
 .content {
   display: none;
-  background-color: #fff;
-  padding: 15px 25px;
-  border-left: 4px solid #f4c20d; /* Highlight border */
+  background-color: #ffffff; /* White background for readability */
+  padding: 15px 25px; /* Same padding as collapsible */
   color: #555;
-  line-height: 1.6;
-  text-align: left; /* Force all text inside content to align left */
-  transition: all 0.3s ease; /* Smooth animation for visibility */
-}
-
-.content p,
-.content ul,
-.content li {
-  margin: 10px 0; /* Add spacing between paragraphs and list items */
-  padding-left: 0; /* Remove any left padding */
-  text-align: left; /* Left-align all content */
-  list-style-position: inside; /* Align bullets to text */
+  border-left: 4px solid #f4c20d; /* Left highlight */
+  line-height: 1.6; /* Improve readability */
+  transition: all 0.3s ease;
 }
 
 .content.show {
   display: block;
-  animation: fadeIn 0.3s ease-in-out; /* Fade-in animation */
+  animation: fadeIn 0.3s ease-in-out; /* Smooth animation */
 }
 
-/* Smooth Fade-In Animation */
+.content p {
+  margin-bottom: 10px; /* Space between paragraphs */
+}
+
+.content ul {
+  margin-left: 20px;
+  padding-left: 0;
+}
+
+.content li {
+  margin-bottom: 8px;
+}
+
+/* Bullet Points */
+.content li::marker {
+  color: #f4c20d; /* Yellow bullet points */
+  font-size: 1.2em;
+}
+
+/* Fade-In Animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -170,7 +188,6 @@
     transform: translateY(0);
   }
 }
-
 /* Skills Section */
 .content .skills {
   margin-top: 10px;
