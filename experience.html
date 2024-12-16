@@ -101,50 +101,68 @@
   color: var(--white);
 }
 
-  /* Collapsible Experience Section */
+/* Collapsible Experience Section */
 .collapsible {
   display: flex;
-  justify-content: space-between; /* Space between text and icon */
-  align-items: center; /* Align items vertically */
-  text-align: left; /* Align text to the left */
-  padding: 15px 20px; /* Add spacing */
-  background-color: #fafafa;
-  border-bottom: 1px solid #ccc;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  font-weight: 600;
+  background-color: #f4f4f4; /* Light background */
+  color: #333;
+  padding: 20px 25px;
+  border-bottom: 1px solid #ddd;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .collapsible:hover {
-  background-color: #f4f4f4;
-}
-
-.collapsible span {
-  flex: 1; /* Allow the text to occupy full space on the left */
-  text-align: left; /* Ensure all text aligns left */
+  background-color: #ececec;
 }
 
 .collapsible i {
-  margin-left: 10px; /* Space between text and icon */
+  margin-left: 10px;
   transition: transform 0.3s ease;
 }
 
 /* Content Section */
 .content {
   display: none;
-  text-align: left; /* Align content text to the left */
-  padding: 15px 20px;
-  border-bottom: 1px solid #eaeaea;
-  font-size: 0.9em;
-  color: #555;
+  text-align: left;
+  padding: 20px 25px;
+  background-color: #fffdf2; /* Light yellow background */
+  border-left: 5px solid #f4c20d; /* Add yellow left border for clarity */
+  color: #444;
+  line-height: 1.8; /* Increase line spacing */
+  font-size: 1em;
 }
 
-.show {
-  display: block; /* Show expanded content */
+.content p {
+  margin-bottom: 15px; /* Space between paragraphs */
+  font-size: 1em;
 }
 
-.rotate {
-  transform: rotate(180deg); /* Rotate the arrow icon */
+.content ul {
+  margin-left: 20px; /* Indent bullet points */
+  padding-left: 10px;
 }
+
+.content ul li {
+  margin-bottom: 10px; /* Add spacing between bullets */
+  font-size: 0.95em; /* Adjust font size for bullets */
+}
+
+.content strong {
+  color: #1e1e1e; /* Emphasize bold text */
+  font-weight: 600;
+}
+
+/* Skills Section */
+.content .skills {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #222;
+}
+
 
 
     /* Footer */
