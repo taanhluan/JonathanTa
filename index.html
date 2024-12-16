@@ -4,17 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Explore Jonathan Ta's professional background, experience, and achievements.">
+  <meta name="author" content="Jonathan Ta">
+  <meta name="keywords" content="Jonathan Ta, Professional Profile, Agile, Scrum, Project Management">
+  <meta name="robots" content="index, follow">
   <title>Jonathan Ta's Blog</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
       color: #333;
+      line-height: 1.6;
     }
 
     header {
-      background: url('image.png') no-repeat center center/cover;
+      background: #333 url('image.png') no-repeat center center/cover;
       height: 250px;
       display: flex;
       justify-content: center;
@@ -38,69 +47,47 @@
       text-decoration: none;
       font-weight: bold;
       font-size: 1rem;
+      transition: color 0.3s;
     }
 
-    nav a:hover {
+    nav a:hover, nav a.active {
       color: #FF5733;
+      text-decoration: underline;
     }
 
     .content {
       max-width: 1000px;
       margin: 2rem auto;
-      padding: 1rem;
+      padding: 2rem;
       background: #fff;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
-      text-align: center;
+      text-align: left;
     }
 
-    h1 {
+    h1, h2 {
       color: #333;
+      margin-bottom: 1rem;
     }
 
     .profile-section {
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
 
     .profile-section h2 {
       color: #FF5733;
-      margin-bottom: 1rem;
-    }
-
-    .badge {
-      display: inline-block;
-      margin: 1rem;
-      text-align: center;
-    }
-
-    .badge img {
-      width: 50px;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    .badge p {
-      margin: 0.5rem 0 0;
-      font-weight: bold;
-      font-size: 0.7rem;
     }
 
     footer {
       background-color: #333;
       color: #fff;
       text-align: center;
-      padding: 1rem 0;
+      padding: 1.5rem 0;
       margin-top: 2rem;
-      position: relative;
     }
 
-    .footer-badges {
-      margin: 1rem 0;
-    }
-
-    .footer-badges .badge {
-      margin: 0 0.5rem;
+    a {
+      color: inherit;
     }
   </style>
 </head>
@@ -111,7 +98,7 @@
 </header>
 
 <nav>
-  <a href="#">HOME</a>
+  <a href="#" class="active">HOME</a>
   <a href="#">COURSES</a>
   <a href="#">SERVICES & PRODUCTS</a>
   <a href="#">ABOUT SCRUMVIET</a>
@@ -139,32 +126,6 @@
 </div>
 
 <footer>
-  <div class="footer-badges">
-    <div class="badge">
-      <a href="#" target="_blank">
-        <img src="https://via.placeholder.com/50" alt="Professional Scrum Product Owner I">
-        <p>Professional Scrum Product Owner I</p>
-      </a>
-    </div>
-    <div class="badge">
-      <a href="#" target="_blank">
-        <img src="https://via.placeholder.com/50" alt="PSPO I Certification">
-        <p>Scrum Product Owner (PSPO I)</p>
-      </a>
-    </div>
-    <div class="badge">
-      <a href="#" target="_blank">
-        <img src="https://via.placeholder.com/50" alt="PMP Exam Prep Seminar">
-        <p>PMP® Exam Prep Seminar</p>
-      </a>
-    </div>
-    <div class="badge">
-      <a href="#" target="_blank">
-        <img src="https://via.placeholder.com/50" alt="Project Management Level One">
-        <p>Beginning Project Management</p>
-      </a>
-    </div>
-  </div>
   <p>&copy; 2024 Jonathan Ta. All rights reserved.</p>
 </footer>
 
