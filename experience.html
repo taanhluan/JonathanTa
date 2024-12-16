@@ -238,7 +238,56 @@
 
   .about {
     margin-top: 10px;
-  </style>
+
+     /* Ensure Print-Friendly Styling */
+  @media print {
+    body {
+      background-color: #fff;
+      color: #000;
+    }
+
+    .resume {
+      background-color: #fff; /* Solid background */
+      color: #000; /* High contrast text */
+    }
+
+    .collapsible {
+      background-color: #f4c20d !important; /* Bright yellow header for contrast */
+      color: #000 !important; /* Ensure text remains black */
+      border: 1px solid #ddd;
+    }
+
+    .content {
+      background-color: #fff !important; /* Solid white background */
+      color: #000 !important; /* High contrast text */
+      border-left: 4px solid #f4c20d; /* Keep the left highlight */
+    }
+
+    /* Remove shadows, transitions, and animations for print */
+    .collapsible:hover,
+    .content,
+    .content.show {
+      box-shadow: none !important;
+      animation: none !important;
+      transition: none !important;
+    }
+
+    .social-icons a {
+      color: #000 !important; /* Ensure social icons are visible in print */
+    }
+
+    /* Disable hover states and opacity issues */
+    a,
+    i {
+      color: inherit !important;
+    }
+
+    /* Remove unnecessary white gaps */
+    .download-btn {
+      display: none; /* Hide download button in PDF */
+    }
+  }
+</style>
 </head>
 <body>
   <div class="resume" id="resume">
@@ -536,7 +585,10 @@
   document.addEventListener("DOMContentLoaded", () => {
     const collapsibles = document.querySelectorAll(".collapsible");
 
-    // Function to toggle collapsible sections
+    /**
+     * Toggle a collapsible section
+     * @param {HTMLElement} collapsible - The clicked collapsible element
+     */
     function toggleCollapsible(collapsible) {
       const content = collapsible.nextElementSibling;
       const icon = collapsible.querySelector("i");
@@ -546,40 +598,46 @@
       icon.classList.toggle("rotate");
     }
 
-    // Add event listeners to each collapsible section
-    collapsibles.forEach((collapsible) => {
-      collapsible.addEventListener("click", () => toggleCollapsible(collapsible));
-    });
-
-    // PDF Download: Expand All Content Before Generating PDF
-    document.getElementById("download").addEventListener("click", () => {
+    /**
+     * Expand all collapsible sections
+     * @returns {number[]} - Array of indexes of initially hidden sections
+     */
+    function expandAllSections() {
       const contents = document.querySelectorAll(".content");
       const icons = document.querySelectorAll(".collapsible i");
       const initiallyHidden = [];
 
-      // Function to expand all sections
-      function expandAll() {
-        contents.forEach((content, index) => {
-          if (!content.classList.contains("show")) {
-            content.classList.add("show");
-            icons[index].classList.add("rotate");
-            initiallyHidden.push(index);
-          }
-        });
-      }
+      contents.forEach((content, index) => {
+        if (!content.classList.contains("show")) {
+          content.classList.add("show");
+          icons[index].classList.add("rotate");
+          initiallyHidden.push(index);
+        }
+      });
 
-      // Function to collapse previously hidden sections
-      function collapseHidden() {
-        initiallyHidden.forEach((index) => {
-          contents[index].classList.remove("show");
-          icons[index].classList.remove("rotate");
-        });
-      }
+      return initiallyHidden;
+    }
 
-      // Expand all sections before generating PDF
-      expandAll();
+    /**
+     * Collapse previously hidden sections
+     * @param {number[]} hiddenIndexes - Array of indexes to collapse
+     */
+    function collapseHiddenSections(hiddenIndexes) {
+      const contents = document.querySelectorAll(".content");
+      const icons = document.querySelectorAll(".collapsible i");
 
-      // Generate PDF using html2pdf
+      hiddenIndexes.forEach((index) => {
+        contents[index].classList.remove("show");
+        icons[index].classList.remove("rotate");
+      });
+    }
+
+    /**
+     * Generate PDF using html2pdf
+     */
+    function generatePDF() {
+      const hiddenIndexes = expandAllSections(); // Expand all sections
+
       const resume = document.getElementById("resume");
       html2pdf()
         .from(resume)
@@ -591,8 +649,16 @@
           jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
         })
         .save()
-        .then(() => collapseHidden()); // Collapse sections after PDF generation
+        .then(() => collapseHiddenSections(hiddenIndexes)); // Collapse after saving
+    }
+
+    // Add event listeners to all collapsible sections
+    collapsibles.forEach((collapsible) => {
+      collapsible.addEventListener("click", () => toggleCollapsible(collapsible));
     });
+
+    // Add event listener to the download button
+    document.getElementById("download").addEventListener("click", generatePDF);
   });
 </script>
 </body>
