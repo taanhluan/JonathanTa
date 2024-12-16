@@ -444,44 +444,38 @@
 
 <!-- JavaScript Code -->
 <script>
-  // Expand/Collapse Functionality for Experience Sections
-  document.querySelectorAll('.collapsible').forEach(item => {
-    item.addEventListener('click', () => {
-      const content = item.nextElementSibling; // Target the content div
-      const icon = item.querySelector('i'); // Target the chevron icon
-      content.classList.toggle('show'); // Toggle visibility
-      icon.classList.toggle('rotate'); // Rotate chevron
-    });
-  });
-
   // PDF Download: Expand All Content Before Generating PDF
-  document.querySelectorAll('#download, #download-footer').forEach(button => {
-    button.addEventListener('click', () => {
-      const collapsibles = document.querySelectorAll('.content');
-      const icons = document.querySelectorAll('.collapsible i');
+  document.getElementById('download').addEventListener('click', () => {
+    const collapsibles = document.querySelectorAll('.content');
+    const icons = document.querySelectorAll('.collapsible i');
+    const hiddenContents = [];
 
-      // Expand all collapsible sections
-      collapsibles.forEach(content => content.classList.add('show'));
-      icons.forEach(icon => icon.classList.add('rotate'));
-
-      // Generate PDF
-      const element = document.getElementById('resume');
-      html2pdf()
-        .from(element)
-        .set({
-          margin: 10,
-          filename: 'resume_ta_anh_luan.pdf',
-          image: { type: 'jpeg', quality: 0.98 },
-          html2canvas: { scale: 2, useCORS: true },
-          jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-        })
-        .save()
-        .then(() => {
-          // Collapse sections after PDF is generated
-          collapsibles.forEach(content => content.classList.remove('show'));
-          icons.forEach(icon => icon.classList.remove('rotate'));
-        });
+    // Expand all collapsible sections and store their previous state
+    collapsibles.forEach((content, index) => {
+      if (!content.classList.contains('show')) {
+        content.classList.add('show');
+        hiddenContents.push(index); // Track which sections were initially hidden
+      }
     });
+    icons.forEach(icon => icon.classList.add('rotate'));
+
+    // Generate PDF
+    const element = document.getElementById('resume');
+    html2pdf()
+      .from(element)
+      .set({
+        margin: 10,
+        filename: 'resume_ta_anh_luan.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      })
+      .save()
+      .then(() => {
+        // Collapse the sections that were originally hidden
+        hiddenContents.forEach(index => collapsibles[index].classList.remove('show'));
+        icons.forEach(icon => icon.classList.remove('rotate'));
+      });
   });
 </script>
 </body>
