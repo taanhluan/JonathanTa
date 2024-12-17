@@ -283,6 +283,19 @@
     display: none !important;
   }
 }
+    /* Print-Safe Styling */
+  .print-safe {
+    background-color: #fff !important; /* White background */
+    color: #000 !important; /* Black text for clarity */
+    border-left: 4px solid #f4c20d !important; /* Highlight border */
+    box-shadow: none !important;
+  }
+
+  /* For collapsible headers */
+  .collapsible.print-safe {
+    background-color: #f4c20d !important; /* Solid yellow */
+    color: #000 !important;
+  }
 </style>
 </head>
 <body>
@@ -578,82 +591,81 @@
 
 <!-- JavaScript Code -->
 <script>
- document.addEventListener("DOMContentLoaded", () => {
-  const collapsibles = document.querySelectorAll(".collapsible");
+  document.addEventListener("DOMContentLoaded", () => {
+    const collapsibles = document.querySelectorAll(".collapsible");
 
-  /**
-   * Toggle collapsible content
-   * @param {HTMLElement} collapsible - The collapsible header
-   */
-  function toggleCollapsible(collapsible) {
-    const content = collapsible.nextElementSibling;
-    const icon = collapsible.querySelector("i");
-    content.classList.toggle("show");
-    if (icon) icon.classList.toggle("rotate");
-  }
+    /**
+     * Toggle collapsible content
+     * @param {HTMLElement} collapsible - The collapsible header
+     */
+    function toggleCollapsible(collapsible) {
+      const content = collapsible.nextElementSibling;
+      const icon = collapsible.querySelector("i");
+      content.classList.toggle("show");
+      if (icon) icon.classList.toggle("rotate");
+    }
 
-  /**
-   * Expand all content and enforce clean styles for PDF
-   * @returns {number[]} - Indexes of initially hidden sections
-   */
-  function expandAndStyleForPDF() {
-    const contents = document.querySelectorAll(".content");
-    const headers = document.querySelectorAll(".collapsible");
-    const initiallyHidden = [];
+    /**
+     * Expand all collapsible content and apply print-safe styles
+     * @returns {number[]} - Indexes of hidden sections before expanding
+     */
+    function expandAndApplyStyles() {
+      const contents = document.querySelectorAll(".content");
+      const collapsibles = document.querySelectorAll(".collapsible");
+      const initiallyHidden = [];
 
-    contents.forEach((content, index) => {
-      if (!content.classList.contains("show")) {
-        content.classList.add("show");
-        headers[index].style.backgroundColor = "#f4c20d";
-        content.style.backgroundColor = "#fff"; // Ensure white content background
-        content.style.color = "#000"; // High contrast text
-        content.style.borderLeft = "4px solid #f4c20d";
-        initiallyHidden.push(index);
-      }
+      contents.forEach((content, index) => {
+        if (!content.classList.contains("show")) {
+          content.classList.add("show");
+          collapsibles[index].style.backgroundColor = "#f4c20d";
+          content.classList.add("print-safe"); // Add print-safe class
+          initiallyHidden.push(index);
+        }
+      });
+
+      return initiallyHidden;
+    }
+
+    /**
+     * Collapse sections that were initially hidden
+     * @param {number[]} indexes - Array of indexes to collapse
+     */
+    function collapseHiddenSections(indexes) {
+      const contents = document.querySelectorAll(".content");
+      indexes.forEach((index) => contents[index].classList.remove("show"));
+    }
+
+    /**
+     * Generate a clean PDF with print-safe styles
+     */
+    function generatePDF() {
+      const hiddenIndexes = expandAndApplyStyles();
+
+      const resume = document.getElementById("resume");
+      html2pdf()
+        .from(resume)
+        .set({
+          margin: 10,
+          filename: "resume_ta_anh_luan.pdf",
+          image: { type: "jpeg", quality: 0.98 },
+          html2canvas: { scale: 2, useCORS: true }, // Scale adjusted to 2 for balance
+          jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+        })
+        .save()
+        .then(() => {
+          collapseHiddenSections(hiddenIndexes);
+          document.querySelectorAll(".print-safe").forEach((el) => el.classList.remove("print-safe"));
+        });
+    }
+
+    // Add event listeners to collapsibles
+    collapsibles.forEach((collapsible) => {
+      collapsible.addEventListener("click", () => toggleCollapsible(collapsible));
     });
 
-    return initiallyHidden;
-  }
-
-  /**
-   * Collapse content that was temporarily shown
-   * @param {number[]} indexes - Array of indexes to collapse
-   */
-  function collapseHiddenContent(indexes) {
-    const contents = document.querySelectorAll(".content");
-    indexes.forEach((index) => contents[index].classList.remove("show"));
-  }
-
-  /**
-   * Generate PDF with enforced visibility styles
-   */
-  function generatePDF() {
-    const initiallyHidden = expandAndStyleForPDF();
-
-    const resume = document.getElementById("resume");
-    html2pdf()
-      .from(resume)
-      .set({
-        margin: 10,
-        filename: "resume_ta_anh_luan.pdf",
-        image: { type: "jpeg", quality: 1.0 },
-        html2canvas: { scale: 3, useCORS: true }, // Increased scale for clarity
-        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-      })
-      .save()
-      .then(() => collapseHiddenContent(initiallyHidden)); // Collapse after generation
-  }
-
-  // Event Listeners
-  collapsibles.forEach((collapsible) => {
-    collapsible.addEventListener("click", () => toggleCollapsible(collapsible));
+    // Add event listener to the download button
+    document.getElementById("download").addEventListener("click", generatePDF);
   });
-
-  const downloadButton = document.getElementById("download");
-  if (downloadButton) {
-    downloadButton.addEventListener("click", generatePDF);
-  }
-});
 </script>
 </body>
 </html>
