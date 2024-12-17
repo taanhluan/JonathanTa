@@ -61,73 +61,91 @@
       overflow: hidden;
     }
 
-      /* =========================
-   Header Styling
-========================= */
-    .header {
-      background: linear-gradient(to right, var(--yellow), var(--accent));
-      color: var(--primary);
-      padding: 40px 20px;
-      text-align: center;
-      border-bottom: 5px solid var(--primary);
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
+ /* =========================
+     Enhanced Header Styling
+  ========================= */
+  .header {
+    background: linear-gradient(to right, var(--brown), var(--highlight));
+    color: var(--white);
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 5px solid var(--accent);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+  }
 
-    .header h1 {
-      font-size: 2.8rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-    }
+  .header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  }
 
-    .header p {
-      font-size: 1.2rem;
-      color: var(--dark-gray);
-      margin-top: 10px;
-    }
+  .header p {
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+    margin-top: 10px;
+  }
 
-    .profile-photo img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 6px solid var(--white);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-      margin-bottom: 20px;
-    }
+  .profile-photo img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 6px solid var(--white);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+  }
 
-    .info h1 {
-      font-size: 2rem;
-      font-weight: 600;
-      color: var(--primary);
-    }
+  .info h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--black);
+  }
 
-    .info p {
-      font-size: 1.1rem;
-      font-weight: 400;
-      color: var(--dark-gray);
-    }
+  .info p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--dark-gray);
+  }
 
-    .tagline {
-      font-size: 1rem;
-      font-style: italic;
-      color: var(--muted);
-      margin-top: 5px;
-    }
-      /* =========================
-    Social Media Icons
-    ========================= */
-    .social-icons a {
-      margin: 0 10px;
-      font-size: 1.6rem;
-      color: var(--primary);
-      transition: color 0.3s ease, transform 0.3s ease;
-    }
+  .tagline {
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--muted);
+    margin-top: 5px;
+  }
 
-    .social-icons a:hover {
-      color: var(--highlight);
-      transform: scale(1.2);
-    }
+  /* =========================
+     Social Media Icons
+  ========================= */
+  .social-icons a {
+    margin: 0 10px;
+    font-size: 1.6rem;
+    color: var(--dark-gray);
+    transition: color 0.4s ease, transform 0.4s ease;
+    position: relative;
+  }
+
+  .social-icons a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background: var(--accent);
+    transition: width 0.4s ease-in-out;
+  }
+
+  .social-icons a:hover {
+    color: var(--accent);
+    transform: scale(1.2);
+  }
+
+  .social-icons a:hover::after {
+    width: 100%;
+  }
 
       /* =========================
    Collapsible Section
