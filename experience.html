@@ -244,32 +244,51 @@
         background: #e0b909;
       }
 
-  /* =========================
-    Footer Styling
-    ========================= */
-    .footer {
-      padding: 25px;
-      text-align: center;
-      background: linear-gradient(135deg, var(--primary), var(--black));
-      color: var(--white);
-      border-top: 5px solid var(--accent);
-      box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
-      animation: fadeIn 0.8s ease-in-out;
-    }
+ /* =========================
+    Enhanced Footer Styling
+========================= */
+.footer {
+  padding: 30px 20px; /* Increased padding for better spacing */
+  text-align: center;
+  background: linear-gradient(135deg, var(--primary-light, #f9e79f), var(--primary, #f4c20d));
+  color: var(--white, #fff);
+  border-top: 5px solid var(--accent, #ffa500);
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.25); /* Deeper shadow for emphasis */
+  animation: fadeIn 0.8s ease-in-out;
+  font-size: 1rem; /* Standard font size for readability */
+  line-height: 1.6; /* Improved line spacing */
+}
 
-    .footer a {
-      text-decoration: none;
-      color: var(--yellow);
-      margin: 0 15px;
-      font-weight: 600;
-      transition: color 0.3s ease, transform 0.3s ease;
-    }
+.footer a {
+  text-decoration: none;
+  color: var(--yellow, #ffd700);
+  margin: 0 20px; /* Wider spacing for links */
+  font-weight: 700; /* Increased font weight for better visibility */
+  font-size: 1.1rem; /* Slightly larger font */
+  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative;
+}
 
-    .footer a:hover {
-      color: var(--highlight);
-      transform: scale(1.1);
-    }
+/* Enhanced Hover Effect */
+.footer a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--highlight, #ff6347);
+  transition: width 0.3s ease-in-out;
+}
 
+.footer a:hover {
+  color: var(--highlight, #ff6347);
+  transform: scale(1.1);
+}
+
+.footer a:hover::after {
+  width: 100%; /* Underline animation on hover */
+}
       /* =========================
     Print-Friendly Styles
     ========================= */
