@@ -244,21 +244,31 @@
         background: #e0b909;
       }
 
-      /* =========================
-   Footer Styling
-========================= */
-      .footer {
-        padding: 20px;
-        text-align: center;
-        background: var(--black);
-        color: var(--white);
-      }
+  /* =========================
+    Footer Styling
+    ========================= */
+    .footer {
+      padding: 25px;
+      text-align: center;
+      background: linear-gradient(135deg, var(--primary), var(--black));
+      color: var(--white);
+      border-top: 5px solid var(--accent);
+      box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 0.8s ease-in-out;
+    }
 
-      .footer a {
-        text-decoration: none;
-        color: var(--yellow);
-        margin: 0 10px;
-      }
+    .footer a {
+      text-decoration: none;
+      color: var(--yellow);
+      margin: 0 15px;
+      font-weight: 600;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .footer a:hover {
+      color: var(--highlight);
+      transform: scale(1.1);
+    }
 
       /* =========================
    Print-Friendly Styles
