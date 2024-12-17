@@ -12,9 +12,8 @@
   <!-- Google Fonts Import -->
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
-    /* =========================
-    Custom CSS Styles
-    ========================= */
+
+    /* Custom CSS Styles */
     :root {
       --black: #1e1e1e;
       --white: #ffffff;
@@ -25,28 +24,23 @@
       --hover-yellow: #fbe8a6;
       --primary: #2b2b2b;
       --accent: #ffc107;
+      --secondary: #0066cc;
     }
 
-      /* =========================
-   General Reset
-========================= */
-      * {
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: "Montserrat", sans-serif;
-      }
+    }
 
-      body {
+    body {
       background-color: var(--gray);
       color: var(--black);
       line-height: 1.6;
-      }
+    }
 
-      /* =========================
-   Resume Container
-========================= */
-      .resume {
+    .resume {
       max-width: 960px;
       margin: 30px auto;
       background: var(--white);
@@ -55,10 +49,7 @@
       overflow: hidden;
     }
 
-      /* =========================
-   Header Styling
-========================= */
-     .header {
+    .header {
       background: linear-gradient(to right, var(--yellow), var(--accent));
       color: var(--primary);
       padding: 40px 20px;
@@ -108,166 +99,96 @@
       margin-top: 5px;
     }
 
-      /* =========================
-   Social Media Icons
-========================= */
-      .social-icons a {
-        margin: 0 10px;
-        font-size: 1.4rem;
-        color: var(--black);
-        transition: color 0.3s ease;
+    .social-icons a {
+      margin: 0 10px;
+      font-size: 1.4rem;
+      color: var(--black);
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: var(--yellow);
+    }
+
+    .collapsible {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+      background-color: var(--yellow);
+      color: var(--black);
+      padding: 15px 20px;
+      border: 1px solid var(--yellow);
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .collapsible:hover {
+      background-color: var(--hover-yellow);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .collapsible i {
+      color: var(--yellow);
+      transition: transform 0.3s ease;
+    }
+
+    .collapsible i.rotate {
+      transform: rotate(180deg);
+    }
+
+    .content {
+      display: none;
+      text-align: left;
+      background-color: var(--white);
+      color: var(--black);
+      padding: 15px 20px;
+      line-height: 1.6;
+      border-left: 4px solid var(--yellow);
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+      border-radius: 0 0 8px 8px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .content.show {
+      display: block;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-5px);
       }
-
-      .social-icons a:hover {
-        color: var(--yellow);
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
+    }
 
-      /* =========================
-   Collapsible Section
-========================= */
-      .section {
-        background-color: var(--light-yellow);
-        padding: 20px 15px;
-        margin-bottom: 10px;
-        border-radius: 8px;
-      }
+    .download-btn {
+      text-align: center;
+      margin: 20px 0;
+    }
 
-      .collapsible {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        text-align: left;
-        background-color: var(--yellow);
-        color: var(--black);
-        padding: 15px 20px;
-        border: 1px solid var(--yellow);
-        cursor: pointer;
-        font-weight: bold;
-        border-radius: 8px;
-        transition: background-color 0.3s ease, box-shadow 0.3s ease;
-      }
+    .download-btn button {
+      background: var(--yellow);
+      color: var(--black);
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
 
-      .collapsible:hover {
-        background-color: var(--hover-yellow);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      .collapsible i {
-        color: var(--yellow);
-        transition: transform 0.3s ease;
-      }
-
-      .collapsible i.rotate {
-        transform: rotate(180deg);
-      }
-
-      .content {
-        display: none;
-        text-align: left;
-        background-color: var(--white);
-        color: var(--black);
-        padding: 15px 20px;
-        line-height: 1.6;
-        border-left: 4px solid var(--yellow);
-        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
-        border-radius: 0 0 8px 8px;
-        transition: all 0.3s ease-in-out;
-      }
-
-      .content.show {
-        display: block;
-        animation: fadeIn 0.3s ease-in-out;
-      }
-
-      /* =========================
-   Animations
-========================= */
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(-5px);
-        }
-
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* =========================
-   Download Button
-========================= */
-      .download-btn {
-        text-align: center;
-        margin: 20px 0;
-      }
-
-      .download-btn button {
-        background: var(--yellow);
-        color: var(--black);
-        border: none;
-        padding: 10px 20px;
-        font-size: 1em;
-        font-weight: 600;
-        cursor: pointer;
-        border-radius: 5px;
-        transition: background 0.3s ease;
-      }
-
-      .download-btn button:hover {
-        background: #e0b909;
-      }
-
-      /* =========================
-   Footer Styling
-========================= */
-      .footer {
-        padding: 20px;
-        text-align: center;
-        background: var(--black);
-        color: var(--white);
-      }
-
-      .footer a {
-        text-decoration: none;
-        color: var(--yellow);
-        margin: 0 10px;
-      }
-
-      /* =========================
-   Print-Friendly Styles
-========================= */
-      @media print {
-
-        body,
-        .resume,
-        .content,
-        .collapsible {
-          background-color: var(--white);
-          color: var(--black);
-          box-shadow: none !important;
-        }
-
-        .collapsible {
-          border: 1px solid var(--black);
-          background-color: var(--yellow) !important;
-        }
-
-        .content {
-          border-left: 4px solid var(--black) !important;
-        }
-
-        a,
-        i {
-          color: var(--black) !important;
-        }
-
-        .download-btn {
-          display: none !important;
-          /* Hide Download Button */
-        }
-      }
-    </style>
+    .download-btn button:hover {
+      background: #e0b909;
+    }
+  </style>
   </head>
   <body>
     <div class="resume" id="resume">
