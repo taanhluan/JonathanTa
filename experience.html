@@ -121,12 +121,12 @@
   justify-content: space-between; /* Align text left and icons right */
   align-items: center; /* Vertical alignment */
   text-align: left; /* Ensure all text aligns to the left */
-  background-color: #fcf6e3; /* Light yellow for header */
-  color: #333; /* Dark text for readability */
+  background-color: #f4c20d; /* Yellow header */
+  color: #000; /* Black text */
   padding: 15px 20px;
   border: 1px solid #f4c20d; /* Highlight border */
   cursor: pointer;
-  font-weight: 600;
+  font-weight: bold;
   margin-bottom: 5px;
   border-radius: 8px;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
@@ -150,12 +150,12 @@
 .content {
   display: none;
   text-align: left; /* Align text to the left */
-  background-color: #fff; /* White content background */
-  color: #555; /* Gray text */
+  background-color: #fff; /* Solid white */
+  color: #000; /* High contrast black text */
   padding: 15px 20px;
   margin: 0;
   line-height: 1.6;
-  border-left: 5px solid #f4c20d; /* Highlighted border */
+  border-left: 4px solid #f4c20d;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
   border-radius: 0 0 8px 8px;
   transition: all 0.3s ease-in-out;
@@ -165,6 +165,7 @@
   display: block;
   animation: fadeIn 0.3s ease-in-out;
 }
+
 
 /* Fade-In Animation */
 @keyframes fadeIn {
@@ -244,8 +245,8 @@
      /* Ensure Print-Friendly Styling */
 @media print {
   body, .resume, .content, .collapsible {
-    background-color: #fff !important; /* Ensure white background */
-    color: #000 !important; /* Force black text */
+    background-color: #fff;
+    color: #000;
     border: none !important;
     box-shadow: none !important;
   }
@@ -577,36 +578,36 @@
 
 <!-- JavaScript Code -->
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
+ document.addEventListener("DOMContentLoaded", () => {
   const collapsibles = document.querySelectorAll(".collapsible");
 
   /**
-   * Toggle visibility for a collapsible section.
-   * @param {HTMLElement} collapsible - The clicked collapsible element.
+   * Toggle collapsible content
+   * @param {HTMLElement} collapsible - The collapsible header
    */
   function toggleCollapsible(collapsible) {
     const content = collapsible.nextElementSibling;
     const icon = collapsible.querySelector("i");
-
-    if (content) {
-      content.classList.toggle("show");
-      if (icon) icon.classList.toggle("rotate");
-    }
+    content.classList.toggle("show");
+    if (icon) icon.classList.toggle("rotate");
   }
 
   /**
-   * Expand all collapsible sections and return a list of indexes for those that were hidden.
-   * @returns {number[]} - Array of indexes for initially hidden sections.
+   * Expand all content and enforce clean styles for PDF
+   * @returns {number[]} - Indexes of initially hidden sections
    */
-  function expandAllSections() {
+  function expandAndStyleForPDF() {
     const contents = document.querySelectorAll(".content");
-    const icons = document.querySelectorAll(".collapsible i");
+    const headers = document.querySelectorAll(".collapsible");
     const initiallyHidden = [];
 
     contents.forEach((content, index) => {
       if (!content.classList.contains("show")) {
         content.classList.add("show");
-        if (icons[index]) icons[index].classList.add("rotate");
+        headers[index].style.backgroundColor = "#f4c20d";
+        content.style.backgroundColor = "#fff"; // Ensure white content background
+        content.style.color = "#000"; // High contrast text
+        content.style.borderLeft = "4px solid #f4c20d";
         initiallyHidden.push(index);
       }
     });
@@ -615,66 +616,39 @@
   }
 
   /**
-   * Collapse all sections that were expanded dynamically during PDF generation.
-   * @param {number[]} hiddenIndexes - Array of indexes to collapse.
+   * Collapse content that was temporarily shown
+   * @param {number[]} indexes - Array of indexes to collapse
    */
-  function collapseHiddenSections(hiddenIndexes) {
+  function collapseHiddenContent(indexes) {
     const contents = document.querySelectorAll(".content");
-    const icons = document.querySelectorAll(".collapsible i");
-
-    hiddenIndexes.forEach((index) => {
-      if (contents[index]) contents[index].classList.remove("show");
-      if (icons[index]) icons[index].classList.remove("rotate");
-    });
+    indexes.forEach((index) => contents[index].classList.remove("show"));
   }
 
   /**
-   * Apply inline styles for better PDF consistency.
-   */
-  function applyPDFStyles() {
-    const collapsibles = document.querySelectorAll(".collapsible");
-    const contents = document.querySelectorAll(".content");
-
-    collapsibles.forEach((collapsible) => {
-      collapsible.style.backgroundColor = "#f4c20d"; // Highlight color for headers
-      collapsible.style.color = "#000";
-    });
-
-    contents.forEach((content) => {
-      content.style.backgroundColor = "#fff";
-      content.style.color = "#000";
-      content.style.borderLeft = "4px solid #f4c20d";
-      content.style.padding = "15px 20px";
-    });
-  }
-  /**
-   * Generate PDF with all sections expanded.
+   * Generate PDF with enforced visibility styles
    */
   function generatePDF() {
-    const hiddenIndexes = expandAllSections(); // Expand all sections before generating
-    applyPDFStyles(); // Apply consistent PDF styles
+    const initiallyHidden = expandAndStyleForPDF();
 
     const resume = document.getElementById("resume");
-
     html2pdf()
       .from(resume)
       .set({
         margin: 10,
         filename: "resume_ta_anh_luan.pdf",
-        image: { type: "jpeg", quality: 0.98 },
-        html2canvas: { scale: 3, useCORS: true }, // Scale increased for sharp text
+        image: { type: "jpeg", quality: 1.0 },
+        html2canvas: { scale: 3, useCORS: true }, // Increased scale for clarity
         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
       })
       .save()
-      .then(() => collapseHiddenSections(hiddenIndexes)); // Collapse sections after saving
+      .then(() => collapseHiddenContent(initiallyHidden)); // Collapse after generation
   }
 
-  // Attach event listeners to collapsible headers
+  // Event Listeners
   collapsibles.forEach((collapsible) => {
     collapsible.addEventListener("click", () => toggleCollapsible(collapsible));
   });
 
-  // Attach event listener to the download button
   const downloadButton = document.getElementById("download");
   if (downloadButton) {
     downloadButton.addEventListener("click", generatePDF);
