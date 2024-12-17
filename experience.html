@@ -58,39 +58,55 @@
       /* =========================
    Header Styling
 ========================= */
-      .header {
+     .header {
       background: linear-gradient(to right, var(--yellow), var(--accent));
       color: var(--primary);
-      padding: 20px;
+      padding: 40px 20px;
       text-align: center;
       border-bottom: 5px solid var(--primary);
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
-      .profile-photo img {
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        border: 6px solid var(--white);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        margin-bottom: 15px;
-      }
+    .header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
 
-      .info h1 {
-        font-size: 2rem;
-        font-weight: 700;
-      }
+    .header p {
+      font-size: 1.3rem;
+      color: var(--dark-gray);
+      margin-top: 10px;
+    }
 
-      .info p {
-        font-size: 1.1rem;
-        font-weight: 400;
-        color: var(--dark-gray);
-      }
+    .profile-photo img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 8px solid var(--white);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      margin-bottom: 20px;
+    }
 
-      .tagline {
-        font-size: 1rem;
-        font-style: italic;
-        color: var(--dark-gray);
-      }
+    .info h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+    }
+
+    .info p {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--dark-gray);
+    }
+
+    .tagline {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--dark-gray);
+      margin-top: 5px;
+    }
 
       /* =========================
    Social Media Icons
