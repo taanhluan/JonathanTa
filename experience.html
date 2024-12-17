@@ -199,20 +199,26 @@
       }
     }
 
-      /* =========================
-   Animations
-========================= */
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(-5px);
-        }
-
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+ /* =========================
+    Animations
+    ========================= */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-15px) scale(0.95);
+        filter: blur(4px);
       }
+      50% {
+        opacity: 0.5;
+        transform: translateY(-7px) scale(1);
+        filter: blur(2px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+      }
+    }
 
       /* =========================
    Download Button
