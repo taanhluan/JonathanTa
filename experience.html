@@ -17,29 +17,27 @@
      Enhanced Custom CSS Styles
   ========================= */
  :root {
-/* Primary Colors */
---black: #1E1E2E;              /* Deep black for strong contrast */
+   /* Primary Colors */
+--black: #1E1E2E;              /* Deep black for strong text contrast */
 --white: #FFFFFF;              /* Clean white for clarity */
---gray: #F8F9FA;               /* Soft gray for subtle background */
---yellow: #FFC107;             /* Rich yellow for highlights and buttons */
+--gray: #F8F9FA;               /* Light gray for backgrounds */
+--gold-yellow: #D6B154;        /* Professional gold-yellow for highlights and buttons */
 
 /* Text Colors */
---text-primary: #1E1E2E;       /* Main text color for headings */
---text-secondary: #6C757D;     /* Subtle text for secondary content */
---muted-text: #8C8C8C;         /* Muted gray for less prominent text */
+--text-primary: #1E1E2E;       /* Dark text for headings */
+--text-secondary: #6C757D;     /* Subtle gray text for descriptions */
+--muted-text: #8C8C8C;         /* Muted text for less important content */
 
 /* Accent Colors */
---hover-yellow: #E0A800;       /* Darker yellow for hover effects */
---dark-gray: #343A40;          /* Dark gray for borders and headings */
---light-brown: #D1B79E;        /* Light brown for backgrounds */
---footer-bg: #5C4033;          /* Deep brown for footer background */
---divider-light: #E9ECEF;      /* Light gray for dividers */
+--hover-gold: #B59348;         /* Darker gold for hover effects */
+--border-gray: #E0E0E0;        /* Light gray for borders and dividers */
+--footer-bg: #403D39;          /* Dark gray-brown for the footer background */
+--button-hover-bg: #C9A34B;    /* Hover state for buttons */
 
-/* Button Styling */
---button-bg: #FFC107;          /* Yellow for buttons */
---button-hover-bg: #E0A800;    /* Hover state for buttons */
---button-text: #1E1E2E;        /* Text color on buttons */
-
+/* Component-Specific Styling */
+--accordion-bg: #F8F8F8;       /* Soft light gray for accordion backgrounds */
+--footer-text: #FFFFFF;        /* Footer text clarity */
+   
   }
 
       /* =========================
@@ -275,48 +273,63 @@
   /* =========================
      Enhanced Footer Styling
   ========================= */
-  .footer {
-    padding: 30px 20px; /* Increased padding for better spacing */
-    text-align: center;
-    background: var(--footer-bg);
-    color: var(--footer-text);
-    border-top: 5px solid var(--divider-dark);
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.25); /* Deeper shadow for emphasis */
-    animation: fadeIn 0.8s ease-in-out;
-    font-size: 1rem; /* Standard font size for readability */
-    line-height: 1.6; /* Improved line spacing */
-  }
+.footer {
+  padding: 30px 20px; /* Increased padding for better spacing */
+  text-align: center;
+  background: var(--black); /* Consistent deep black background */
+  color: var(--gray); /* Light gray text for readability */
+  border-top: 5px solid var(--hover-yellow); /* Consistent gold-yellow border */
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow for elegance */
+  animation: fadeIn 0.8s ease-in-out;
+  font-size: 1rem; /* Standard font size for readability */
+  line-height: 1.6; /* Improved line spacing */
+}
 
-  .footer a {
-    text-decoration: none;
-    color: var(--footer-link);
-    margin: 0 20px; /* Wider spacing for links */
-    font-weight: 700; /* Increased font weight for better visibility */
-    font-size: 1.1rem; /* Slightly larger font */
-    transition: color 0.3s ease, transform 0.3s ease;
-    position: relative;
-  }
+.footer a {
+  text-decoration: none;
+  color: var(--gold-yellow); /* Professional gold-yellow for links */
+  margin: 0 15px; /* Balanced spacing for links */
+  font-weight: 600; /* Medium font weight for better visibility */
+  font-size: 1.1rem; /* Slightly larger font */
+  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative;
+}
 
-  /* Enhanced Hover Effect */
-  .footer a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 0;
-    height: 2px;
-    background: var(--hover-yellow);
-    transition: width 0.3s ease-in-out;
-  }
+/* Enhanced Hover Effect */
+.footer a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--hover-gold); /* Consistent hover effect */
+  transition: width 0.3s ease-in-out;
+}
 
-  .footer a:hover {
-    color: var(--hover-yellow);
-    transform: scale(1.1);
-  }
+.footer a:hover {
+  color: var(--hover-gold); /* Darker gold-yellow on hover */
+  transform: scale(1.05); /* Slight zoom effect for interactivity */
+}
 
-  .footer a:hover::after {
-    width: 100%; /* Underline animation on hover */
-  }
+.footer a:hover::after {
+  width: 100%; /* Underline animation on hover */
+}
+
+/* Footer Social Icons */
+.footer .social-icons a {
+  display: inline-block;
+  margin: 0 10px;
+  color: var(--gold-yellow); /* Social links match the theme */
+  font-size: 1.5rem; /* Larger icons */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+  color: var(--hover-gold); /* Darker gold for hover effect */
+  transform: translateY(-3px); /* Slight lift effect */
+}
+
       /* =========================
     Print-Friendly Styles
     ========================= */
