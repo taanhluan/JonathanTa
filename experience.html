@@ -11,182 +11,123 @@
 
   <!-- Google Fonts Import -->
   <style>
-     @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 
-  /* =========================
-     Enhanced Custom CSS Styles
-  ========================= */
- :root {
-/* Primary Colors */
---black: #1E1E2E;              /* Deep black for strong text contrast */
---white: #FFFFFF;              /* Clean white for clarity */
---gold-yellow: #D6B154;        /* Professional gold-yellow for highlights and buttons */
+/* =========================
+     Root Variables
+========================= */
+:root {
+  /* Primary Colors */
+  --black: #1E1E2E;              /* Deep black for strong text contrast */
+  --white: #FFFFFF;              /* Clean white for clarity */
+  --gold-yellow: #D6B154;        /* Professional gold-yellow for highlights and buttons */
 
-/* Background and Neutral Colors */
---gray: #F8F9FA;               /* Light gray for soft backgrounds */
---dark-gray: #403D39;          /* Dark gray-brown for footer background */
---border-gray: #E0E0E0;        /* Light gray for borders and dividers */
+  /* Background and Neutral Colors */
+  --gray: #F8F9FA;               /* Light gray for backgrounds */
+  --dark-gray: #403D39;          /* Dark gray-brown for footer background */
+  --border-gray: #E0E0E0;        /* Light gray for borders and dividers */
 
-/* Text Colors */
---text-primary: #1E1E2E;       /* Deep black for headings */
---text-secondary: #6C757D;     /* Subtle gray for descriptions */
---muted-text: #8C8C8C;         /* Muted text for less important content */
+  /* Text Colors */
+  --text-primary: #1E1E2E;       /* Black for headings */
+  --text-secondary: #6C757D;     /* Subtle gray for descriptions */
+  --muted-text: #8C8C8C;         /* Muted gray for less important content */
 
-/* Accent Colors */
---hover-gold: #B59348;         /* Darker gold-yellow for hover effects */
---button-hover-bg: #C9A34B;    /* Richer yellow for hover states */
---accordion-bg: #F8F8F8;       /* Light gray accordion background */
---footer-text: #FFFFFF;        /* White text for footer readability */
+  /* Accent Colors */
+  --hover-gold: #B59348;         /* Darker gold-yellow for hover effects */
+  --button-hover-bg: #C9A34B;    /* Hover state for buttons */
+  --footer-text: #FFFFFF;        /* Footer text clarity */
+}
 
-  }
-
-      /* =========================
+/* =========================
    General Reset
 ========================= */
-      * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Montserrat", sans-serif;
-      }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
 
-      body {
-      background-color: var(--gray);
-      color: var(--black);
-      line-height: 1.6;
-      }
+body {
+  background-color: var(--gray);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
 
-      /* =========================
+/* =========================
    Resume Container
 ========================= */
-      .resume {
-      max-width: 960px;
-      margin: 30px auto;
-      background: var(--white);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
-      overflow: hidden;
-    }
+.resume {
+  max-width: 960px;
+  margin: 30px auto;
+  background: var(--white);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
 
- /* =========================
-     Enhanced Header Styling
-  ========================= */
-  .header {
-    background: linear-gradient(to right, var(--brown), var(--highlight));
-    color: var(--white);
-    padding: 40px 20px;
-    text-align: center;
-    border-bottom: 5px solid var(--accent);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 1s ease-in-out;
-  }
+/* =========================
+   Header Styling
+========================= */
+.header {
+  background-color: var(--gold-yellow);
+  color: var(--black);
+  padding: 40px 20px;
+  text-align: center;
+  border-bottom: 3px solid var(--hover-gold);
+  animation: fadeIn 1s ease-in-out;
+}
 
-  .header h1 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  }
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
 
-  .header p {
-    font-size: 1.2rem;
-    color: var(--dark-gray);
-    margin-top: 10px;
-  }
+.header p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
 
-  .profile-photo img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 6px solid var(--white);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    margin-bottom: 20px;
-  }
+.profile-photo img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 5px solid var(--white);
+  margin-bottom: 15px;
+}
 
-  .info h1 {
-    font-size: 2rem;
-    font-weight: 600;
-    color: var(--black);
-  }
-
-  .info p {
-    font-size: 1.1rem;
-    font-weight: 400;
-    color: var(--dark-gray);
-  }
-
-  .tagline {
-    font-size: 1rem;
-    font-style: italic;
-    color: var(--muted);
-    margin-top: 5px;
-  }
-
-  /* =========================
-     Social Media Icons
-  ========================= */
-  .social-icons a {
-    margin: 0 10px;
-    font-size: 1.6rem;
-    color: var(--dark-gray);
-    transition: color 0.4s ease, transform 0.4s ease;
-    position: relative;
-  }
-
-  .social-icons a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 0;
-    height: 3px;
-    background: var(--accent);
-    transition: width 0.4s ease-in-out;
-  }
-
-  .social-icons a:hover {
-    color: var(--accent);
-    transform: scale(1.2);
-  }
-
-  .social-icons a:hover::after {
-    width: 100%;
-  }
-
-  /* =========================
-   Collapsible Section Styling
+/* =========================
+   Collapsible Section
 ========================= */
 .section {
-  background: var(--gray); /* Consistent light gray for section background */
-  padding: 25px 20px;
+  background: var(--gray);
+  padding: 20px;
   margin-bottom: 15px;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease-in-out;
 }
 
 .section:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Shadow lift on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .collapsible {
+  background-color: var(--gold-yellow);
+  color: var(--black);
+  padding: 15px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 8px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  background-color: var(--gold-yellow); /* Solid yellow background */
-  color: var(--black); /* Deep black text for readability */
-  padding: 18px 25px;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .collapsible:hover {
-  background-color: var(--hover-gold); /* Darker gold on hover */
-  transform: translateY(-3px); /* Lift effect */
+  background-color: var(--hover-gold);
+  transform: translateY(-3px);
 }
 
 .collapsible i {
@@ -194,173 +135,91 @@
 }
 
 .collapsible i.rotate {
-  transform: rotate(180deg); /* Smooth icon rotation */
+  transform: rotate(180deg);
 }
 
 .content {
   display: none;
-  background-color: var(--white); /* Clean white for contrast */
-  color: var(--text-secondary); /* Subtle gray text */
-  padding: 20px 25px;
-  line-height: 1.6;
-  border-left: 4px solid var(--gold-yellow); /* Highlighted left border */
+  background-color: var(--white);
+  padding: 15px 20px;
+  border-left: 4px solid var(--gold-yellow);
   border-radius: 0 0 8px 8px;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: max-height 0.5s ease-in-out;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.content.show {
-  display: block;
-  animation: fadeIn 0.4s ease-in-out;
+/* =========================
+   Buttons
+========================= */
+.download-btn {
+  text-align: center;
+  margin: 20px 0;
 }
 
+.download-btn button {
+  background-color: var(--gold-yellow);
+  color: var(--black);
+  padding: 10px 20px;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.download-btn button:hover {
+  background-color: var(--hover-gold);
+  transform: scale(1.05);
+}
+
+/* =========================
+   Footer Styling
+========================= */
+.footer {
+  background-color: var(--black);
+  color: var(--footer-text);
+  padding: 20px;
+  text-align: center;
+  border-top: 4px solid var(--gold-yellow);
+}
+
+.footer a {
+  color: var(--gold-yellow);
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer a:hover {
+  color: var(--hover-gold);
+  transform: scale(1.1);
+}
+
+.footer .social-icons a {
+  font-size: 1.5rem;
+  margin: 0 8px;
+  color: var(--gold-yellow);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+  color: var(--hover-gold);
+  transform: translateY(-3px);
+}
+
+/* =========================
+   Animations
+========================= */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(-5px);
+    transform: translateY(-10px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-
- /* =========================
-    Animations
-    ========================= */
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-        transform: translateY(-15px) scale(0.95);
-        filter: blur(4px);
-      }
-      50% {
-        opacity: 0.5;
-        transform: translateY(-7px) scale(1);
-        filter: blur(2px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-        filter: blur(0);
-      }
-    }
-
-      /* =========================
-   Download Button
-========================= */
-      .download-btn {
-        text-align: center;
-        margin: 20px 0;
-      }
-
-      .download-btn button {
-        background: var(--yellow);
-        color: var(--black);
-        border: none;
-        padding: 10px 20px;
-        font-size: 1em;
-        font-weight: 600;
-        cursor: pointer;
-        border-radius: 5px;
-        transition: background 0.3s ease;
-      }
-
-      .download-btn button:hover {
-        background: #e0b909;
-      }
-
-  /* =========================
-     Enhanced Footer Styling
-  ========================= */
-.footer {
-  padding: 30px 20px; /* Increased padding for better spacing */
-  text-align: center;
-  background: var(--black); /* Consistent deep black background */
-  color: var(--gray); /* Light gray text for readability */
-  border-top: 5px solid var(--hover-yellow); /* Consistent gold-yellow border */
-  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow for elegance */
-  animation: fadeIn 0.8s ease-in-out;
-  font-size: 1rem; /* Standard font size for readability */
-  line-height: 1.6; /* Improved line spacing */
-}
-
-.footer a {
-  text-decoration: none;
-  color: var(--gold-yellow); /* Professional gold-yellow for links */
-  margin: 0 15px; /* Balanced spacing for links */
-  font-weight: 600; /* Medium font weight for better visibility */
-  font-size: 1.1rem; /* Slightly larger font */
-  transition: color 0.3s ease, transform 0.3s ease;
-  position: relative;
-}
-
-/* Enhanced Hover Effect */
-.footer a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  height: 2px;
-  background: var(--hover-gold); /* Consistent hover effect */
-  transition: width 0.3s ease-in-out;
-}
-
-.footer a:hover {
-  color: var(--hover-gold); /* Darker gold-yellow on hover */
-  transform: scale(1.05); /* Slight zoom effect for interactivity */
-}
-
-.footer a:hover::after {
-  width: 100%; /* Underline animation on hover */
-}
-
-/* Footer Social Icons */
-.footer .social-icons a {
-  display: inline-block;
-  margin: 0 10px;
-  color: var(--gold-yellow); /* Social links match the theme */
-  font-size: 1.5rem; /* Larger icons */
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.footer .social-icons a:hover {
-  color: var(--hover-gold); /* Darker gold for hover effect */
-  transform: translateY(-3px); /* Slight lift effect */
-}
-
-      /* =========================
-    Print-Friendly Styles
-    ========================= */
-    @media print {
-      body, .resume, .content, .collapsible {
-        background-color: var(--white);
-        color: var(--black);
-        box-shadow: none !important;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
-
-      .collapsible {
-        border: 1px solid var(--black);
-        background-color: var(--yellow) !important;
-      }
-
-      .content {
-        border-left: 4px solid var(--black) !important;
-        padding: 20px !important;
-      }
-
-      a, i {
-        color: var(--black) !important;
-        text-decoration: underline;
-      }
-
-      .download-btn {
-        display: none !important;
-      }
-    }
     </style>
   </head>
   <body>
