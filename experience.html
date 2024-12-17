@@ -271,38 +271,36 @@
     }
 
       /* =========================
-   Print-Friendly Styles
-========================= */
-      @media print {
-
-        body,
-        .resume,
-        .content,
-        .collapsible {
-          background-color: var(--white);
-          color: var(--black);
-          box-shadow: none !important;
-        }
-
-        .collapsible {
-          border: 1px solid var(--black);
-          background-color: var(--yellow) !important;
-        }
-
-        .content {
-          border-left: 4px solid var(--black) !important;
-        }
-
-        a,
-        i {
-          color: var(--black) !important;
-        }
-
-        .download-btn {
-          display: none !important;
-          /* Hide Download Button */
-        }
+    Print-Friendly Styles
+    ========================= */
+    @media print {
+      body, .resume, .content, .collapsible {
+        background-color: var(--white);
+        color: var(--black);
+        box-shadow: none !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
       }
+
+      .collapsible {
+        border: 1px solid var(--black);
+        background-color: var(--yellow) !important;
+      }
+
+      .content {
+        border-left: 4px solid var(--black) !important;
+        padding: 20px !important;
+      }
+
+      a, i {
+        color: var(--black) !important;
+        text-decoration: underline;
+      }
+
+      .download-btn {
+        display: none !important;
+      }
+    }
     </style>
   </head>
   <body>
