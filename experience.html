@@ -6,55 +6,63 @@
   <title>Professional Resume</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
 
-    /* Color Variables */
-    :root {
-      --black: #1e1e1e;
-      --white: #ffffff;
-      --gray: #f9f9f9;
-      --yellow: #f4c20d;
-      --dark-gray: #444444;
-    }
+/* =========================
+   Color Variables
+========================= */
+:root {
+  --black: #1e1e1e;
+  --white: #ffffff;
+  --gray: #f9f9f9;
+  --yellow: #f4c20d;
+  --dark-gray: #444444;
+  --light-yellow: #fff8d6;
+  --hover-yellow: #fbe8a6;
+}
 
-  /* General Reset */
+/* =========================
+   General Reset
+========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
-    body {
-      background-color: var(--gray);
-      color: var(--black);
-      line-height: 1.6;
-    }
 
-    /* Resume Container */
-    .resume {
-      max-width: 960px;
-      margin: 30px auto;
-      background: var(--white);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
-      overflow: hidden;
-    }
+body {
+  background-color: var(--gray);
+  color: var(--black);
+  line-height: 1.6;
+}
 
-  /* Header Styling */
+/* =========================
+   Resume Container
+========================= */
+.resume {
+  max-width: 960px;
+  margin: 30px auto;
+  background: var(--white);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* =========================
+   Header Styling
+========================= */
 .header {
-  background: linear-gradient(135deg, #f4c20d, #ffdd57);
+  background: linear-gradient(135deg, var(--yellow), #ffdd57);
   color: var(--black);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   padding: 20px;
   text-align: center;
-  position: relative;
 }
 
-/* Profile Photo */
 .profile-photo img {
   width: 120px;
   height: 120px;
@@ -64,18 +72,15 @@
   margin-bottom: 15px;
 }
 
-/* Header Info */
 .info h1 {
   font-size: 2rem;
   font-weight: 700;
-  margin: 10px 0;
-  color: var(--black);
 }
 
 .info p {
   font-size: 1.1rem;
   font-weight: 400;
-  color: #333;
+  color: var(--dark-gray);
 }
 
 .tagline {
@@ -84,11 +89,9 @@
   color: var(--dark-gray);
 }
 
-/* Social Media Icons */
-.social-icons {
-  margin-top: 15px;
-}
-
+/* =========================
+   Social Media Icons
+========================= */
 .social-icons a {
   margin: 0 10px;
   font-size: 1.4rem;
@@ -97,48 +100,41 @@
 }
 
 .social-icons a:hover {
-  color: var(--white);
+  color: var(--yellow);
 }
 
-/* Container */
+/* =========================
+   Collapsible Section
+========================= */
 .section {
-  background-color: #fdfdfd; /* Light background for consistency */
-  padding: 10px 0;
-  color: #333;
-}
-
-/* Collapsible Experience Section */
-.section {
-  background-color: #fff8d6; /* Light yellow for consistency */
+  background-color: var(--light-yellow);
   padding: 20px 15px;
   margin-bottom: 10px;
   border-radius: 8px;
 }
 
-/* Collapsible Header */
 .collapsible {
   display: flex;
-  justify-content: space-between; /* Align text left and icons right */
-  align-items: center; /* Vertical alignment */
-  text-align: left; /* Ensure all text aligns to the left */
-  background-color: #f4c20d; /* Yellow header */
-  color: #000; /* Black text */
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  background-color: var(--yellow);
+  color: var(--black);
   padding: 15px 20px;
-  border: 1px solid #f4c20d; /* Highlight border */
+  border: 1px solid var(--yellow);
   cursor: pointer;
   font-weight: bold;
-  margin-bottom: 5px;
   border-radius: 8px;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .collapsible:hover {
-  background-color: #fbe8a6;
+  background-color: var(--hover-yellow);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .collapsible i {
-  color: #f4c20d; /* Highlight color for icon */
+  color: var(--yellow);
   transition: transform 0.3s ease;
 }
 
@@ -146,16 +142,14 @@
   transform: rotate(180deg);
 }
 
-/* Collapsible Content */
 .content {
   display: none;
-  text-align: left; /* Align text to the left */
-  background-color: #fff; /* Solid white */
-  color: #000; /* High contrast black text */
+  text-align: left;
+  background-color: var(--white);
+  color: var(--black);
   padding: 15px 20px;
-  margin: 0;
   line-height: 1.6;
-  border-left: 4px solid #f4c20d;
+  border-left: 4px solid var(--yellow);
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
   border-radius: 0 0 8px 8px;
   transition: all 0.3s ease-in-out;
@@ -166,8 +160,9 @@
   animation: fadeIn 0.3s ease-in-out;
 }
 
-
-/* Fade-In Animation */
+/* =========================
+   Animations
+========================= */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -179,123 +174,78 @@
   }
 }
 
-/* Skills Section */
-.content .skills {
-  margin-top: 10px;
+/* =========================
+   Download Button
+========================= */
+.download-btn {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.download-btn button {
+  background: var(--yellow);
+  color: var(--black);
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
   font-weight: 600;
-  color: #222;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease;
 }
-    /* Footer */
-    .footer {
-      padding: 20px;
-      text-align: center;
-      background: var(--black);
-      color: var(--white);
-    }
 
-    .footer a {
-      text-decoration: none;
-      color: var(--yellow);
-      margin: 0 10px;
-    }
+.download-btn button:hover {
+  background: #e0b909;
+}
 
-    /* Download Button */
-    .download-btn {
-      text-align: center;
-      margin: 20px 0;
-    }
+/* =========================
+   Footer Styling
+========================= */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: var(--black);
+  color: var(--white);
+}
 
-    .download-btn button {
-      background: var(--yellow);
-      color: var(--black);
-      border: none;
-      padding: 10px 20px;
-      font-size: 1em;
-      font-weight: 600;
-      cursor: pointer;
-      border-radius: 5px;
-      transition: background 0.3s ease;
-    }
+.footer a {
+  text-decoration: none;
+  color: var(--yellow);
+  margin: 0 10px;
+}
 
-    .download-btn button:hover {
-      background: #e0b909;
-    }
-     /* Updated spacing styles */
-  .section,
-  .about {
-    padding: 30px 40px;
-  }
-
-  .resume {
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-
-  .collapsible {
-    padding: 15px 40px;
-  }
-
-  .content {
-    padding: 15px 40px;
-  }
-
-  .about {
-    margin-top: 10px;
-
-     /* Ensure Print-Friendly Styling */
+/* =========================
+   Print-Friendly Styles
+========================= */
 @media print {
-  body, .resume, .content, .collapsible {
-    background-color: #fff;
-    color: #000;
-    border: none !important;
+  body,
+  .resume,
+  .content,
+  .collapsible {
+    background-color: var(--white);
+    color: var(--black);
     box-shadow: none !important;
   }
 
   .collapsible {
-    border: 1px solid #000 !important; /* High contrast border */
+    border: 1px solid var(--black);
+    background-color: var(--yellow) !important;
   }
 
   .content {
-    border-left: 4px solid #000 !important; /* Solid black left border */
+    border-left: 4px solid var(--black) !important;
   }
 
+  a,
   i {
-    color: #000 !important; /* Ensure all icons are black */
+    color: var(--black) !important;
   }
 
-  a, a:visited {
-    color: #000 !important; /* Black links */
-    text-decoration: none;
-  }
-}
-
-
-  /* Remove unnecessary effects */
-  .collapsible:hover,
-  .content.show {
-    box-shadow: none !important;
-    animation: none !important;
-    transition: none !important;
-  }
-
-  /* Hide Download Button */
   .download-btn {
-    display: none !important;
+    display: none !important; /* Hide Download Button */
   }
 }
-    /* Print-Safe Styling */
-  .print-safe {
-    background-color: #fff !important; /* White background */
-    color: #000 !important; /* Black text for clarity */
-    border-left: 4px solid #f4c20d !important; /* Highlight border */
-    box-shadow: none !important;
-  }
 
-  /* For collapsible headers */
-  .collapsible.print-safe {
-    background-color: #f4c20d !important; /* Solid yellow */
-    color: #000 !important;
-  }
 </style>
 </head>
 <body>
