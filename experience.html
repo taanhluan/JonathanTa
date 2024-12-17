@@ -154,76 +154,76 @@
     width: 100%;
   }
 
-      /* =========================
-   Collapsible Section
+  /* =========================
+   Collapsible Section Styling
 ========================= */
-       .section {
-      background: linear-gradient(135deg, var(--light-yellow), var(--white));
-      padding: 25px 20px;
-      margin-bottom: 15px;
-      border-radius: 12px;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-      transition: all 0.4s ease-in-out;
-    }
+.section {
+  background: var(--gray); /* Consistent light gray for section background */
+  padding: 25px 20px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: box-shadow 0.3s ease-in-out;
+}
 
-    .collapsible {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      text-align: left;
-      background: linear-gradient(to right, var(--yellow), var(--accent));
-      color: var(--primary);
-      padding: 18px 25px;
-      border: 2px solid var(--yellow);
-      cursor: pointer;
-      font-weight: bold;
-      border-radius: 10px;
-      transition: background-color 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease;
-    }
+.section:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Shadow lift on hover */
+}
 
-    .collapsible:hover {
-      background: var(--hover-yellow);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      transform: translateY(-3px);
-    }
+.collapsible {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--gold-yellow); /* Solid yellow background */
+  color: var(--black); /* Deep black text for readability */
+  padding: 18px 25px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
 
-    .collapsible i {
-      color: var(--primary);
-      transition: transform 0.4s ease;
-    }
+.collapsible:hover {
+  background-color: var(--hover-gold); /* Darker gold on hover */
+  transform: translateY(-3px); /* Lift effect */
+}
 
-    .collapsible i.rotate {
-      transform: rotate(180deg);
-    }
+.collapsible i {
+  transition: transform 0.3s ease;
+}
 
-    .content {
-      display: none;
-      text-align: left;
-      background-color: var(--white);
-      color: var(--black);
-      padding: 22px 30px;
-      line-height: 1.8;
-      border-left: 5px solid var(--yellow);
-      box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
-      border-radius: 0 0 10px 10px;
-      transition: all 0.5s ease-in-out;
-    }
+.collapsible i.rotate {
+  transform: rotate(180deg); /* Smooth icon rotation */
+}
 
-    .content.show {
-      display: block;
-      animation: fadeIn 0.5s ease-in-out;
-    }
+.content {
+  display: none;
+  background-color: var(--white); /* Clean white for contrast */
+  color: var(--text-secondary); /* Subtle gray text */
+  padding: 20px 25px;
+  line-height: 1.6;
+  border-left: 4px solid var(--gold-yellow); /* Highlighted left border */
+  border-radius: 0 0 8px 8px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: max-height 0.5s ease-in-out;
+}
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(-8px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+.content.show {
+  display: block;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
  /* =========================
     Animations
