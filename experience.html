@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -47,20 +48,59 @@
   text-align: center;
   padding: 60px 20px;
   color: var(--primary);
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  background: linear-gradient(135deg, #FFD700, #FF8C00, #F0E68C, #DAA520);
+  background-size: 200% 200%;
+  animation: hologramEffect 8s infinite alternate;
   border-bottom: 4px solid var(--accent);
+  position: relative;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  margin: 40px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+}
+
+.header:hover {
+  transform: scale(1.02);
+}
+
+@keyframes hologramEffect {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .header h1 {
-  font-size: 3.2rem;
+  font-size: 3.5rem;
   font-weight: 800;
   margin-bottom: 10px;
   color: var(--white);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  position: relative;
 }
 
 .header p {
   font-size: 1.4rem;
   color: var(--light);
+  margin-bottom: 20px;
+  z-index: 2;
+  position: relative;
 }
 
 .profile-photo img {
@@ -70,6 +110,35 @@
   margin-bottom: 20px;
   border: 8px solid var(--white);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   Social Icons Animation
+========================= */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.social-icons a {
+  font-size: 2rem;
+  color: var(--white);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2) rotate(10deg);
+  color: var(--accent);
+}
+
+.social-icons a:active {
+  transform: scale(0.9) rotate(-5deg);
 }
 
     </style>
