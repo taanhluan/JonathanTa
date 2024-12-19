@@ -208,38 +208,83 @@
    Enhanced About Section
 ========================= */
 .about {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 50px;
-  background: linear-gradient(135deg, var(--hologram-brown), var(--hologram-light));
-  background-size: 200% 200%;
-  animation: hologramEffect 6s infinite alternate;
-  border-radius: 25px;
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 30px;
+  background: linear-gradient(135deg, var(--hologram-start), var(--hologram-end));
+  background-size: 300% 300%;
+  animation: hologramEffect 4s infinite alternate ease-in-out;
+  border-radius: 20px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-  color: var(--text-brown);
+  color: var(--text-color);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
 .about h2 {
-  font-size: 3rem;
+  font-size: 2.4rem;
   font-weight: 900;
-  margin-bottom: 25px;
-  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
-  color: var(--text-brown);
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  color: var(--text-color);
 }
 
 .about p {
-  font-size: 1.6rem;
-  line-height: 2.2;
-  color: var(--text-brown);
-  margin-bottom: 20px;
+  font-size: 1.3rem;
+  line-height: 2;
+  color: var(--text-color);
+  margin-bottom: 15px;
 }
+
+/* Accessibility Enhancements */
+:root {
+  --hologram-start: #f8e8fc; /* Light lavender for hologram start */
+  --hologram-end: #e3c3f5;   /* Soft purple for hologram end */
+  --accent-color: #d09ce1;   /* Soft purple accent for highlights */
+  --background-color: #f7ecfc; /* Very light lavender background */
+  --text-color: #4a148c;     /* Deep purple for text */
+  --highlight-gradient: linear-gradient(135deg, #e0c3fc, #b39ddb); /* Gradient for highlights */
+  --hover-gradient: linear-gradient(135deg, #b39ddb, #9575cd); /* Gradient for hover states */
+}
+
+@keyframes hologramEffect {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+
+/* Accessibility Enhancements */
+:root {
+  --hologram-start: #f3e5f5; /* Light lavender for hologram start */
+  --hologram-end: #e1bee7;   /* Soft purple for hologram end */
+  --accent-color: #ce93d8;   /* Soft purple accent for highlights */
+  --background-color: #f8f0fc; /* Very light lavender background */
+  --text-color: #4a148c;     /* Deep purple for text */
+  --highlight-gradient: linear-gradient(135deg, #d1c4e9, #b39ddb); /* Gradient for highlights */
+  --hover-gradient: linear-gradient(135deg, #b39ddb, #9575cd); /* Gradient for hover states */
+}
+
+@keyframes hologramEffect {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
 
 /* Accessibility Enhancements */
 :root {
@@ -251,6 +296,16 @@
   --highlight-gradient: linear-gradient(135deg, #ffcc80, #ffa726); /* Gradient for highlights */
   --hover-gradient: linear-gradient(135deg, #ffa726, #ff7043); /* Gradient for hover states */
 }
+
+@keyframes hologramEffect {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
 
 /* General Styling */
 body {
@@ -522,6 +577,55 @@ body {
 
   .footer .social-icons a {
     font-size: 1.3rem;
+  }
+}
+
+/* =========================
+   Download Button Styling
+========================= */
+.download-btn {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.download-btn button {
+  background: linear-gradient(135deg, #8e44ad, #9b59b6);
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: buttonHologram 4s infinite alternate ease-in-out;
+  background-size: 300% 300%;
+}
+
+.download-btn button:hover {
+  background: linear-gradient(135deg, #9b59b6, #8e44ad);
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.download-btn button:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.download-btn button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(155, 89, 182, 0.5);
+}
+
+@keyframes buttonHologram {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
   }
 }
 
