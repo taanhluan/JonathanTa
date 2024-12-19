@@ -205,41 +205,42 @@
 }
 
 /* =========================
-   Enhanced About Section
+   Enhanced About Section - Smaller Version
 ========================= */
 .about {
-  max-width: 700px;
-  margin: 30px auto;
-  padding: 30px;
+  max-width: 600px; /* Giảm chiều rộng tối đa */
+  margin: 20px auto; /* Giảm khoảng cách trên và dưới */
+  padding: 20px; /* Giảm padding bên trong */
   background: linear-gradient(135deg, var(--hologram-start), var(--hologram-end));
   background-size: 300% 300%;
   animation: hologramEffect 4s infinite alternate ease-in-out;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  border-radius: 15px; /* Giảm bán kính bo tròn */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Giảm hiệu ứng đổ bóng */
   color: var(--text-color);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about:hover {
-  transform: scale(1.08);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  transform: scale(1.05); /* Giảm mức độ phóng to khi hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Giảm hiệu ứng đổ bóng khi hover */
 }
 
 .about h2 {
-  font-size: 2.4rem;
-  font-weight: 900;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  font-size: 1.8rem; /* Giảm kích thước font của tiêu đề */
+  font-weight: 700; /* Giảm độ đậm của font */
+  margin-bottom: 15px; /* Giảm khoảng cách dưới tiêu đề */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4); /* Giảm hiệu ứng bóng chữ */
   color: var(--text-color);
 }
 
 .about p {
-  font-size: 1.3rem;
-  line-height: 2;
+  font-size: 1rem; /* Giảm kích thước chữ của nội dung */
+  line-height: 1.6; /* Giảm chiều cao dòng */
   color: var(--text-color);
-  margin-bottom: 15px;
+  margin-bottom: 10px; /* Giảm khoảng cách giữa các đoạn văn */
 }
+
 
 /* Accessibility Enhancements */
 :root {
@@ -304,17 +305,30 @@
   100% {
     background-position: 100% 50%;
   }
+  
 }
-
+.header, .about, .experience, .footer {
+  max-width: 900px; /* Điều chỉnh chiều rộng của từng phần */
+  margin: 0 auto; /* Căn giữa các phần */
+  padding: 20px; /* Giảm padding nếu cần */
+}
 
 /* General Styling */
 body {
   font-family: Arial, sans-serif;
+  max-width: 1200px; /* Giới hạn chiều rộng */
+  margin: 0 auto; /* Căn giữa nội dung */
   background-color: var(--background-color);
   color: var(--text-color);
-  margin: 0;
   padding: 20px;
   line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .header, .about, .experience, .footer {
+    max-width: 100%; /* Toàn bộ chiều rộng trên màn hình nhỏ */
+    padding: 15px; /* Giảm padding nếu cần */
+  }
 }
 
 /* Enhanced Experience Section */
