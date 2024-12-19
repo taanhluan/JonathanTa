@@ -89,7 +89,7 @@
   font-size: 3.5rem;
   font-weight: 800;
   margin-bottom: 10px;
-  color: var(--white);
+  color: var(--text-brown); /* Corrected to solid brown */
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
   z-index: 2;
   position: relative;
@@ -97,11 +97,13 @@
 
 .header p {
   font-size: 1.4rem;
-  color: var(--light);
+  color: var(--text-brown); /* Corrected to solid brown */
   margin-bottom: 20px;
   z-index: 2;
   position: relative;
 }
+
+
 
 .profile-photo img {
   width: 150px;
@@ -128,18 +130,60 @@
 
 .social-icons a {
   font-size: 2rem;
-  color: var(--white);
-  transition: transform 0.3s ease, color 0.3s ease;
+  color: var(--text-brown);
+  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 }
 
 .social-icons a:hover {
-  transform: scale(1.2) rotate(10deg);
+  transform: scale(1.3) rotate(15deg);
   color: var(--accent);
+  text-shadow: 0 0 15px var(--accent);
 }
 
 .social-icons a:active {
-  transform: scale(0.9) rotate(-5deg);
+  transform: scale(0.9) rotate(-10deg);
+  color: var(--accent);
+  text-shadow: 0 0 12px var(--accent);
 }
+
+/* =========================
+   About Section
+========================= */
+.about {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 40px;
+  background: var(--hologram-brown);
+  background-size: 200% 200%;
+  animation: hologramEffect 6s infinite alternate;
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  color: var(--text-brown);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  color: var(--text-brown);
+}
+
+.about p {
+  font-size: 1.4rem;
+  line-height: 2;
+  color: var(--text-brown);
+  margin-bottom: 15px;
+}
+
 
     </style>
   </head>
