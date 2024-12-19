@@ -31,6 +31,17 @@
   --link-color: #E74C3C;     /* Links and interactive elements */
 }
 
+@keyframes backgroundAnimation {
+  0% {
+    background-color: var(--animation-start);
+  }
+  100% {
+    background-color: var(--animation-end);
+  }
+}
+
+
+
 /* =========================
    Global Reset
 ========================= */
@@ -48,7 +59,7 @@
   text-align: center;
   padding: 60px 20px;
   color: var(--primary);
-  background: linear-gradient(135deg, #FFD700, #FF8C00, #F0E68C, #DAA520);
+  background: linear-gradient(135deg, #f0fcfd, #b3e7f0, #d9f4f9, #a7dce4);
   background-size: 200% 200%;
   animation: hologramEffect 8s infinite alternate;
   border-bottom: 4px solid var(--accent);
@@ -57,8 +68,23 @@
   border-radius: 20px;
   margin: 40px;
   overflow: hidden;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
+
+.header:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes hologramEffect {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
 
 .header:hover {
   transform: scale(1.02);
@@ -73,6 +99,22 @@
   }
 }
 
+.header {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--primary);
+  background: linear-gradient(135deg, #f0fcfd, #b3e7f0, #d9f4f9, #a7dce4);
+  background-size: 200% 200%;
+  animation: hologramEffect 8s infinite alternate;
+  border-bottom: 4px solid var(--accent);
+  position: relative;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  margin: 40px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
 .header::before {
   content: "";
   position: absolute;
@@ -80,10 +122,25 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.3) 0%, rgba(255, 215, 0, 0) 70%);
   z-index: 1;
   pointer-events: none;
 }
+
+.header:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes hologramEffect {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
 
 .header h1 {
   font-size: 3.5rem;
