@@ -11,6 +11,66 @@
 
   <!-- Google Fonts Import -->
   <style>
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+/* =========================
+     Root Variables
+========================= */
+:root {
+  /* Base Colors */
+  --primary: #2C3E50;        /* Deep blue for primary content */
+  --secondary: #34495E;      /* Slightly lighter blue */
+  --accent: #E74C3C;         /* Red accent for highlights */
+  --light: #ECF0F1;          /* Light gray for backgrounds */
+  --white: #FFFFFF;          /* White for contrast */
+
+  /* Text Colors */
+  --text-main: #2C3E50;      /* Main text color */
+  --text-muted: #7F8C8D;     /* Muted text */
+  --link-color: #E74C3C;     /* Links and interactive elements */
+}
+
+/* =========================
+   Global Reset
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+/* =========================
+   Header Section
+========================= */
+.header {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  border-bottom: 4px solid var(--accent);
+}
+
+.header h1 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: var(--white);
+}
+
+.header p {
+  font-size: 1.4rem;
+  color: var(--light);
+}
+
+.profile-photo img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 8px solid var(--white);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
 
     </style>
   </head>
