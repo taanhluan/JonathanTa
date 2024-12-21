@@ -632,9 +632,29 @@ body {
   max-width: 1200px;
   margin: 40px auto;
   padding: 20px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  border: 1px solid #ddd; /* Optional border to highlight the box */
+  background: linear-gradient(135deg, var(--hologram-start), var(--hologram-end)); /* Áp dụng nền gradient */
+  background-size: 300% 300%; /* Đảm bảo hiệu ứng chuyển động */
+  animation: hologramEffect 6s infinite alternate; /* Hiệu ứng động */
+  border-radius: 15px; /* Làm bo tròn mềm hơn */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Tăng hiệu ứng bóng */
+  border: 1px solid #e0e0e0; /* Sử dụng màu border nhẹ hơn */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Thêm hiệu ứng chuyển động khi hover */
 }
+
+/* Hiệu ứng khi hover */
+.container:hover {
+  transform: scale(1.02); /* Phóng to nhẹ khi hover */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Tăng cường hiệu ứng bóng khi hover */
+}
+
+/* Hiệu ứng nền động */
+@keyframes hologramEffect {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
 
