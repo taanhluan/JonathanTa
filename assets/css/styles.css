@@ -151,65 +151,202 @@
   margin-bottom: 15px;
 }
 
-/* Enhanced Experience Section */
+/* =========================
+   Enhanced Experience Section
+========================= */
 .experience {
-  max-width: 1000px; /* Ensure the width fits the container */
-  margin: 40px auto; /* Center with spacing around */
-  background: linear-gradient(135deg, #ffffff, #f9f9f9); /* Soft gradient */
-  border-radius: 20px; /* Smooth rounded corners */
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Subtle shadow */
-  padding: 20px; /* Adjust padding for proper spacing */
-  border-left: 8px solid var(--primary-color); /* Accent strip */
-  overflow-wrap: break-word; /* Prevent text overflow */
-  word-wrap: break-word; /* Support for older browsers */
+  max-width: 1000px; /* Mở rộng chiều rộng tối đa */
+  margin: 40px auto; /* Tăng khoảng cách giữa các phần */
+  background: linear-gradient(135deg, #ffffff, #f9f9f9); /* Nền gradient nhẹ */
+  border-radius: 20px; /* Bo tròn mềm mại */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Đổ bóng mềm */
+  padding: 40px; /* Tăng padding để tạo không gian thoáng */
+  border-left: 10px solid var(--primary-color); /* Dải màu bên trái */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: left; /* Ensure alignment */
-  position: relative;
+  text-align: left;
+  position: relative; /* Để dùng hiệu ứng nổi bật */
+  overflow: hidden; /* Đảm bảo phần tử con không tràn ra ngoài */
+}
+
+.experience:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Đổ bóng rõ hơn khi hover */
 }
 
 .experience h2 {
-  font-size: 2.4rem;
+  font-size: 2.4rem; /* Tăng kích thước font */
   font-weight: bold;
   color: var(--primary-color);
-  margin-bottom: 20px;
-  border-bottom: 4px solid var(--accent-color);
-  padding-bottom: 10px;
+  margin-bottom: 25px;
+  border-bottom: 4px solid var(--accent-color); /* Đường gạch chân nổi bật */
+  padding-bottom: 12px;
+  text-align: left;
+}
+
+.experience h3 {
+  font-size: 1.8rem; /* Tăng kích thước tiêu đề nhỏ */
+  font-weight: bold;
+  color: var(--text-color);
+  margin-bottom: 15px;
 }
 
 .experience p {
-  margin: 10px 0;
-  font-size: 1rem;
+  margin: 15px 0;
+  font-size: 1.2rem; /* Tăng kích thước chữ */
   line-height: 1.8;
-  color: var(--text-muted);
+  color: var(--text-muted); /* Màu xám nhẹ để không làm rối */
 }
 
-/* Ensure list items are styled properly */
 .experience ul {
   margin: 20px 0;
-  padding-left: 20px;
+  padding-left: 40px;
 }
 
 .experience ul li {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--text-main);
-  margin-bottom: 10px;
+  margin-bottom: 12px; /* Tăng khoảng cách giữa các mục */
+  font-size: 1.1rem; /* Tăng kích thước font của danh sách */
+  line-height: 1.8;
+  color: var(--text-color);
 }
 
-/* Fix collapsible content layout */
+.experience .skills {
+  margin-top: 25px;
+  padding: 20px; /* Tăng padding cho phần kỹ năng */
+  background: var(--highlight-gradient); /* Gradient nổi bật */
+  border-radius: 12px;
+  color: #ffffff; /* Chữ trắng trên nền gradient */
+  font-weight: bold;
+  text-align: left;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Đổ bóng nhẹ */
+}
+
+/* =========================
+   Subtle Animations
+========================= */
+.experience::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0.1));
+  z-index: -1;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.experience:hover::before {
+  opacity: 1; /* Hiệu ứng ánh sáng khi hover */
+}
+
+/* Experience Section Title */
+.experience-title {
+  text-align: center; /* Căn giữa chữ */
+  font-size: 2.4rem; /* Làm to hơn tương đương About */
+  font-weight: bold;
+  color: var(--primary-color); /* Màu nổi bật */
+  margin-bottom: 30px; /* Thêm khoảng cách dưới */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng nhẹ */
+  position: relative;
+}
+
+/* Optional: Decorative Line Below Title */
+.experience-title::after {
+  content: "";
+  display: block;
+  width: 60px; /* Chiều rộng của đường gạch chân */
+  height: 4px; /* Độ dày của đường gạch chân */
+  background: var(--accent-color); /* Màu nổi bật */
+  margin: 10px auto 0; /* Căn giữa và cách chữ 10px */
+  border-radius: 2px; /* Bo tròn nhẹ */
+}
+
+/* Collapsible Design */
+.collapsible {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.collapsible:hover {
+  background-color: var(--hover-gradient);
+  transform: scale(1.03);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.collapsible i {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.collapsible.active i {
+  transform: rotate(180deg);
+}
+
+/* Collapsible Content */
 .content {
+  max-height: 0;
   overflow: hidden;
-  max-height: 0; /* Start collapsed */
-  transition: max-height 0.5s ease, padding 0.5s ease;
+  transition: max-height 0.6s ease-out, padding 0.6s ease-out;
   padding: 0;
   background: var(--light);
-  border-radius: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
 }
 
 .content.show {
-  max-height: 1000px; /* Expand to fit content */
+  max-height: 1200px;
   padding: 15px;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .experience {
+    padding: 20px;
+  }
+
+  .experience h2 {
+    font-size: 1.8rem;
+  }
+
+  .experience h3 {
+    font-size: 1.4rem;
+  }
+
+  .experience ul li {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience {
+    padding: 15px;
+  }
+
+  .experience h2 {
+    font-size: 1.6rem;
+  }
+
+  .experience h3 {
+    font-size: 1.2rem;
+  }
+
+  .experience ul li {
+    font-size: 0.85rem;
+  }
+}
+
 /* =========================
    Footer Section
 ========================= */
