@@ -4,50 +4,57 @@ document.addEventListener("DOMContentLoaded", () => {
   const downloadButton = document.getElementById("download");
   if (downloadButton) {
     downloadButton.addEventListener("click", async () => {
-      // Expand all collapsibles
+      // Mở rộng tất cả các phần "collapsible"
       const collapsibles = document.querySelectorAll(".collapsible");
-      const hiddenContents = []; // Track hidden sections
+      const hiddenContents = []; // Danh sách phần đã ẩn
       collapsibles.forEach((collapsible) => {
         const content = collapsible.nextElementSibling;
-        if (!content.classList.contains("show")) {
-          hiddenContents.push(content); // Track which sections were hidden
+        if (content && !content.classList.contains("show")) {
+          hiddenContents.push(content); // Ghi lại phần đã ẩn
           content.classList.add("show");
           content.style.maxHeight = `${content.scrollHeight}px`;
         }
       });
 
-      // Ensure footer visibility
+      // Đảm bảo hiển thị footer
       const footer = document.querySelector(".footer");
       if (footer) footer.style.display = "block";
 
-      // Generate PDF
-      const resume = document.querySelector(".container");
-      await html2pdf().from(resume).set({
-        margin: 10,
-        filename: "resume_ta_anh_luan.pdf",
-        image: {
-          type: "jpeg",
-          quality: 0.98,
-        },
-        html2canvas: {
-          scale: 2,
-          useCORS: true,
-        },
-        jsPDF: {
-          unit: "mm",
-          format: "a4",
-          orientation: "portrait",
-        },
-      }).save();
+      // Tạo PDF
+      try {
+        const resume = document.querySelector(".container");
+        if (!resume) throw new Error("Không tìm thấy phần tử 'container'.");
+        await html2pdf()
+          .from(resume)
+          .set({
+            margin: 10,
+            filename: "resume_ta_anh_luan.pdf",
+            image: {
+              type: "jpeg",
+              quality: 0.98,
+            },
+            html2canvas: {
+              scale: 2,
+              useCORS: true,
+            },
+            jsPDF: {
+              unit: "mm",
+              format: "a4",
+              orientation: "portrait",
+            },
+          })
+          .save();
+      } catch (error) {
+        console.error("Lỗi khi tạo PDF:", error.message);
+      }
 
-      // Collapse sections that were previously hidden
+      // Thu nhỏ lại các phần "collapsible" đã ẩn trước đó
       hiddenContents.forEach((content) => {
         content.classList.remove("show");
         content.style.maxHeight = null;
       });
     });
   }
-});
 
   // Hiệu ứng nền động cho body dựa trên vị trí chuột
   document.addEventListener("mousemove", (e) => {
