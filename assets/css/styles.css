@@ -1,4 +1,3 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 /* =========================
@@ -66,7 +65,7 @@
   max-width: 1200px; /* Đặt giới hạn chiều rộng tối đa */
   overflow: hidden;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  margin-bottom: 60px; /* Thêm khoảng cách giữa Header và About */
+  margin-bottom: 20px; /* Thêm khoảng cách giữa Header và About */
 }
 
 .header:hover {
@@ -184,49 +183,78 @@
 }
 
 /* =========================
-   Enhanced Experience Section
+   Enhanced Experience Section - Box Design
 ========================= */
 .experience {
-  max-width: 1000px; /* Mở rộng chiều rộng tối đa */
-  margin: 40px auto; /* Tăng khoảng cách giữa các phần */
-  background: linear-gradient(135deg, #ffffff, #f9f9f9); /* Nền gradient nhẹ */
-  border-radius: 20px; /* Bo tròn mềm mại */
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Đổ bóng mềm */
-  padding: 40px; /* Tăng padding để tạo không gian thoáng */
-  border-left: 10px solid var(--primary-color); /* Dải màu bên trái */
+  max-width: 1200px; /* Align width with other sections */
+  margin: 60px auto; /* Add spacing around */
+  padding: 50px; /* Consistent padding */
+  background: linear-gradient(135deg, var(--hologram-start), var(--hologram-end)); /* Gradient like header and about */
+  border-radius: 20px; /* Rounded corners for box design */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+  border: 2px solid rgba(255, 255, 255, 0.4); /* Border for emphasis */
+  text-align: left; /* Align content to the left */
+  overflow: hidden; /* Prevent content overflow */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: left;
-  position: relative; /* Để dùng hiệu ứng nổi bật */
-  overflow: hidden; /* Đảm bảo phần tử con không tràn ra ngoài */
+  position: relative;
 }
 
 .experience:hover {
-  transform: scale(1.03);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Đổ bóng rõ hơn khi hover */
+  transform: scale(1.05); /* Slight scaling effect */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+.experience::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.experience:hover::before {
+  opacity: 1; /* Subtle glow effect on hover */
 }
 
 .experience h2 {
-  font-size: 2.4rem; /* Tăng kích thước font */
-  font-weight: bold;
-  color: var(--primary-color);
-  margin-bottom: 25px;
-  border-bottom: 4px solid var(--accent-color); /* Đường gạch chân nổi bật */
-  padding-bottom: 12px;
-  text-align: left;
+  font-size: 2.6rem; /* Larger title */
+  font-weight: 800; /* Bold title for emphasis */
+  color: var(--primary-color); /* Primary color for text */
+  margin-bottom: 30px; /* Spacing below the title */
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow for title */
+  text-align: center; /* Center title for a box look */
+  position: relative;
+}
+
+.experience h2::after {
+  content: "";
+  display: block;
+  width: 80px; /* Decorative line below title */
+  height: 5px;
+  background: var(--accent-color);
+  margin: 15px auto;
+  border-radius: 5px;
 }
 
 .experience h3 {
-  font-size: 1.8rem; /* Tăng kích thước tiêu đề nhỏ */
+  font-size: 1.8rem;
   font-weight: bold;
-  color: var(--text-color);
-  margin-bottom: 15px;
+  color: var(--text-main);
+  margin-bottom: 20px;
 }
 
 .experience p {
-  margin: 15px 0;
-  font-size: 1.2rem; /* Tăng kích thước chữ */
+  font-size: 1.2rem;
   line-height: 1.8;
-  color: var(--text-muted); /* Màu xám nhẹ để không làm rối */
+  color: var(--text-muted);
+  margin: 15px 0;
+  text-align: justify; /* Align text for readability */
 }
 
 .experience ul {
@@ -235,115 +263,42 @@
 }
 
 .experience ul li {
-  margin-bottom: 12px; /* Tăng khoảng cách giữa các mục */
-  font-size: 1.1rem; /* Tăng kích thước font của danh sách */
-  line-height: 1.8;
-  color: var(--text-color);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  color: var(--text-main);
 }
 
 .experience .skills {
-  margin-top: 25px;
-  padding: 20px; /* Tăng padding cho phần kỹ năng */
-  background: var(--highlight-gradient); /* Gradient nổi bật */
+  margin-top: 30px;
+  padding: 20px;
+  background: var(--highlight-gradient); /* Highlighted section with gradient */
   border-radius: 12px;
-  color: #ffffff; /* Chữ trắng trên nền gradient */
+  color: #ffffff; /* White text for contrast */
   font-weight: bold;
-  text-align: left;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Đổ bóng nhẹ */
-}
-
-/* =========================
-   Subtle Animations
-========================= */
-.experience::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0.1));
-  z-index: -1;
-  transition: opacity 0.5s ease-in-out;
-  opacity: 0;
-}
-
-.experience:hover::before {
-  opacity: 1; /* Hiệu ứng ánh sáng khi hover */
-}
-
-/* Experience Section Title */
-.experience-title {
-  text-align: center; /* Căn giữa chữ */
-  font-size: 2.4rem; /* Làm to hơn tương đương About */
-  font-weight: bold;
-  color: var(--primary-color); /* Màu nổi bật */
-  margin-bottom: 30px; /* Thêm khoảng cách dưới */
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng nhẹ */
-  position: relative;
-}
-
-/* Optional: Decorative Line Below Title */
-.experience-title::after {
-  content: "";
-  display: block;
-  width: 60px; /* Chiều rộng của đường gạch chân */
-  height: 4px; /* Độ dày của đường gạch chân */
-  background: var(--accent-color); /* Màu nổi bật */
-  margin: 10px auto 0; /* Căn giữa và cách chữ 10px */
-  border-radius: 2px; /* Bo tròn nhẹ */
-}
-
-/* Collapsible Design */
-.collapsible {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-  background-color: var(--secondary-color);
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  margin-top: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: left;
-}
-
-.collapsible:hover {
-  background-color: var(--hover-gradient);
-  transform: scale(1.03);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-.collapsible i {
-  font-size: 1.2rem;
-  transition: transform 0.3s ease;
-}
-
-.collapsible.active i {
-  transform: rotate(180deg);
-}
-
-/* Collapsible Content */
-.content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.6s ease-out, padding 0.6s ease-out;
-  padding: 0;
-  background: var(--light);
-  border-radius: 5px;
-  margin-top: 10px;
-  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
-  text-align: left;
-}
-
-.content.show {
-  max-height: 1200px;
-  padding: 15px;
-}
-
-/* Responsive Design */
+/* Responsive Design Adjustments */
 @media (max-width: 768px) {
+  .experience {
+    padding: 30px; /* Reduced padding for smaller screens */
+  }
+
+  .experience h2 {
+    font-size: 2.2rem;
+  }
+
+  .experience h3 {
+    font-size: 1.6rem;
+  }
+
+  .experience ul li {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
   .experience {
     padding: 20px;
   }
@@ -358,24 +313,6 @@
 
   .experience ul li {
     font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .experience {
-    padding: 15px;
-  }
-
-  .experience h2 {
-    font-size: 1.6rem;
-  }
-
-  .experience h3 {
-    font-size: 1.2rem;
-  }
-
-  .experience ul li {
-    font-size: 0.85rem;
   }
 }
 
