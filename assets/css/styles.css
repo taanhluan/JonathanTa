@@ -378,70 +378,95 @@ body {
 
 
 
-/* Enhanced Experience Section */
+/* =========================
+   Enhanced Experience Section
+========================= */
 .experience {
-  max-width: 800px;
-  margin: 20px auto;
-  background: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-  padding: 25px;
-  border-left: 8px solid var(--primary-color);
+  max-width: 1000px; /* Mở rộng chiều rộng tối đa */
+  margin: 40px auto; /* Tăng khoảng cách giữa các phần */
+  background: linear-gradient(135deg, #ffffff, #f9f9f9); /* Nền gradient nhẹ */
+  border-radius: 20px; /* Bo tròn mềm mại */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Đổ bóng mềm */
+  padding: 40px; /* Tăng padding để tạo không gian thoáng */
+  border-left: 10px solid var(--primary-color); /* Dải màu bên trái */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: left;
+  position: relative; /* Để dùng hiệu ứng nổi bật */
+  overflow: hidden; /* Đảm bảo phần tử con không tràn ra ngoài */
 }
 
 .experience:hover {
-  transform: scale(1.02);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transform: scale(1.03);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Đổ bóng rõ hơn khi hover */
 }
 
 .experience h2 {
-  font-size: 2rem;
+  font-size: 2.4rem; /* Tăng kích thước font */
   font-weight: bold;
   color: var(--primary-color);
-  margin-bottom: 20px;
-  border-bottom: 3px solid var(--accent-color);
-  padding-bottom: 10px;
+  margin-bottom: 25px;
+  border-bottom: 4px solid var(--accent-color); /* Đường gạch chân nổi bật */
+  padding-bottom: 12px;
   text-align: left;
 }
 
 .experience h3 {
-  font-size: 1.6rem;
+  font-size: 1.8rem; /* Tăng kích thước tiêu đề nhỏ */
   font-weight: bold;
   color: var(--text-color);
   margin-bottom: 15px;
 }
 
 .experience p {
-  margin: 10px 0;
-  font-size: 1rem;
+  margin: 15px 0;
+  font-size: 1.2rem; /* Tăng kích thước chữ */
   line-height: 1.8;
-  color: var(--text-color);
+  color: var(--text-muted); /* Màu xám nhẹ để không làm rối */
 }
 
 .experience ul {
-  margin: 15px 0;
+  margin: 20px 0;
   padding-left: 40px;
 }
 
 .experience ul li {
-  margin-bottom: 8px;
-  font-size: 1rem;
-  line-height: 1.6;
+  margin-bottom: 12px; /* Tăng khoảng cách giữa các mục */
+  font-size: 1.1rem; /* Tăng kích thước font của danh sách */
+  line-height: 1.8;
   color: var(--text-color);
 }
 
 .experience .skills {
-  margin-top: 20px;
-  padding: 15px;
-  background: var(--highlight-gradient);
-  border-radius: 8px;
-  color: #ffffff;
+  margin-top: 25px;
+  padding: 20px; /* Tăng padding cho phần kỹ năng */
+  background: var(--highlight-gradient); /* Gradient nổi bật */
+  border-radius: 12px;
+  color: #ffffff; /* Chữ trắng trên nền gradient */
   font-weight: bold;
   text-align: left;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Đổ bóng nhẹ */
 }
+
+/* =========================
+   Subtle Animations
+========================= */
+.experience::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0.1));
+  z-index: -1;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.experience:hover::before {
+  opacity: 1; /* Hiệu ứng ánh sáng khi hover */
+}
+
 
 /* Collapsible Design */
 .collapsible {
