@@ -45,7 +45,7 @@
 ========================= */
 .header {
   text-align: center;
-  padding: 60px 20px;
+  padding: 80px 20px; /* Tăng padding để mở rộng chiều cao */
   color: var(--primary);
   background: linear-gradient(135deg, #f0fcfd, #b3e7f0, #d9f4f9, #a7dce4);
   background-size: 200% 200%;
@@ -54,7 +54,9 @@
   position: relative;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
-  margin: 40px;
+  margin: 40px auto; /* Đảm bảo căn giữa và thêm khoảng cách xung quanh */
+  width: 95%; /* Mở rộng chiều rộng */
+  max-width: 1200px; /* Đặt giới hạn chiều rộng tối đa */
   overflow: hidden;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
@@ -63,7 +65,6 @@
   transform: scale(1.05);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
-
 @keyframes hologramEffect {
   0% {
     background-position: 0% 50%;
@@ -196,22 +197,22 @@
    Enhanced About Section - Smaller Version
 ========================= */
 .about {
-  max-width: 600px; /* Giảm chiều rộng tối đa */
-  margin: 20px auto; /* Giảm khoảng cách trên và dưới */
-  padding: 20px; /* Giảm padding bên trong */
+  max-width: 1100px; /* Tăng chiều rộng tối đa */
+  margin: 40px auto; /* Thêm khoảng cách trên và dưới */
+  padding: 40px; /* Tăng padding để mở rộng chiều cao */
   background: linear-gradient(135deg, var(--hologram-start), var(--hologram-end));
   background-size: 300% 300%;
   animation: hologramEffect 4s infinite alternate ease-in-out;
-  border-radius: 15px; /* Giảm bán kính bo tròn */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Giảm hiệu ứng đổ bóng */
+  border-radius: 15px; /* Bo tròn mềm mại */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   color: var(--text-color);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about:hover {
-  transform: scale(1.05); /* Giảm mức độ phóng to khi hover */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Giảm hiệu ứng đổ bóng khi hover */
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
 
 .about h2 {
