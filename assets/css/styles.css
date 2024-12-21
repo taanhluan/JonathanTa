@@ -45,20 +45,21 @@
 ========================= */
 .header {
   text-align: center;
-  padding: 100px 20px; /* Tăng padding để làm nổi bật */
+  padding: 80px 20px; /* Tăng padding để mở rộng chiều cao */
   color: var(--primary);
   background: linear-gradient(135deg, #f0fcfd, #b3e7f0, #d9f4f9, #a7dce4);
   background-size: 200% 200%;
-  animation: hologramEffect 8s infinite alternate; /* Hiệu ứng chuyển động nền */
+  animation: hologramEffect 8s infinite alternate;
   border-bottom: 4px solid var(--accent);
   position: relative;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Tăng bóng đổ */
-  border-radius: 25px; /* Bo tròn mềm mại */
-  margin: 50px auto; /* Căn giữa và thêm khoảng cách */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  margin: 40px auto; /* Đảm bảo căn giữa và thêm khoảng cách xung quanh */
   width: 95%; /* Mở rộng chiều rộng */
   max-width: 1200px; /* Đặt giới hạn chiều rộng tối đa */
   overflow: hidden;
-  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out; /* Hiệu ứng hover mượt mà */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin-bottom: 50px; /* Thêm khoảng cách giữa Header và About */
 }
 
 .header:hover {
@@ -164,44 +165,96 @@
   color: var(--accent);
   text-shadow: 0 0 12px var(--accent);
 }
-
 /* =========================
-   Enhanced About Section - Smaller Version
+   Enhanced About Section
 ========================= */
 .about {
-  max-width: 1100px; /* Tăng chiều rộng tối đa */
-  margin: 40px auto; /* Thêm khoảng cách trên và dưới */
-  padding: 40px; /* Tăng padding để mở rộng chiều cao */
-  background: linear-gradient(135deg, var(--hologram-start), var(--hologram-end));
+  max-width: 1200px; /* Tăng chiều rộng tối đa */
+  margin: 50px auto; /* Thêm khoảng cách trên và dưới */
+  padding: 50px; /* Tăng padding để mở rộng chiều cao */
+  background: linear-gradient(135deg, var(--hologram-start), var(--hologram-end)); /* Nền gradient động */
   background-size: 300% 300%;
   animation: hologramEffect 4s infinite alternate ease-in-out;
-  border-radius: 15px; /* Bo tròn mềm mại */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 20px; /* Bo tròn mềm mại */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Tăng hiệu ứng bóng đổ */
   color: var(--text-color);
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng mượt mà khi hover */
+  margin-top: 50px; /* Đảm bảo thêm khoảng cách phía trên */
 }
 
 .about:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  transform: scale(1.07); /* Phóng to nhẹ khi hover */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); /* Tăng bóng đổ khi hover */
 }
 
 .about h2 {
-  font-size: 1.8rem; /* Giảm kích thước font của tiêu đề */
-  font-weight: 700; /* Giảm độ đậm của font */
-  margin-bottom: 15px; /* Giảm khoảng cách dưới tiêu đề */
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4); /* Giảm hiệu ứng bóng chữ */
-  color: var(--text-color);
+  font-size: 2.2rem; /* Tăng kích thước tiêu đề */
+  font-weight: 800; /* Đậm hơn để nổi bật */
+  margin-bottom: 20px; /* Tăng khoảng cách dưới tiêu đề */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Hiệu ứng bóng chữ nổi bật */
+  color: var(--primary); /* Màu sắc đồng bộ với tiêu đề */
+  position: relative;
+  z-index: 2;
+}
+
+.about h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin: 10px auto;
+  background: var(--accent-color); /* Thanh nhấn dưới tiêu đề */
+  border-radius: 5px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+  100% {
+    opacity: 1;
+    width: 60px;
+  }
 }
 
 .about p {
-  font-size: 1rem; /* Giảm kích thước chữ của nội dung */
-  line-height: 1.6; /* Giảm chiều cao dòng */
-  color: var(--text-color);
-  margin-bottom: 10px; /* Giảm khoảng cách giữa các đoạn văn */
+  font-size: 1.2rem; /* Tăng kích thước chữ để dễ đọc hơn */
+  line-height: 1.8; /* Tăng chiều cao dòng để tạo sự thoáng đãng */
+  color: var(--text-muted); /* Màu sắc dịu nhẹ hơn cho đoạn văn */
+  margin-bottom: 15px; /* Tăng khoảng cách giữa các đoạn văn */
+  text-align: justify; /* Căn lề để nội dung trông gọn gàng */
+  text-indent: 20px; /* Thêm thụt đầu dòng */
 }
 
+.about::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent 70%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.about:hover::before {
+  animation: pulseGlow 6s infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.3;
+    transform: scale(1.1);
+  }
+}
 
 /* Accessibility Enhancements */
 :root {
