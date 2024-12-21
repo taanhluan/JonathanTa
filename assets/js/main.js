@@ -40,11 +40,42 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("mousemove", (e) => {
       const { clientX, clientY } = e; // Lấy vị trí chuột
       const { left, top, width, height } = container.getBoundingClientRect(); // Kích thước của container
-      const xPercent = ((clientX - left) / width) * 100; // Phần trăm ngang
-      const yPercent = ((clientY - top) / height) * 100; // Phần trăm dọc
+      const xPercent = ((clientX - left) / width) * 30; // Phần trăm ngang
+      const yPercent = ((clientY - top) / height) * 30; // Phần trăm dọc
 
       // Cập nhật vị trí background của container
       container.style.backgroundPosition = `${xPercent}% ${yPercent}%`;
     });
   }
+
+  // Chức năng chuyển đổi giữa chế độ sáng và tối
+  const toggleThemeButton = document.getElementById("toggle-theme");
+  if (toggleThemeButton) {
+    toggleThemeButton.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+    });
+  }
+
+  // CSS cho chế độ tối
+  const darkModeCSS = `
+    body.dark-mode {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+    }
+
+    .header, .about, .experience, .footer {
+      background-color: #34495e;
+      color: #ecf0f1;
+    }
+
+    .collapsible {
+      background-color: #3b5998;
+      color: #ecf0f1;
+    }
+  `;
+
+  // Thêm CSS chế độ tối vào trang
+  const styleSheet = document.createElement("style");
+  styleSheet.innerText = darkModeCSS;
+  document.head.appendChild(styleSheet);
 });
