@@ -15,6 +15,8 @@
   --text-main: #2C3E50;      /* Main text color */
   --text-muted: #7F8C8D;     /* Muted text */
   --link-color: #E74C3C;     /* Links and interactive elements */
+  --hologram-start: #f3e5f5; /* Màu lavender nhạt */
+  --hologram-end: #e1bee7;   /* Màu tím nhạt */
 }
 
 @keyframes backgroundAnimation {
