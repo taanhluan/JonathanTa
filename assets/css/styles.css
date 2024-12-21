@@ -637,17 +637,4 @@ body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   border: 1px solid #ddd; /* Optional border to highlight the box */
 }
-/* Add hologram background to the container */
-.container {
-  background: linear-gradient(135deg, #f0fcfd, #b3e7f0, #d9f4f9, #a7dce4);
-  background-size: 200% 200%;
-  animation: hologramEffect 8s infinite alternate;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-}
-body {
-  background: linear-gradient(135deg, #f0fcfd, #b3e7f0, #d9f4f9, #a7dce4);
-  background-size: 200% 200%;
-  animation: hologramEffect 8s infinite alternate;
-}
+
