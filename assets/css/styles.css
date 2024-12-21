@@ -634,13 +634,16 @@ body {
   max-width: 1200px;
   margin: 40px auto;
   padding: 20px;
-  background: linear-gradient(135deg, var(--hologram-start), var(--hologram-end));
-  background-size: 300% 300%;
-  border-radius: 15px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-  border: 1px solid #e0e0e0;
-  transition: background-position 0.1s ease-in-out, transform 0.3s ease-in-out;
+  background: linear-gradient(135deg, #f0fcfd, #b3e7f0, #d9f4f9, #a7dce4); /* Màu hologram giống header */
+  background-size: 300% 300%; /* Hiệu ứng động */
+  animation: hologramEffect 6s infinite alternate; /* Hiệu ứng chuyển đổi */
+  border-radius: 15px; /* Bo góc mềm mại */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng */
+  border: 1px solid #e0e0e0; /* Đường viền nhẹ */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Hiệu ứng hover */
 }
+
+/* Hiệu ứng khi hover */
 .container:hover {
   transform: scale(1.02);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
