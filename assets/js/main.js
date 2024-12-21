@@ -24,4 +24,18 @@ document.addEventListener("DOMContentLoaded", () => {
       }).save();
     });
   }
+
+  // Hiệu ứng nền động theo vị trí chuột
+  document.addEventListener("mousemove", (e) => {
+    const container = document.querySelector(".container"); // Tìm phần tử container
+    if (container) {
+      const { clientX, clientY } = e; // Lấy vị trí chuột
+      const { left, top, width, height } = container.getBoundingClientRect(); // Kích thước của container
+      const xPercent = ((clientX - left) / width) * 100; // Phần trăm ngang
+      const yPercent = ((clientY - top) / height) * 100; // Phần trăm dọc
+
+      // Cập nhật vị trí background dựa trên vị trí chuột
+      container.style.backgroundPosition = `${xPercent}% ${yPercent}%`;
+    }
+  });
 });
