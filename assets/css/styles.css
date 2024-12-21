@@ -151,48 +151,65 @@
   margin-bottom: 15px;
 }
 
-/* =========================
-   Experience Section
-========================= */
+/* Enhanced Experience Section */
 .experience {
-  max-width: 1000px;
-  margin: 40px auto;
-  background: linear-gradient(135deg, #ffffff, #f9f9f9);
-  border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  padding: 40px;
-  border-left: 10px solid var(--primary-color);
+  max-width: 1000px; /* Ensure the width fits the container */
+  margin: 40px auto; /* Center with spacing around */
+  background: linear-gradient(135deg, #ffffff, #f9f9f9); /* Soft gradient */
+  border-radius: 20px; /* Smooth rounded corners */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+  padding: 20px; /* Adjust padding for proper spacing */
+  border-left: 8px solid var(--primary-color); /* Accent strip */
+  overflow-wrap: break-word; /* Prevent text overflow */
+  word-wrap: break-word; /* Support for older browsers */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.experience:hover {
-  transform: scale(1.03);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: left; /* Ensure alignment */
+  position: relative;
 }
 
 .experience h2 {
   font-size: 2.4rem;
   font-weight: bold;
   color: var(--primary-color);
-  margin-bottom: 25px;
+  margin-bottom: 20px;
+  border-bottom: 4px solid var(--accent-color);
+  padding-bottom: 10px;
 }
 
 .experience p {
-  margin: 15px 0;
-  font-size: 1.2rem;
+  margin: 10px 0;
+  font-size: 1rem;
+  line-height: 1.8;
   color: var(--text-muted);
 }
 
+/* Ensure list items are styled properly */
 .experience ul {
   margin: 20px 0;
-  padding-left: 40px;
+  padding-left: 20px;
 }
 
 .experience ul li {
-  margin-bottom: 12px;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-main);
+  margin-bottom: 10px;
 }
 
+/* Fix collapsible content layout */
+.content {
+  overflow: hidden;
+  max-height: 0; /* Start collapsed */
+  transition: max-height 0.5s ease, padding 0.5s ease;
+  padding: 0;
+  background: var(--light);
+  border-radius: 10px;
+}
+
+.content.show {
+  max-height: 1000px; /* Expand to fit content */
+  padding: 15px;
+}
 /* =========================
    Footer Section
 ========================= */
