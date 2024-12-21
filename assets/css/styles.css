@@ -41,42 +41,29 @@
 }
 
 /* =========================
-   Header Section
+   Enhanced Header Section
 ========================= */
 .header {
   text-align: center;
-  padding: 80px 20px; /* Tăng padding để mở rộng chiều cao */
+  padding: 100px 20px; /* Tăng padding để làm nổi bật */
   color: var(--primary);
   background: linear-gradient(135deg, #f0fcfd, #b3e7f0, #d9f4f9, #a7dce4);
   background-size: 200% 200%;
-  animation: hologramEffect 8s infinite alternate;
+  animation: hologramEffect 8s infinite alternate; /* Hiệu ứng chuyển động nền */
   border-bottom: 4px solid var(--accent);
   position: relative;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
-  margin: 40px auto; /* Đảm bảo căn giữa và thêm khoảng cách xung quanh */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Tăng bóng đổ */
+  border-radius: 25px; /* Bo tròn mềm mại */
+  margin: 50px auto; /* Căn giữa và thêm khoảng cách */
   width: 95%; /* Mở rộng chiều rộng */
   max-width: 1200px; /* Đặt giới hạn chiều rộng tối đa */
   overflow: hidden;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out; /* Hiệu ứng hover mượt mà */
 }
 
 .header:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-}
-@keyframes hologramEffect {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
-
-
-.header:hover {
-  transform: scale(1.02);
+  transform: scale(1.07); /* Tăng nhẹ kích thước khi hover */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Tăng hiệu ứng bóng */
 }
 
 @keyframes hologramEffect {
@@ -86,22 +73,6 @@
   100% {
     background-position: 100% 50%;
   }
-}
-
-.header {
-  text-align: center;
-  padding: 60px 20px;
-  color: var(--primary);
-  background: linear-gradient(135deg, #f0fcfd, #b3e7f0, #d9f4f9, #a7dce4);
-  background-size: 200% 200%;
-  animation: hologramEffect 8s infinite alternate;
-  border-bottom: 4px solid var(--accent);
-  position: relative;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
-  margin: 40px;
-  overflow: hidden;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .header::before {
@@ -111,57 +82,58 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(255, 215, 0, 0.3) 0%, rgba(255, 215, 0, 0) 70%);
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.3), transparent 70%);
   z-index: 1;
   pointer-events: none;
+  animation: pulseGlow 6s infinite alternate; /* Hiệu ứng ánh sáng lan tỏa */
 }
 
-.header:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-}
-
-@keyframes hologramEffect {
+@keyframes pulseGlow {
   0% {
-    background-position: 0% 50%;
+    opacity: 0.6;
+    transform: scale(1);
   }
   100% {
-    background-position: 100% 50%;
+    opacity: 0.3;
+    transform: scale(1.2);
   }
 }
 
-
 .header h1 {
-  font-size: 3.5rem;
-  font-weight: 800;
-  margin-bottom: 10px;
-  color: var(--text-brown); /* Corrected to solid brown */
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  font-size: 4rem; /* Tăng kích thước chữ */
+  font-weight: 900; /* Tăng độ đậm */
+  margin-bottom: 15px;
+  color: var(--text-brown); /* Màu sắc nổi bật */
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6); /* Hiệu ứng bóng chữ nổi bật */
   z-index: 2;
   position: relative;
 }
 
 .header p {
-  font-size: 1.4rem;
-  color: var(--text-brown); /* Corrected to solid brown */
-  margin-bottom: 20px;
+  font-size: 1.6rem; /* Tăng kích thước chữ phụ */
+  color: var(--text-brown); /* Màu sắc đồng bộ */
+  margin-bottom: 25px;
   z-index: 2;
   position: relative;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4); /* Hiệu ứng bóng nhẹ */
 }
-
-
 
 .profile-photo img {
-  width: 150px;
-  height: 150px;
+  width: 160px; /* Tăng kích thước ảnh */
+  height: 160px;
   border-radius: 50%;
   margin-bottom: 20px;
-  border: 8px solid var(--white);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border: 10px solid var(--white); /* Tăng độ dày viền */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Hiệu ứng bóng đổ mạnh hơn */
   position: relative;
   z-index: 2;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng hover */
 }
 
+.profile-photo img:hover {
+  transform: scale(1.1); /* Phóng to nhẹ khi hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Tăng bóng khi hover */
+}
 /* =========================
    Social Icons Animation
 ========================= */
