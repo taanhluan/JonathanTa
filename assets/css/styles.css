@@ -467,6 +467,27 @@ body {
   opacity: 1; /* Hiệu ứng ánh sáng khi hover */
 }
 
+/* Experience Section Title */
+.experience-title {
+  text-align: center; /* Căn giữa chữ */
+  font-size: 2.4rem; /* Làm to hơn tương đương About */
+  font-weight: bold;
+  color: var(--primary-color); /* Màu nổi bật */
+  margin-bottom: 30px; /* Thêm khoảng cách dưới */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng nhẹ */
+  position: relative;
+}
+
+/* Optional: Decorative Line Below Title */
+.experience-title::after {
+  content: "";
+  display: block;
+  width: 60px; /* Chiều rộng của đường gạch chân */
+  height: 4px; /* Độ dày của đường gạch chân */
+  background: var(--accent-color); /* Màu nổi bật */
+  margin: 10px auto 0; /* Căn giữa và cách chữ 10px */
+  border-radius: 2px; /* Bo tròn nhẹ */
+}
 
 /* Collapsible Design */
 .collapsible {
