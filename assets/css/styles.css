@@ -304,20 +304,52 @@
 /* General Styling */
 body {
   font-family: Arial, sans-serif;
-  max-width: 1200px; /* Giới hạn chiều rộng */
-  margin: 0 auto; /* Căn giữa nội dung */
-  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #ffecd2, #fcb69f, #a1c4fd, #c2e9fb); /* Gradient động */
+  background-size: 400% 400%;
+  animation: gradientAnimation 10s infinite alternate ease-in-out; /* Hiệu ứng chuyển động */
   color: var(--text-color);
-  padding: 20px;
   line-height: 1.6;
 }
 
+/* Đảm bảo nội dung container được căn giữa */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  z-index: 10;
+  position: relative;
+}
+
+/* Animation for background gradient */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Responsive Styling */
 @media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+
   .header, .about, .experience, .footer {
     max-width: 100%; /* Toàn bộ chiều rộng trên màn hình nhỏ */
     padding: 15px; /* Giảm padding nếu cần */
   }
 }
+
 
 /* Enhanced Experience Section */
 .experience {
