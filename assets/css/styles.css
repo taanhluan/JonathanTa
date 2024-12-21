@@ -116,6 +116,36 @@
   transform: scale(1.1);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
+/* =========================
+   Social Icons Animation
+========================= */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.social-icons a {
+  font-size: 2rem;
+  color: var(--text-brown);
+  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.social-icons a:hover {
+  transform: scale(1.3) rotate(15deg);
+  color: var(--accent);
+  text-shadow: 0 0 15px var(--accent);
+}
+
+.social-icons a:active {
+  transform: scale(0.9) rotate(-10deg);
+  color: var(--accent);
+  text-shadow: 0 0 12px var(--accent);
+}
 
 /* =========================
    About Section
