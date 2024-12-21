@@ -1,11 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Main script initialized.");
 
-  // Chức năng tải xuống PDF
   const downloadButton = document.getElementById("download");
   if (downloadButton) {
     downloadButton.addEventListener("click", async () => {
-      const resume = document.getElementById("resume");
+      // Expand all collapsibles
+      const collapsibles = document.querySelectorAll(".collapsible");
+      const hiddenContents = []; // Track hidden sections
+      collapsibles.forEach((collapsible) => {
+        const content = collapsible.nextElementSibling;
+        if (!content.classList.contains("show")) {
+          hiddenContents.push(content); // Track which sections were hidden
+          content.classList.add("show");
+          content.style.maxHeight = `${content.scrollHeight}px`;
+        }
+      });
+
+      // Ensure footer visibility
+      const footer = document.querySelector(".footer");
+      if (footer) footer.style.display = "block";
+
+      // Generate PDF
+      const resume = document.querySelector(".container");
       await html2pdf().from(resume).set({
         margin: 10,
         filename: "resume_ta_anh_luan.pdf",
@@ -23,8 +39,15 @@ document.addEventListener("DOMContentLoaded", () => {
           orientation: "portrait",
         },
       }).save();
+
+      // Collapse sections that were previously hidden
+      hiddenContents.forEach((content) => {
+        content.classList.remove("show");
+        content.style.maxHeight = null;
+      });
     });
   }
+});
 
   // Hiệu ứng nền động cho body dựa trên vị trí chuột
   document.addEventListener("mousemove", (e) => {
