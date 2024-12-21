@@ -66,7 +66,7 @@
   max-width: 1200px; /* Đặt giới hạn chiều rộng tối đa */
   overflow: hidden;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  margin-bottom: 500px; /* Thêm khoảng cách giữa Header và About */
+  margin-bottom: 60px; /* Thêm khoảng cách giữa Header và About */
 }
 
 .header:hover {
