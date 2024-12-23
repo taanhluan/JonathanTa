@@ -382,76 +382,7 @@ body {
    Enhanced Experience Section
 ========================= */
 .experience {
-  max-width: 1000px; /* Mở rộng chiều rộng tối đa */
-  margin: 40px auto; /* Tăng khoảng cách giữa các phần */
-  background: linear-gradient(135deg, #ffffff, #f9f9f9); /* Nền gradient nhẹ */
-  border-radius: 20px; /* Bo tròn mềm mại */
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Đổ bóng mềm */
-  padding: 40px; /* Tăng padding để tạo không gian thoáng */
-  border-left: 10px solid var(--primary-color); /* Dải màu bên trái */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: left;
-  position: relative; /* Để dùng hiệu ứng nổi bật */
-  overflow: hidden; /* Đảm bảo phần tử con không tràn ra ngoài */
-}
-
-.experience:hover {
-  transform: scale(1.03);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Đổ bóng rõ hơn khi hover */
-}
-
-.experience h2 {
-  font-size: 2.4rem; /* Tăng kích thước font */
-  font-weight: bold;
-  color: var(--primary-color);
-  margin-bottom: 25px;
-  border-bottom: 4px solid var(--accent-color); /* Đường gạch chân nổi bật */
-  padding-bottom: 12px;
-  text-align: left;
-}
-
-.experience h3 {
-  font-size: 1.8rem; /* Tăng kích thước tiêu đề nhỏ */
-  font-weight: bold;
-  color: var(--text-color);
-  margin-bottom: 15px;
-}
-
-.experience p {
-  margin: 15px 0;
-  font-size: 1.2rem; /* Tăng kích thước chữ */
-  line-height: 1.8;
-  color: var(--text-muted); /* Màu xám nhẹ để không làm rối */
-}
-
-.experience ul {
-  margin: 20px 0;
-  padding-left: 40px;
-}
-
-.experience ul li {
-  margin-bottom: 12px; /* Tăng khoảng cách giữa các mục */
-  font-size: 1.1rem; /* Tăng kích thước font của danh sách */
-  line-height: 1.8;
-  color: var(--text-color);
-}
-
-.experience .skills {
-  margin-top: 25px;
-  padding: 20px; /* Tăng padding cho phần kỹ năng */
-  background: var(--highlight-gradient); /* Gradient nổi bật */
-  border-radius: 12px;
-  color: #ffffff; /* Chữ trắng trên nền gradient */
-  font-weight: bold;
-  text-align: left;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Đổ bóng nhẹ */
-}
-
-/* =========================
-   Enhanced Experience Section
-========================= */
-.experience {
-  max-width: 1000px;
+  max-width: 80%; /* Sử dụng tỷ lệ phần trăm để tăng tính responsive */
   margin: 40px auto;
   padding: 40px;
   background: linear-gradient(135deg, #ffffff, #f9f9f9);
@@ -464,9 +395,24 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.experience:hover {
+.experience:hover,
+.experience:hover::before {
   transform: scale(1.03);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+}
+
+.experience::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0.1));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .experience h2 {
@@ -490,6 +436,17 @@ body {
   color: var(--text-color);
 }
 
+.experience .skills {
+  margin-top: 25px;
+  padding: 20px;
+  background: var(--highlight-gradient);
+  border-radius: 12px;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: left;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
 /* Title Styling */
 .experience-title {
   text-align: center;
@@ -509,24 +466,6 @@ body {
   background: var(--accent-color);
   margin: 10px auto 0;
   border-radius: 2px;
-}
-
-/* Subtle Background Animation */
-.experience::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0.1));
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.experience:hover::before {
-  opacity: 1;
 }
 
 /* Responsive Design */
@@ -553,6 +492,38 @@ body {
     font-size: 0.85rem;
   }
 }
+
+/* Collapse and Expand */
+.experience .collapse-expand {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.collapse-expand button {
+  background: var(--primary-color);
+  color: #ffffff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.collapse-expand button:hover {
+  background: var(--accent-color);
+}
+
+.experience-content {
+  max-height: 500px;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.experience-content.collapsed {
+  max-height: 0;
+}
+
 /* Footer Styling */
 .footer {
   background: var(--footer-bg);
