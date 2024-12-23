@@ -375,11 +375,6 @@ body {
     padding: 15px; /* Giảm padding nếu cần */
   }
 }
-
-
-
-
-
 /* Footer Styling */
 .footer {
   background: var(--footer-bg);
@@ -493,55 +488,6 @@ body {
   }
 }
 
-
-/* =========================
-   Download Button Styling
-========================= */
-.download-btn {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
-}
-
-.download-btn button {
-  background: linear-gradient(135deg, #8e44ad, #9b59b6);
-  color: #ffffff;
-  font-size: 1.2rem;
-  font-weight: 600;
-  padding: 12px 25px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  animation: buttonHologram 4s infinite alternate ease-in-out;
-  background-size: 300% 300%;
-}
-
-.download-btn button:hover {
-  background: linear-gradient(135deg, #9b59b6, #8e44ad);
-  transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
-
-.download-btn button:active {
-  transform: scale(0.98);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.download-btn button:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(155, 89, 182, 0.5);
-}
-
-@keyframes buttonHologram {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
 .container {
   max-width: 1200px;
   margin: 40px auto;
