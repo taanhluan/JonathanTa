@@ -442,11 +442,11 @@ button:hover {
               rgba(240, 250, 255, 0.8), /* Xanh pastel nhạt */
               rgba(255, 240, 250, 0.8), /* Hồng pastel nhạt */
               rgba(245, 255, 250, 0.8)); /* Vàng ánh xanh nhạt */
-  background-size: 200% 200%; /* Tăng kích thước để phù hợp animation */
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Giảm độ mạnh bóng đổ */
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Viền sáng hơn với độ trong suốt 30% */
+  background-size: 200% 200%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 15px;
-  animation: hologramEffect 4s infinite alternate ease-in-out; /* Hiệu ứng động cho nền */
+  animation: hologramEffect 4s infinite alternate ease-in-out;
 }
 
 .section h2 {
@@ -665,22 +665,28 @@ body, html {
 }
 /* CSS chỉ áp dụng khi xuất PDF */
 .pdf-export .section {
-  background: #ffffff !important; /* Nền trắng */
-  color: #000 !important; /* Màu chữ đen đậm */
+  background: #ffffff !important; /* Nền trắng để chữ dễ nhìn */
+  color: #000 !important; /* Chữ đen rõ ràng */
   box-shadow: none !important; /* Loại bỏ bóng đổ */
-  border: 1px solid #ddd !important; /* Viền đơn giản */
-  animation: none !important; /* Loại bỏ hiệu ứng động */
-  border-radius: 0 !important; /* Bỏ bo góc */
+  border: 1px solid #ddd !important; /* Viền đơn giản hơn */
+  animation: none !important; /* Tắt hiệu ứng động */
+  border-radius: 0 !important; /* Loại bỏ bo góc */
 }
 
-.pdf-export img {
-  max-width: 100% !important; /* Đảm bảo hình ảnh không bị cắt */
-  height: auto !important;
+.pdf-export .section h2,
+.pdf-export .section p,
+.pdf-export .section ul,
+.pdf-export .section li {
+  color: #000 !important; /* Chữ đen đậm */
+  font-size: 16px !important; /* Cỡ chữ phù hợp */
+  line-height: 1.5 !important; /* Khoảng cách dòng */
+}
+
+.pdf-export .section ul {
+  padding-left: 20px !important; /* Thụt lề danh sách */
 }
 
 .pdf-export {
-  overflow: visible !important; /* Đảm bảo không bị cắt nội dung */
+  overflow: visible !important; /* Hiển thị đầy đủ nội dung */
 }
-.pdf-export {
-  font-family: Arial, sans-serif !important; /* Sử dụng phông chữ chuẩn */
-}
+
