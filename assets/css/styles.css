@@ -707,3 +707,10 @@ body, html {
 .pdf-export .content {
   overflow: visible !important;
 }
+.pdf-export .collapsible + .content {
+  max-height: none !important;
+  display: block !important; /* Đảm bảo nội dung được hiển thị */
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
