@@ -376,61 +376,69 @@ body {
   }
 }
 
-/* General Styling for Collapsible Section */
+/* General Styling for the Experience Section */
 .section {
   margin: 50px auto;
   max-width: 900px;
   padding: 20px;
-  border-radius: 10px;
-  background: var(--background-color, #fff);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  background: linear-gradient(135deg, var(--hologram-start, #f3e5f5), var(--hologram-end, #e1bee7)); /* Holographic gradient */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .section h2 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 20px;
-  color: var(--primary-color, #333);
+  color: var(--primary, #2C3E50); /* Deep blue for primary text */
+  text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.6); /* Light glow effect */
 }
 
+/* Collapsible Headers */
 .collapsible {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 15px;
+  padding: 15px 20px;
   font-size: 1.2rem;
-  background: var(--primary-color, #f7f7f7);
-  color: var(--text-color, #333);
-  border: 1px solid var(--border-color, #ddd);
-  border-radius: 5px;
+  background: linear-gradient(135deg, var(--primary, #2C3E50), var(--secondary, #34495E)); /* Gradient header */
+  color: var(--white, #FFFFFF); /* White text for contrast */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
   margin-bottom: 10px;
   cursor: pointer;
   transition: background 0.3s ease, color 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .collapsible:hover {
-  background: var(--hover-gradient, #e0e0e0);
-  color: var(--accent-color, #007bff);
+  background: linear-gradient(135deg, var(--accent, #E74C3C), var(--secondary, #34495E)); /* Red and blue gradient */
+  color: var(--white, #FFFFFF); /* Ensure text remains white */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Enhance glow */
 }
 
 .collapsible i {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   transition: transform 0.3s ease;
 }
 
 .collapsible.open i {
-  transform: rotate(180deg);
+  transform: rotate(180deg); /* Chevron rotates when expanded */
 }
 
+/* Content Section */
 .content {
   display: none;
-  padding: 15px;
-  background: var(--content-background, #f9f9f9);
-  border-left: 4px solid var(--primary-color, #007bff);
-  border-radius: 5px;
+  padding: 20px;
+  background: var(--light, #ECF0F1); /* Light gray for content background */
+  border-left: 4px solid var(--accent, #E74C3C); /* Red accent for left border */
+  border-radius: 10px;
   font-size: 1rem;
-  color: var(--text-color-muted, #555);
+  color: var(--text-main, #2C3E50); /* Main text color */
   line-height: 1.6;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: max-height 0.3s ease, opacity 0.3s ease;
 }
 
 .content ul {
@@ -444,12 +452,27 @@ body {
 }
 
 .content strong {
-  color: var(--primary-color, #333);
+  color: var(--primary, #2C3E50); /* Bold text color */
 }
 
+/* Expanded Content */
 .content.expanded {
   display: block;
+  animation: fadeIn 0.5s ease-in-out;
 }
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 /* Footer Styling */
 .footer {
