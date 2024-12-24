@@ -4,31 +4,47 @@
      Root Variables
 ========================= */
 :root {
-  /* Base Colors */
-  --primary: #2C3E50;        /* Deep blue for primary content */
-  --secondary: #34495E;      /* Slightly lighter blue */
-  --accent: #E74C3C;         /* Red accent for highlights */
-  --light: #ECF0F1;          /* Light gray for backgrounds */
-  --white: #FFFFFF;          /* White for contrast */
-
-  --text-main: #2C3E50;      /* Main text color */
-  /* Text Colors */
-  --text-muted: #7F8C8D;     /* Muted text */
-  --link-color: #E74C3C;     /* Links and interactive elements */
+  /* Common Variables */
   --hologram-start: #f3e5f5;
   --hologram-end: #e1bee7;
+  --text-color: #4a148c;
+  --highlight-gradient: linear-gradient(135deg, #d1c4e9, #b39ddb);
+  --hover-gradient: linear-gradient(135deg, #b39ddb, #9575cd);
 }
 
-@keyframes backgroundAnimation {
+.theme-blue {
+  --primary: #2C3E50;
+  --secondary: #34495E;
+  --accent: #E74C3C;
+  --light: #ECF0F1;
+  --white: #FFFFFF;
+}
+
+.theme-lavender {
+  --hologram-start: #f8e8fc;
+  --hologram-end: #e3c3f5;
+  --accent-color: #d09ce1;
+  --background-color: #f7ecfc;
+}
+
+.theme-orange {
+  --primary-color: #ff9800;
+  --secondary-color: #fff3e0;
+  --accent-color: #ff5722;
+  --background-color: #ffe0b2;
+  --text-color: #3e2723;
+}
+@keyframes hologramEffect {
   0% {
-    background-color: var(--animation-start);
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 50% 100%;
   }
   100% {
-    background-color: var(--animation-end);
+    background-position: 100% 50%;
   }
 }
-
-
 
 /* =========================
    Global Reset
@@ -65,15 +81,6 @@
 .header:hover {
   transform: scale(1.07); /* Tăng nhẹ kích thước khi hover */
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Tăng hiệu ứng bóng */
-}
-
-@keyframes hologramEffect {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
 }
 
 .header::before {
@@ -256,71 +263,6 @@
   }
 }
 
-/* Accessibility Enhancements */
-:root {
-  --hologram-start: #f8e8fc; /* Light lavender for hologram start */
-  --hologram-end: #e3c3f5;   /* Soft purple for hologram end */
-  --accent-color: #d09ce1;   /* Soft purple accent for highlights */
-  --background-color: #f7ecfc; /* Very light lavender background */
-  --text-color: #4a148c;     /* Deep purple for text */
-  --highlight-gradient: linear-gradient(135deg, #e0c3fc, #b39ddb); /* Gradient for highlights */
-  --hover-gradient: linear-gradient(135deg, #b39ddb, #9575cd); /* Gradient for hover states */
-}
-
-@keyframes hologramEffect {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 50% 100%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
-
-
-/* Accessibility Enhancements */
-:root {
-  --hologram-start: #f3e5f5; /* Light lavender for hologram start */
-  --hologram-end: #e1bee7;   /* Soft purple for hologram end */
-  --accent-color: #ce93d8;   /* Soft purple accent for highlights */
-  --background-color: #f8f0fc; /* Very light lavender background */
-  --text-color: #4a148c;     /* Deep purple for text */
-  --highlight-gradient: linear-gradient(135deg, #d1c4e9, #b39ddb); /* Gradient for highlights */
-  --hover-gradient: linear-gradient(135deg, #b39ddb, #9575cd); /* Gradient for hover states */
-}
-
-@keyframes hologramEffect {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
-
-
-/* Accessibility Enhancements */
-:root {
-  --primary-color: #ff9800; /* Vibrant orange for main elements */
-  --secondary-color: #fff3e0; /* Light orange for highlights */
-  --accent-color: #ff5722; /* Bright orange-red for interactive elements */
-  --background-color: #ffe0b2; /* Warm beige for the background */
-  --text-color: #3e2723; /* Rich brown for text */
-  --highlight-gradient: linear-gradient(135deg, #ffcc80, #ffa726); /* Gradient for highlights */
-  --hover-gradient: linear-gradient(135deg, #ffa726, #ff7043); /* Gradient for hover states */
-}
-
-@keyframes hologramEffect {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-  
-}
 .header, .about, .experience, .footer {
   max-width: 900px; /* Điều chỉnh chiều rộng của từng phần */
   margin: 0 auto; /* Căn giữa các phần */
@@ -564,19 +506,6 @@ body {
   font-size: 1rem;
   color: var(--text-muted);
   z-index: 2;
-}
-
-/* Animation Enhancements */
-@keyframes hologramEffect {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 50% 100%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
 }
 
 @keyframes pulseGlow {
