@@ -407,6 +407,17 @@ button:hover {
   line-height: 1.8;
   color: #495057; /* Màu chữ trung tính để dễ đọc */
 }
+/* Tùy chọn: Thêm ảnh cho container */
+.container {
+  background-image: url('https://github.com/taanhluan/JonathanTa/blob/main/assets/images/Christmax.jpg?raw=true');
+  background-size: cover; /* Phủ kín container */
+  background-position: top; /* Đặt ảnh ở phía trên */
+  background-repeat: no-repeat; /* Không lặp lại ảnh */
+  border-radius: 15px; /* Bo tròn góc container */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+}
+
 
 /* General Styling for the Experience Section */
 .section {
