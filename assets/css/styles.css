@@ -4,7 +4,6 @@
      Root Variables
 ========================= */
 :root {
-  /* Common Variables */
   --hologram-start: #f3e5f5;
   --hologram-end: #e1bee7;
   --text-color: #2c3e50;
@@ -12,46 +11,20 @@
   --hover-gradient: linear-gradient(135deg, #42a5f5, #1e88e5);
   --background-color: #f9f9f9;
   --white: #ffffff;
-}
-
-/* =========================
-        Theme: Blue
-========================= */
-.theme-blue {
   --primary: #1e3a56;
   --secondary: #2c5364;
   --accent: #29b6f6;
   --light: #e3f2fd;
-  --text-color: #ffffff;
-}
-
-/* =========================
-      Theme: Lavender
-========================= */
-.theme-lavender {
-  --hologram-start: #ede7f6;
-  --hologram-end: #d1c4e9;
-  --accent-color: #9575cd;
-  --background-color: #ede7f6;
-  --text-color: #4a148c;
-}
-
-/* =========================
-      Theme: Orange
-========================= */
-.theme-orange {
-  --primary-color: #e65100;
-  --secondary-color: #ffcc80;
-  --accent-color: #ff5722;
-  --background-color: #fff3e0;
-  --text-color: #3e2723;
 }
 
 /* =========================
       Base Styling
 ========================= */
 body {
-  background-color: #fff; /* White background */
+  background-color: var(--background-color);
+  background-image: url("path/to/your/subtle-pattern.png"); /* Add a subtle pattern image */
+  background-size: cover;
+  background-attachment: fixed;
   color: var(--text-color);
   font-family: 'Inter', sans-serif;
   font-size: 16px;
@@ -166,9 +139,7 @@ button:hover {
   text-align: center;
   padding: 80px 20px;
   color: var(--primary);
-  background: linear-gradient(135deg, #f0fcfd, #b3e7f0, #d9f4f9, #a7dce4);
-  background-size: 200% 200%;
-  animation: hologramEffect 8s infinite alternate;
+  background-color: var(--background-color);
   border-bottom: 4px solid var(--accent);
   position: relative;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -214,7 +185,7 @@ button:hover {
   font-size: 4rem;
   font-weight: 900;
   margin-bottom: 15px;
-  color: var(--text-brown);
+  color: var(--text-color);
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
   z-index: 2;
   position: relative;
@@ -222,7 +193,7 @@ button:hover {
 
 .header p {
   font-size: 1.6rem;
-  color: var(--text-brown);
+  color: var(--text-color);
   margin-bottom: 25px;
   z-index: 2;
   position: relative;
@@ -303,9 +274,7 @@ button:hover {
   max-width: 1200px;
   margin: 50px auto;
   padding: 50px;
-  background: linear-gradient(135deg, var(--hologram-start), var(--hologram-end));
-  background-size: 300% 300%;
-  animation: hologramEffect 4s infinite alternate ease-in-out;
+  background-color: var(--background-color);
   border-radius: 20px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
   color: var(--text-color);
@@ -354,7 +323,7 @@ button:hover {
 .about p {
   font-size: 1.2rem;
   line-height: 1.8;
-  color: var(--text-muted);
+  color: var(--text-color);
   margin-bottom: 15px;
   text-align: justify;
   text-indent: 20px;
@@ -380,6 +349,16 @@ button:hover {
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
+}
+
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
 }
 
 /* Ensure container content is centered */
@@ -411,7 +390,7 @@ button:hover {
   margin: 50px auto;
   max-width: 900px;
   padding: 20px;
-  background: linear-gradient(135deg, var(--hologram-start, #f3e5f5), var(--hologram-end, #e1bee7));
+  background-color: var(--background-color);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 15px;
@@ -421,7 +400,7 @@ button:hover {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 20px;
-  color: var(--primary, #2C3E50);
+  color: var(--primary);
   text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.6);
 }
 
@@ -432,8 +411,8 @@ button:hover {
   align-items: center;
   padding: 15px 20px;
   font-size: 1.2rem;
-  background: linear-gradient(135deg, var(--primary, #2C3E50), var(--secondary, #34495E));
-  color: var(--white, #FFFFFF);
+  background: var(--primary);
+  color: var(--white);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 10px;
   margin-bottom: 10px;
@@ -443,8 +422,8 @@ button:hover {
 }
 
 .collapsible:hover {
-  background: linear-gradient(135deg, var(--accent, #E74C3C), var(--secondary, #34495E));
-  color: var(--white, #FFFFFF);
+  background: var(--accent);
+  color: var(--white);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -461,11 +440,11 @@ button:hover {
 .content {
   display: none;
   padding: 20px;
-  background: var(--light, #ECF0F1);
-  border-left: 4px solid var(--accent, #E74C3C);
+  background: var(--light);
+  border-left: 4px solid var(--accent);
   border-radius: 10px;
   font-size: 1rem;
-  color: var(--text-main, #2C3E50);
+  color: var(--text-color);
   line-height: 1.6;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: max-height 0.3s ease, opacity 0.3s ease;
@@ -487,7 +466,7 @@ button:hover {
 }
 
 .content strong {
-  color: var(--primary, #2C3E50);
+  color: var(--primary);
 }
 
 /* Fade-in Animation */
@@ -504,7 +483,7 @@ button:hover {
 
 /* Footer Styling */
 .footer {
-  background: var(--footer-bg);
+  background: var(--background-color);
   padding: 40px 20px;
   text-align: center;
   border-top: 3px solid var(--primary-color);
@@ -529,7 +508,7 @@ button:hover {
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  color: var(--footer-text);
+  color: var(--text-color);
 }
 
 /* Social Icons Styling */
@@ -575,7 +554,7 @@ button:hover {
 .footer-bottom {
   margin-top: 20px;
   font-size: 0.9rem;
-  color: var(--footer-text);
+  color: var(--text-color);
 }
 
 /* Responsive Design */
