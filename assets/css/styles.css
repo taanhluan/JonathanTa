@@ -663,30 +663,47 @@ img {
 body, html {
   overflow: visible !important; /* Đảm bảo toàn bộ nội dung được hiển thị */
 }
-/* CSS chỉ áp dụng khi xuất PDF */
+/* Thiết kế gốc trên trình duyệt */
+.section {
+  margin: 50px auto;
+  max-width: 900px;
+  padding: 20px;
+  background: linear-gradient(135deg, 
+              rgba(255, 255, 255, 0.9), 
+              rgba(240, 250, 255, 0.8), 
+              rgba(255, 240, 250, 0.8), 
+              rgba(245, 255, 250, 0.8));
+  background-size: 200% 200%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  animation: hologramEffect 4s infinite alternate ease-in-out;
+}
+
+/* Tối ưu hóa cho PDF */
 .pdf-export .section {
-  background: #ffffff !important; /* Nền trắng để chữ dễ nhìn */
-  color: #000 !important; /* Chữ đen rõ ràng */
-  box-shadow: none !important; /* Loại bỏ bóng đổ */
-  border: 1px solid #ddd !important; /* Viền đơn giản hơn */
+  background: #ffffff !important; /* Nền trắng */
+  color: #000 !important; /* Chữ đen */
+  box-shadow: none !important; /* Bỏ bóng đổ */
+  border: 1px solid #ddd !important; /* Viền đơn giản */
   animation: none !important; /* Tắt hiệu ứng động */
-  border-radius: 0 !important; /* Loại bỏ bo góc */
+  border-radius: 0 !important; /* Bỏ bo góc */
 }
 
 .pdf-export .section h2,
 .pdf-export .section p,
 .pdf-export .section ul,
 .pdf-export .section li {
-  color: #000 !important; /* Chữ đen đậm */
-  font-size: 16px !important; /* Cỡ chữ phù hợp */
-  line-height: 1.5 !important; /* Khoảng cách dòng */
+  color: #000 !important; /* Chữ đen */
+  font-size: 16px !important;
+  line-height: 1.5 !important;
 }
 
-.pdf-export .section ul {
-  padding-left: 20px !important; /* Thụt lề danh sách */
+.pdf-export img {
+  max-width: 100% !important;
+  height: auto !important;
 }
 
-.pdf-export {
-  overflow: visible !important; /* Hiển thị đầy đủ nội dung */
+.pdf-export .content {
+  overflow: visible !important;
 }
-
