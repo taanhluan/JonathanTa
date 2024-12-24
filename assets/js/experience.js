@@ -1,14 +1,16 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const collapsibles = document.querySelectorAll(".collapsible");
+// JavaScript to toggle collapsible sections
+document.querySelectorAll('.collapsible').forEach((item) => {
+  item.addEventListener('click', () => {
+    const content = item.nextElementSibling;
 
-  collapsibles.forEach((collapsible) => {
-    collapsible.addEventListener("click", () => {
-      const content = collapsible.nextElementSibling;
-      const icon = collapsible.querySelector("i");
-      content.classList.toggle("show");
-      icon.classList.toggle("rotate");
-    });
+    // Toggle open class for the chevron icon
+    item.classList.toggle('open');
+
+    // Toggle content visibility
+    if (content.style.display === 'block') {
+      content.style.display = 'none';
+    } else {
+      content.style.display = 'block';
+    }
   });
-
-  console.log("Experience section initialized.");
 });
