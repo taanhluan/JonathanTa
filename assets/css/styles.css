@@ -666,7 +666,7 @@ body, html {
 /* CSS chỉ áp dụng khi xuất PDF */
 .pdf-export .section {
   background: #ffffff !important; /* Nền trắng */
-  color: #333 !important; /* Màu chữ đậm */
+  color: #000 !important; /* Màu chữ đen đậm */
   box-shadow: none !important; /* Loại bỏ bóng đổ */
   border: 1px solid #ddd !important; /* Viền đơn giản */
   animation: none !important; /* Loại bỏ hiệu ứng động */
@@ -681,4 +681,6 @@ body, html {
 .pdf-export {
   overflow: visible !important; /* Đảm bảo không bị cắt nội dung */
 }
-
+.pdf-export {
+  font-family: Arial, sans-serif !important; /* Sử dụng phông chữ chuẩn */
+}
