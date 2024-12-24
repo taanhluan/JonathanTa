@@ -5,44 +5,89 @@
 ========================= */
 :root {
   /* Common Variables */
-  --hologram-start: #f3e5f5; /* Gradient start color */
-  --hologram-end: #e1bee7;   /* Gradient end color */
-  --text-color: #4a148c;     /* Default text color */
-  --highlight-gradient: linear-gradient(135deg, #d1c4e9, #b39ddb); /* Highlight gradient */
-  --hover-gradient: linear-gradient(135deg, #b39ddb, #9575cd);     /* Hover gradient */
+  --hologram-start: #f3e5f5; /* Default gradient start color */
+  --hologram-end: #e1bee7;   /* Default gradient end color */
+  --text-color: #2c3e50;     /* Default text color (dark blue-gray) */
+  --highlight-gradient: linear-gradient(135deg, #64b5f6, #42a5f5); /* Highlight gradient */
+  --hover-gradient: linear-gradient(135deg, #42a5f5, #1e88e5);     /* Hover gradient */
+  --background-color: #f9f9f9; /* Light background for the entire page */
+  --white: #ffffff;          /* Pure white */
 }
 
 /* =========================
         Theme: Blue
 ========================= */
 .theme-blue {
-  --primary: #2C3E50;     /* Main color */
-  --secondary: #34495E;   /* Secondary color */
-  --accent: #E74C3C;      /* Accent color */
-  --light: #ECF0F1;       /* Light background */
-  --white: #FFFFFF;       /* Pure white */
+  --primary: #1e3a56;        /* Deep blue for primary color */
+  --secondary: #2c5364;      /* Secondary color */
+  --accent: #29b6f6;         /* Bright blue for accents */
+  --light: #e3f2fd;          /* Light blue background */
+  --text-color: #ffffff;     /* White text for contrast */
 }
 
 /* =========================
       Theme: Lavender
 ========================= */
 .theme-lavender {
-  --hologram-start: #f8e8fc;       /* Start of hologram gradient */
-  --hologram-end: #e3c3f5;         /* End of hologram gradient */
-  --accent-color: #d09ce1;         /* Accent for lavender theme */
-  --background-color: #f7ecfc;     /* Light lavender background */
-  --text-color: #4a148c;           /* Text color for better readability */
+  --hologram-start: #ede7f6;       /* Lavender gradient start */
+  --hologram-end: #d1c4e9;         /* Lavender gradient end */
+  --accent-color: #9575cd;         /* Lavender accent */
+  --background-color: #ede7f6;     /* Soft lavender background */
+  --text-color: #4a148c;           /* Deep purple text for contrast */
 }
 
 /* =========================
       Theme: Orange
 ========================= */
 .theme-orange {
-  --primary-color: #ff9800;        /* Main orange */
-  --secondary-color: #fff3e0;      /* Light orange */
+  --primary-color: #e65100;        /* Vibrant orange */
+  --secondary-color: #ffcc80;      /* Light orange background */
   --accent-color: #ff5722;         /* Bright orange accent */
-  --background-color: #ffe0b2;     /* Soft orange background */
+  --background-color: #fff3e0;     /* Soft orange background */
   --text-color: #3e2723;           /* Dark brown for contrast */
+}
+
+/* =========================
+      Base Styling
+========================= */
+body {
+  background-color: var(--background-color); /* Apply global background */
+  color: var(--text-color);                 /* Apply global text color */
+  font-family: 'Roboto', 'Inter', sans-serif; /* Unified font */
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Heading Styles */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color);
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+/* Link Styles */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--hover-gradient);
 }
 
 /* =========================
@@ -61,43 +106,43 @@
 }
 
 /* =========================
-     Enhancements
+      Hologram Animation
 ========================= */
-
-/* Hologram animation for elements */
 .hologram {
-  background: var(--highlight-gradient); /* Default gradient */
-  background-size: 200% 200%;           /* Enlarged for smooth effect */
-  animation: hologramEffect 5s infinite; /* Apply animation */
+  background: var(--highlight-gradient);
+  background-size: 200% 200%;
+  animation: hologramEffect 6s infinite alternate;
+  border-radius: 10px;
+  padding: 20px;
+  color: var(--text-color);
 }
 
-/* Themed text styling */
-.theme-text {
-  color: var(--text-color); /* Use text color from the current theme */
-}
-
-/* Buttons with hover effects */
-.theme-button {
-  padding: 10px 20px;
+/* Button Styling */
+button {
+  background: var(--highlight-gradient);
+  color: var(--white);
   border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
   border-radius: 5px;
-  color: var(--white); /* White text */
-  background: var(--accent); /* Accent color */
-  transition: background 0.3s ease-in-out;
-}
-
-.theme-button:hover {
-  background: var(--hover-gradient); /* Apply hover gradient */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
-/* Themed background */
+button:hover {
+  background: var(--hover-gradient);
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Themed Background */
 .theme-background {
   background-color: var(--background-color);
   color: var(--text-color);
 }
 
-/* Utility class for primary theme elements */
+/* Utility Classes */
 .theme-primary {
   color: var(--white);
   background-color: var(--primary);
@@ -108,7 +153,6 @@
   background-color: var(--secondary);
 }
 
-
 /* =========================
    Global Reset
 ========================= */
@@ -116,7 +160,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Inter", sans-serif;
 }
 
 /* =========================
