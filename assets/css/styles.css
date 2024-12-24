@@ -171,12 +171,16 @@ button:hover {
   text-align: center;
   padding: 80px 20px;
   color: var(--primary);
-  background: linear-gradient(135deg, #f0fcfd, #b3e7f0, #d9f4f9, #a7dce4);
+  background: linear-gradient(135deg, 
+              rgba(255, 255, 255, 0.9), /* Trắng trong suốt */
+              rgba(240, 250, 255, 0.8), /* Xanh nhạt pastel */
+              rgba(255, 240, 250, 0.8), /* Hồng pastel nhạt */
+              rgba(250, 255, 240, 0.8)); /* Vàng nhạt ánh xanh */
   background-size: 200% 200%;
   animation: hologramEffect 8s infinite alternate;
   border-bottom: 4px solid var(--accent);
   position: relative;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Giảm độ mạnh của bóng đổ */
   border-radius: 20px;
   margin: 40px auto;
   width: 95%;
