@@ -189,6 +189,9 @@
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4); /* Hiệu ứng bóng nhẹ */
 }
 
+/* =========================
+   Profile Photo Styles
+========================= */
 .profile-photo img {
   width: 160px; /* Tăng kích thước ảnh */
   height: 160px;
@@ -205,6 +208,40 @@
   transform: scale(1.1); /* Phóng to nhẹ khi hover */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Tăng bóng khi hover */
 }
+
+/* =========================
+   Icon Container Styles
+========================= */
+.header-icons {
+  display: flex; /* Sắp xếp icon theo hàng ngang */
+  justify-content: center; /* Căn giữa các icon */
+  gap: 15px; /* Khoảng cách giữa các icon */
+  margin-top: 20px; /* Tạo khoảng cách phía trên */
+}
+
+.header-icons a {
+  display: inline-flex; /* Đảm bảo icon luôn nằm giữa */
+  align-items: center;
+  justify-content: center;
+  width: 50px; /* Kích thước đồng đều cho icon */
+  height: 50px;
+  background-color: #ffffff; /* Nền trắng để làm nổi icon */
+  border-radius: 50%; /* Bo tròn icon */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng đổ */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header-icons a:hover {
+  transform: scale(1.1); /* Phóng to khi hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Tăng hiệu ứng bóng khi hover */
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient nền khi hover */
+}
+
+.header-icons a img {
+  width: 24px; /* Kích thước icon */
+  height: 24px;
+}
+
 /* =========================
    Enhanced About Section
 ========================= */
