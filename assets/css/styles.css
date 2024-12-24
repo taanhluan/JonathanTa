@@ -5,62 +5,61 @@
 ========================= */
 :root {
   /* Common Variables */
-  --hologram-start: #f3e5f5; /* Default gradient start color */
-  --hologram-end: #e1bee7;   /* Default gradient end color */
-  --text-color: #2c3e50;     /* Default text color (dark blue-gray) */
-  --highlight-gradient: linear-gradient(135deg, #64b5f6, #42a5f5); /* Highlight gradient */
-  --hover-gradient: linear-gradient(135deg, #42a5f5, #1e88e5);     /* Hover gradient */
-  --background-color: #f9f9f9; /* Light background for the entire page */
-  --white: #ffffff;          /* Pure white */
+  --hologram-start: #f3e5f5;
+  --hologram-end: #e1bee7;
+  --text-color: #2c3e50;
+  --highlight-gradient: linear-gradient(135deg, #64b5f6, #42a5f5);
+  --hover-gradient: linear-gradient(135deg, #42a5f5, #1e88e5);
+  --background-color: #f9f9f9;
+  --white: #ffffff;
 }
 
 /* =========================
         Theme: Blue
 ========================= */
 .theme-blue {
-  --primary: #1e3a56;        /* Deep blue for primary color */
-  --secondary: #2c5364;      /* Secondary color */
-  --accent: #29b6f6;         /* Bright blue for accents */
-  --light: #e3f2fd;          /* Light blue background */
-  --text-color: #ffffff;     /* White text for contrast */
+  --primary: #1e3a56;
+  --secondary: #2c5364;
+  --accent: #29b6f6;
+  --light: #e3f2fd;
+  --text-color: #ffffff;
 }
 
 /* =========================
       Theme: Lavender
 ========================= */
 .theme-lavender {
-  --hologram-start: #ede7f6;       /* Lavender gradient start */
-  --hologram-end: #d1c4e9;         /* Lavender gradient end */
-  --accent-color: #9575cd;         /* Lavender accent */
-  --background-color: #ede7f6;     /* Soft lavender background */
-  --text-color: #4a148c;           /* Deep purple text for contrast */
+  --hologram-start: #ede7f6;
+  --hologram-end: #d1c4e9;
+  --accent-color: #9575cd;
+  --background-color: #ede7f6;
+  --text-color: #4a148c;
 }
 
 /* =========================
       Theme: Orange
 ========================= */
 .theme-orange {
-  --primary-color: #e65100;        /* Vibrant orange */
-  --secondary-color: #ffcc80;      /* Light orange background */
-  --accent-color: #ff5722;         /* Bright orange accent */
-  --background-color: #fff3e0;     /* Soft orange background */
-  --text-color: #3e2723;           /* Dark brown for contrast */
+  --primary-color: #e65100;
+  --secondary-color: #ffcc80;
+  --accent-color: #ff5722;
+  --background-color: #fff3e0;
+  --text-color: #3e2723;
 }
 
 /* =========================
       Base Styling
 ========================= */
 body {
-  background-color: var(--background-color); /* Apply global background */
-  color: var(--text-color);                 /* Apply global text color */
-  font-family: 'Roboto', 'Inter', sans-serif; /* Unified font */
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
   line-height: 1.6;
   margin: 0;
   padding: 0;
 }
 
-/* Heading Styles */
 h1, h2, h3, h4, h5, h6 {
   color: var(--text-color);
   font-weight: bold;
@@ -79,7 +78,6 @@ h3 {
   font-size: 1.75rem;
 }
 
-/* Link Styles */
 a {
   color: var(--accent);
   text-decoration: none;
@@ -95,13 +93,13 @@ a:hover {
 ========================= */
 @keyframes hologramEffect {
   0% {
-    background-position: 0% 50%;   /* Start at top-left */
+    background-position: 0% 50%;
   }
   50% {
-    background-position: 50% 100%; /* Move diagonally to middle */
+    background-position: 50% 100%;
   }
   100% {
-    background-position: 100% 50%; /* End at bottom-right */
+    background-position: 100% 50%;
   }
 }
 
@@ -117,7 +115,6 @@ a:hover {
   color: var(--text-color);
 }
 
-/* Button Styling */
 button {
   background: var(--highlight-gradient);
   color: var(--white);
@@ -167,26 +164,24 @@ button:hover {
 ========================= */
 .header {
   text-align: center;
-  padding: 80px 20px; /* Tăng padding để mở rộng chiều cao */
+  padding: 80px 20px;
   color: var(--primary);
-  background: linear-gradient(135deg, #f0fcfd, #b3e7f0, #d9f4f9, #a7dce4);
-  background-size: 200% 200%;
-  animation: hologramEffect 8s infinite alternate;
+  background-color: var(--background-color);
   border-bottom: 4px solid var(--accent);
   position: relative;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
-  margin: 40px auto; /* Đảm bảo căn giữa và thêm khoảng cách xung quanh */
-  width: 95%; /* Mở rộng chiều rộng */
-  max-width: 1200px; /* Đặt giới hạn chiều rộng tối đa */
+  margin: 40px auto;
+  width: 95%;
+  max-width: 1200px;
   overflow: hidden;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  margin-bottom: 50px !important; /* Thêm khoảng cách giữa Header và About */
+  margin-bottom: 50px !important;
 }
 
 .header:hover {
-  transform: scale(1.07); /* Tăng nhẹ kích thước khi hover */
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Tăng hiệu ứng bóng */
+  transform: scale(1.07);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
 .header::before {
@@ -199,7 +194,7 @@ button:hover {
   background: radial-gradient(circle, rgba(255, 215, 0, 0.3), transparent 70%);
   z-index: 1;
   pointer-events: none;
-  animation: pulseGlow 6s infinite alternate; /* Hiệu ứng ánh sáng lan tỏa */
+  animation: pulseGlow 6s infinite alternate;
 }
 
 @keyframes pulseGlow {
@@ -214,89 +209,88 @@ button:hover {
 }
 
 .header h1 {
-  font-size: 4rem; /* Tăng kích thước chữ */
-  font-weight: 900; /* Tăng độ đậm */
+  font-size: 4rem;
+  font-weight: 900;
   margin-bottom: 15px;
-  color: var(--text-brown); /* Màu sắc nổi bật */
-  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6); /* Hiệu ứng bóng chữ nổi bật */
+  color: var(--text-color);
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
   z-index: 2;
   position: relative;
 }
 
 .header p {
-  font-size: 1.6rem; /* Tăng kích thước chữ phụ */
-  color: var(--text-brown); /* Màu sắc đồng bộ */
+  font-size: 1.6rem;
+  color: var(--text-color);
   margin-bottom: 25px;
   z-index: 2;
   position: relative;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4); /* Hiệu ứng bóng nhẹ */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 /* =========================
    Profile Photo Styles
 ========================= */
 .profile-photo img {
-  width: 160px; /* Tăng kích thước ảnh */
+  width: 160px;
   height: 160px;
   border-radius: 50%;
   margin-bottom: 20px;
-  border: 10px solid var(--white); /* Tăng độ dày viền */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Hiệu ứng bóng đổ mạnh hơn */
+  border: 10px solid var(--white);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
   position: relative;
   z-index: 2;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng hover */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .profile-photo img:hover {
-  transform: scale(1.1); /* Phóng to nhẹ khi hover */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Tăng bóng khi hover */
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
 /* =========================
    Icon Container Styles
 ========================= */
 .header-icons {
-  display: flex; /* Sắp xếp icon theo hàng ngang */
-  justify-content: center; /* Căn giữa các icon */
-  gap: 20px; /* Tăng khoảng cách giữa các icon */
-  margin-top: 25px; /* Tăng khoảng cách phía trên */
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 25px;
 }
 
 .header-icons a {
-  display: inline-flex; /* Đảm bảo icon luôn nằm giữa */
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 60px; /* Tăng kích thước icon */
+  width: 60px;
   height: 60px;
-  background-color: #ffffff; /* Nền trắng để làm nổi icon */
-  border-radius: 50%; /* Bo tròn icon */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng đổ */
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   position: relative;
 }
 
 .header-icons a:hover {
-  transform: scale(1.2); /* Tăng kích thước khi hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Tăng bóng khi hover */
-  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient nền khi hover */
-  animation: bounce 0.6s ease; /* Hiệu ứng bounce khi hover */
+  transform: scale(1.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  animation: bounce 0.6s ease;
 }
 
 .header-icons a img {
-  width: 30px; /* Tăng kích thước icon */
+  width: 30px;
   height: 30px;
 }
 
-/* Animation cho hover (Bounce effect) */
 @keyframes bounce {
   0% {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.3); /* Icon phóng to nhẹ */
+    transform: scale(1.3);
   }
   100% {
-    transform: scale(1.2); /* Icon trở lại trạng thái hover */
+    transform: scale(1.2);
   }
 }
 
@@ -304,31 +298,29 @@ button:hover {
    Enhanced About Section
 ========================= */
 .about {
-  max-width: 1200px; /* Tăng chiều rộng tối đa */
-  margin: 50px auto; /* Thêm khoảng cách trên và dưới */
-  padding: 50px; /* Tăng padding để mở rộng chiều cao */
-  background: linear-gradient(135deg, var(--hologram-start), var(--hologram-end)); /* Nền gradient động */
-  background-size: 300% 300%;
-  animation: hologramEffect 4s infinite alternate ease-in-out;
-  border-radius: 20px; /* Bo tròn mềm mại */
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Tăng hiệu ứng bóng đổ */
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 50px;
+  background-color: var(--background-color);
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
   color: var(--text-color);
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng mượt mà khi hover */
-  margin-top: 50px !important; /* Đảm bảo thêm khoảng cách phía trên */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 50px !important;
 }
 
 .about:hover {
-  transform: scale(1.07); /* Phóng to nhẹ khi hover */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); /* Tăng bóng đổ khi hover */
+  transform: scale(1.07);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
 .about h2 {
-  font-size: 2.2rem; /* Tăng kích thước tiêu đề */
-  font-weight: 800; /* Đậm hơn để nổi bật */
-  margin-bottom: 20px; /* Tăng khoảng cách dưới tiêu đề */
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Hiệu ứng bóng chữ nổi bật */
-  color: var(--primary); /* Màu sắc đồng bộ với tiêu đề */
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  color: var(--primary);
   position: relative;
   z-index: 2;
 }
@@ -339,7 +331,7 @@ button:hover {
   width: 60px;
   height: 3px;
   margin: 10px auto;
-  background: var(--accent-color); /* Thanh nhấn dưới tiêu đề */
+  background: var(--accent-color);
   border-radius: 5px;
   animation: fadeIn 1s ease-in-out;
 }
@@ -356,12 +348,12 @@ button:hover {
 }
 
 .about p {
-  font-size: 1.2rem; /* Tăng kích thước chữ để dễ đọc hơn */
-  line-height: 1.8; /* Tăng chiều cao dòng để tạo sự thoáng đãng */
-  color: var(--text-muted); /* Màu sắc dịu nhẹ hơn cho đoạn văn */
-  margin-bottom: 15px; /* Tăng khoảng cách giữa các đoạn văn */
-  text-align: justify; /* Căn lề để nội dung trông gọn gàng */
-  text-indent: 20px; /* Thêm thụt đầu dòng */
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--text-color);
+  margin-bottom: 15px;
+  text-align: justify;
+  text-indent: 20px;
 }
 
 .about::before {
@@ -380,21 +372,10 @@ button:hover {
   animation: pulseGlow 6s infinite alternate;
 }
 
-@keyframes pulseGlow {
-  0% {
-    opacity: 0.5;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0.3;
-    transform: scale(1.1);
-  }
-}
-
 .header, .about, .experience, .footer {
-  max-width: 900px; /* Điều chỉnh chiều rộng của từng phần */
-  margin: 0 auto; /* Căn giữa các phần */
-  padding: 20px; /* Giảm padding nếu cần */
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 /* General Styling */
@@ -402,14 +383,12 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #ffecd2, #fcb69f, #a1c4fd, #c2e9fb); /* Gradient động */
-  background-size: 400% 400%;
-  animation: gradientAnimation 10s infinite alternate ease-in-out; /* Hiệu ứng chuyển động */
+  background-color: var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
 }
 
-/* Đảm bảo nội dung container được căn giữa */
+/* Ensure container content is centered */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -421,19 +400,6 @@ body {
   position: relative;
 }
 
-/* Animation for background gradient */
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 50% 100%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
-
 /* Responsive Styling */
 @media (max-width: 768px) {
   body {
@@ -441,8 +407,8 @@ body {
   }
 
   .header, .about, .experience, .footer {
-    max-width: 100%; /* Toàn bộ chiều rộng trên màn hình nhỏ */
-    padding: 15px; /* Giảm padding nếu cần */
+    max-width: 100%;
+    padding: 15px;
   }
 }
 
@@ -451,18 +417,18 @@ body {
   margin: 50px auto;
   max-width: 900px;
   padding: 20px;
-  border-radius: 15px;
-  background: linear-gradient(135deg, var(--hologram-start, #f3e5f5), var(--hologram-end, #e1bee7)); /* Holographic gradient */
+  background-color: var(--background-color);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
 }
 
 .section h2 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 20px;
-  color: var(--primary, #2C3E50); /* Deep blue for primary text */
-  text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.6); /* Light glow effect */
+  color: var(--primary);
+  text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.6);
 }
 
 /* Collapsible Headers */
@@ -472,8 +438,8 @@ body {
   align-items: center;
   padding: 15px 20px;
   font-size: 1.2rem;
-  background: linear-gradient(135deg, var(--primary, #2C3E50), var(--secondary, #34495E)); /* Gradient header */
-  color: var(--white, #FFFFFF); /* White text for contrast */
+  background: var(--primary);
+  color: var(--white);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 10px;
   margin-bottom: 10px;
@@ -483,9 +449,9 @@ body {
 }
 
 .collapsible:hover {
-  background: linear-gradient(135deg, var(--accent, #E74C3C), var(--secondary, #34495E)); /* Red and blue gradient */
-  color: var(--white, #FFFFFF); /* Ensure text remains white */
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Enhance glow */
+  background: var(--accent);
+  color: var(--white);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 .collapsible i {
@@ -494,21 +460,26 @@ body {
 }
 
 .collapsible.open i {
-  transform: rotate(180deg); /* Chevron rotates when expanded */
+  transform: rotate(180deg);
 }
 
 /* Content Section */
 .content {
   display: none;
   padding: 20px;
-  background: var(--light, #ECF0F1); /* Light gray for content background */
-  border-left: 4px solid var(--accent, #E74C3C); /* Red accent for left border */
+  background: var(--light);
+  border-left: 4px solid var(--accent);
   border-radius: 10px;
   font-size: 1rem;
-  color: var(--text-main, #2C3E50); /* Main text color */
+  color: var(--text-color);
   line-height: 1.6;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.content.expanded {
+  display: block;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 .content ul {
@@ -522,13 +493,7 @@ body {
 }
 
 .content strong {
-  color: var(--primary, #2C3E50); /* Bold text color */
-}
-
-/* Expanded Content */
-.content.expanded {
-  display: block;
-  animation: fadeIn 0.5s ease-in-out;
+  color: var(--primary);
 }
 
 /* Fade-in Animation */
@@ -545,7 +510,7 @@ body {
 
 /* Footer Styling */
 .footer {
-  background: var(--footer-bg);
+  background: var(--background-color);
   padding: 40px 20px;
   text-align: center;
   border-top: 3px solid var(--primary-color);
@@ -570,7 +535,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  color: var(--footer-text);
+  color: var(--text-color);
 }
 
 /* Social Icons Styling */
@@ -616,7 +581,7 @@ body {
 .footer-bottom {
   margin-top: 20px;
   font-size: 0.9rem;
-  color: var(--footer-text);
+  color: var(--text-color);
 }
 
 /* Responsive Design */
