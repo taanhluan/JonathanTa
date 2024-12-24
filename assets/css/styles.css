@@ -623,3 +623,28 @@ button:hover {
     height: 35px;
   }
 }
+.download-button {
+  text-align: center;
+  margin: 20px 0;
+}
+
+#download-btn {
+  background-color: #007bff; /* Màu xanh nhấn */
+  color: white; /* Màu chữ trắng */
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#download-btn:hover {
+  background-color: #0056b3; /* Màu xanh đậm hơn khi hover */
+  transform: scale(1.05); /* Phóng to nhẹ khi hover */
+}
+
+#download-btn i {
+  margin-right: 10px;
+}
