@@ -648,3 +648,18 @@ button:hover {
 #download-btn i {
   margin-right: 10px;
 }
+/* Ngắt trang khi xuất PDF */
+.resume, .section, .about, .content {
+  page-break-inside: avoid; /* Tránh ngắt giữa các phần */
+  page-break-after: always; /* Đảm bảo mỗi phần xuất hiện trên một trang mới */
+}
+
+/* Đảm bảo hình ảnh và nội dung không bị cắt */
+img {
+  max-width: 100%; /* Đảm bảo ảnh vừa với khung */
+  height: auto;
+}
+
+body, html {
+  overflow: visible !important; /* Đảm bảo toàn bộ nội dung được hiển thị */
+}
