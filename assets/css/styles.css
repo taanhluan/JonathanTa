@@ -473,16 +473,16 @@ body {
   }
 }
 
-
-/* Enhanced Footer Styling */
+/* Enhanced Footer with Hologram Effect */
 .footer {
-  background: linear-gradient(135deg, var(--hologram-start), var(--hologram-end)); /* Gradient động */
+  background: linear-gradient(135deg, var(--hologram-start), var(--hologram-end)); /* Hologram gradient */
+  background-size: 300% 300%; /* Hiệu ứng chuyển động */
+  animation: hologramEffect 6s infinite alternate ease-in-out; /* Hologram animation */
   padding: 60px 20px; /* Tăng padding để tạo khoảng trống thoáng đãng */
   text-align: center;
   border-top: 3px solid var(--accent); /* Đường viền nhấn đỏ */
   box-shadow: 0 -6px 15px rgba(0, 0, 0, 0.2); /* Tăng hiệu ứng bóng */
   margin-top: 50px;
-  animation: footerSlideIn 1.5s ease-out; /* Animation vào mượt hơn */
   border-radius: 15px 15px 0 0; /* Bo góc phía trên */
   color: var(--text-main); /* Màu chữ chính */
   position: relative;
@@ -567,14 +567,15 @@ body {
 }
 
 /* Animation Enhancements */
-@keyframes footerSlideIn {
+@keyframes hologramEffect {
   0% {
-    transform: translateY(100%);
-    opacity: 0;
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 50% 100%;
   }
   100% {
-    transform: translateY(0);
-    opacity: 1;
+    background-position: 100% 50%;
   }
 }
 
@@ -620,4 +621,3 @@ body {
     font-size: 1.5rem;
   }
 }
-
