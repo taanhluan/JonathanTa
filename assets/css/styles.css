@@ -51,9 +51,14 @@
       Base Styling
 ========================= */
 body {
-  background-color: #fff; /* White background */
-  color: var(--text-color);
-  font-family: 'Inter', sans-serif;
+  background-color: #fff; /* Màu nền trắng, để dự phòng khi ảnh không tải được */
+  background-image: url('https://github.com/taanhluan/JonathanTa/blob/main/assets/images/pexels-candis-hidalgo-23771-639110.jpg?raw=true'); /* Đường dẫn ảnh nền */
+  background-size: cover; /* Ảnh sẽ bao phủ toàn bộ màn hình */
+  background-position: center; /* Ảnh được căn giữa */
+  background-repeat: no-repeat; /* Ảnh không lặp lại */
+  background-attachment: fixed; /* Nền cố định khi cuộn trang */
+  color: var(--text-color); /* Màu chữ */
+  font-family: 'Inter', sans-serif; /* Font chữ */
   font-size: 16px;
   line-height: 1.6;
   margin: 0;
