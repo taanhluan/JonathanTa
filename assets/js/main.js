@@ -30,17 +30,21 @@ document.addEventListener('DOMContentLoaded', () => {
       const resume = document.getElementById('resume'); // Phần cần tải PDF
       
       if (resume) {
+        // Thêm lớp CSS chỉ dành cho PDF
+        resume.classList.add('pdf-export');
+
+        // Tùy chọn cho html2pdf
         const options = {
-          margin: [0.5, 0.5, 0.5, 0.5], // Lề trang
-          filename: 'TaAnhLuan_Resume.pdf', // Tên file PDF
-          image: { type: 'jpeg', quality: 0.98 },
+          margin: 0.5, // Lề
+          filename: 'TaAnhLuan_Resume.pdf', // Tên file
+          image: { type: 'jpeg', quality: 0.98 }, // Chất lượng hình ảnh
           html2canvas: {
-            scale: 2, // Tăng độ phân giải
+            scale: 2, // Độ phân giải cao
             useCORS: true, // Xử lý hình ảnh bên ngoài
           },
           jsPDF: {
             unit: 'in',
-            format: 'letter',
+            format: 'letter', // Kích thước trang
             orientation: 'portrait', // Hướng dọc
           },
           pagebreak: {
@@ -50,7 +54,14 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         // Tạo PDF và tải xuống
-        html2pdf().set(options).from(resume).save();
+        html2pdf()
+          .set(options)
+          .from(resume)
+          .save()
+          .finally(() => {
+            // Xóa lớp CSS sau khi tạo PDF
+            resume.classList.remove('pdf-export');
+          });
       } else {
         console.error('Resume section not found!');
       }
