@@ -663,3 +663,22 @@ img {
 body, html {
   overflow: visible !important; /* Đảm bảo toàn bộ nội dung được hiển thị */
 }
+/* CSS chỉ áp dụng khi xuất PDF */
+.pdf-export .section {
+  background: #ffffff !important; /* Nền trắng */
+  color: #333 !important; /* Màu chữ đậm */
+  box-shadow: none !important; /* Loại bỏ bóng đổ */
+  border: 1px solid #ddd !important; /* Viền đơn giản */
+  animation: none !important; /* Loại bỏ hiệu ứng động */
+  border-radius: 0 !important; /* Bỏ bo góc */
+}
+
+.pdf-export img {
+  max-width: 100% !important; /* Đảm bảo hình ảnh không bị cắt */
+  height: auto !important;
+}
+
+.pdf-export {
+  overflow: visible !important; /* Đảm bảo không bị cắt nội dung */
+}
+
