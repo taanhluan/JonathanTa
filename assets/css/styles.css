@@ -523,18 +523,6 @@ button:hover {
   border-top: 3px solid var(--primary-color);
   box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
   margin-top: 40px;
-  animation: footerSlideIn 1s ease-out;
-}
-
-@keyframes footerSlideIn {
-  from {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
 }
 
 .footer .footer-content {
@@ -564,14 +552,15 @@ button:hover {
   border-radius: 50%;
   border: 2px solid transparent;
   background: var(--light);
-  transition: transform 0.3s, color 0.3s, border-color 0.3s;
+  transition: transform 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
   animation: socialIconPulse 1.5s infinite alternate ease-in-out;
 }
 
 .footer .social-icons a:hover {
-  transform: scale(1.2);
+  transform: scale(1.2) rotate(10deg); /* Added slight rotation for enhanced effect */
   color: var(--primary-color);
   border-color: var(--primary-color);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes socialIconPulse {
