@@ -551,15 +551,15 @@ body {
   border-top: 3px solid var(--primary-color);
   box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
   margin-top: 40px;
-  animation: footerSlideIn 1s ease-out; /* Footer vẫn trượt vào */
+  animation: footerSlideIn 1s ease-out;
 }
 
 @keyframes footerSlideIn {
-  0% {
+  from {
     transform: translateY(100%);
     opacity: 0;
   }
-  100% {
+  to {
     transform: translateY(0);
     opacity: 1;
   }
@@ -582,43 +582,37 @@ body {
 }
 
 .footer .social-icons a {
-  font-size: 2rem; /* Tăng kích thước icon */
+  font-size: 2rem;
   color: var(--accent-color);
-  width: 50px; /* Kích thước container icon */
+  width: 50px;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%; /* Bo tròn container */
+  border-radius: 50%;
   border: 2px solid transparent;
-  background: var(--light); /* Nền sáng nhẹ */
-  transition: transform 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-  animation: socialIconPulse 1.5s infinite alternate ease-in-out; /* Nhấp nháy nhẹ */
+  background: var(--light);
+  transition: transform 0.3s, color 0.3s, border-color 0.3s;
+  animation: socialIconPulse 1.5s infinite alternate ease-in-out;
 }
 
 .footer .social-icons a:hover {
-  transform: scale(1.2); /* Phóng to khi hover */
+  transform: scale(1.2);
   color: var(--primary-color);
-  border-color: var(--primary-color); /* Đổi màu viền */
+  border-color: var(--primary-color);
 }
 
-/* Social Icon Pulse Animation */
 @keyframes socialIconPulse {
-  0% {
-    transform: scale(1); /* Bình thường */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  50% {
-    transform: scale(1.1); /* Nhấp nháy to nhẹ */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  }
-  100% {
+  0%, 100% {
     transform: scale(1);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
 }
 
-/* Footer Bottom Text */
 .footer-bottom {
   margin-top: 20px;
   font-size: 0.9rem;
@@ -649,4 +643,3 @@ body {
     height: 35px;
   }
 }
-
