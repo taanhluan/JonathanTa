@@ -20,47 +20,30 @@ function toggleContent(button) {
 
 // Download the resume as a PDF
 document.addEventListener('DOMContentLoaded', () => {
-  // Tìm nút download bằng ID
   const downloadButton = document.getElementById('download-btn');
-  
-  // Kiểm tra nếu nút tồn tại
-  if (downloadButton) {
-    // Gắn sự kiện click
-    downloadButton.addEventListener('click', () => {
-      const resume = document.getElementById('resume'); // Phần cần tải PDF
-      
-      if (resume) {
-        // Thêm lớp CSS chỉ dành cho PDF
-        resume.classList.add('pdf-export');
 
-        // Tùy chọn cho html2pdf
+  if (downloadButton) {
+    downloadButton.addEventListener('click', () => {
+      const resume = document.getElementById('resume');
+
+      if (resume) {
+        resume.classList.add('pdf-export'); // Thêm lớp CSS cho PDF
+
         const options = {
-          margin: 0.5, // Lề
-          filename: 'TaAnhLuan_Resume.pdf', // Tên file
-          image: { type: 'jpeg', quality: 0.98 }, // Chất lượng hình ảnh
-          html2canvas: {
-            scale: 2, // Độ phân giải cao
-            useCORS: true, // Xử lý hình ảnh bên ngoài
-          },
-          jsPDF: {
-            unit: 'in',
-            format: 'letter', // Kích thước trang
-            orientation: 'portrait', // Hướng dọc
-          },
-          pagebreak: {
-            mode: ['avoid-all', 'css', 'legacy'], // Ngắt trang thông minh
-            after: '.section, .about', // Ngắt trang sau các phần này
-          },
+          margin: 0.5,
+          filename: 'TaAnhLuan_Resume.pdf',
+          image: { type: 'jpeg', quality: 0.98 },
+          html2canvas: { scale: 2, useCORS: true },
+          jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
+          pagebreak: { mode: ['avoid-all', 'css', 'legacy'], after: '.section' },
         };
 
-        // Tạo PDF và tải xuống
         html2pdf()
           .set(options)
           .from(resume)
           .save()
           .finally(() => {
-            // Xóa lớp CSS sau khi tạo PDF
-            resume.classList.remove('pdf-export');
+            resume.classList.remove('pdf-export'); // Xóa lớp CSS sau khi tạo PDF
           });
       } else {
         console.error('Resume section not found!');
