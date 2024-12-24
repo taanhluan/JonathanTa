@@ -4,29 +4,63 @@
      Root Variables
 ========================= */
 :root {
-  --primary-color: #1e88e5;
-  --secondary-color: #1976d2;
-  --accent-color: #64b5f6;
-  --text-color: #2c3e50;
-  --background-color: #f4f8fb;
-  --white: #ffffff;
-  --gradient: linear-gradient(135deg, #42a5f5, #64b5f6);
-  --hover-gradient: linear-gradient(135deg, #1e88e5, #42a5f5);
+  /* Common Variables */
+  --hologram-start: #f3e5f5; /* Default gradient start color */
+  --hologram-end: #e1bee7;   /* Default gradient end color */
+  --text-color: #2c3e50;     /* Default text color (dark blue-gray) */
+  --highlight-gradient: linear-gradient(135deg, #64b5f6, #42a5f5); /* Highlight gradient */
+  --hover-gradient: linear-gradient(135deg, #42a5f5, #1e88e5);     /* Hover gradient */
+  --background-color: #f9f9f9; /* Light background for the entire page */
+  --white: #ffffff;          /* Pure white */
 }
 
 /* =========================
-     Base Styling
+        Theme: Blue
 ========================= */
-body {
-  background-color: var(--background-color);
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  color: var(--text-color);
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
+.theme-blue {
+  --primary: #1e3a56;        /* Deep blue for primary color */
+  --secondary: #2c5364;      /* Secondary color */
+  --accent: #29b6f6;         /* Bright blue for accents */
+  --light: #e3f2fd;          /* Light blue background */
+  --text-color: #ffffff;     /* White text for contrast */
 }
 
+/* =========================
+      Theme: Lavender
+========================= */
+.theme-lavender {
+  --hologram-start: #ede7f6;       /* Lavender gradient start */
+  --hologram-end: #d1c4e9;         /* Lavender gradient end */
+  --accent-color: #9575cd;         /* Lavender accent */
+  --background-color: #ede7f6;     /* Soft lavender background */
+  --text-color: #4a148c;           /* Deep purple text for contrast */
+}
+
+/* =========================
+      Theme: Orange
+========================= */
+.theme-orange {
+  --primary-color: #e65100;        /* Vibrant orange */
+  --secondary-color: #ffcc80;      /* Light orange background */
+  --accent-color: #ff5722;         /* Bright orange accent */
+  --background-color: #fff3e0;     /* Soft orange background */
+  --text-color: #3e2723;           /* Dark brown for contrast */
+}
+
+/* =========================
+      Base Styling
+========================= */
+body {
+  background-color: var(--background-color); /* Apply global background */
+  color: var(--text-color);                 /* Apply global text color */
+  font-family: 'Roboto', 'Inter', sans-serif; /* Unified font */
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Heading Styles */
 h1, h2, h3, h4, h5, h6 {
   color: var(--text-color);
   font-weight: bold;
@@ -34,41 +68,63 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3rem;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-h2 {
   font-size: 2.5rem;
 }
 
-p {
-  margin: 0 0 15px;
-  color: var(--text-color);
+h2 {
+  font-size: 2rem;
 }
 
+h3 {
+  font-size: 1.75rem;
+}
+
+/* Link Styles */
 a {
-  color: var(--primary-color);
+  color: var(--accent);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: var(--secondary-color);
+  color: var(--hover-gradient);
 }
 
 /* =========================
-     Button Styling
+      Keyframes: Hologram
 ========================= */
+@keyframes hologramEffect {
+  0% {
+    background-position: 0% 50%;   /* Start at top-left */
+  }
+  50% {
+    background-position: 50% 100%; /* Move diagonally to middle */
+  }
+  100% {
+    background-position: 100% 50%; /* End at bottom-right */
+  }
+}
+
+/* =========================
+      Hologram Animation
+========================= */
+.hologram {
+  background: var(--highlight-gradient);
+  background-size: 200% 200%;
+  animation: hologramEffect 6s infinite alternate;
+  border-radius: 10px;
+  padding: 20px;
+  color: var(--text-color);
+}
+
+/* Button Styling */
 button {
-  background: var(--gradient);
+  background: var(--highlight-gradient);
   color: var(--white);
   border: none;
-  padding: 12px 24px;
+  padding: 10px 20px;
   font-size: 1rem;
-  border-radius: 25px;
+  border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s ease;
@@ -76,95 +132,34 @@ button {
 
 button:hover {
   background: var(--hover-gradient);
-  transform: translateY(-3px);
+  transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* =========================
-     Section Styling
-========================= */
-section {
-  padding: 50px 20px;
-  margin: 0 auto;
-  max-width: 1200px;
-  text-align: center;
+/* Themed Background */
+.theme-background {
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
-section h2 {
-  margin-bottom: 20px;
-}
-
-section p {
-  margin: 0 auto;
-  max-width: 800px;
-}
-
-/* =========================
-     Cards for Experience
-========================= */
-.card {
-  background: var(--white);
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 15px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.card h3 {
-  margin-bottom: 10px;
-  font-size: 1.5rem;
-}
-
-.card p {
-  font-size: 1rem;
-  color: #5f6c7b;
-}
-
-/* =========================
-     Footer Styling
-========================= */
-footer {
-  background: var(--gradient);
+/* Utility Classes */
+.theme-primary {
   color: var(--white);
-  padding: 20px 0;
-  text-align: center;
+  background-color: var(--primary);
 }
 
-footer p {
+.theme-secondary {
+  color: var(--white);
+  background-color: var(--secondary);
+}
+
+/* =========================
+   Global Reset
+========================= */
+* {
   margin: 0;
-  font-size: 0.9rem;
-}
-
-footer a {
-  color: var(--white);
-  text-decoration: underline;
-  transition: opacity 0.3s ease;
-}
-
-footer a:hover {
-  opacity: 0.8;
-}
-
-/* =========================
-     Media Queries
-========================= */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2rem;
-  }
-  h2 {
-    font-size: 1.75rem;
-  }
-  button {
-    font-size: 0.9rem;
-    padding: 10px 20px;
-  }
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* =========================
