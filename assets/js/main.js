@@ -19,39 +19,43 @@ function toggleContent(button) {
 }
 
 // Download the resume as a PDF
-function downloadResume() {
-  const resume = document.getElementById('resume'); // Lấy phần tử resume
+document.addEventListener('DOMContentLoaded', () => {
+  // Tìm nút download bằng ID
+  const downloadButton = document.getElementById('download-btn');
+  
+  // Kiểm tra nếu nút tồn tại
+  if (downloadButton) {
+    // Gắn sự kiện click
+    downloadButton.addEventListener('click', () => {
+      const resume = document.getElementById('resume'); // Phần cần tải PDF
+      
+      if (resume) {
+        const options = {
+          margin: [0.5, 0.5, 0.5, 0.5], // Lề trang
+          filename: 'TaAnhLuan_Resume.pdf', // Tên file PDF
+          image: { type: 'jpeg', quality: 0.98 },
+          html2canvas: {
+            scale: 2, // Tăng độ phân giải
+            useCORS: true, // Xử lý hình ảnh bên ngoài
+          },
+          jsPDF: {
+            unit: 'in',
+            format: 'letter',
+            orientation: 'portrait', // Hướng dọc
+          },
+          pagebreak: {
+            mode: ['avoid-all', 'css', 'legacy'], // Ngắt trang thông minh
+            after: '.section, .about', // Ngắt trang sau các phần này
+          },
+        };
 
-  // Tùy chọn nâng cao cho html2pdf
-  const options = {
-    margin: [0.5, 0.5, 0.5, 0.5], // Lề trên, dưới, trái, phải
-    filename: 'TaAnhLuan_Resume.pdf', // Tên file PDF
-    image: { type: 'jpeg', quality: 0.98 }, // Chất lượng hình ảnh
-    html2canvas: {
-      scale: 2, // Tăng độ phân giải
-      useCORS: true, // Đảm bảo tải hình ảnh từ các URL bên ngoài
-      allowTaint: true, // Hỗ trợ các hình ảnh chưa được xử lý CORS
-    },
-    jsPDF: {
-      unit: 'in', // Đơn vị đo
-      format: 'letter', // Kích thước trang (Letter hoặc A4)
-      orientation: 'portrait', // Hướng dọc
-    },
-    pagebreak: {
-      mode: ['avoid-all', 'css', 'legacy'], // Ngắt trang thông minh
-      after: '.section, .about', // Ngắt sau các phần chính
-    },
-  };
-
-  // Áp dụng và xuất PDF
-  html2pdf()
-    .set(options)
-    .from(resume)
-    .toPdf()
-    .get('pdf')
-    .then((pdf) => {
-      // Nếu cần thêm nội dung như header/footer vào PDF, bạn có thể tùy chỉnh tại đây
-      console.log('PDF Generated Successfully!');
-    })
-    .save(); // Tự động tải PDF
-}
+        // Tạo PDF và tải xuống
+        html2pdf().set(options).from(resume).save();
+      } else {
+        console.error('Resume section not found!');
+      }
+    });
+  } else {
+    console.error('Download button not found!');
+  }
+});
