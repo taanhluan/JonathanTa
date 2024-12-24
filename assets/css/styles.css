@@ -382,29 +382,30 @@ button:hover {
   padding: 20px;
 }
 
-/* Ensure container content is centered */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  background: linear-gradient(to bottom right, #f8f9fa, #e9ecef); /* Subtle gradient for a professional look */
-  border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow for depth */
-  padding: 20px;
+  background: linear-gradient(to bottom right, #ffffff, #f0f2f5); /* Gradient nhẹ tạo sự tinh tế */
+  border-radius: 15px; /* Góc bo tròn hơn */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Bóng đổ mạnh hơn để tạo chiều sâu */
+  padding: 30px; /* Tăng khoảng cách bên trong để tạo sự thoáng đãng */
   z-index: 10;
   position: relative;
-  border: 1px solid #dee2e6; /* Light border for a neat finish */
+  border: 1px solid #d1d9e6; /* Đường viền nhẹ nhàng tạo cảm giác mềm mại */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng chuyển đổi mượt mà */
 }
 
-/* Responsive Styling */
-@media (max-width: 768px) {
-  body {
-    padding: 15px;
-  }
+.container:hover {
+  transform: scale(1.02); /* Hiệu ứng phóng to nhẹ khi rê chuột */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Bóng đổ mạnh hơn khi hover */
+}
 
-  .header, .about, .experience, .footer {
-    max-width: 100%;
-    padding: 15px;
-  }
+/* Tùy chọn: Thêm khoảng cách bên trong cho nội dung */
+.container .content {
+  padding: 20px;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #495057; /* Màu chữ trung tính để dễ đọc */
 }
 
 /* General Styling for the Experience Section */
