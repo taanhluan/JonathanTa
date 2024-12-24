@@ -51,7 +51,7 @@
       Base Styling
 ========================= */
 body {
-  background-color: var(--background-color);
+  background-color: #fff; /* White background */
   color: var(--text-color);
   font-family: 'Inter', sans-serif;
   font-size: 16px;
@@ -166,7 +166,9 @@ button:hover {
   text-align: center;
   padding: 80px 20px;
   color: var(--primary);
-  background-color: var(--background-color);
+  background: linear-gradient(135deg, #f0fcfd, #b3e7f0, #d9f4f9, #a7dce4);
+  background-size: 200% 200%;
+  animation: hologramEffect 8s infinite alternate;
   border-bottom: 4px solid var(--accent);
   position: relative;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -212,7 +214,7 @@ button:hover {
   font-size: 4rem;
   font-weight: 900;
   margin-bottom: 15px;
-  color: var(--text-color);
+  color: var(--text-brown);
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
   z-index: 2;
   position: relative;
@@ -220,7 +222,7 @@ button:hover {
 
 .header p {
   font-size: 1.6rem;
-  color: var(--text-color);
+  color: var(--text-brown);
   margin-bottom: 25px;
   z-index: 2;
   position: relative;
@@ -301,7 +303,9 @@ button:hover {
   max-width: 1200px;
   margin: 50px auto;
   padding: 50px;
-  background-color: var(--background-color);
+  background: linear-gradient(135deg, var(--hologram-start), var(--hologram-end));
+  background-size: 300% 300%;
+  animation: hologramEffect 4s infinite alternate ease-in-out;
   border-radius: 20px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
   color: var(--text-color);
@@ -350,7 +354,7 @@ button:hover {
 .about p {
   font-size: 1.2rem;
   line-height: 1.8;
-  color: var(--text-color);
+  color: var(--text-muted);
   margin-bottom: 15px;
   text-align: justify;
   text-indent: 20px;
@@ -376,16 +380,6 @@ button:hover {
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
-}
-
-/* General Styling */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  line-height: 1.6;
 }
 
 /* Ensure container content is centered */
@@ -417,7 +411,7 @@ body {
   margin: 50px auto;
   max-width: 900px;
   padding: 20px;
-  background-color: var(--background-color);
+  background: linear-gradient(135deg, var(--hologram-start, #f3e5f5), var(--hologram-end, #e1bee7));
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 15px;
@@ -427,7 +421,7 @@ body {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 20px;
-  color: var(--primary);
+  color: var(--primary, #2C3E50);
   text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.6);
 }
 
@@ -438,8 +432,8 @@ body {
   align-items: center;
   padding: 15px 20px;
   font-size: 1.2rem;
-  background: var(--primary);
-  color: var(--white);
+  background: linear-gradient(135deg, var(--primary, #2C3E50), var(--secondary, #34495E));
+  color: var(--white, #FFFFFF);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 10px;
   margin-bottom: 10px;
@@ -449,8 +443,8 @@ body {
 }
 
 .collapsible:hover {
-  background: var(--accent);
-  color: var(--white);
+  background: linear-gradient(135deg, var(--accent, #E74C3C), var(--secondary, #34495E));
+  color: var(--white, #FFFFFF);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -467,11 +461,11 @@ body {
 .content {
   display: none;
   padding: 20px;
-  background: var(--light);
-  border-left: 4px solid var(--accent);
+  background: var(--light, #ECF0F1);
+  border-left: 4px solid var(--accent, #E74C3C);
   border-radius: 10px;
   font-size: 1rem;
-  color: var(--text-color);
+  color: var(--text-main, #2C3E50);
   line-height: 1.6;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: max-height 0.3s ease, opacity 0.3s ease;
@@ -493,7 +487,7 @@ body {
 }
 
 .content strong {
-  color: var(--primary);
+  color: var(--primary, #2C3E50);
 }
 
 /* Fade-in Animation */
@@ -510,7 +504,7 @@ body {
 
 /* Footer Styling */
 .footer {
-  background: var(--background-color);
+  background: var(--footer-bg);
   padding: 40px 20px;
   text-align: center;
   border-top: 3px solid var(--primary-color);
@@ -535,7 +529,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  color: var(--text-color);
+  color: var(--footer-text);
 }
 
 /* Social Icons Styling */
@@ -581,7 +575,7 @@ body {
 .footer-bottom {
   margin-top: 20px;
   font-size: 0.9rem;
-  color: var(--text-color);
+  color: var(--footer-text);
 }
 
 /* Responsive Design */
