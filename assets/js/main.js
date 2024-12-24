@@ -27,7 +27,17 @@ document.addEventListener('DOMContentLoaded', () => {
       const resume = document.getElementById('resume');
 
       if (resume) {
-        // Thêm lớp CSS cho PDF
+        // Mở toàn bộ các phần collapsible
+        const collapsibles = document.querySelectorAll('.collapsible');
+        collapsibles.forEach((collapsible) => {
+          const content = collapsible.nextElementSibling;
+          if (content) {
+            content.style.maxHeight = 'none';
+            content.style.display = 'block'; // Hiển thị nội dung
+          }
+        });
+
+        // Thêm lớp tối ưu hóa PDF
         resume.classList.add('pdf-export');
 
         const options = {
@@ -35,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
           filename: 'TaAnhLuan_Resume.pdf',
           image: { type: 'jpeg', quality: 0.98 },
           html2canvas: {
-            scale: 2, // Tăng độ phân giải
+            scale: 2,
             useCORS: true,
           },
           jsPDF: {
@@ -43,10 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
             format: 'letter',
             orientation: 'portrait',
           },
-          pagebreak: {
-            mode: ['avoid-all', 'css', 'legacy'], // Ngắt trang thông minh
-            after: '.section', // Ngắt sau mỗi section
-          },
+          pagebreak: { mode: ['avoid-all', 'css', 'legacy'], after: '.section' },
         };
 
         // Tạo PDF
@@ -55,7 +62,14 @@ document.addEventListener('DOMContentLoaded', () => {
           .from(resume)
           .save()
           .finally(() => {
-            // Xóa lớp CSS sau khi export PDF
+            // Đóng lại các collapsible sau khi xuất PDF
+            collapsibles.forEach((collapsible) => {
+              const content = collapsible.nextElementSibling;
+              if (content) {
+                content.style.maxHeight = '0';
+                content.style.display = 'none'; // Ẩn nội dung
+              }
+            });
             resume.classList.remove('pdf-export');
           });
       } else {
@@ -66,3 +80,4 @@ document.addEventListener('DOMContentLoaded', () => {
     console.error('Download button not found!');
   }
 });
+
