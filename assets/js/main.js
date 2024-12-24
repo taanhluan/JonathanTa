@@ -27,23 +27,36 @@ document.addEventListener('DOMContentLoaded', () => {
       const resume = document.getElementById('resume');
 
       if (resume) {
-        resume.classList.add('pdf-export'); // Thêm lớp CSS cho PDF
+        // Thêm lớp CSS cho PDF
+        resume.classList.add('pdf-export');
 
         const options = {
           margin: 0.5,
           filename: 'TaAnhLuan_Resume.pdf',
           image: { type: 'jpeg', quality: 0.98 },
-          html2canvas: { scale: 2, useCORS: true },
-          jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
-          pagebreak: { mode: ['avoid-all', 'css', 'legacy'], after: '.section' },
+          html2canvas: {
+            scale: 2, // Tăng độ phân giải
+            useCORS: true,
+          },
+          jsPDF: {
+            unit: 'in',
+            format: 'letter',
+            orientation: 'portrait',
+          },
+          pagebreak: {
+            mode: ['avoid-all', 'css', 'legacy'], // Ngắt trang thông minh
+            after: '.section', // Ngắt sau mỗi section
+          },
         };
 
+        // Tạo PDF
         html2pdf()
           .set(options)
           .from(resume)
           .save()
           .finally(() => {
-            resume.classList.remove('pdf-export'); // Xóa lớp CSS sau khi tạo PDF
+            // Xóa lớp CSS sau khi export PDF
+            resume.classList.remove('pdf-export');
           });
       } else {
         console.error('Resume section not found!');
