@@ -20,42 +20,38 @@ function toggleContent(button) {
 
 // Download the resume as a PDF
 function downloadResume() {
-  const resume = document.getElementById('resume'); // Lấy phần nội dung cần tải
+  const resume = document.getElementById('resume'); // Lấy phần tử resume
+
+  // Tùy chọn nâng cao cho html2pdf
   const options = {
-    margin: 0.5,
-    filename: 'TaAnhLuan_Resume.pdf',
-    image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2 },
-    jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
+    margin: [0.5, 0.5, 0.5, 0.5], // Lề trên, dưới, trái, phải
+    filename: 'TaAnhLuan_Resume.pdf', // Tên file PDF
+    image: { type: 'jpeg', quality: 0.98 }, // Chất lượng hình ảnh
+    html2canvas: {
+      scale: 2, // Tăng độ phân giải
+      useCORS: true, // Đảm bảo tải hình ảnh từ các URL bên ngoài
+      allowTaint: true, // Hỗ trợ các hình ảnh chưa được xử lý CORS
+    },
+    jsPDF: {
+      unit: 'in', // Đơn vị đo
+      format: 'letter', // Kích thước trang (Letter hoặc A4)
+      orientation: 'portrait', // Hướng dọc
+    },
+    pagebreak: {
+      mode: ['avoid-all', 'css', 'legacy'], // Ngắt trang thông minh
+      after: '.section, .about', // Ngắt sau các phần chính
+    },
   };
 
-  // Sử dụng html2pdf để tạo PDF
-  html2pdf().set(options).from(resume).save();
+  // Áp dụng và xuất PDF
+  html2pdf()
+    .set(options)
+    .from(resume)
+    .toPdf()
+    .get('pdf')
+    .then((pdf) => {
+      // Nếu cần thêm nội dung như header/footer vào PDF, bạn có thể tùy chỉnh tại đây
+      console.log('PDF Generated Successfully!');
+    })
+    .save(); // Tự động tải PDF
 }
-
-// Initialize the page after DOM content is loaded
-document.addEventListener('DOMContentLoaded', () => {
-  // Gắn sự kiện cho các nút toggle
-  const toggleButtons = document.querySelectorAll('.collapsible button');
-  toggleButtons.forEach(button => {
-    button.addEventListener('click', () => toggleContent(button));
-  });
-
-  // Thiết lập trạng thái ban đầu cho nội dung collapsible
-  const collapsibleContents = document.querySelectorAll('.content');
-  collapsibleContents.forEach(content => {
-    if (content.classList.contains('collapsed')) {
-      content.style.maxHeight = '0';
-    } else {
-      content.style.maxHeight = content.scrollHeight + 'px';
-    }
-  });
-
-  // Gắn sự kiện cho nút download
-  const downloadButton = document.getElementById('download-btn');
-  if (downloadButton) {
-    downloadButton.addEventListener('click', downloadResume);
-  }
-});
-
-
