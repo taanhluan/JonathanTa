@@ -437,10 +437,16 @@ button:hover {
   margin: 50px auto;
   max-width: 900px;
   padding: 20px;
-  background: linear-gradient(135deg, var(--hologram-start, #f3e5f5), var(--hologram-end, #e1bee7));
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, 
+              rgba(255, 255, 255, 0.9), /* Trắng nhạt */
+              rgba(240, 250, 255, 0.8), /* Xanh pastel nhạt */
+              rgba(255, 240, 250, 0.8), /* Hồng pastel nhạt */
+              rgba(245, 255, 250, 0.8)); /* Vàng ánh xanh nhạt */
+  background-size: 200% 200%; /* Tăng kích thước để phù hợp animation */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Giảm độ mạnh bóng đổ */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Viền sáng hơn với độ trong suốt 30% */
   border-radius: 15px;
+  animation: hologramEffect 4s infinite alternate ease-in-out; /* Hiệu ứng động cho nền */
 }
 
 .section h2 {
