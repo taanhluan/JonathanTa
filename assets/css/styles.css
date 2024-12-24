@@ -551,7 +551,7 @@ body {
   border-top: 3px solid var(--primary-color);
   box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
   margin-top: 40px;
-  animation: footerSlideIn 1s ease-out;
+  animation: footerSlideIn 1s ease-out; /* Footer vẫn trượt vào */
 }
 
 @keyframes footerSlideIn {
@@ -573,32 +573,7 @@ body {
   color: var(--footer-text);
 }
 
-.footer .footer-content a {
-  color: var(--accent-color);
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.footer .footer-content a:hover {
-  color: var(--primary-color);
-  text-shadow: 0 0 5px var(--primary-color);
-  transform: scale(1.1);
-}
-
-.footer .footer-section h3 {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: var(--footer-text);
-  margin-bottom: 10px;
-}
-
-.footer .footer-section p {
-  margin: 5px 0;
-  font-size: 1rem;
-  color: var(--footer-text);
-}
-
+/* Social Icons Styling */
 .footer .social-icons {
   display: flex;
   justify-content: center;
@@ -607,28 +582,43 @@ body {
 }
 
 .footer .social-icons a {
-  font-size: 1.8rem;
+  font-size: 2rem; /* Tăng kích thước icon */
   color: var(--accent-color);
-  transition: transform 0.3s ease, color 0.3s ease;
-  animation: socialIconFadeIn 1.5s ease-out;
-}
-
-@keyframes socialIconFadeIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+  width: 50px; /* Kích thước container icon */
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; /* Bo tròn container */
+  border: 2px solid transparent;
+  background: var(--light); /* Nền sáng nhẹ */
+  transition: transform 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  animation: socialIconPulse 1.5s infinite alternate ease-in-out; /* Nhấp nháy nhẹ */
 }
 
 .footer .social-icons a:hover {
-  transform: scale(1.2);
+  transform: scale(1.2); /* Phóng to khi hover */
   color: var(--primary-color);
+  border-color: var(--primary-color); /* Đổi màu viền */
 }
 
+/* Social Icon Pulse Animation */
+@keyframes socialIconPulse {
+  0% {
+    transform: scale(1); /* Bình thường */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    transform: scale(1.1); /* Nhấp nháy to nhẹ */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Footer Bottom Text */
 .footer-bottom {
   margin-top: 20px;
   font-size: 0.9rem;
@@ -642,7 +632,9 @@ body {
   }
 
   .footer .social-icons a {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    width: 40px;
+    height: 40px;
   }
 }
 
@@ -652,35 +644,9 @@ body {
   }
 
   .footer .social-icons a {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    width: 35px;
+    height: 35px;
   }
 }
 
-.container {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 20px;
-  background: linear-gradient(135deg, #f0fcfd, #b3e7f0, #d9f4f9, #a7dce4); /* Màu hologram giống header */
-  background-size: 300% 300%; /* Hiệu ứng động */
-  animation: hologramEffect 6s infinite alternate; /* Hiệu ứng chuyển đổi */
-  border-radius: 15px; /* Bo góc mềm mại */
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng */
-  border: 1px solid #e0e0e0; /* Đường viền nhẹ */
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Hiệu ứng hover */
-}
-
-/* Hiệu ứng khi hover */
-.container:hover {
-  transform: scale(1.02);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-}
-
-/* Hiệu ứng nền động */
-@keyframes hologramEffect {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
