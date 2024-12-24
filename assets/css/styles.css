@@ -386,12 +386,13 @@ button:hover {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  background: #fff;
+  background: linear-gradient(to bottom right, #f8f9fa, #e9ecef); /* Subtle gradient for a professional look */
   border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow for depth */
   padding: 20px;
   z-index: 10;
   position: relative;
+  border: 1px solid #dee2e6; /* Light border for a neat finish */
 }
 
 /* Responsive Styling */
