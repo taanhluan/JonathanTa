@@ -244,27 +244,32 @@ button:hover {
 .profile-photo {
   width: 160px; /* Kích thước khung cố định */
   height: 160px;
-  border-radius: 50%; /* Khung hình tròn */
-  overflow: hidden; /* Đảm bảo ảnh không tràn ra ngoài khung */
-  margin-bottom: 20px;
-  border: 10px solid var(--white); /* Viền trắng */
+  border-radius: 50%; /* Tạo hình tròn */
+  overflow: hidden; /* Cắt bỏ phần dư thừa của ảnh */
+  margin: 0 auto; /* Căn giữa container */
+  border: 10px solid var(--white); /* Viền trắng bao quanh */
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Hiệu ứng đổ bóng */
-  position: relative;
-  z-index: 2;
+  display: flex;
+  justify-content: center; /* Căn giữa nội dung theo chiều ngang */
+  align-items: center; /* Căn giữa nội dung theo chiều dọc */
+  background-color: #f0f0f0; /* Màu nền trong trường hợp ảnh không tải được */
 }
 
 .profile-photo img {
-  width: 100%; /* Ảnh chiếm toàn bộ chiều rộng container */
-  height: 100%; /* Ảnh chiếm toàn bộ chiều cao container */
-  object-fit: cover; /* Cắt ảnh đúng tỉ lệ mà không bị méo */
+  width: 100%; /* Ảnh lấp đầy container */
+  height: auto; /* Giữ nguyên tỉ lệ ảnh */
+  object-fit: cover; /* Cắt ảnh vừa khung mà không bị méo */
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%); /* Đảm bảo khuôn mặt nằm giữa */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .profile-photo img:hover {
-  transform: scale(1.1); /* Phóng to khi hover */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Tăng đổ bóng khi hover */
+  transform: scale(1.1) translateX(-50%); /* Hiệu ứng hover, giữ nguyên căn giữa */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
-
 
 /* =========================
    Icon Container Styles
