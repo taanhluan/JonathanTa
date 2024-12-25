@@ -241,22 +241,30 @@ button:hover {
 /* =========================
    Profile Photo Styles
 ========================= */
-.profile-photo img {
-  width: 160px;
+.profile-photo {
+  width: 160px; /* Kích thước khung cố định */
   height: 160px;
-  border-radius: 50%;
+  border-radius: 50%; /* Khung hình tròn */
+  overflow: hidden; /* Đảm bảo ảnh không tràn ra ngoài khung */
   margin-bottom: 20px;
-  border: 10px solid var(--white);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  border: 10px solid var(--white); /* Viền trắng */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Hiệu ứng đổ bóng */
   position: relative;
   z-index: 2;
+}
+
+.profile-photo img {
+  width: 100%; /* Ảnh chiếm toàn bộ chiều rộng container */
+  height: 100%; /* Ảnh chiếm toàn bộ chiều cao container */
+  object-fit: cover; /* Cắt ảnh đúng tỉ lệ mà không bị méo */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .profile-photo img:hover {
-  transform: scale(1.1);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  transform: scale(1.1); /* Phóng to khi hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Tăng đổ bóng khi hover */
 }
+
 
 /* =========================
    Icon Container Styles
