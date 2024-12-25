@@ -242,32 +242,29 @@ button:hover {
    Profile Photo Styles
 ========================= */
 .profile-photo {
-  width: 160px; /* Kích thước khung cố định */
+  width: 160px; /* Kích thước khung */
   height: 160px;
-  border-radius: 50%; /* Tạo hình tròn */
-  overflow: hidden; /* Cắt bỏ phần dư thừa của ảnh */
+  border-radius: 50%; /* Khung hình tròn */
+  overflow: hidden; /* Cắt bỏ phần dư thừa */
   margin: 0 auto; /* Căn giữa container */
-  border: 10px solid var(--white); /* Viền trắng bao quanh */
+  border: 10px solid var(--white); /* Viền trắng */
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Hiệu ứng đổ bóng */
   display: flex;
-  justify-content: center; /* Căn giữa nội dung theo chiều ngang */
-  align-items: center; /* Căn giữa nội dung theo chiều dọc */
-  background-color: #f0f0f0; /* Màu nền trong trường hợp ảnh không tải được */
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0; /* Màu nền khi ảnh không tải được */
 }
 
 .profile-photo img {
-  width: 100%; /* Ảnh lấp đầy container */
-  height: auto; /* Giữ nguyên tỉ lệ ảnh */
-  object-fit: cover; /* Cắt ảnh vừa khung mà không bị méo */
-  position: relative;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%); /* Đảm bảo khuôn mặt nằm giữa */
+  width: 100%; /* Ảnh chiếm toàn bộ chiều rộng container */
+  height: 100%; /* Ảnh chiếm toàn bộ chiều cao container */
+  object-fit: cover; /* Đảm bảo ảnh giữ đúng tỉ lệ */
+  object-position: center top; /* Căn chỉnh ảnh sao cho phần mặt nằm ở trung tâm phía trên */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .profile-photo img:hover {
-  transform: scale(1.1) translateX(-50%); /* Hiệu ứng hover, giữ nguyên căn giữa */
+  transform: scale(1.1); /* Hiệu ứng phóng to khi hover */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
