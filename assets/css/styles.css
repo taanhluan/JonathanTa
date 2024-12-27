@@ -751,4 +751,41 @@ body, html {
   margin: 5px 0;
   font-size: 14px;
 }
+.experience-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
+.experience-logo {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.experience-logo img {
+  width: 100%;
+  height: auto;
+}
+
+.experience-info {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 600px) {
+  .experience-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .experience-info {
+    margin-top: 8px;
+  }
+}
