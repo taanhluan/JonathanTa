@@ -48,6 +48,28 @@
 }
 
 /* =========================
+      Theme: Green
+========================= */
+.theme-green {
+  --primary: #2e7d32;
+  --secondary: #66bb6a;
+  --accent: #00e676;
+  --light: #e8f5e9;
+  --text-color: #1b5e20;
+}
+
+/* =========================
+      Theme: Dark
+========================= */
+.theme-dark {
+  --primary: #121212;
+  --secondary: #1e1e1e;
+  --accent: #bb86fc;
+  --light: #2c2c2c;
+  --text-color: #e0e0e0;
+}
+
+/* =========================
       Base Styling
 ========================= */
 body {
@@ -129,13 +151,14 @@ button {
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
 
 button:hover {
   background: var(--hover-gradient);
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  color: var(--accent);
 }
 
 /* Themed Background */
