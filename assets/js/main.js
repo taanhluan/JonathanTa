@@ -18,10 +18,12 @@ function toggleContent(button) {
   // Hiệu ứng mượt mà
   if (isCollapsed) {
     content.style.maxHeight = '0';
+    content.style.opacity = '0';
   } else {
     content.style.maxHeight = `${content.scrollHeight}px`;
+    content.style.opacity = '1';
   }
-  content.style.transition = 'max-height 0.3s ease';
+  content.style.transition = 'max-height 0.3s ease, opacity 0.3s ease';
 }
 
 // Hàm mở hoặc đóng tất cả collapsibles
@@ -33,9 +35,11 @@ function toggleAllCollapsibles(show = true) {
       if (show) {
         content.style.maxHeight = `${content.scrollHeight}px`;
         content.style.display = 'block';
+        content.style.opacity = '1';
       } else {
         content.style.maxHeight = '0';
         content.style.display = 'none';
+        content.style.opacity = '0';
       }
     }
   });
