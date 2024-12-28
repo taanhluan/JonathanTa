@@ -12,9 +12,11 @@ function toggleContent(button) {
 
   // Thêm hiệu ứng mượt mà
   if (isCollapsed) {
-    content.style.maxHeight = '0';
+    content.style.maxHeight = '0'; // Ẩn nội dung
+    content.style.transition = 'max-height 0.3s ease-out';
   } else {
-    content.style.maxHeight = content.scrollHeight + 'px';
+    content.style.maxHeight = content.scrollHeight + 'px'; // Hiển thị nội dung
+    content.style.transition = 'max-height 0.3s ease-in';
   }
 }
 
@@ -32,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         collapsibles.forEach((collapsible) => {
           const content = collapsible.nextElementSibling;
           if (content) {
-            content.style.maxHeight = 'none';
+            content.style.maxHeight = content.scrollHeight + 'px';
             content.style.display = 'block'; // Hiển thị nội dung
           }
         });
@@ -80,4 +82,3 @@ document.addEventListener('DOMContentLoaded', () => {
     console.error('Download button not found!');
   }
 });
-
