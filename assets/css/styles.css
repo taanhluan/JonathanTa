@@ -696,7 +696,8 @@ img {
 body, html {
   overflow: visible !important; /* Đảm bảo toàn bộ nội dung được hiển thị */
 }
-/* Thiết kế gốc trên trình duyệt */
+
+/* Tối ưu hiển thị trên trình duyệt */
 .section {
   margin: 50px auto;
   max-width: 900px;
@@ -711,6 +712,7 @@ body, html {
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 15px;
   animation: hologramEffect 4s infinite alternate ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 /* Tối ưu hóa cho PDF */
@@ -740,12 +742,15 @@ body, html {
 .pdf-export .content {
   overflow: visible !important;
 }
+
 .pdf-export .collapsible + .content {
   max-height: none !important;
   display: block !important; /* Đảm bảo nội dung được hiển thị */
   visibility: visible !important;
   opacity: 1 !important;
 }
+
+/* Certificates Section */
 .certificates {
   margin: 20px 0;
 }
@@ -774,6 +779,8 @@ body, html {
   margin: 5px 0;
   font-size: 14px;
 }
+
+/* Experience Section */
 .experience-header {
   display: flex;
   align-items: center;
@@ -790,6 +797,7 @@ body, html {
   border: 1px solid #ddd;
   border-radius: 8px;
   flex-shrink: 0;
+  transition: all 0.3s ease;
 }
 
 .experience-logo img {
@@ -812,3 +820,20 @@ body, html {
     margin-top: 8px;
   }
 }
+
+/* Hiệu ứng cho PDF */
+@media print {
+  .collapsible + .content {
+    max-height: none !important;
+    display: block !important;
+  }
+
+  img {
+    break-inside: avoid;
+  }
+
+  .section {
+    page-break-after: always;
+  }
+}
+
