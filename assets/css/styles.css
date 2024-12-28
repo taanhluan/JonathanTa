@@ -750,16 +750,16 @@ button:hover {
   border-color: #aaa; /* Viền đậm hơn khi hover */
 }
 
-/* Certificate Image */
+/* Certificate Image - Fix Size */
 #resume .certificate-item img {
-  width: auto; /* Đảm bảo giữ tỷ lệ gốc */
+  width: 100px; /* Đặt chiều rộng cố định */
   height: 100px; /* Đặt chiều cao cố định */
-  max-width: 100%; /* Đảm bảo không vượt quá container */
-  object-fit: contain; /* Đảm bảo ảnh vừa khung mà không bị cắt hoặc méo */
+  object-fit: contain; /* Đảm bảo giữ nguyên tỉ lệ ảnh */
   margin: 0 auto 12px; /* Căn giữa hình ảnh và thêm khoảng cách dưới */
-  display: block; /* Loại bỏ lỗi căn chỉnh inline */
+  display: block; /* Đảm bảo hình ảnh là block */
   border-radius: 6px; /* Bo góc nhẹ cho ảnh */
   border: 1px solid #ccc; /* Thêm viền ảnh */
+  background-color: #fff; /* Thêm nền trắng nếu ảnh trong suốt */
 }
 
 /* Certificate Description */
