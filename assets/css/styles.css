@@ -681,40 +681,6 @@ button:hover {
 #download-btn i {
   margin-right: 10px;
 }
-/* Ngắt trang khi xuất PDF */
-#resume .section, #resume .about, #resume .content {
-  page-break-inside: avoid; /* Tránh ngắt giữa các phần */
-  page-break-after: always; /* Đảm bảo mỗi phần xuất hiện trên một trang mới */
-  overflow: hidden; /* Đảm bảo nội dung không bị cắt */
-}
-
-/* Đảm bảo hình ảnh và nội dung không bị cắt */
-#resume img {
-  max-width: 100%; /* Đảm bảo ảnh vừa với khung */
-  max-height: 300px; /* Giới hạn chiều cao tối đa */
-  height: auto;
-  object-fit: contain; /* Duy trì tỷ lệ gốc của ảnh */
-  page-break-inside: avoid; /* Tránh ngắt giữa ảnh */
-}
-
-/* Tối ưu hiển thị trên trình duyệt */
-#resume .section {
-  margin: 20px auto; /* Giảm khoảng trắng */
-  max-width: 900px;
-  padding: 15px 20px; /* Thu gọn padding */
-  background: linear-gradient(135deg, 
-              rgba(255, 255, 255, 0.9), 
-              rgba(240, 250, 255, 0.8), 
-              rgba(255, 240, 250, 0.8), 
-              rgba(245, 255, 250, 0.8));
-  background-size: 200% 200%;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Giảm bóng đổ */
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 10px; /* Thu gọn bo góc */
-  animation: hologramEffect 4s infinite alternate ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-
 /* Tối ưu hóa cho PDF */
 #resume.pdf-export .section {
   background: #ffffff !important; /* Nền trắng */
@@ -725,9 +691,6 @@ button:hover {
   border-radius: 0 !important; /* Bỏ bo góc */
   margin: 0 auto !important; /* Đảm bảo cân đối nội dung */
   overflow: visible !important; /* Hiển thị toàn bộ nội dung */
-  page-break-inside: avoid !important; /* Tránh cắt giữa nội dung */
-  page-break-before: auto !important;
-  page-break-after: always !important;
 }
 
 #resume.pdf-export .section h2,
@@ -735,15 +698,14 @@ button:hover {
 #resume.pdf-export .section ul,
 #resume.pdf-export .section li {
   color: #000 !important; /* Chữ đen */
-  font-size: 14px !important; /* Font nhỏ gọn hơn */
-  line-height: 1.6 !important;
+  font-size: 16px !important;
+  line-height: 1.5 !important;
 }
 
 #resume.pdf-export img {
   max-width: 100% !important;
   max-height: 300px !important; /* Giới hạn chiều cao trong PDF */
   object-fit: contain !important; /* Đảm bảo ảnh không méo */
-  page-break-inside: avoid; /* Tránh ngắt giữa ảnh */
 }
 
 #resume.pdf-export .content {
@@ -757,22 +719,79 @@ button:hover {
   opacity: 1 !important;
 }
 
-/* Tối ưu hóa hình ảnh và các mục */
-#resume.pdf-export .experience-logo img {
-  max-width: 100px !important;
-  height: auto !important;
+/* Certificates Section */
+#resume .certificates {
+  margin: 20px 0;
 }
 
-#resume.pdf-export .certificate-item {
-  break-inside: avoid; /* Tránh ngắt giữa các phần */
+#resume .certificate-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
-#resume.pdf-export .certificate-item img {
-  max-width: 80px !important; /* Giới hạn kích thước ảnh nhỏ hơn */
+#resume .certificate-item {
+  flex: 1 1 calc(33% - 15px); /* Tinh chỉnh khoảng cách */
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#resume .certificate-item img {
+  max-width: 100px;
+  margin-bottom: 8px;
+}
+
+#resume .certificate-item p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+/* Experience Section */
+#resume .experience-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#resume .experience-logo {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+#resume .experience-logo img {
+  max-width: 100%; /* Đảm bảo ảnh không vượt quá khung */
   height: auto;
 }
 
-/* Hiệu ứng tắt khi xuất PDF */
+#resume .experience-info {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  #resume .experience-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #resume .experience-info {
+    margin-top: 8px;
+  }
+}
+
+/* Hiệu ứng cho PDF */
 @media print {
   #resume .collapsible + .content {
     max-height: none !important;
@@ -787,7 +806,3 @@ button:hover {
     page-break-after: always;
   }
 }
-
-
-
-
