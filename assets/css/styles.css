@@ -752,12 +752,14 @@ button:hover {
 
 /* Certificate Image */
 #resume .certificate-item img {
-  max-width: 120px; /* Tăng kích thước tối đa của ảnh */
-  max-height: 100px; /* Đảm bảo tỷ lệ ảnh phù hợp */
-  margin-bottom: 12px; /* Tăng khoảng cách dưới ảnh */
+  width: auto; /* Đảm bảo giữ tỷ lệ gốc */
+  height: 100px; /* Đặt chiều cao cố định */
+  max-width: 100%; /* Đảm bảo không vượt quá container */
+  object-fit: contain; /* Đảm bảo ảnh vừa khung mà không bị cắt hoặc méo */
+  margin: 0 auto 12px; /* Căn giữa hình ảnh và thêm khoảng cách dưới */
+  display: block; /* Loại bỏ lỗi căn chỉnh inline */
   border-radius: 6px; /* Bo góc nhẹ cho ảnh */
   border: 1px solid #ccc; /* Thêm viền ảnh */
-  object-fit: cover; /* Cắt ảnh phù hợp khung */
 }
 
 /* Certificate Description */
