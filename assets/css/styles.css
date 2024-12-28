@@ -694,6 +694,7 @@ button:hover {
   max-height: 300px; /* Giới hạn chiều cao tối đa */
   height: auto;
   object-fit: contain; /* Duy trì tỷ lệ gốc của ảnh */
+  page-break-inside: avoid; /* Tránh ngắt giữa ảnh */
 }
 
 /* Tối ưu hiển thị trên trình duyệt */
