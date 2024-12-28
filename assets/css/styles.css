@@ -685,17 +685,15 @@ button:hover {
 #resume .section, #resume .about, #resume .content {
   page-break-inside: avoid; /* Tránh ngắt giữa các phần */
   page-break-after: always; /* Đảm bảo mỗi phần xuất hiện trên một trang mới */
+  overflow: hidden; /* Đảm bảo nội dung không bị cắt */
 }
 
 /* Đảm bảo hình ảnh và nội dung không bị cắt */
 #resume img {
   max-width: 100%; /* Đảm bảo ảnh vừa với khung */
+  max-height: 300px; /* Giới hạn chiều cao tối đa */
   height: auto;
   object-fit: contain; /* Duy trì tỷ lệ gốc của ảnh */
-}
-
-body, html {
-  overflow: visible !important; /* Đảm bảo toàn bộ nội dung được hiển thị */
 }
 
 /* Tối ưu hiển thị trên trình duyệt */
@@ -725,6 +723,7 @@ body, html {
   animation: none !important; /* Tắt hiệu ứng động */
   border-radius: 0 !important; /* Bỏ bo góc */
   margin: 0 auto !important; /* Đảm bảo cân đối nội dung */
+  overflow: visible !important; /* Hiển thị toàn bộ nội dung */
 }
 
 #resume.pdf-export .section h2,
@@ -738,7 +737,7 @@ body, html {
 
 #resume.pdf-export img {
   max-width: 100% !important;
-  height: auto !important;
+  max-height: 300px !important; /* Giới hạn chiều cao trong PDF */
   object-fit: contain !important; /* Đảm bảo ảnh không méo */
 }
 
@@ -813,6 +812,7 @@ body, html {
   flex-direction: column;
 }
 
+/* Responsive Design */
 @media (max-width: 600px) {
   #resume .experience-header {
     flex-direction: column;
@@ -839,5 +839,6 @@ body, html {
     page-break-after: always;
   }
 }
+
 
 
