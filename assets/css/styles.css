@@ -297,53 +297,60 @@ button:hover {
 .header-icons {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  margin-top: 25px;
+  gap: 25px; /* Tăng khoảng cách giữa các biểu tượng */
+  margin-top: 30px;
 }
 
 .header-icons a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
+  width: 75px; /* Tăng kích thước icon (60px * 1.25) */
+  height: 75px; /* Tăng kích thước icon (60px * 1.25) */
   background-color: var(--background-color); /* Màu nền theo theme */
   border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Tăng bóng mờ */
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   position: relative;
-  overflow: hidden;
+  overflow: hidden; /* Đảm bảo gradient không tràn ra ngoài viền */
 }
 
 .header-icons a:hover {
-  transform: scale(1.2);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  animation: hologram-shift 1.5s infinite linear; /* Thêm hoạt ảnh chuyển màu */
+  transform: scale(1.25); /* Phóng to hơn khi hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Tăng bóng mờ khi hover */
   background: linear-gradient(
     135deg,
     var(--hologram-start),
     var(--hologram-end),
     var(--hover-gradient)
   );
+  animation: hologram-enhanced 2s infinite linear; /* Hoạt ảnh gradient động */
 }
 
 .header-icons a img {
-  width: 30px;
-  height: 30px;
-  filter: brightness(0) invert(1); /* Đảm bảo biểu tượng nổi bật */
+  width: 35px; /* Tăng kích thước hình ảnh (30px * 1.25) */
+  height: 35px;
+  filter: brightness(0) invert(1); /* Đảm bảo hình ảnh nổi bật */
 }
 
-@keyframes hologram-shift {
+@keyframes hologram-enhanced {
   0% {
     background-position: 0% 50%;
   }
+  25% {
+    background-position: 50% 0%;
+  }
   50% {
     background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 100%;
   }
   100% {
     background-position: 0% 50%;
   }
 }
+
 /* =========================
    Enhanced About Section
 ========================= */
