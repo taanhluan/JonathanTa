@@ -312,34 +312,38 @@ button:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   position: relative;
+  overflow: hidden;
 }
 
 .header-icons a:hover {
   transform: scale(1.2);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  background: var(--hover-gradient); /* Gradient hover theo theme */
-  animation: bounce-enhanced 0.8s ease-in-out infinite; /* Cải thiện hoạt ảnh */
+  animation: hologram-shift 1.5s infinite linear; /* Thêm hoạt ảnh chuyển màu */
+  background: linear-gradient(
+    135deg,
+    var(--hologram-start),
+    var(--hologram-end),
+    var(--hover-gradient)
+  );
 }
 
 .header-icons a img {
   width: 30px;
   height: 30px;
-  filter: brightness(0) invert(1); /* Đảm bảo biểu tượng luôn nổi bật */
+  filter: brightness(0) invert(1); /* Đảm bảo biểu tượng nổi bật */
 }
 
-@keyframes bounce-enhanced {
-  0%, 100% {
-    transform: scale(1.2);
+@keyframes hologram-shift {
+  0% {
+    background-position: 0% 50%;
   }
   50% {
-    transform: scale(1.4) rotate(10deg); /* Thêm xoay nhẹ */
+    background-position: 100% 50%;
   }
-  75% {
-    transform: scale(1.3) rotate(-10deg); /* Đảo chiều xoay */
+  100% {
+    background-position: 0% 50%;
   }
 }
-
-
 /* =========================
    Enhanced About Section
 ========================= */
