@@ -307,7 +307,7 @@ button:hover {
   justify-content: center;
   width: 60px;
   height: 60px;
-  background-color: #ffffff;
+  background-color: var(--background-color); /* Màu nền theo theme */
   border-radius: 50%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
@@ -317,26 +317,28 @@ button:hover {
 .header-icons a:hover {
   transform: scale(1.2);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
-  animation: bounce 0.6s ease;
+  background: var(--hover-gradient); /* Gradient hover theo theme */
+  animation: bounce-enhanced 0.8s ease-in-out infinite; /* Cải thiện hoạt ảnh */
 }
 
 .header-icons a img {
   width: 30px;
   height: 30px;
+  filter: brightness(0) invert(1); /* Đảm bảo biểu tượng luôn nổi bật */
 }
 
-@keyframes bounce {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.3);
-  }
-  100% {
+@keyframes bounce-enhanced {
+  0%, 100% {
     transform: scale(1.2);
   }
+  50% {
+    transform: scale(1.4) rotate(10deg); /* Thêm xoay nhẹ */
+  }
+  75% {
+    transform: scale(1.3) rotate(-10deg); /* Đảo chiều xoay */
+  }
 }
+
 
 /* =========================
    Enhanced About Section
