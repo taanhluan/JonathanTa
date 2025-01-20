@@ -468,14 +468,14 @@ button:hover {
 }
 /* Tùy chọn: Thêm ảnh cho container */
 .container {
-  /*background-image: url('https://github.com/taanhluan/JonathanTa/blob/main/assets/images/20741881.jpg?raw=true');
-  background-size: cover; /* Phủ kín container */
-  background-position: top; /* Đặt ảnh ở phía trên */
-  background-repeat: no-repeat; /* Không lặp lại ảnh */
+  background-color: rgba(255, 255, 255, 0.8); /* Màu trắng với độ trong suốt */
   border-radius: 15px; /* Bo tròn góc container */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Hiệu ứng đổ bóng */
+  padding: 30px; /* Khoảng cách bên trong container */
+  backdrop-filter: blur(10px); /* Hiệu ứng làm mờ nền phía sau container */
+  -webkit-backdrop-filter: blur(10px); /* Hỗ trợ cho trình duyệt Webkit */
 }
+
 
 
 /* General Styling for the Experience Section */
