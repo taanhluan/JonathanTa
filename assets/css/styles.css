@@ -444,13 +444,13 @@ button:hover {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  background: linear-gradient(to bottom right, #ffffff, #f0f2f5); /* Gradient nhẹ tạo sự tinh tế */
-  border-radius: 15px; /* Góc bo tròn hơn */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Bóng đổ mạnh hơn để tạo chiều sâu */
-  padding: 30px; /* Tăng khoảng cách bên trong để tạo sự thoáng đãng */
+  background-color: transparent; /* Làm container hoàn toàn trong suốt */
+  border-radius: 15px; /* Bo tròn góc container */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Hiệu ứng đổ bóng tạo chiều sâu */
+  padding: 30px; /* Tạo khoảng cách bên trong */
   z-index: 10;
   position: relative;
-  border: 1px solid #d1d9e6; /* Đường viền nhẹ nhàng tạo cảm giác mềm mại */
+  border: 1px solid rgba(209, 217, 230, 0.3); /* Đường viền trong suốt nhẹ */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng chuyển đổi mượt mà */
 }
 
@@ -466,13 +466,7 @@ button:hover {
   line-height: 1.8;
   color: #495057; /* Màu chữ trung tính để dễ đọc */
 }
-/* Tùy chọn: Thêm ảnh cho container */
-.container {
-  background-color: transparent; /* Làm cho container hoàn toàn trong suốt */
-  border-radius: 15px; /* Bo tròn góc container */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Hiệu ứng đổ bóng */
-  padding: 30px; /* Khoảng cách bên trong container */
-}
+
 
 
 /* General Styling for the Experience Section */
