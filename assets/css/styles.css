@@ -468,7 +468,7 @@ button:hover {
 }
 /* Tùy chọn: Thêm ảnh cho container */
 .container {
-  background-image: url('https://github.com/taanhluan/JonathanTa/blob/main/assets/images/20741881.jpg?raw=true');
+  /*background-image: url('https://github.com/taanhluan/JonathanTa/blob/main/assets/images/20741881.jpg?raw=true');
   background-size: cover; /* Phủ kín container */
   background-position: top; /* Đặt ảnh ở phía trên */
   background-repeat: no-repeat; /* Không lặp lại ảnh */
