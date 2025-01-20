@@ -468,14 +468,11 @@ button:hover {
 }
 /* Tùy chọn: Thêm ảnh cho container */
 .container {
-  background-color: rgba(255, 255, 255, 0.8); /* Màu trắng với độ trong suốt */
+  background-color: transparent; /* Làm cho container hoàn toàn trong suốt */
   border-radius: 15px; /* Bo tròn góc container */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Hiệu ứng đổ bóng */
   padding: 30px; /* Khoảng cách bên trong container */
-  backdrop-filter: blur(10px); /* Hiệu ứng làm mờ nền phía sau container */
-  -webkit-backdrop-filter: blur(10px); /* Hỗ trợ cho trình duyệt Webkit */
 }
-
 
 
 /* General Styling for the Experience Section */
