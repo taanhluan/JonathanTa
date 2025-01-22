@@ -691,6 +691,7 @@ button:hover {
   border-radius: 0 !important; /* Bỏ bo góc */
   margin: 0 auto !important; /* Đảm bảo cân đối nội dung */
   overflow: visible !important; /* Hiển thị toàn bộ nội dung */
+  padding: 10px !important; /* Thêm padding để tránh cắt nội dung */
 }
 
 #resume.pdf-export .section h2,
@@ -700,16 +701,21 @@ button:hover {
   color: #000 !important; /* Chữ đen */
   font-size: 16px !important;
   line-height: 1.5 !important;
+  margin: 5px 0 !important; /* Đảm bảo khoảng cách hợp lý */
 }
 
 #resume.pdf-export img {
   max-width: 100% !important;
   max-height: 300px !important; /* Giới hạn chiều cao trong PDF */
   object-fit: contain !important; /* Đảm bảo ảnh không méo */
+  display: block !important;
+  margin: 0 auto !important; /* Căn giữa ảnh */
+  border: 1px solid #ccc !important; /* Viền nhẹ để phân biệt ảnh */
 }
 
 #resume.pdf-export .content {
   overflow: visible !important;
+  padding: 10px !important; /* Thêm padding để tránh nội dung bị che khuất */
 }
 
 #resume.pdf-export .collapsible + .content {
@@ -718,6 +724,22 @@ button:hover {
   visibility: visible !important;
   opacity: 1 !important;
 }
+
+#resume.pdf-export .pdf-footer {
+  text-align: center !important;
+  font-size: 12px !important;
+  color: #555 !important;
+  margin-top: 20px !important;
+  border-top: 1px solid #ddd !important;
+  padding-top: 10px !important;
+  position: relative !important;
+  bottom: 0 !important;
+}
+
+#resume.pdf-export .page-break {
+  page-break-before: always !important;
+}
+
 
 /* Certificates Section */
 #resume .certificates {
