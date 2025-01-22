@@ -681,65 +681,6 @@ button:hover {
   background-color: #0056b3; /* Màu xanh đậm hơn khi hover */
   transform: scale(1.05); /* Phóng to nhẹ khi hover */
 }
-/* Tối ưu hóa cho PDF */
-#resume.pdf-export .section {
-  background: #ffffff !important; /* Nền trắng */
-  color: #000 !important; /* Chữ đen */
-  box-shadow: none !important; /* Bỏ bóng đổ */
-  border: 1px solid #ddd !important; /* Viền đơn giản */
-  animation: none !important; /* Tắt hiệu ứng động */
-  border-radius: 0 !important; /* Bỏ bo góc */
-  margin: 0 auto !important; /* Đảm bảo cân đối nội dung */
-  overflow: visible !important; /* Hiển thị toàn bộ nội dung */
-  padding: 10px !important; /* Thêm padding để tránh cắt nội dung */
-}
-
-#resume.pdf-export .section h2,
-#resume.pdf-export .section p,
-#resume.pdf-export .section ul,
-#resume.pdf-export .section li {
-  color: #000 !important; /* Chữ đen */
-  font-size: 16px !important;
-  line-height: 1.5 !important;
-  margin: 5px 0 !important; /* Đảm bảo khoảng cách hợp lý */
-}
-
-#resume.pdf-export img {
-  max-width: 100% !important;
-  max-height: 300px !important; /* Giới hạn chiều cao trong PDF */
-  object-fit: contain !important; /* Đảm bảo ảnh không méo */
-  display: block !important;
-  margin: 0 auto !important; /* Căn giữa ảnh */
-  border: 1px solid #ccc !important; /* Viền nhẹ để phân biệt ảnh */
-}
-
-#resume.pdf-export .content {
-  overflow: visible !important;
-  padding: 10px !important; /* Thêm padding để tránh nội dung bị che khuất */
-}
-
-#resume.pdf-export .collapsible + .content {
-  max-height: none !important;
-  display: block !important; /* Đảm bảo nội dung được hiển thị */
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-#resume.pdf-export .pdf-footer {
-  text-align: center !important;
-  font-size: 12px !important;
-  color: #555 !important;
-  margin-top: 20px !important;
-  border-top: 1px solid #ddd !important;
-  padding-top: 10px !important;
-  position: relative !important;
-  bottom: 0 !important;
-}
-
-#resume.pdf-export .page-break {
-  page-break-before: always !important;
-}
-
 
 /* Certificates Section */
 #resume .certificates {
@@ -894,4 +835,64 @@ button:hover {
     object-fit: contain !important; /* Đảm bảo không bị méo */
     max-width: 100% !important;
   }
+}
+/* Tối ưu hóa cho PDF */
+#resume.pdf-export {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background: #ffffff !important;
+  color: #000 !important;
+  font-family: Arial, sans-serif;
+  box-shadow: none !important;
+  border: 1px solid #ddd !important;
+  animation: none !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+}
+
+#resume.pdf-export .section {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+#resume.pdf-export h1, #resume.pdf-export h2, #resume.pdf-export h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+#resume.pdf-export img {
+  max-width: 100% !important;
+  max-height: 300px !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: 0 auto !important;
+  border: 1px solid #ccc !important;
+}
+
+#resume.pdf-export .content {
+  overflow: visible !important;
+  padding: 10px !important;
+}
+
+#resume.pdf-export .collapsible + .content {
+  max-height: none !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+#resume.pdf-export .pdf-footer {
+  text-align: center !important;
+  font-size: 12px !important;
+  color: #555 !important;
+  margin-top: 20px !important;
+  border-top: 1px solid #ddd !important;
+  padding-top: 10px !important;
+}
+
+#resume.pdf-export .page-break {
+  page-break-before: always !important;
 }
