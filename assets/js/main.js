@@ -21,23 +21,41 @@ function toggleContent(button) {
   content.style.opacity = isCollapsed ? "0" : "1";
 }
 
-// Mở hoặc đóng tất cả các collapsibles
+// Mở hoặc đóng tất cả các collapsibles và cập nhật trạng thái nút
 function toggleAllCollapsibles(show = true) {
   const collapsibles = document.querySelectorAll(".collapsible");
   collapsibles.forEach((collapsible) => {
     const content = collapsible.nextElementSibling;
     if (content) {
-      content.style.transition = "none"; // Tắt hiệu ứng tạm thời
+      content.style.transition = "max-height 0.3s ease, opacity 0.3s ease";
       content.style.maxHeight = show ? `${content.scrollHeight}px` : "0";
-      content.style.display = show ? "block" : "none";
       content.style.opacity = show ? "1" : "0";
     }
   });
+
+  // Cập nhật văn bản của nút toggle all
+  const toggleAllButton = document.getElementById("toggle-all-btn");
+  if (toggleAllButton) {
+    toggleAllButton.textContent = show ? "Thu gọn tất cả" : "Mở rộng tất cả";
+  }
 }
 
-// Download the resume as a PDF
+// Download the resume as a PDF with a loading indicator
 document.addEventListener("DOMContentLoaded", () => {
   const downloadButton = document.getElementById("download-btn");
+  const loadingIndicator = document.createElement("div");
+  loadingIndicator.textContent = "Đang tạo PDF...";
+  loadingIndicator.style.display = "none";
+  loadingIndicator.style.position = "fixed";
+  loadingIndicator.style.top = "50%";
+  loadingIndicator.style.left = "50%";
+  loadingIndicator.style.transform = "translate(-50%, -50%)";
+  loadingIndicator.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
+  loadingIndicator.style.color = "white";
+  loadingIndicator.style.padding = "10px 20px";
+  loadingIndicator.style.borderRadius = "5px";
+  loadingIndicator.style.zIndex = "1000";
+  document.body.appendChild(loadingIndicator);
 
   if (downloadButton) {
     downloadButton.addEventListener("click", async () => {
@@ -45,10 +63,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (resume) {
         try {
-          // Mở toàn bộ các phần collapsible trước khi xuất PDF
-          toggleAllCollapsibles(true);
+          // Hiển thị loading indicator
+          loadingIndicator.style.display = "block";
 
-          // Thêm lớp tối ưu hóa PDF
+          // Mở toàn bộ collapsibles trước khi xuất PDF
+          toggleAllCollapsibles(true);
           resume.classList.add("pdf-export");
 
           const options = {
@@ -72,6 +91,8 @@ document.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
           console.error("Lỗi khi xuất PDF:", error);
         } finally {
+          // Ẩn loading indicator
+          loadingIndicator.style.display = "none";
           // Đóng lại các collapsibles sau khi hoàn tất
           toggleAllCollapsibles(false);
           resume.classList.remove("pdf-export");
