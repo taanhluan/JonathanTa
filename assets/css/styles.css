@@ -73,46 +73,85 @@
       Base Styling
 ========================= */
 body {
-  background-color: #fff; /* Màu nền trắng, để dự phòng khi ảnh không tải được */
-  background-image: url('https://github.com/taanhluan/JonathanTa/blob/main/assets/images/vecteezy_close-up-of-computer-circuit-photo-of-a-dell-computer-with_46478822.jpeg?raw=true'); /* Đường dẫn ảnh nền */
-  background-size: cover; /* Ảnh sẽ bao phủ toàn bộ màn hình */
-  background-position: center; /* Ảnh được căn giữa */
-  background-repeat: no-repeat; /* Ảnh không lặp lại */
-  background-attachment: fixed; /* Nền cố định khi cuộn trang */
-  color: var(--text-color); /* Màu chữ */
-  font-family: 'Inter', sans-serif; /* Font chữ */
+  background-color: #fff; /* Màu nền fallback */
+  background-image: url('https://github.com/taanhluan/JonathanTa/blob/main/assets/images/vecteezy_close-up-of-computer-circuit-photo-of-a-dell-computer-with_46478822.jpeg?raw=true');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--text-color);
+  font-family: 'Inter', Arial, sans-serif; /* Thêm fallback font */
   font-size: 16px;
   line-height: 1.6;
   margin: 0;
   padding: 0;
 }
 
+/* Cải thiện Responsive Background */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll; /* Mobile thường không hỗ trợ fixed */
+    background-size: contain; /* Tránh zoom quá lớn trên mobile */
+  }
+}
+
+/* =========================
+      Typography
+========================= */
 h1, h2, h3, h4, h5, h6 {
   color: var(--text-color);
   font-weight: bold;
   line-height: 1.2;
 }
 
-h1 {
-  font-size: 2.5rem;
+/* Responsive Font Sizes */
+h1 { font-size: clamp(2rem, 5vw, 2.5rem); } /* Tự điều chỉnh từ 2rem đến 2.5rem */
+h2 { font-size: clamp(1.75rem, 4.5vw, 2rem); }
+h3 { font-size: clamp(1.5rem, 4vw, 1.75rem); }
+
+/* Cải thiện khoảng cách trên mobile */
+@media (max-width: 768px) {
+  h1, h2, h3 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
 }
 
-h2 {
-  font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.75rem;
-}
-
+/* =========================
+      Links
+========================= */
 a {
   color: var(--accent);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease-in-out;
 }
 
 a:hover {
   color: var(--hover-gradient);
+}
+
+/* =========================
+      General Responsive Adjustments
+========================= */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* Nhỏ hơn một chút trên mobile */
+  }
+
+  p {
+    text-align: justify; /* Giúp văn bản dễ đọc hơn trên màn hình nhỏ */
+    padding: 0 10px; /* Thêm padding cho readability */
+  }
+}
+
+/* =========================
+      Performance Optimization
+========================= */
+/* Dùng hình ảnh có độ phân giải thấp hơn trên mobile */
+@media (max-width: 768px) {
+  body {
+    background-image: url('https://github.com/taanhluan/JonathanTa/blob/main/assets/images/mobile-background.jpeg?raw=true');
+  }
 }
 
 /* =========================
