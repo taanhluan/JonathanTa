@@ -70,46 +70,59 @@
 }
 
 /* =========================
-      Base Styling
+      Base Styling (Desktop)
 ========================= */
 body {
-  background-color: #fff; /* Màu nền fallback */
+  background-color: #fff;
   background-image: url('https://github.com/taanhluan/JonathanTa/blob/main/assets/images/vecteezy_close-up-of-computer-circuit-photo-of-a-dell-computer-with_46478822.jpeg?raw=true');
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: var(--text-color);
-  font-family: 'Inter', Arial, sans-serif; /* Thêm fallback font */
+  font-family: 'Inter', Arial, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   margin: 0;
   padding: 0;
 }
 
-/* Cải thiện Responsive Background */
+/* Responsive Background cho Mobile */
 @media (max-width: 768px) {
   body {
-    background-attachment: scroll; /* Mobile thường không hỗ trợ fixed */
-    background-size: contain; /* Tránh zoom quá lớn trên mobile */
+    background-image: url('https://github.com/taanhluan/JonathanTa/blob/main/assets/images/mobile-background.jpeg?raw=true');
+    background-size: cover; /* Đảm bảo ảnh nền che toàn bộ màn hình */
+    background-position: center top; /* Điều chỉnh vị trí để phù hợp hơn trên mobile */
+    background-attachment: scroll; /* Tránh lỗi background fixed trên một số mobile */
   }
 }
 
+/* Để đảm bảo readability trên nền ảnh */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Lớp phủ làm mờ nền */
+  z-index: -1; /* Đặt phía sau nội dung */
+}
+
 /* =========================
-      Typography
+      Responsive Typography
 ========================= */
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
   color: var(--text-color);
   font-weight: bold;
   line-height: 1.2;
 }
 
-/* Responsive Font Sizes */
-h1 { font-size: clamp(2rem, 5vw, 2.5rem); } /* Tự điều chỉnh từ 2rem đến 2.5rem */
+h1 { font-size: clamp(2rem, 5vw, 2.5rem); }
 h2 { font-size: clamp(1.75rem, 4.5vw, 2rem); }
 h3 { font-size: clamp(1.5rem, 4vw, 1.75rem); }
 
-/* Cải thiện khoảng cách trên mobile */
+/* Mobile Adjustments */
 @media (max-width: 768px) {
   h1, h2, h3 {
     text-align: center;
@@ -118,7 +131,7 @@ h3 { font-size: clamp(1.5rem, 4vw, 1.75rem); }
 }
 
 /* =========================
-      Links
+      Link Styling
 ========================= */
 a {
   color: var(--accent);
@@ -135,24 +148,15 @@ a:hover {
 ========================= */
 @media (max-width: 768px) {
   body {
-    font-size: 14px; /* Nhỏ hơn một chút trên mobile */
+    font-size: 14px;
   }
 
   p {
-    text-align: justify; /* Giúp văn bản dễ đọc hơn trên màn hình nhỏ */
-    padding: 0 10px; /* Thêm padding cho readability */
+    text-align: justify;
+    padding: 0 10px;
   }
 }
 
-/* =========================
-      Performance Optimization
-========================= */
-/* Dùng hình ảnh có độ phân giải thấp hơn trên mobile */
-@media (max-width: 768px) {
-  body {
-    background-image: url('https://github.com/taanhluan/JonathanTa/blob/main/assets/images/mobile-background.jpeg?raw=true');
-  }
-}
 
 /* =========================
       Keyframes: Hologram
