@@ -70,13 +70,13 @@
 }
 
 /* =========================
-      Base Styling (Desktop)
+      Base Styling (Desktop & Mobile)
 ========================= */
 body {
   background-color: #fff;
   background-image: url('https://github.com/taanhluan/JonathanTa/blob/main/assets/images/vecteezy_close-up-of-computer-circuit-photo-of-a-dell-computer-with_46478822.jpeg?raw=true');
-  background-size: cover;
-  background-position: center center;
+  background-size: cover; /* Đảm bảo ảnh nền luôn phủ kín */
+  background-position: center center; /* Căn giữa */
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: var(--text-color);
@@ -85,19 +85,20 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
+  min-height: 100vh; /* Đảm bảo chiều cao tối thiểu luôn bằng màn hình */
+  position: relative;
 }
 
-/* Responsive Background cho Mobile */
+/* Đảm bảo background full screen và tối ưu hiển thị trên Mobile */
 @media (max-width: 768px) {
   body {
-    background-image: url('https://github.com/taanhluan/JonathanTa/blob/main/assets/images/mobile-background.jpeg?raw=true');
-    background-size: cover; /* Đảm bảo ảnh nền che toàn bộ màn hình */
-    background-position: center top; /* Điều chỉnh vị trí để phù hợp hơn trên mobile */
-    background-attachment: scroll; /* Tránh lỗi background fixed trên một số mobile */
+    background-size: cover; /* Vẫn phủ kín màn hình */
+    background-position: center top; /* Căn chỉnh vị trí phù hợp hơn */
+    background-attachment: scroll; /* Tránh lỗi trên một số thiết bị di động */
   }
 }
 
-/* Để đảm bảo readability trên nền ảnh */
+/* Lớp phủ làm mờ nền để readability tốt hơn */
 body::before {
   content: "";
   position: absolute;
@@ -105,7 +106,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3); /* Lớp phủ làm mờ nền */
+  background: rgba(0, 0, 0, 0.3); /* Hiệu ứng tối nhẹ trên nền */
   z-index: -1; /* Đặt phía sau nội dung */
 }
 
@@ -156,7 +157,6 @@ a:hover {
     padding: 0 10px;
   }
 }
-
 
 /* =========================
       Keyframes: Hologram
