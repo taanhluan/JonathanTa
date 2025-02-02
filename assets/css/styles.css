@@ -273,7 +273,7 @@ button:hover {
 }
 
 /* =========================
-   Responsive Profile Photo Styles
+   Profile Photo Styles
 ========================= */
 .profile-photo {
   width: 140px;
@@ -336,6 +336,30 @@ button:hover {
 }
 
 /* =========================
+   Fix Text Layout Issue (Web & Mobile)
+========================= */
+.text-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  font-size: 1.2rem;
+}
+
+.text-container span {
+  display: inline-block;
+  white-space: nowrap;
+  padding: 5px 10px;
+}
+
+.text-container .separator {
+  font-weight: bold;
+  padding: 0 8px;
+}
+
+/* =========================
    Mobile Responsiveness
 ========================= */
 @media (max-width: 768px) {
@@ -370,6 +394,11 @@ button:hover {
   .header-icons a img {
     width: 25px;
     height: 25px;
+  }
+
+  .text-container {
+    flex-direction: column;
+    gap: 5px;
   }
 }
 
@@ -407,7 +436,6 @@ button:hover {
     height: 20px;
   }
 }
-
 
 /* =========================
    Enhanced About Section
