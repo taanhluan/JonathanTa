@@ -231,168 +231,183 @@ button:hover {
 }
 
 /* =========================
-   Enhanced Header Section
+   Enhanced Responsive Header Section
 ========================= */
 .header {
   text-align: center;
-  padding: 80px 20px;
+  padding: 60px 15px;
   color: var(--primary);
-  background: linear-gradient(135deg, 
-              rgba(255, 255, 255, 0.9), /* Trắng trong suốt */
-              rgba(240, 250, 255, 0.8), /* Xanh nhạt pastel */
-              rgba(255, 240, 250, 0.8), /* Hồng pastel nhạt */
-              rgba(250, 255, 240, 0.8)); /* Vàng nhạt ánh xanh */
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 250, 255, 0.8), rgba(255, 240, 250, 0.8), rgba(250, 255, 240, 0.8));
   background-size: 200% 200%;
   animation: hologramEffect 8s infinite alternate;
-  border-bottom: 4px solid var(--accent);
+  border-bottom: 3px solid var(--accent);
   position: relative;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Giảm độ mạnh của bóng đổ */
-  border-radius: 20px;
-  margin: 40px auto;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  margin: 30px auto;
   width: 95%;
-  max-width: 1200px;
+  max-width: 1100px;
   overflow: hidden;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  margin-bottom: 50px !important;
 }
 
 .header:hover {
-  transform: scale(1.07);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-}
-
-.header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, rgba(255, 215, 0, 0.3), transparent 70%);
-  z-index: 1;
-  pointer-events: none;
-  animation: pulseGlow 6s infinite alternate;
-}
-
-@keyframes pulseGlow {
-  0% {
-    opacity: 0.6;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0.3;
-    transform: scale(1.2);
-  }
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
 }
 
 .header h1 {
-  font-size: 4rem;
-  font-weight: 900;
-  margin-bottom: 15px;
+  font-size: 3rem;
+  font-weight: 800;
   color: var(--text-brown);
-  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
-  z-index: 2;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
   position: relative;
+  z-index: 2;
 }
 
 .header p {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color: var(--text-brown);
-  margin-bottom: 25px;
-  z-index: 2;
-  position: relative;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* =========================
-   Profile Photo Styles
+   Responsive Profile Photo Styles
 ========================= */
 .profile-photo {
-  width: 160px; /* Kích thước khung */
-  height: 160px;
-  border-radius: 50%; /* Khung hình tròn */
-  overflow: hidden; /* Cắt bỏ phần dư thừa */
-  margin: 0 auto; /* Căn giữa container */
-  border: 10px solid var(--white); /* Viền trắng */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Hiệu ứng đổ bóng */
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  border: 8px solid var(--white);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f0f0f0; /* Màu nền khi ảnh không tải được */
 }
 
 .profile-photo img {
-  width: 100%; /* Ảnh chiếm toàn bộ chiều rộng container */
-  height: 100%; /* Ảnh chiếm toàn bộ chiều cao container */
-  object-fit: cover; /* Đảm bảo ảnh giữ đúng tỉ lệ */
-  object-position: center top; /* Căn chỉnh ảnh sao cho phần mặt nằm ở trung tâm phía trên */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.3s ease;
 }
 
 .profile-photo img:hover {
-  transform: scale(1.1); /* Hiệu ứng phóng to khi hover */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  transform: scale(1.08);
 }
 
 /* =========================
-   Icon Container Styles
+   Responsive Icon Container
 ========================= */
 .header-icons {
   display: flex;
   justify-content: center;
-  gap: 25px; /* Tăng khoảng cách giữa các biểu tượng */
-  margin-top: 30px;
+  gap: 20px;
+  margin-top: 25px;
 }
 
 .header-icons a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 75px; /* Tăng kích thước icon (60px * 1.25) */
-  height: 75px; /* Tăng kích thước icon (60px * 1.25) */
-  background-color: var(--background-color); /* Màu nền theo theme */
+  width: 60px;
+  height: 60px;
+  background-color: var(--background-color);
   border-radius: 50%;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Tăng bóng mờ */
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-  position: relative;
-  overflow: hidden; /* Đảm bảo gradient không tràn ra ngoài viền */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
 }
 
 .header-icons a:hover {
-  transform: scale(1.25); /* Phóng to hơn khi hover */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Tăng bóng mờ khi hover */
-  background: linear-gradient(
-    135deg,
-    var(--hologram-start),
-    var(--hologram-end),
-    var(--hover-gradient)
-  );
-  animation: hologram-enhanced 2s infinite linear; /* Hoạt ảnh gradient động */
+  transform: scale(1.15);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, var(--hologram-start), var(--hologram-end), var(--hover-gradient));
 }
 
 .header-icons a img {
-  width: 35px; /* Tăng kích thước hình ảnh (30px * 1.25) */
-  height: 35px;
-  filter: brightness(0) invert(1); /* Đảm bảo hình ảnh nổi bật */
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1);
 }
 
-@keyframes hologram-enhanced {
-  0% {
-    background-position: 0% 50%;
+/* =========================
+   Mobile Responsiveness
+========================= */
+@media (max-width: 768px) {
+  .header {
+    padding: 40px 10px;
+    margin: 20px auto;
   }
-  25% {
-    background-position: 50% 0%;
+  
+  .header h1 {
+    font-size: 2.5rem;
   }
-  50% {
-    background-position: 100% 50%;
+  
+  .header p {
+    font-size: 1.2rem;
   }
-  75% {
-    background-position: 50% 100%;
+
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+    border: 6px solid var(--white);
   }
-  100% {
-    background-position: 0% 50%;
+  
+  .header-icons {
+    gap: 15px;
+  }
+  
+  .header-icons a {
+    width: 50px;
+    height: 50px;
+  }
+
+  .header-icons a img {
+    width: 25px;
+    height: 25px;
   }
 }
+
+@media (max-width: 480px) {
+  .header {
+    padding: 30px 5px;
+    margin: 15px auto;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .header p {
+    font-size: 1rem;
+  }
+
+  .profile-photo {
+    width: 100px;
+    height: 100px;
+    border: 5px solid var(--white);
+  }
+
+  .header-icons {
+    gap: 10px;
+  }
+
+  .header-icons a {
+    width: 40px;
+    height: 40px;
+  }
+
+  .header-icons a img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
 
 /* =========================
    Enhanced About Section
