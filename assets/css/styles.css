@@ -15,7 +15,7 @@
 }
 
 /* =========================
-        Theme: Blue
+        Theme Definitions
 ========================= */
 .theme-blue {
   --primary: #1e3a56;
@@ -25,9 +25,6 @@
   --text-color: #ffffff;
 }
 
-/* =========================
-      Theme: Lavender
-========================= */
 .theme-lavender {
   --hologram-start: #ede7f6;
   --hologram-end: #d1c4e9;
@@ -36,9 +33,6 @@
   --text-color: #4a148c;
 }
 
-/* =========================
-      Theme: Orange
-========================= */
 .theme-orange {
   --primary-color: #e65100;
   --secondary-color: #ffcc80;
@@ -47,9 +41,6 @@
   --text-color: #3e2723;
 }
 
-/* =========================
-      Theme: Green
-========================= */
 .theme-green {
   --primary: #2e7d32;
   --secondary: #66bb6a;
@@ -58,9 +49,6 @@
   --text-color: #1b5e20;
 }
 
-/* =========================
-      Theme: Dark
-========================= */
 .theme-dark {
   --primary: #121212;
   --secondary: #1e1e1e;
@@ -70,13 +58,13 @@
 }
 
 /* =========================
-      Base Styling (Desktop & Mobile)
+      Base Styling
 ========================= */
 body {
   background-color: #fff;
   background-image: url('https://github.com/taanhluan/JonathanTa/blob/main/assets/images/vecteezy_close-up-of-computer-circuit-photo-of-a-dell-computer-with_46478822.jpeg?raw=true');
-  background-size: cover; /* Đảm bảo ảnh nền luôn phủ kín */
-  background-position: center center; /* Căn giữa */
+  background-size: cover;
+  background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: var(--text-color);
@@ -85,20 +73,10 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  min-height: 100vh; /* Đảm bảo chiều cao tối thiểu luôn bằng màn hình */
+  min-height: 100vh;
   position: relative;
 }
 
-/* Đảm bảo background full screen và tối ưu hiển thị trên Mobile */
-@media (max-width: 768px) {
-  body {
-    background-size: cover; /* Vẫn phủ kín màn hình */
-    background-position: center top; /* Căn chỉnh vị trí phù hợp hơn */
-    background-attachment: scroll; /* Tránh lỗi trên một số thiết bị di động */
-  }
-}
-
-/* Lớp phủ làm mờ nền để readability tốt hơn */
 body::before {
   content: "";
   position: absolute;
@@ -106,12 +84,12 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3); /* Hiệu ứng tối nhẹ trên nền */
-  z-index: -1; /* Đặt phía sau nội dung */
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
 }
 
 /* =========================
-      Responsive Typography
+      Typography
 ========================= */
 h1, h2, h3 {
   color: var(--text-color);
@@ -123,16 +101,8 @@ h1 { font-size: clamp(2rem, 5vw, 2.5rem); }
 h2 { font-size: clamp(1.75rem, 4.5vw, 2rem); }
 h3 { font-size: clamp(1.5rem, 4vw, 1.75rem); }
 
-/* Mobile Adjustments */
-@media (max-width: 768px) {
-  h1, h2, h3 {
-    text-align: center;
-    margin-bottom: 10px;
-  }
-}
-
 /* =========================
-      Link Styling
+      Links & Buttons
 ========================= */
 a {
   color: var(--accent);
@@ -142,47 +112,6 @@ a {
 
 a:hover {
   color: var(--hover-gradient);
-}
-
-/* =========================
-      General Responsive Adjustments
-========================= */
-@media (max-width: 768px) {
-  body {
-    font-size: 14px;
-  }
-
-  p {
-    text-align: justify;
-    padding: 0 10px;
-  }
-}
-
-/* =========================
-      Keyframes: Hologram
-========================= */
-@keyframes hologramEffect {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 50% 100%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
-
-/* =========================
-      Hologram Animation
-========================= */
-.hologram {
-  background: var(--highlight-gradient);
-  background-size: 200% 200%;
-  animation: hologramEffect 6s infinite alternate;
-  border-radius: 10px;
-  padding: 20px;
-  color: var(--text-color);
 }
 
 button {
@@ -204,34 +133,35 @@ button:hover {
   color: var(--accent);
 }
 
-/* Themed Background */
-.theme-background {
-  background-color: var(--background-color);
-  color: var(--text-color);
-}
-
-/* Utility Classes */
-.theme-primary {
-  color: var(--white);
-  background-color: var(--primary);
-}
-
-.theme-secondary {
-  color: var(--white);
-  background-color: var(--secondary);
-}
-
 /* =========================
-   Global Reset
+      Layout & Containers
 ========================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: transparent;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+  z-index: 10;
+  position: relative;
+  border: 1px solid rgba(209, 217, 230, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.header, .about, .experience, .footer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 /* =========================
-   Enhanced Responsive Header Section
+      Header Section
 ========================= */
 .header {
   text-align: center;
@@ -256,25 +186,6 @@ button:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.header h1 {
-  font-size: 2.8rem;
-  font-weight: 800;
-  color: var(--text-brown);
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-  position: relative;
-  z-index: 2;
-}
-
-.header p {
-  font-size: 1.3rem;
-  color: var(--text-brown);
-  margin-bottom: 15px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-/* =========================
-   Profile Photo Styles
-========================= */
 .profile-photo {
   width: 130px;
   height: 130px;
@@ -300,9 +211,6 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* =========================
-   Responsive Icon Container
-========================= */
 .header-icons {
   display: flex;
   justify-content: center;
@@ -336,136 +244,20 @@ button:hover {
 }
 
 /* =========================
-   Fix Text Layout Issue (Web & Mobile)
-========================= */
-.text-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  gap: 8px;
-  font-size: 1.1rem;
-  max-width: 90%;
-  margin: 0 auto;
-}
-
-.text-container span {
-  display: inline-block;
-  white-space: nowrap;
-  padding: 3px 8px;
-}
-
-.text-container .separator {
-  font-weight: bold;
-  padding: 0 5px;
-}
-
-/* =========================
-   Mobile Responsiveness
-========================= */
-@media (max-width: 768px) {
-  .header {
-    padding: 35px 10px;
-    margin: 15px auto;
-  }
-  
-  .header h1 {
-    font-size: 2.2rem;
-  }
-  
-  .header p {
-    font-size: 1.1rem;
-  }
-
-  .profile-photo {
-    width: 110px;
-    height: 110px;
-    border: 5px solid var(--white);
-  }
-  
-  .header-icons {
-    gap: 10px;
-  }
-  
-  .header-icons a {
-    width: 40px;
-    height: 40px;
-  }
-
-  .header-icons a img {
-    width: 20px;
-    height: 20px;
-  }
-
-  .text-container {
-    flex-direction: column;
-    gap: 3px;
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .header {
-    padding: 25px 5px;
-    margin: 10px auto;
-  }
-
-  .header h1 {
-    font-size: 1.8rem;
-  }
-
-  .header p {
-    font-size: 0.95rem;
-  }
-
-  .profile-photo {
-    width: 90px;
-    height: 90px;
-    border: 4px solid var(--white);
-  }
-
-  .header-icons {
-    gap: 8px;
-  }
-
-  .header-icons a {
-    width: 35px;
-    height: 35px;
-  }
-
-  .header-icons a img {
-    width: 18px;
-    height: 18px;
-  }
-
-  .text-container {
-    font-size: 0.9rem;
-    text-align: center;
-  }
-}
-
-
-/* =========================
-   Enhanced About Section
+      About Section
 ========================= */
 .about {
   max-width: 1200px;
   margin: 50px auto;
   padding: 50px;
-  background: linear-gradient(135deg, 
-              rgba(255, 255, 255, 0.9), /* Trắng nhạt */
-              rgba(240, 250, 255, 0.8), /* Xanh pastel nhẹ */
-              rgba(255, 240, 250, 0.8), /* Hồng pastel ánh trắng */
-              rgba(245, 255, 250, 0.8)); /* Vàng ánh xanh nhạt */
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 250, 255, 0.8), rgba(255, 240, 250, 0.8), rgba(245, 255, 250, 0.8));
   background-size: 300% 300%;
   animation: hologramEffect 4s infinite alternate ease-in-out;
   border-radius: 20px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Giảm độ mạnh bóng đổ */
-  color: #2c3e50; /* Màu chữ trung tính cho dễ đọc */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  color: #2c3e50;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-top: 50px !important;
 }
 
 .about:hover {
@@ -479,8 +271,6 @@ button:hover {
   margin-bottom: 20px;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
   color: var(--primary);
-  position: relative;
-  z-index: 2;
 }
 
 .about h2::after {
@@ -495,14 +285,8 @@ button:hover {
 }
 
 @keyframes fadeIn {
-  0% {
-    opacity: 0;
-    width: 0;
-  }
-  100% {
-    opacity: 1;
-    width: 60px;
-  }
+  0% { opacity: 0; width: 0; }
+  100% { opacity: 1; width: 60px; }
 }
 
 .about p {
@@ -514,66 +298,14 @@ button:hover {
   text-indent: 20px;
 }
 
-.about::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent 70%);
-  z-index: 1;
-  pointer-events: none;
-}
-
-.about:hover::before {
-  animation: pulseGlow 6s infinite alternate;
-}
-
-.header, .about, .experience, .footer {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  background-color: transparent; /* Làm container hoàn toàn trong suốt */
-  border-radius: 15px; /* Bo tròn góc container */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Hiệu ứng đổ bóng tạo chiều sâu */
-  padding: 30px; /* Tạo khoảng cách bên trong */
-  z-index: 10;
-  position: relative;
-  border: 1px solid rgba(209, 217, 230, 0.3); /* Đường viền trong suốt nhẹ */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng chuyển đổi mượt mà */
-}
-
-.container:hover {
-  transform: scale(1.02); /* Hiệu ứng phóng to nhẹ khi rê chuột */
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Bóng đổ mạnh hơn khi hover */
-}
-
-/* Tùy chọn: Thêm khoảng cách bên trong cho nội dung */
-.container .content {
-  padding: 20px;
-  font-size: 1rem;
-  line-height: 1.8;
-  color: #495057; /* Màu chữ trung tính để dễ đọc */
-}
-
-
-
-/* General Styling for the Experience Section */
+/* =========================
+      Experience Section
+========================= */
 .section {
   margin: 50px auto;
   max-width: 900px;
   padding: 20px;
-  background: linear-gradient(135deg, 
-              rgba(255, 255, 255, 0.9), /* Trắng nhạt */
-              rgba(240, 250, 255, 0.8), /* Xanh pastel nhạt */
-              rgba(255, 240, 250, 0.8), /* Hồng pastel nhạt */
-              rgba(245, 255, 250, 0.8)); /* Vàng ánh xanh nhạt */
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 250, 255, 0.8), rgba(255, 240, 250, 0.8), rgba(245, 255, 250, 0.8));
   background-size: 200% 200%;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -581,15 +313,6 @@ button:hover {
   animation: hologramEffect 4s infinite alternate ease-in-out;
 }
 
-.section h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: var(--primary, #2C3E50);
-  text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.6);
-}
-
-/* Collapsible Headers */
 .collapsible {
   display: flex;
   justify-content: space-between;
@@ -621,7 +344,6 @@ button:hover {
   transform: rotate(180deg);
 }
 
-/* Content Section */
 .content {
   display: none;
   padding: 20px;
@@ -640,33 +362,9 @@ button:hover {
   animation: fadeIn 0.5s ease-in-out;
 }
 
-.content ul {
-  padding-left: 20px;
-  list-style-type: disc;
-}
-
-.content p,
-.content ul li {
-  margin-bottom: 10px;
-}
-
-.content strong {
-  color: var(--primary, #2C3E50);
-}
-
-/* Fade-in Animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Footer Styling */
+/* =========================
+      Footer Section
+========================= */
 .footer {
   background: var(--footer-bg);
   padding: 40px 20px;
@@ -676,15 +374,6 @@ button:hover {
   margin-top: 40px;
 }
 
-.footer .footer-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  color: var(--footer-text);
-}
-
-/* Social Icons Styling */
 .footer .social-icons {
   display: flex;
   justify-content: center;
@@ -708,33 +397,62 @@ button:hover {
 }
 
 .footer .social-icons a:hover {
-  transform: scale(1.2) rotate(10deg); /* Added slight rotation for enhanced effect */
+  transform: scale(1.2) rotate(10deg);
   color: var(--primary-color);
   border-color: var(--primary-color);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes socialIconPulse {
-  0%, 100% {
-    transform: scale(1);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  50% {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  }
+  0%, 100% { transform: scale(1); box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+  50% { transform: scale(1.1); box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); }
 }
 
-.footer-bottom {
-  margin-top: 20px;
-  font-size: 0.9rem;
-  color: var(--footer-text);
-}
-
-/* Responsive Design */
+/* =========================
+      Responsive Adjustments
+========================= */
 @media (max-width: 768px) {
-  .footer .footer-content {
-    gap: 10px;
+  body {
+    font-size: 14px;
+  }
+
+  .header {
+    padding: 35px 10px;
+  }
+
+  .header h1 {
+    font-size: 2.2rem;
+  }
+
+  .header p {
+    font-size: 1.1rem;
+  }
+
+  .profile-photo {
+    width: 110px;
+    height: 110px;
+  }
+
+  .header-icons a {
+    width: 40px;
+    height: 40px;
+  }
+
+  .header-icons a img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .about {
+    padding: 30px;
+  }
+
+  .about h2 {
+    font-size: 2rem;
+  }
+
+  .about p {
+    font-size: 1rem;
   }
 
   .footer .social-icons a {
@@ -745,8 +463,31 @@ button:hover {
 }
 
 @media (max-width: 480px) {
-  .footer .footer-content {
-    gap: 5px;
+  .header {
+    padding: 25px 5px;
+  }
+
+  .header h1 {
+    font-size: 1.8rem;
+  }
+
+  .header p {
+    font-size: 0.95rem;
+  }
+
+  .profile-photo {
+    width: 90px;
+    height: 90px;
+  }
+
+  .header-icons a {
+    width: 35px;
+    height: 35px;
+  }
+
+  .header-icons a img {
+    width: 18px;
+    height: 18px;
   }
 
   .footer .social-icons a {
@@ -754,240 +495,4 @@ button:hover {
     width: 35px;
     height: 35px;
   }
-}
-.download-button {
-  text-align: center;
-  margin: 20px 0;
-}
-
-#download-btn {
-  background-color: #007bff; /* Màu xanh nhấn */
-  color: white; /* Màu chữ trắng */
-  font-size: 1.2rem;
-  font-weight: 600;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-#download-btn:hover {
-  background-color: #0056b3; /* Màu xanh đậm hơn khi hover */
-  transform: scale(1.05); /* Phóng to nhẹ khi hover */
-}
-
-/* Certificates Section */
-#resume .certificates {
-  margin: 20px 0;
-  padding: 10px; /* Thêm khoảng cách cho toàn bộ phần */
-  background-color: #f9f9f9; /* Nền nhẹ để tạo sự phân biệt */
-  border: 1px solid #eee; /* Viền nhẹ */
-  border-radius: 8px; /* Bo góc phần toàn bộ */
-}
-
-/* Certificate List Container */
-#resume .certificate-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px; /* Tăng khoảng cách giữa các mục */
-  justify-content: space-around; /* Căn chỉnh đều các mục */
-}
-
-/* Individual Certificate Item */
-#resume .certificate-item {
-  flex: 1 1 calc(30% - 20px); /* Điều chỉnh kích thước theo màn hình */
-  text-align: center;
-  border: 1px solid #ddd;
-  border-radius: 10px; /* Bo góc mềm mại hơn */
-  padding: 15px; /* Tăng khoảng cách bên trong */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng rõ hơn */
-  background-color: #fff; /* Nền trắng cho mục */
-  transition: transform 0.3s, box-shadow 0.3s; /* Hiệu ứng khi hover */
-}
-
-#resume .certificate-item:hover {
-  transform: translateY(-5px); /* Hiệu ứng nổi lên khi hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Đổ bóng mạnh hơn */
-  border-color: #aaa; /* Viền đậm hơn khi hover */
-}
-
-/* Certificate Image - Fix Size */
-#resume .certificate-item img {
-  width: 100px; /* Đặt chiều rộng cố định */
-  height: 100px; /* Đặt chiều cao cố định */
-  object-fit: contain; /* Đảm bảo giữ nguyên tỉ lệ ảnh */
-  margin: 0 auto 12px; /* Căn giữa hình ảnh và thêm khoảng cách dưới */
-  display: block; /* Đảm bảo hình ảnh là block */
-  border-radius: 6px; /* Bo góc nhẹ cho ảnh */
-  border: 1px solid #ccc; /* Thêm viền ảnh */
-  background-color: #fff; /* Thêm nền trắng nếu ảnh trong suốt */
-}
-
-/* Certificate Description */
-#resume .certificate-item p {
-  margin: 6px 0; /* Tăng khoảng cách giữa các đoạn văn */
-  font-size: 15px; /* Tăng kích thước chữ */
-  line-height: 1.5; /* Tăng khoảng cách dòng */
-  color: #333; /* Màu chữ tối hơn */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  #resume .certificate-item {
-    flex: 1 1 calc(45% - 20px); /* Chuyển sang 2 cột trên màn hình nhỏ hơn */
-  }
-}
-
-@media (max-width: 480px) {
-  #resume .certificate-item {
-    flex: 1 1 100%; /* Chuyển sang 1 cột trên màn hình rất nhỏ */
-  }
-
-  #resume .certificate-list {
-    gap: 15px; /* Giảm khoảng cách giữa các mục */
-  }
-}
-
-
-/* Experience Section */
-#resume .experience-header {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-/* Logo Container */
-#resume .experience-logo {
-  width: 60px;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f0f0f0;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  flex-shrink: 0;
-  overflow: hidden; /* Đảm bảo ảnh không bị tràn */
-}
-
-/* Logo Image */
-#resume .experience-logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* Duy trì tỷ lệ gốc */
-}
-
-/* Information Container */
-#resume .experience-info {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Title Styling */
-#resume .experience-title {
-  font-size: 18px;
-  color: #fff;
-  font-weight: bold;
-}
-
-/* Company Name Styling */
-#resume .experience-company {
-  font-size: 18px;
-  color: #fff;
-  margin-top: 5px;
-  font-weight: bold;
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-  #resume .experience-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  #resume .experience-info {
-    margin-top: 8px;
-  }
-}
-
-/* Hiệu ứng cho PDF */
-@media print {
-  #resume .collapsible + .content {
-    max-height: none !important;
-    display: block !important;
-  }
-
-  #resume img {
-    break-inside: avoid;
-  }
-
-  #resume .section {
-    page-break-after: always;
-  }
-
-  #resume .experience-logo img {
-    object-fit: contain !important; /* Đảm bảo không bị méo */
-    max-width: 100% !important;
-  }
-}
-/* Tối ưu hóa cho PDF */
-#resume.pdf-export {
-  width: 100%;
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
-  background: #ffffff !important;
-  color: #000 !important;
-  font-family: Arial, sans-serif;
-  box-shadow: none !important;
-  border: 1px solid #ddd !important;
-  animation: none !important;
-  border-radius: 0 !important;
-  overflow: visible !important;
-}
-
-#resume.pdf-export .section {
-  margin-bottom: 20px;
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-}
-
-#resume.pdf-export h1, #resume.pdf-export h2, #resume.pdf-export h3 {
-  color: #333;
-  margin-bottom: 10px;
-}
-
-#resume.pdf-export img {
-  max-width: 100% !important;
-  max-height: 300px !important;
-  object-fit: contain !important;
-  display: block !important;
-  margin: 0 auto !important;
-  border: 1px solid #ccc !important;
-}
-
-#resume.pdf-export .content {
-  overflow: visible !important;
-  padding: 10px !important;
-}
-
-#resume.pdf-export .collapsible + .content {
-  max-height: none !important;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-#resume.pdf-export .pdf-footer {
-  text-align: center !important;
-  font-size: 12px !important;
-  color: #555 !important;
-  margin-top: 20px !important;
-  border-top: 1px solid #ddd !important;
-  padding-top: 10px !important;
-}
-
-#resume.pdf-export .page-break {
-  page-break-before: always !important;
 }
