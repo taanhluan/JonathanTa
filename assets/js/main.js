@@ -11,7 +11,7 @@ function toggleContent(button) {
   button.textContent = isCollapsed ? "Mở rộng" : "Thu gọn";
   const icon = button.querySelector("i");
   if (icon) {
-    icon.className = isCollapsed ? "fas fa-chevron-down" : "fas fa-chevron-up";
+    icon.className = isCollapsed ? "fa-solid fa-chevron-down" : "fa-solid fa-chevron-up";
   }
 
   content.style.transition = "max-height 0.3s ease, opacity 0.3s ease";
@@ -39,20 +39,43 @@ function toggleAllCollapsibles(show = true) {
 document.addEventListener("DOMContentLoaded", () => {
   const downloadButton = document.getElementById("download-btn");
 
-  // Loading Indicator
+  // Loading Indicator (Cải tiến giao diện)
   const loadingIndicator = document.createElement("div");
-  loadingIndicator.textContent = "Đang tạo PDF...";
+  loadingIndicator.innerHTML = `
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <span class="loader"></span> Đang tạo PDF...
+    </div>
+  `;
   loadingIndicator.style.display = "none";
   loadingIndicator.style.position = "fixed";
   loadingIndicator.style.top = "50%";
   loadingIndicator.style.left = "50%";
   loadingIndicator.style.transform = "translate(-50%, -50%)";
-  loadingIndicator.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
+  loadingIndicator.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
   loadingIndicator.style.color = "white";
-  loadingIndicator.style.padding = "10px 20px";
-  loadingIndicator.style.borderRadius = "5px";
+  loadingIndicator.style.padding = "15px 25px";
+  loadingIndicator.style.borderRadius = "8px";
   loadingIndicator.style.zIndex = "1000";
+  loadingIndicator.style.fontSize = "16px";
   document.body.appendChild(loadingIndicator);
+
+  // Thêm hiệu ứng loading spinner
+  const loaderStyle = document.createElement("style");
+  loaderStyle.innerHTML = `
+    .loader {
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      border-top: 4px solid #fff;
+      border-radius: 50%;
+      width: 16px;
+      height: 16px;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  `;
+  document.head.appendChild(loaderStyle);
 
   if (downloadButton) {
     downloadButton.addEventListener("click", async () => {
@@ -64,8 +87,8 @@ document.addEventListener("DOMContentLoaded", () => {
           toggleAllCollapsibles(true);
           resume.classList.add("pdf-export");
 
-          // Đợi DOM cập nhật trước khi render PDF
-          await new Promise((resolve) => setTimeout(resolve, 300));
+          // Đợi 500ms để đảm bảo tất cả nội dung đã hiển thị trước khi xuất PDF
+          await new Promise((resolve) => setTimeout(resolve, 500));
 
           const options = {
             margin: 0.5,
