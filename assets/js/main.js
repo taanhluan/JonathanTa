@@ -38,6 +38,8 @@ function toggleAllCollapsibles(show = true) {
 
 document.addEventListener("DOMContentLoaded", () => {
   const downloadButton = document.getElementById("download-btn");
+
+  // Loading Indicator
   const loadingIndicator = document.createElement("div");
   loadingIndicator.textContent = "Đang tạo PDF...";
   loadingIndicator.style.display = "none";
@@ -51,26 +53,29 @@ document.addEventListener("DOMContentLoaded", () => {
   loadingIndicator.style.borderRadius = "5px";
   loadingIndicator.style.zIndex = "1000";
   document.body.appendChild(loadingIndicator);
-  
+
   if (downloadButton) {
     downloadButton.addEventListener("click", async () => {
       const resume = document.getElementById("resume");
-      
+
       if (resume) {
         try {
           loadingIndicator.style.display = "block";
           toggleAllCollapsibles(true);
           resume.classList.add("pdf-export");
-          
+
+          // Đợi DOM cập nhật trước khi render PDF
+          await new Promise((resolve) => setTimeout(resolve, 300));
+
           const options = {
             margin: 0.5,
             filename: "Resume.pdf",
             image: { type: "jpeg", quality: 0.98 },
-            html2canvas: { scale: 2, useCORS: true },
+            html2canvas: { scale: 2, useCORS: true, scrollY: 0, allowTaint: true },
             jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
             pagebreak: { mode: ["avoid-all", "css"], after: ".section, .pdf-footer" }
           };
-          
+
           await html2pdf().set(options).from(resume).save();
         } catch (error) {
           console.error("Lỗi khi xuất PDF:", error);
