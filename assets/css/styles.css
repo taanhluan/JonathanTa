@@ -924,6 +924,7 @@ button:hover {
 
   #resume img {
     break-inside: avoid;
+    page-break-inside: avoid !important;
   }
 
   #resume .section {
@@ -931,10 +932,16 @@ button:hover {
   }
 
   #resume .experience-logo img {
-    object-fit: contain !important; /* Đảm bảo không bị méo */
+    object-fit: contain !important;
+    object-position: top !important;
     max-width: 100% !important;
   }
+
+  #resume h1, #resume h2, #resume h3, #resume p {
+    page-break-after: avoid !important;
+  }
 }
+
 /* Tối ưu hóa cho PDF */
 #resume.pdf-export {
   width: 100%;
@@ -965,10 +972,12 @@ button:hover {
 #resume.pdf-export img {
   max-width: 100% !important;
   max-height: 300px !important;
-  object-fit: contain !important;
+  object-fit: cover !important;
+  object-position: top !important;
   display: block !important;
   margin: 0 auto !important;
   border: 1px solid #ccc !important;
+  page-break-inside: avoid !important;
 }
 
 #resume.pdf-export .content {
