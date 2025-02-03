@@ -932,8 +932,8 @@ button:hover {
   }
 
   #resume .experience-logo img {
-    object-fit: contain !important;
-    object-position: top !important;
+    object-fit: cover !important; /* Hiển thị ảnh đầy đủ hơn */
+    object-position: top !important; /* Tránh ảnh bị cắt đầu */
     max-width: 100% !important;
   }
 
@@ -972,8 +972,8 @@ button:hover {
 #resume.pdf-export img {
   max-width: 100% !important;
   max-height: 300px !important;
-  object-fit: cover !important;
-  object-position: top !important;
+  object-fit: cover !important; /* Đảm bảo ảnh được hiển thị đầy đủ */
+  object-position: top !important; /* Đẩy ảnh lên để không bị cắt đầu */
   display: block !important;
   margin: 0 auto !important;
   border: 1px solid #ccc !important;
