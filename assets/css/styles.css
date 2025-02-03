@@ -925,6 +925,7 @@ button:hover {
   #resume img {
     break-inside: avoid;
     page-break-inside: avoid !important;
+    max-height: none !important;
   }
 
   #resume .section {
@@ -932,9 +933,11 @@ button:hover {
   }
 
   #resume .experience-logo img {
-    object-fit: cover !important; /* Hiển thị ảnh đầy đủ hơn */
-    object-position: top !important; /* Tránh ảnh bị cắt đầu */
+    object-fit: contain !important; /* Giữ toàn bộ ảnh mà không bị cắt */
+    object-position: top center !important;
     max-width: 100% !important;
+    max-height: none !important;
+    display: block !important;
   }
 
   #resume h1, #resume h2, #resume h3, #resume p {
@@ -947,7 +950,7 @@ button:hover {
   width: 100%;
   max-width: 800px;
   margin: auto;
-  padding: 20px;
+  padding: 15px; /* Giảm padding để tiết kiệm không gian */
   background: #ffffff !important;
   color: #000 !important;
   font-family: Arial, sans-serif;
@@ -959,21 +962,22 @@ button:hover {
 }
 
 #resume.pdf-export .section {
-  margin-bottom: 20px;
-  padding: 10px;
+  margin-bottom: 15px; /* Giảm margin để tiết kiệm không gian */
+  padding: 8px; /* Điều chỉnh padding */
   border-bottom: 1px solid #ddd;
 }
 
 #resume.pdf-export h1, #resume.pdf-export h2, #resume.pdf-export h3 {
   color: #333;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+  page-break-after: avoid !important;
 }
 
 #resume.pdf-export img {
   max-width: 100% !important;
-  max-height: 300px !important;
-  object-fit: cover !important; /* Đảm bảo ảnh được hiển thị đầy đủ */
-  object-position: top !important; /* Đẩy ảnh lên để không bị cắt đầu */
+  max-height: none !important;
+  object-fit: contain !important; /* Giữ nguyên tỉ lệ ảnh */
+  object-position: top center !important;
   display: block !important;
   margin: 0 auto !important;
   border: 1px solid #ccc !important;
@@ -982,7 +986,7 @@ button:hover {
 
 #resume.pdf-export .content {
   overflow: visible !important;
-  padding: 10px !important;
+  padding: 8px !important;
 }
 
 #resume.pdf-export .collapsible + .content {
@@ -996,9 +1000,9 @@ button:hover {
   text-align: center !important;
   font-size: 12px !important;
   color: #555 !important;
-  margin-top: 20px !important;
+  margin-top: 15px !important;
   border-top: 1px solid #ddd !important;
-  padding-top: 10px !important;
+  padding-top: 8px !important;
 }
 
 #resume.pdf-export .page-break {
