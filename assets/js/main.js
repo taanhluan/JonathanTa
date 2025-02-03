@@ -85,10 +85,19 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
           loadingIndicator.style.display = "block";
           toggleAllCollapsibles(true);
+
+          // Hiển thị tất cả nội dung trước khi xuất PDF
+          document.querySelectorAll(".content").forEach((el) => {
+            el.style.display = "block";
+            el.style.maxHeight = "none";
+            el.style.opacity = "1";
+            el.style.visibility = "visible";
+          });
+
           resume.classList.add("pdf-export");
 
-          // Chờ 10000ms để đảm bảo tất cả nội dung đã hiển thị
-          await new Promise((resolve) => setTimeout(resolve, 10000));
+          // Đợi lâu hơn để DOM cập nhật (2500ms)
+          await new Promise((resolve) => setTimeout(resolve, 2500));
 
           const options = {
             margin: 0.5,
