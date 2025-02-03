@@ -914,8 +914,7 @@ button:hover {
     margin-top: 8px;
   }
 }
-
-/* Hiệu ứng khi xuất PDF */
+/* Hiển thị nội dung bị ẩn khi xuất PDF */
 @media print {
   .collapsible + .content {
     max-height: none !important;
@@ -989,13 +988,6 @@ button:hover {
 .pdf-export .content {
   overflow: visible !important;
   padding: 8px !important;
-}
-
-.pdf-export .collapsible + .content {
-  max-height: none !important;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
 }
 
 .pdf-export .pdf-footer {
