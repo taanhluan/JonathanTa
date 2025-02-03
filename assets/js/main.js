@@ -87,8 +87,8 @@ document.addEventListener("DOMContentLoaded", () => {
           toggleAllCollapsibles(true);
           resume.classList.add("pdf-export");
 
-          // Chờ 100000ms để đảm bảo tất cả nội dung đã hiển thị
-          await new Promise((resolve) => setTimeout(resolve, 100000));
+          // Chờ 10000ms để đảm bảo tất cả nội dung đã hiển thị
+          await new Promise((resolve) => setTimeout(resolve, 10000));
 
           const options = {
             margin: 0.5,
