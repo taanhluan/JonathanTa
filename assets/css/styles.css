@@ -917,36 +917,38 @@ button:hover {
 
 /* Hiệu ứng khi xuất PDF */
 @media print {
-  #resume .collapsible + .content {
+  .collapsible + .content {
     max-height: none !important;
     display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
-  #resume img {
-    break-inside: avoid;
+  img {
     page-break-inside: avoid !important;
-    max-height: none !important;
-  }
-
-  #resume .section {
-    page-break-after: always;
-  }
-
-  #resume .experience-logo img {
-    object-fit: contain !important;
-    object-position: top center !important;
     max-width: 100% !important;
     max-height: none !important;
+    object-fit: contain !important;
+    object-position: top center !important;
     display: block !important;
   }
 
-  #resume h1, #resume h2, #resume h3, #resume p {
+  .section {
+    page-break-before: always !important;
+    page-break-inside: avoid !important;
+  }
+
+  .pdf-footer {
+    page-break-after: always !important;
+  }
+
+  h1, h2, h3, p {
     page-break-after: avoid !important;
   }
 }
 
 /* Tối ưu hóa PDF */
-#resume.pdf-export {
+.pdf-export {
   width: 100%;
   max-width: 800px;
   margin: auto;
@@ -961,19 +963,19 @@ button:hover {
   overflow: visible !important;
 }
 
-#resume.pdf-export .section {
+.pdf-export .section {
   margin-bottom: 15px;
   padding: 8px;
   border-bottom: 1px solid #ddd;
 }
 
-#resume.pdf-export h1, #resume.pdf-export h2, #resume.pdf-export h3 {
+.pdf-export h1, .pdf-export h2, .pdf-export h3 {
   color: #333;
   margin-bottom: 8px;
   page-break-after: avoid !important;
 }
 
-#resume.pdf-export img {
+.pdf-export img {
   max-width: 100% !important;
   max-height: none !important;
   object-fit: contain !important;
@@ -984,19 +986,19 @@ button:hover {
   page-break-inside: avoid !important;
 }
 
-#resume.pdf-export .content {
+.pdf-export .content {
   overflow: visible !important;
   padding: 8px !important;
 }
 
-#resume.pdf-export .collapsible + .content {
+.pdf-export .collapsible + .content {
   max-height: none !important;
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
 }
 
-#resume.pdf-export .pdf-footer {
+.pdf-export .pdf-footer {
   text-align: center !important;
   font-size: 12px !important;
   color: #555 !important;
@@ -1005,7 +1007,6 @@ button:hover {
   padding-top: 8px !important;
 }
 
-#resume.pdf-export .page-break {
+.pdf-export .page-break {
   page-break-before: always !important;
 }
-
