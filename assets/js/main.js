@@ -87,14 +87,14 @@ document.addEventListener("DOMContentLoaded", () => {
           toggleAllCollapsibles(true);
           resume.classList.add("pdf-export");
 
-          // Đợi 1500ms để đảm bảo toàn bộ nội dung đã hiển thị
-          await new Promise((resolve) => setTimeout(resolve, 1500));
+          // Chờ 2000ms để đảm bảo tất cả nội dung đã hiển thị
+          await new Promise((resolve) => setTimeout(resolve, 2000));
 
           const options = {
             margin: 0.5,
             filename: "Resume.pdf",
             image: { type: "jpeg", quality: 0.98 },
-            html2canvas: { scale: 2, useCORS: true, scrollY: 0, allowTaint: true },
+            html2canvas: { scale: 2, useCORS: true, scrollY: 0, allowTaint: true, imageTimeout: 5000 },
             jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
             pagebreak: { mode: ["avoid-all", "css"], after: ".section, .pdf-footer" }
           };
