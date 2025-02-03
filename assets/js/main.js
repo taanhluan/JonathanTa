@@ -39,7 +39,7 @@ function toggleAllCollapsibles(show = true) {
 document.addEventListener("DOMContentLoaded", () => {
   const downloadButton = document.getElementById("download-btn");
 
-  // Loading Indicator (Cải tiến giao diện)
+  // Loading Indicator (Cải tiến UI)
   const loadingIndicator = document.createElement("div");
   loadingIndicator.innerHTML = `
     <div style="display: flex; align-items: center; gap: 10px;">
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loadingIndicator.style.fontSize = "16px";
   document.body.appendChild(loadingIndicator);
 
-  // Thêm hiệu ứng loading spinner
+  // Loading Spinner
   const loaderStyle = document.createElement("style");
   loaderStyle.innerHTML = `
     .loader {
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
           toggleAllCollapsibles(true);
           resume.classList.add("pdf-export");
 
-          // Đợi 1500ms để đảm bảo tất cả nội dung đã hiển thị trước khi xuất PDF
+          // Đợi 1500ms để đảm bảo toàn bộ nội dung đã hiển thị
           await new Promise((resolve) => setTimeout(resolve, 1500));
 
           const options = {
@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
           resume.classList.remove("pdf-export");
         }
       } else {
-        console.error("Không tìm thấy phần hồ sơ để xuất PDF!");
+        console.error("Không tìm thấy nội dung để xuất PDF!");
       }
     });
   } else {
