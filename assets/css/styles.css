@@ -915,7 +915,7 @@ button:hover {
   }
 }
 
-/* Hiệu ứng cho PDF */
+/* Hiệu ứng khi xuất PDF */
 @media print {
   #resume .collapsible + .content {
     max-height: none !important;
@@ -933,7 +933,7 @@ button:hover {
   }
 
   #resume .experience-logo img {
-    object-fit: contain !important; /* Giữ toàn bộ ảnh mà không bị cắt */
+    object-fit: contain !important;
     object-position: top center !important;
     max-width: 100% !important;
     max-height: none !important;
@@ -945,12 +945,12 @@ button:hover {
   }
 }
 
-/* Tối ưu hóa cho PDF */
+/* Tối ưu hóa PDF */
 #resume.pdf-export {
   width: 100%;
   max-width: 800px;
   margin: auto;
-  padding: 15px; /* Giảm padding để tiết kiệm không gian */
+  padding: 15px;
   background: #ffffff !important;
   color: #000 !important;
   font-family: Arial, sans-serif;
@@ -962,8 +962,8 @@ button:hover {
 }
 
 #resume.pdf-export .section {
-  margin-bottom: 15px; /* Giảm margin để tiết kiệm không gian */
-  padding: 8px; /* Điều chỉnh padding */
+  margin-bottom: 15px;
+  padding: 8px;
   border-bottom: 1px solid #ddd;
 }
 
@@ -976,7 +976,7 @@ button:hover {
 #resume.pdf-export img {
   max-width: 100% !important;
   max-height: none !important;
-  object-fit: contain !important; /* Giữ nguyên tỉ lệ ảnh */
+  object-fit: contain !important;
   object-position: top center !important;
   display: block !important;
   margin: 0 auto !important;
@@ -1008,3 +1008,4 @@ button:hover {
 #resume.pdf-export .page-break {
   page-break-before: always !important;
 }
+
