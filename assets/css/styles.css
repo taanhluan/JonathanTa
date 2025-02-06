@@ -571,7 +571,7 @@ button:hover {
 /* General Styling for the Experience Section */
 .section {
   margin: 50px auto;
-  max-width: 900px;
+  max-width: 1200px;
   padding: 20px;
   background: linear-gradient(135deg, 
               rgba(255, 255, 255, 0.9), /* Trắng nhạt */
