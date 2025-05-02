@@ -447,143 +447,75 @@ button:hover {
 
 
 /* =========================
-   About Me Portfolio Section
+   Enhanced Responsive About Section
 ========================= */
 .about {
   max-width: 1100px;
   margin: 50px auto;
   padding: 50px;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 20px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-  color: #2c3e50;
-  text-align: left;
-  font-family: 'Poppins', 'Merriweather', sans-serif;
-  transition: all 0.4s ease;
+  background: linear-gradient(135deg, 
+              rgba(255, 255, 255, 0.9), 
+              rgba(240, 250, 255, 0.85), 
+              rgba(255, 240, 250, 0.85), 
+              rgba(245, 255, 250, 0.85));
+  background-size: 300% 300%;
+  animation: hologramEffect 6s infinite alternate ease-in-out;
+  border-radius: 18px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  color: #34495e;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
-  overflow: hidden;
 }
 
-.about::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 50%, #fbc2eb 100%);
-  background-size: 400% 400%;
-  animation: moveBackground 20s ease infinite;
-  z-index: 0;
-  opacity: 0.15;
-}
-
-.about-content {
-  position: relative;
-  z-index: 1;
+.about:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .about h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
-  color: #0077cc;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  color: var(--primary);
   position: relative;
 }
 
 .about h2::after {
   content: "";
   display: block;
-  width: 60px;
-  height: 4px;
-  background: #00c6ff;
-  margin-top: 8px;
-  border-radius: 2px;
+  width: 50px;
+  height: 3px;
+  margin: 10px auto;
+  background: var(--accent-color);
+  border-radius: 3px;
   animation: fadeIn 1s ease-in-out;
 }
 
-.about h3 {
-  margin-top: 40px;
-  font-size: 1.8rem;
-  color: #00509e;
-  border-bottom: 2px solid #00c6ff;
-  display: inline-block;
-  padding-bottom: 6px;
-}
-
-.about p, .about li {
+.about p {
   font-size: 1.1rem;
-  line-height: 1.8;
-  margin: 15px 0;
-  color: #555;
-}
-
-.about ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 20px;
-}
-
-.about li {
-  background: #f8f9fa;
+  font-family: "Merriweather", serif; /* Font chữ thanh lịch */
+  line-height: 1.7;
+  color: var(--text-muted);
   margin-bottom: 15px;
-  padding: 15px 20px;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.about li:hover {
-  background: #e0f7ff;
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-.about strong {
-  color: #0077cc;
-}
-
-/* Background animation */
-@keyframes moveBackground {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Fade animation */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px);}
-  to { opacity: 1; transform: translateY(0);}
-}
-
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  .about {
-    background: rgba(30, 30, 30, 0.95);
-    color: #ecf0f1;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
-  }
-  
-  .about li {
-    background: #2c2c2c;
-  }
-  
-  .about li:hover {
-    background: #1f2d3a;
-  }
-
-  .about h2, .about h3, .about strong {
-    color: #00c6ff;
-  }
+  text-align: justify;
+  text-indent: 18px;
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
   .about {
+    max-width: 90%;
     padding: 40px;
   }
+  
   .about h2 {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
+  }
+
+  .about p {
+    font-size: 1rem;
   }
 }
 
@@ -592,11 +524,19 @@ button:hover {
     padding: 30px;
     margin: 30px auto;
   }
-  .about h2 {
-    font-size: 1.9rem;
+
+  .about:hover {
+    transform: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
-  .about p, .about li {
-    font-size: 1rem;
+
+  .about h2 {
+    font-size: 1.6rem;
+  }
+
+  .about p {
+    font-size: 0.95rem;
+    text-indent: 10px;
   }
 }
 
