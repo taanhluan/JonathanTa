@@ -454,23 +454,24 @@ button:hover {
   margin: 50px auto;
   padding: 50px;
   background: linear-gradient(135deg, 
-              rgba(255, 255, 255, 0.9), 
-              rgba(240, 250, 255, 0.85), 
-              rgba(255, 240, 250, 0.85), 
-              rgba(245, 255, 250, 0.85));
+              rgba(255, 255, 255, 0.95), 
+              rgba(240, 250, 255, 0.9), 
+              rgba(255, 245, 250, 0.9), 
+              rgba(245, 255, 250, 0.9));
   background-size: 300% 300%;
   animation: hologramEffect 6s infinite alternate ease-in-out;
   border-radius: 18px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  color: #34495e;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  color: #2c3e50; /* màu chữ rõ hơn */
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
+  backdrop-filter: blur(3px); /* hiệu ứng mờ nền nhẹ */
 }
 
 .about:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
 
 .about h2 {
@@ -493,14 +494,39 @@ button:hover {
   animation: fadeIn 1s ease-in-out;
 }
 
+.about h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #0d3b66;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
 .about p {
   font-size: 1.1rem;
-  font-family: "Merriweather", serif; /* Font chữ thanh lịch */
-  line-height: 1.7;
-  color: var(--text-muted);
-  margin-bottom: 15px;
+  font-family: "Merriweather", serif;
+  line-height: 1.75;
+  color: #3a3a3a;
+  margin-bottom: 18px;
   text-align: justify;
   text-indent: 18px;
+}
+
+.about ul {
+  text-align: left;
+  padding-left: 25px;
+  margin-bottom: 20px;
+}
+
+.about ul li {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  color: #2f2f2f;
+}
+
+.about ul li strong {
+  color: #0056b3;
 }
 
 /* Responsive Design */
@@ -509,12 +535,16 @@ button:hover {
     max-width: 90%;
     padding: 40px;
   }
-  
+
   .about h2 {
     font-size: 1.8rem;
   }
 
   .about p {
+    font-size: 1rem;
+  }
+
+  .about ul li {
     font-size: 1rem;
   }
 }
@@ -538,35 +568,21 @@ button:hover {
     font-size: 0.95rem;
     text-indent: 10px;
   }
+
+  .about ul {
+    padding-left: 15px;
+  }
+
+  .about ul li {
+    font-size: 0.95rem;
+  }
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  background-color: transparent; /* Làm container hoàn toàn trong suốt */
-  border-radius: 15px; /* Bo tròn góc container */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Hiệu ứng đổ bóng tạo chiều sâu */
-  padding: 30px; /* Tạo khoảng cách bên trong */
-  z-index: 10;
-  position: relative;
-  border: 1px solid rgba(209, 217, 230, 0.3); /* Đường viền trong suốt nhẹ */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng chuyển đổi mượt mà */
+/* Optional: add smooth fade-in if needed */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-
-.container:hover {
-  transform: scale(1.02); /* Hiệu ứng phóng to nhẹ khi rê chuột */
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Bóng đổ mạnh hơn khi hover */
-}
-
-/* Tùy chọn: Thêm khoảng cách bên trong cho nội dung */
-.container .content {
-  padding: 20px;
-  font-size: 1rem;
-  line-height: 1.8;
-  color: #495057; /* Màu chữ trung tính để dễ đọc */
-}
-
-
 
 /* General Styling for the Experience Section */
 .section {
